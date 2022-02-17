@@ -1,0 +1,16 @@
+setup:
+  config:
+    NODE_ENV: production
+    # ↓ デプロイ先によって必要な環境変数が変わってくるため、デプロイ先プラットフォームの公式ドキュメントはよく読むこと
+    # NPM_CONFIG_PRODUCTION: false
+    # ↑ ちなみにHerokuの場合、こちらの設定は不要なのでコメントアウトしている
+build:
+  docker:
+    web: Dockerfile
+  config:
+    WORKDIR: app
+    # API_URLのみ「heroku.yml」で管理
+    # ↑「heroku config:set API_URL=hoge」だと「nuxt.config.js」の「axios」にうまく渡せないため
+    API_URL: "https://rack-fashion-api.herokuapp.com"
+run:
+  web: yarn run start
