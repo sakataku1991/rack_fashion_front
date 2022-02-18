@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+// 「フォームに関する注意書き」
+
+
+// ----------▼▼ 「フォームに関する注意書き」のスタイル ▼▼----------
+
+// フォームに関する注意書き
+.form-list-item-data-note {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-note .list.-note li {
+  @include sp {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  };
+}
+
+// ----------▲▲ 「フォームに関する注意書き」のスタイル ▲▲----------

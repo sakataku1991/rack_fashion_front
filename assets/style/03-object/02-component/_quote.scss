@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+// 「引用文」まわりのスタイルのテンプレートです。
+
+
+// ----------▼▼ 「引用文」のスタイル ▼▼----------
+
+// 引用文全体
+.blockquote {
+  @include mark;
+  background-color: $gray_f8;
+  @include sp {
+    border-radius: 6px;
+    margin: 40px 0;
+    padding: 20px 20px 20px 36px;
+  };
+  @include pc {
+    border-radius: 6px;
+    margin: 48px 0;
+    padding: 24px 24px 24px 44px;
+  };
+}
+.blockquote::before {
+  background-color: $gray_c;
+  border-radius: 50px;
+  @include sp {
+    height: calc(100% - 40px);
+    left: 20px;
+    top: 20px;
+    width: 4px;
+  };
+  @include pc {
+    height: calc(100% - 48px);
+    left: 24px;
+    top: 24px;
+    width: 4px;
+  };
+}
+
+// 引用文の文章そのもの
+.blockquote-text {
+  color: $black;
+  font-style: italic;
+  @include sp {
+    font-size: 1.4rem;
+    line-height: 1.7;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    line-height: 1.8;
+  };
+  &:first-of-type {
+    margin-top: 0;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & + .blockquote-text {
+    @include sp {
+      margin-top: 12px;
+    };
+    @include pc {
+      margin-top: 12px;
+    };
+  }
+}
+
+// 引用元の情報
+.blockquote-cite {
+  background-color: $gray_f8;
+  color: $gray_5;
+  display: block;
+  font-style: normal;
+  font-weight: bold;
+  position: relative;
+  text-align: right;
+  &::before {
+    content: "引用：";
+  }
+  @include sp {
+    font-size: 1.2rem;
+    padding: 0 20px 20px 20px;
+    &::before {
+      font-size: inherit;
+    }
+  };
+  @include pc {
+    font-size: 1.2rem;
+    padding: 0 24px 24px 24px;
+    &::before {
+      font-size: inherit;
+    }
+  };
+}
+.blockquote + .blockquote-cite {
+  @include sp {
+    margin-top: -40px;
+  };
+  @include pc {
+    margin-top: -48px;
+  };
+}
+
+// ----------▲▲ 「引用文」のスタイル ▲▲----------

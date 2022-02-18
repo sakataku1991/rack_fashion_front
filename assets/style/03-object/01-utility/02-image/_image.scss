@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+// アイコンやロゴで使うbackground-imageは、この「_image.scss」にまとめて定義する。
+
+
+// ----------▼▼ 各種SNSのアイコン ▼▼----------
+
+// -----▼ リンクをコピー ▼-----
+// 白Ver.
+.icon-sns.-copyLink.-white::before {
+  // background-image: url(../image/icon/icon_share_copy-link_white.svg);
+}
+// -----▲ リンクをコピー ▲-----
+
+// -----▼ Twitter ▼-----
+// 白Ver.
+.icon-sns.-twitter.-white::before {
+  // background-image: url(../image/icon/icon_share_twitter_white.svg);
+}
+// -----▲ Twitter ▲-----
+
+// -----▼ Facebook ▼-----
+// 白Ver.
+.icon-sns.-facebook.-white::before {
+  // background-image: url(../image/icon/icon_share_facebook_white.svg);
+}
+// -----▲ Facebook ▲-----
+
+// -----▼ LINE ▼-----
+// 白Ver.
+.icon-sns.-line.-white::before {
+  // background-image: url(../image/icon/icon_share_line_white.svg);
+}
+// -----▲ LINE ▲-----
+
+// -----▼ はてなブックマーク ▼-----
+// 白Ver.
+.icon-sns.-hatebu.-white::before {
+  // background-image: url(../image/icon/icon_share_hatebu_white.svg);
+}
+// -----▲ はてなブックマーク ▲-----
+
+// ----------▲▲ 各種SNSのアイコン ▲▲----------
+
+
+// ----------▼▼ 背景画像 ▼▼----------
+
+// -----▼ 背景イメージ写真 ▼-----
+// トップページのメインビジュアルの背景画像
+.MainVisual__image {
+  @include sp {
+    // background-image: url(../image/photo/photo_mv-image_sp.jpg);
+  };
+  @include pc {
+    // background-image: url(../image/photo/photo_mv-image_pc.jpg);
+  };
+}
+// -----▲ 背景イメージ写真 ▲-----
+
+// ----------▲▲ 背景画像 ▲▲----------
+
+
+// 「詳細を見る」ボタンの別タブリンクマーク
+.-tab .icon-arrow-btn-next.-white::after {
+  // background-image: url(../image/icon/icon_link-external_white.svg);
+}
+.-tab .icon-arrow-btn-next.-blue::after {
+  // background-image: url(../image/icon/icon_link-external_blue.svg);
+}
+// クリップボードのアイコン
+.icon-fileboard.-white::before {
+  // background-image: url(../image/icon/icon_fileboard_white.svg);
+}
+// 「目次」の「▼」のアイコン
+#ez-toc-container a.ez-toc-toggle::before {
+  // background-image: url(../image/icon/icon_arrow_table-of-contents.svg);
+}
+// フォームの「クリアボタン」用のバツ印のアイコン
+.form-btn.-clear::before {
+  // background-image: url(../image/icon/icon_cross_form-clear.svg);
+}

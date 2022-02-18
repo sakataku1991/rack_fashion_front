@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+// サンクスページの共通スタイルです。
+
+
+// ----------▼▼ サンクスページの共通スタイル ▼▼----------
+
+// ありがとうございました！
+.Thanks__message {
+	@include sp {
+	};
+	@include pc {
+	};
+}
+// サンクスページの見出し
+.Thanks__messageTitle {
+	text-align: center;
+	@include sp {
+		font-size: 2.0rem;
+	};
+	@include pc {
+		font-size: 3.2rem;
+	};
+}
+.Thanks__messageTitle + .Thanks__messageText {
+	@include sp {
+		margin-top: 24px;
+	};
+	@include pc {
+		margin-top: 32px;
+	};
+}
+.Thanks__messageText {
+	@include sp {
+	};
+	@include pc {
+	};
+}
+// 「トップページへ戻る」ボタン
+.Thanks__topLink {
+	@include sp {
+		margin-top: 40px;
+	};
+	@include pc {
+		margin-top: 64px;
+	};
+}
+.Thanks__topLinkBtn.btn-top-page {
+	@include sp {
+		width: 80%;
+	};
+	@include pc {
+		width: 240px;
+	};
+}
+
+// ※「トップページへ戻る」ボタンそのもののスタイルは「_button.scss」に記述。
+
+// ----------▲▲ サンクスページの共通スタイル ▲▲----------

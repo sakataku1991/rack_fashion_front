@@ -1,0 +1,553 @@
+@charset "utf-8";
+
+// 「見出し」のスタイルのテンプレートです。
+
+
+// ---------▼▼ 「見出し」のスタイル ▼▼----------
+
+
+// .title-page：ページタイトル
+// .title-section：セクションの見出し
+
+
+// .title-modal：モーダルの見出し
+// .title-subsidy：「補助金情報」のタイトル（h1）
+// .title-column：「中小企業向けコラム」のタイトル（h1）
+// .title-news：「中小企業向けニュース」のタイトル（h2）
+// .post-content h1：投稿記事のタイトル（h1）
+// .title-2：汎用的な見出し（h2）
+// .title-3：汎用的な見出し（h3）
+// .title-4：汎用的な見出し（h4）
+// .title-5：汎用的な見出し（h5）
+// .title-6：汎用的な見出し（h6）
+// .title-form：フォームの見出し
+// .title-taxonomy-archive：カテゴリーごとやタグごとの記事一覧ページで表示するタイトル
+
+
+// ----▼ ページタイトル ▼-----
+.title-page {
+  font-size: 1em;  // 「user agent stylesheet」対策として必要。
+  text-align: center;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ページタイトルの文字セット全体
+.title-page-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ページタイトルの文字部分
+.title-page-text {
+  color: $black;
+  display: block;
+  font-feature-settings: "palt";
+  font-weight: bold;
+  @include sp {
+    font-size: 2.4rem;
+    letter-spacing: $lsAV80;
+    line-height: 1.4;
+  };
+  @include pc {
+    font-size: 4.0rem;
+    letter-spacing: $lsAV100;
+    line-height: 1.4;
+  };
+}
+// ----▲ ページタイトル ▲-----
+
+// ----▼ セクションの見出し ▼-----
+.title-section {
+  @include sp {
+    font-weight: bold;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-weight: bold;
+    line-height: 1.5;
+  };
+}
+// 青色Ver.
+.title-section.-blue {
+  color: $blue;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 中央寄せVer.
+.title-section.-center {
+  text-align: center;
+  @include sp {
+    font-size: 1.8rem;
+  };
+  @include pc {
+    font-size: 1.8rem;
+    letter-spacing: $lsAV80;
+  };
+}
+// 左寄せVer.
+.title-section.-left {
+  @include sp {
+    font-size: 1.8rem;
+  };
+  @include pc {
+    font-size: 1.8rem;
+  };
+}
+// ----▲ セクションの見出し ▲-----
+
+// ----▼ モーダルの見出し ▼-----
+.title-modal {
+  font-weight: bold;
+  text-align: center;
+  @include sp {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 2.4rem;
+    line-height: 1.5;
+  };
+}
+// ----▲ モーダルの見出し ▲-----
+
+// ----▼ 「中小企業向けコラム」のタイトル（h1） ▼-----
+.title-column {
+  font-weight: bold;
+  @include sp {
+    border-bottom: 2px solid $blue;
+    font-size: 2.0rem;
+    line-height: 1.5;
+    padding-bottom: 14px;
+  };
+  @include pc {
+    border-bottom: 2px solid $blue;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    padding-bottom: 24px;
+  };
+}
+// ----▲ 「中小企業向けコラム」のタイトル（h1） ▲-----
+
+// ----▼ 「中小企業ニュース」のタイトル（h2） ▼-----
+.title-news {
+  font-weight: bold;
+  @include sp {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  };
+}
+// ----▲ 「中小企業ニュース」のタイトル（h2） ▲-----
+
+// ----▼ 投稿記事のタイトル（h1） ▼-----
+.post-content h1 {
+  font-weight: bold;
+  @include sp {
+    border-bottom: 2px solid $blue;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding-bottom: 14px;
+  };
+  @include pc {
+    border-bottom: 2px solid $blue;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    padding-bottom: 24px;
+  };
+}
+// ----▲ 投稿記事のタイトル（h1） ▲-----
+
+// ----▼ 汎用的な見出し（h2） ▼-----
+.title-2 {
+  background-color: $blue_bgLight;
+  color: $black;
+  font-weight: bold;
+  @include sp {
+    border-radius: 6px;
+    font-size: 2.0rem;
+    line-height: 1.5;
+    padding: 12px 10px;
+  };
+  @include pc {
+    border-radius: 6px;
+    font-size: 2.2rem;
+    line-height: 1.5;
+    padding: 14px 12px;
+  };
+}
+// ----▲ 汎用的な見出し（h2） ▲-----
+
+// ----▼ 汎用的な見出し（h3） ▼-----
+.title-3 {
+  @include mark;
+  font-weight: bold;
+  @include sp {
+    font-size: 2.0rem;
+    line-height: 1.5;
+    padding: 4px 0 4px 16px;
+  };
+  @include pc {
+    font-size: 2.0rem;
+    line-height: 1.5;
+    padding: 6px 0 6px 18px;
+  };
+}
+.title-3::before {
+  background-color: $blue;
+  border-radius: 50px;
+  box-sizing: content-box;
+  height: 100%;
+  @include sp {
+    left: 0;
+    top: 0;
+    width: 5px;
+  };
+  @include pc {
+    left: 0;
+    top: 0;
+    width: 5px;
+  };
+}
+// ----▲ 汎用的な見出し（h3） ▲-----
+
+// ----▼ 汎用的な見出し（h4） ▼-----
+.title-4 {
+  @include mark;
+  font-weight: bold;
+  @include sp {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding-left: 16px;
+  };
+  @include pc {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding-left: 18px;
+  };
+}
+.title-4::before {
+  background-color: $blue;
+  border-radius: 50px;
+  @include sp {
+    height: 3px;
+    left: 0;
+    top: calc(50% - 1.5px);
+    width: 10px;
+  };
+  @include pc {
+    height: 4px;
+    left: 0;
+    top: calc(50% - 2px);
+    width: 12px;
+  };
+}
+// ----▲ 汎用的な見出し（h4） ▲-----
+
+// ----▼ 汎用的な見出し（h5） ▼-----
+.title-5 {
+  font-weight: bold;
+  @include sp {
+    font-size: 1.7rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.7rem;
+    line-height: 1.5;
+  };
+}
+// ----▲ 汎用的な見出し（h5） ▲-----
+
+// ----▼ 汎用的な見出し（h6） ▼-----
+.title-6 {
+  font-weight: bold;
+  @include sp {
+    font-size: 1.7rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.7rem;
+    line-height: 1.5;
+  };
+}
+// ----▲ 汎用的な見出し（h5） ▲-----
+
+// ----▼ フォームの見出し ▼-----
+// フォームの見出し（共通スタイル）
+.title-form {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.title-form-text {
+  font-weight: bold;
+  @include sp {
+    line-height: 1.5;
+  };
+  @include pc {
+    line-height: 1.5;
+  };
+}
+// 検索フォームの見出し（共通スタイル）
+.title-form-text {
+  @include sp {
+    font-size: 1.8rem;
+    padding-left: 32px;
+  };
+  @include pc {
+    font-size: 1.8rem;
+    padding-left: 32px;
+  };
+}
+.title-form-text::before {
+  @include sp {
+    height: 24px;
+    left: 0;
+    top: calc(50% - 13px);
+    width: 24px;
+  };
+  @include pc {
+    height: 24px;
+    left: 0;
+    top: calc(50% - 13px);
+    width: 24px;
+  };
+}
+// 検索フォームの見出し｜補助金・助成金検索
+.form-search.-subsidy .title-form {
+  @include sp {
+    text-align: center;
+  };
+  @include pc {
+  };
+}
+.form-search.-subsidy .title-form-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-search.-subsidy .title-form-text::before {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォームの見出し｜キーワード検索
+.form-search.-keyword .title-form {
+  @include sp {
+    text-align: center;
+  };
+  @include pc {
+  };
+}
+.form-search.-keyword .title-form-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-search.-keyword .title-form-text::before {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォームの見出し｜メールマガジン登録
+.form-regist.-newsletter .title-form {
+  text-align: center;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-regist.-newsletter .title-form-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-regist.-newsletter .title-form::before {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォームの見出し｜LINE登録
+.form-regist.-line .title-form {
+  text-align: center;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-regist.-line .title-form-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-regist.-line .title-form::before {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ----▲ フォームの見出し ▲-----
+
+// ----▼ カテゴリーごとやタグごとの記事一覧ページで表示するタイトル ▼-----
+.title-taxonomy-archive {
+  background-color: $gray_f4;
+  @include sp {
+    border-bottom: 3px solid $blue;
+    padding: 18px 12px 20px;
+  };
+  @include pc {
+    border-bottom: 6px solid $blue;
+    padding: 32px 16px 30px;
+  };
+}
+.title-taxonomy-archive-text {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  @include sp {
+    line-height: 1.5;
+    margin-top: -10px;
+  };
+  @include pc {
+    line-height: 1.5;
+    margin-top: -12px;
+  };
+}
+.title-taxonomy-archive-text-bracket-and-name {
+  @include sp {
+    width: 100%;
+    margin-top: 10px;
+  };
+  @include pc {
+    margin-top: 12px;
+  };
+}
+.title-taxonomy-archive-text-bracket {
+  color: $blue;
+  font-weight: bold;
+  @include sp {
+    font-size: 1.8rem;
+  };
+  @include pc {
+    font-size: 3.2rem;
+  };
+}
+.title-taxonomy-archive-text-bracket.-open {
+  @include sp {
+    margin-right: 4px;
+  };
+  @include pc {
+    margin-right: 6px;
+  };
+}
+.title-taxonomy-archive-text-bracket.-closing {
+  @include sp {
+    margin-left: 4px;
+  };
+  @include pc {
+    margin-left: 6px;
+  };
+}
+.title-taxonomy-archive-text-name {
+  font-weight: bold;
+  @include sp {
+    font-size: 1.8rem;
+    letter-spacing: $lsAV150;
+  };
+  @include pc {
+    font-size: 3.2rem;
+    letter-spacing: $lsAV80;
+  };
+}
+.title-taxonomy-archive-text-end-of-word {
+  @include sp {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-top: 10px;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 16px;
+  };
+}
+// アラート時の表示色
+.title-taxonomy-archive.-alert {
+  border: 1px solid $red;
+  background-color: $red_8pct;
+  text-align: center;
+  @include sp {
+    border-radius: 4px;
+    padding: 22px 16px 22px;
+  };
+  @include pc {
+    border-radius: 6px;
+    padding: 32px 24px 32px;
+  };
+}
+.feas-result-count-and-sort + .title-taxonomy-archive {
+  @include sp {
+    margin-top: 32px;
+  };
+  @include pc {
+    margin-top: 32px;
+  };
+}
+.title-taxonomy-archive-alert-text {
+  color: $red;
+  font-weight: bold;
+  @include sp {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  };
+}
+// 「検索結果」ページでの「検索条件」の表示
+.BlogArchive.-search {
+  .title-taxonomy-archive-text-bracket {
+    @include sp {
+      font-size: 1.4rem;
+    };
+    @include pc {
+      font-size: 1.6rem;
+    };
+  }
+  .title-taxonomy-archive-text-name {
+    @include sp {
+      font-size: 1.4rem;
+
+    };
+    @include pc {
+      font-size: 1.6rem;
+      letter-spacing: $lsAV80;
+    };
+  }
+  .title-taxonomy-archive-text-end-of-word {
+    font-weight: normal;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// ----▲ カテゴリーごとやタグごとの記事一覧ページで表示するタイトル ▲-----
+
+// ---------▲▲ 「見出し」のスタイル ▲▲----------

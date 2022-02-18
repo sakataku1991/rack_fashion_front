@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+// ブログの「一覧ページ」と「個別詳細ページ」と「検索結果ページ」とで共通のスタイルです。
+
+
+// ----------▼▼ 「archive.php」と「single.php」と「search.php」とで共通のスタイル ▼▼----------
+
+.Blog {
+
+  @include sp {
+  };
+  @include pc {
+  };
+
+  &.pageContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+  // ブログの投稿記事セクション
+  .Blog__post {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .Blog__post .sectionContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // ブログの投稿記事の内容（レイアウト）
+  .Blog__postContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // ブログの記事コンテンツのカラム
+  .Blog__postContentItem {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // メインカラム
+  .Blog__postContentItem.-main {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // サイドバー
+  // ※このサイトの投稿機能は1カラムのため、このclassは未使用
+  .Blog__postContentItem.-sidebar {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+}
+
+// ----------▲▲ 「archive.php」と「single.php」と「search.php」とで共通のスタイル ▲▲----------

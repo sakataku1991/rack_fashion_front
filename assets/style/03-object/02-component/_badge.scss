@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+// 「バッヂ」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「バッヂ」のスタイル ▼▼----------
+
+// .badge：すべてのバッヂのベース
+
+// .badge.-icon：基本のバッヂ｜アイコン
+
+
+// -----▼ すべてのボタンのベース ▼-----
+// ボタン
+.btn {
+  display: block;
+  height: auto;
+  margin: auto;
+  position: relative;    // ※アイコン付きボタン用
+  text-align: center;
+  @include sp {
+  };
+  @include pc {
+    cursor: pointer;
+  };
+}
+// ボタンのテキスト
+.btn-text {
+  @include sp {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  };
+}
+// -----▲ すべてのボタンのベース ▲-----
+
+// -----▼ 基本のバッヂ｜アイコン ▼-----
+.badge.-icon {
+  @include sp {
+    font-size: 0;
+    line-height: 1;
+    margin: 0;
+  };
+  @include pc {
+    font-size: 0;
+    line-height: 1;
+    margin: 0;
+  };
+}
+// -----▲ 基本のバッヂ｜アイコン ▲-----
+
+// ----------▲▲ 「バッヂ」のスタイル ▲▲----------

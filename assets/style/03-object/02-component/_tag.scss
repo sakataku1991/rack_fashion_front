@@ -1,0 +1,539 @@
+@charset "utf-8";
+
+// 「タグ」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「タグ」のスタイル ▼▼----------
+
+
+// .tag-general：汎用タグ
+
+// .tag-prefectures：「対象地域（都道府県）」のタグ
+// .tag-general.-subsidy：「補助金・助成金情報」の「目的」のタグ（汎用）
+// .tag-amount：「補助金・助成金情報」のカードの「上限額」のタグ
+// .tag-rate.-subsidy：「補助金・助成金情報」の「補助率」のタグ
+// .tag-domain：「中小企業向けニュース」のソース（ドメイン）のタグ
+// .tag-general.-column：「中小企業コラム」のタグ（汎用）
+
+
+// -----▼ 「タグ」の共通スタイル ▼-----
+// タグの基本のスタイル
+.tag {
+  @include sp {
+    line-height: 1;
+  };
+  @include pc {
+    line-height: 1;
+  };
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-list-item {
+  display: inline-block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// タグのリンクのスタイル
+.tag-link {
+  display: block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ※リンクなしのタグのスタイル
+.tag-not-link {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// タグのテキストのスタイル
+.tag-text {
+  display: block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ 「タグ」の共通スタイル ▲-----
+
+// -----▼ 汎用タグ ▼-----
+.tag-general {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-general .tag-list {
+  @include sp {
+    margin-left: -6px;
+    margin-top: -6px;
+  };
+  @include pc {
+    margin-left: -8px;
+    margin-top: -8px;
+  };
+  .tag-list-item {
+    @include sp {
+      margin-left: 6px;
+      margin-top: 6px;
+    };
+    @include pc {
+      margin-left: 8px;
+      margin-top: 8px;
+    };
+  }
+}
+.tag-general {
+  .tag-link {
+    transition: .3s;
+    @include sp {
+      border-radius: 4px;
+      &:active {
+        transition: .1s;
+        .tag-text {
+          transition: .1s;
+        }
+      }
+    };
+    @include pc {
+      border-radius: 4px;
+      &:hover {
+        transition: .1s;
+        .tag-text {
+          transition: .1s;
+        }
+      }
+    };
+  }
+  .tag-text {
+    transition: .3s;
+    @include sp {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      padding: 4px 10px;
+    };
+    @include pc {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      padding: 4px 10px;
+    };
+  }
+}
+// 青色Ver.
+.tag-general.-blue .tag-list {
+  @include sp {
+  };
+  @include pc {
+  };
+  .tag-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-link {
+    background-color: $blue;
+    border: 1px solid $blue;
+    @include sp {
+      &:active {
+        background-color: $blue_hover;
+        border: 1px solid $blue_hover;
+      }
+    };
+    @include pc {
+      &:hover {
+        background-color: $blue_hover;
+        border: 1px solid $blue_hover;
+      }
+    };
+  }
+  .tag-text {
+    color: $white;
+    font-weight: bold;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// グレーVer.
+.tag-general.-gray .tag-list {
+  @include sp {
+  };
+  @include pc {
+  };
+  .tag-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-link {
+    background-color: $gray_f5;
+    border: 1px solid $gray_c;
+    @include sp {
+      &:active {
+        background-color: $gray_5;
+        border: 1px solid $gray_5;
+        .tag-text {
+          color: $white;
+        }
+      }
+    };
+    @include pc {
+      &:hover {
+        background-color: $gray_5;
+        border: 1px solid $gray_5;
+        .tag-text {
+          color: $white;
+        }
+      }
+    };
+  }
+  .tag-text {
+    color: $gray_5;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ 汎用タグ ▲-----
+
+// -----▼ 「対象地域（都道府県）」のタグ ▼-----
+.tag-prefectures {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-prefectures .tag-list {
+  @include sp {
+    margin-left: -4px;
+    margin-top: -4px;
+  };
+  @include pc {
+    margin-left: -6px;
+    margin-top: -6px;
+  };
+  .tag-list-item {
+    @include sp {
+      margin-left: 4px;
+      margin-top: 4px;
+    };
+    @include pc {
+      margin-left: 6px;
+      margin-top: 6px;
+    };
+  }
+  .tag-link {
+    @include sp {
+      padding-left: 16px;
+      &:active {
+        opacity: .7;
+        .tag-text {
+          text-decoration: underline;
+        }
+      }
+    };
+    @include pc {
+      padding-left: 16px;
+      &:hover {
+        opacity: .7;
+        .tag-text {
+          text-decoration: underline;
+        }
+      }
+    };
+  }
+  .tag-link::before {
+    // background-image: url(../image/icon/icon_map_gray.svg);
+    @include sp {
+      height: 16px;
+      left: 0;
+      top: calc(50% - 9px);
+      width: 16px;
+    };
+    @include pc {
+      height: 16px;
+      left: 0;
+      top: calc(50% - 10px);
+      width: 16px;
+    };
+  }
+  .tag-text {
+    color: $gray_5;
+    @include sp {
+      font-size: 1.4rem;
+      line-height: 1.5;
+    };
+    @include pc {
+      font-size: 1.4rem;
+      line-height: 1.5;
+    };
+  }
+}
+// -----▲ 「対象地域（都道府県）」のタグ ▲-----
+
+// -----▼ 「補助金・助成金情報」の「目的」のタグ（汎用） ▼-----
+.tag-general.-subsidy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-general.-subsidy {
+  .tag-link {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-text {
+    @include sp {
+      font-size: 1.0rem;
+      padding: 3px 6px;
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ 「補助金・助成金情報」の「目的」のタグ（汎用） ▲-----
+
+// -----▼ 「補助金・助成金情報」のカードの「上限額」のタグ ▼-----
+.tag-amount {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-amount {
+  .tag-not-link {
+    background-color: $white;
+    border: 1px solid $blue;
+    display: inline-block;
+    @include sp {
+      border-radius: 50px;
+      padding: 3px 12px 3px 12px;
+    };
+    @include pc {
+      border-radius: 50px;
+      padding: 4px 12px 4px 12px;
+    };
+  }
+  .tag-amount-text {
+    color: $blue;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-amount-text-maximum {
+    @include sp {
+      font-size: 1.2rem;
+      vertical-align: 1px;
+    };
+    @include pc {
+      font-size: 1.4rem;
+      vertical-align: 1px;
+    };
+  }
+  .tag-amount-text-money-and-yen {
+    font-weight: bold;
+    @include sp {
+      margin-left: 8px;
+    };
+    @include pc {
+      margin-left: 12px;
+    };
+  }
+  .tag-amount-text-money {
+    @include sp {
+      font-size: 2.0rem;
+    };
+    @include pc {
+      font-size: 2.0rem;
+    };
+  }
+  .tag-amount-text-yen {
+    @include sp {
+      font-size: 1.2rem;
+      margin-left: 3px;
+      vertical-align: 1px;
+    };
+    @include pc {
+      font-size: 1.2rem;
+      margin-left: 4px;
+      vertical-align: 1px;
+    };
+  }
+}
+// -----▲ 「補助金・助成金情報」のカードの「上限額」のタグ ▲-----
+
+// -----▼ 「補助金・助成金情報」の「補助率」のタグ ▼-----
+.tag-rate.-subsidy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-rate.-subsidy {
+  .tag-list {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-list-item + .tag-list-item::before {
+    content: "、";
+    font-size: inherit;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-text {
+    display: inline;
+    font-weight: bold;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ 「補助金・助成金情報」の「補助率」のタグ ▲-----
+
+// -----▼ 「中小企業向けニュース」のソース（ドメイン）のタグ ▼-----
+.tag-domain {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-domain {
+  .tag-link {
+    display: inline-block;
+    @include sp {
+      &:active {
+        opacity: .7;
+        .tag-domain-text-url {
+          text-decoration: underline;
+        }
+      }
+    };
+    @include pc {
+      &:hover {
+        opacity: .7;
+        .tag-domain-text-url {
+          text-decoration: underline;
+        }
+      }
+    };
+  }
+  .tag-domain-text {
+    align-items: center;
+    display: flex;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-domain-text-favicon {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-domain-text-favicon-img {
+    @include sp {
+      height: 16px;
+      width: 16px;
+    };
+    @include pc {
+      height: 16px;
+      width: 16px;
+    };
+  }
+  .tag-domain-text-url {
+    color: $gray_5;
+    @include sp {
+      font-size: 1.2rem;
+      margin-left: 5px;
+      padding-bottom: 1px;
+    };
+    @include pc {
+      font-size: 1.2rem;
+      margin-left: 6px;
+      padding-bottom: 1px;
+    };
+  }
+}
+// -----▲ 「中小企業向けニュース」のソース（ドメイン）のタグ ▲-----
+
+// -----▼ 「中小企業コラム」のタグ（汎用） ▼-----
+.tag-general.-column {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.tag-general.-column .tag-list {
+  @include sp {
+    margin-left: -4px;
+    margin-top: -4px;
+  };
+  @include pc {
+    margin-left: -6px;
+    margin-top: -6px;
+  };
+  .tag-list-item {
+    @include sp {
+      margin-left: 4px;
+      margin-top: 4px;
+    };
+    @include pc {
+      margin-left: 6px;
+      margin-top: 6px;
+    };
+  }
+  .tag-link {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .tag-text {
+    @include sp {
+      font-size: 1.0rem;
+      padding: 2px 6px;
+    };
+    @include pc {
+      font-size: 1.0rem;
+      padding: 4px 8px;
+    };
+  }
+}
+// -----▲ 「中小企業コラム」のタグ（汎用） ▲-----
+
+
+
+
+
+
+// ----------▲▲ 「タグ」のスタイル ▲▲----------

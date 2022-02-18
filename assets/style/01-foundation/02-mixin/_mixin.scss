@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+// サイトのデザインの基礎となる、汎用的な「ミックスイン」をこのファイルにまとめて定義する。
+
+
+// ----------▼▼ device-size ▼▼----------
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+@mixin tb {
+  @media screen and (min-width: ($tb)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin retina {
+  @media (-webkit-device-pixel-ratio: ($retina)) {
+    @content;
+  }
+}
+// 画面の横幅が767px以上かつ1200px未満のとき
+@mixin pcContentWidth {
+  @media screen and (min-width: ($pc)) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+// ----------▲▲ device-size ▲▲----------
+
+
+// ----------▼▼ reboot-fix ▼▼----------
+@mixin hover {
+	@include sp {
+	};
+	@include pc {
+		&:hover {
+			@content;
+		}
+	};
+}
+@mixin hover-focus {
+	&:focus, :hover {
+		@content;
+	}
+}
+// ----------▲▲ reboot-fix ▲▲----------
+
+
+// ----------▼▼ .visuallyhidden ▼▼----------
+
+// 「見た目非表示」のコードスニペット。
+// スクリーンリーダーや検索エンジンのロボットからはコンテンツを隠さない。
+// 要素としては存在させたいが、
+// ユーザーには視覚的に見えないようにしたいという場合に使用する。
+// フォームのinputを隠す際に使う。
+
+// -----▼ @mixin ▼-----
+@mixin visuallyHidden {
+  border: 0;
+  clip-path: inset(50%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+// -----▲ @mixin ▲-----
+
+// ----------▲▲ .visuallyhidden ▲▲----------
+
+
+// ----------▼▼ background-image-size ▼▼----------
+@mixin bgFitCov {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin bgFitCnt {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+// ----------▲▲ background-image-size ▲▲----------
+
+
+// ----------▼▼ mark ▼▼----------
+
+// -----▼ @mixin ▼-----
+@mixin mark {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+}
+// -----▲ @mixin ▲-----
+
+// ----------▲▲ mark ▲▲----------

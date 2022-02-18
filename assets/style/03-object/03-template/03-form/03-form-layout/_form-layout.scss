@@ -1,0 +1,538 @@
+@charset "utf-8";
+
+// フォームのレイアウトのスタイルです。
+
+// ※このscssには、レイアウトに関するスタイルだけを記述すること！
+
+// ■記述してもよいプロパティ
+// align-items
+// display
+// flex-wrap
+// height
+// justify-content
+// margin
+// padding
+// position
+// text-align
+// width
+// z-index
+
+// ↑上記以外のスタイルは「_form-component.scss」に記述すべし！
+
+
+// ----------▼▼ フォームの各項目レイアウト ▼▼----------
+
+// -----▼ フォームの基本構成 ▼-----
+// フォーム全体
+.form {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダー
+.form-header {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダーのタイトル
+.form-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダーの文章
+.form-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション
+.form-section {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「入力欄」
+.form-section.-input {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「プライバシーポリシー」
+.form-section.-privacyPolicy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「送信ボタン」
+.form-section.-submit {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力項目のリスト
+.form-list {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※入力項目のリスト「.form-list」は、階層の深さに合わせて
+// 「.-layer1」「.-layer2」などといったclassを追加することで
+// 階層の違いを表現する
+
+.form-list.-layer1 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list.-layer2 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list.-layer3 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// 個々の入力項目
+.form-list-item {
+  position: relative;  // ※バリデーション文言の赤いフキダシのレイアウトに必要
+  z-index: 0;  // ※バリデーション文言の赤いフキダシのレイアウトに必要
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力項目のタイトル
+.form-list-item-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-title-label {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄
+.form-list-item-data {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（単文）
+.form-list-item-data-content.-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（テキストエリア）
+.form-list-item-data-content.-textarea {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（セレクトボックス）
+.form-list-item-data-content.-select {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// セレクトボックスのラッパー（アイコン配置用）
+.form-list-item-data-select-wrap {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（ラジオボタン）
+.form-list-item-data-content.-radio {
+  display: block;
+  @include sp {
+    // margin-top: -8px;
+  };
+  @include pc {
+    // margin-top: -8px;
+  };
+}
+// 入力欄（チェックボックス）
+.form-list-item-data-content.-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  @include sp {
+    // margin-left: -8px;
+    // margin-top: -8px;
+  };
+  @include pc {
+    // margin-left: -8px;
+    // margin-top: -8px;
+  };
+}
+// ラジオボタンやチェックボックスのlabel部分
+.form-list-item-data-content-label {
+  @include sp {
+    // margin-left: 8px;
+    // margin-top: 8px;
+  };
+  @include pc {
+    // margin-left: 8px;
+    // margin-top: 8px;
+  };
+}
+// ラジオボタンやチェックボックスの文言（sapn）部分
+.form-list-item-data-content-label-text {
+  display: block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（日付のカレンダー入力）
+.form-list-item-data-content.-calendar {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 日付のカレンダー入力のラッパー（アイコン配置用）
+.form-list-item-data-calendar-wrap {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（ファイル）
+.form-list-item-data-content.-file {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの記入例
+.form-list-item-data-description {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォーム内の注意書き
+.form-list-item-data-note {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン
+.form-btn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「送信する」ボタン（メールフォーム用）
+.form-btn.-formContact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「検索」ボタン（検索フォーム用）
+.form-btn.-searchSubsidyAndColumn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「補助金・助成金を検索」ボタン（検索フォーム用）
+.form-btn.-formContact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「メールマガジン登録」ボタン（登録フォーム用）
+.form-btn.-registNewsletter {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「LINE登録」ボタン（登録フォーム用）
+.form-btn.-registLine {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※フォームの送信ボタンそのもののスタイルは「_button.scss」に記述
+
+// -----▲ フォームの基本構成 ▲-----
+
+// -----▼ フォームの種類 ▼-----
+// メールフォーム
+.form.form-mail {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// メールフォーム「お問い合わせ」
+.form.form-mail.-contact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム
+.form.form-search {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム「補助金・助成金検索」
+.form.form-search.-subsidy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム「キーワード検索」
+.form.form-search.-keyword {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム
+.form.form-regist {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム「メールマガジン」
+.form.form-regist.-newsletter {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム「LINE」
+.form.form-regist.-line {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ フォームの種類 ▲-----
+
+
+
+
+
+
+
+
+
+// -----▼ 【全フォーム共通】各パーツ間のマージン ▼-----
+// 「入力項目のタイトル」＋「入力欄」（基本）
+.form-list.-layer1 > .form-list-item > .form-list-item-title + .form-list-item-data {
+  @include sp {
+    // margin-top: 8px;
+  };
+  @include pc {
+    // margin-top: 10px;
+  };
+}
+.form-list.-layer2 > .form-list-item > .form-list-item-title + .form-list-item-data {
+  @include sp {
+    // margin-top: 4px;
+  };
+  @include pc {
+    // margin-top: 6px;
+  };
+}
+// 入力欄と記入例の間のマージン
+.form-list-item-data-content + .form-list-item-data-description,
+.wpcf7-form-control-wrap + .form-list-item-data-description {
+  @include sp {
+    margin-top: 6px;
+  };
+  @include pc {
+    margin-top: 10px;
+  };
+}
+// 「フォームの記入例」＋「フォームに関する注意書き」
+.form-list-item-data-description + .form-list-item-data-note {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+// -----▲ 【全フォーム共通】各パーツ間のマージン ▲-----
+
+// -----▼ メールフォーム（form-mail） ▼-----
+// 「同意確認」
+.form-mail .form-section.-privacyPolicy {
+  @include sp {
+    margin-top: 48px;
+  };
+  @include pc {
+    margin-top: 56px;
+  };
+}
+// 「送信ボタン」
+.form-mail .form-section.-submit {
+  @include sp {
+    margin-top: 48px;
+  };
+  @include pc {
+    margin-top: 48px;
+  };
+}
+.form .form-section + .form-section {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-mail .form-list {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 個々の入力項目
+.form-mail .form-list .form-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 個々の入力項目のマージン
+.form-mail .form-list > .form-list-item + .form-list-item {
+  @include sp {
+    margin-top: 40px;
+  };
+  @include pc {
+    margin-top: 48px;
+  };
+}
+.form-mail .form-list-item-data-content.-radio {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-mail .form-list-item-data-content.-checkbox {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（ラジオボタン・チェックボックス）
+.form-mail .form-list-item-data-content.-radio,
+.form-mail .form-list-item-data-content.-checkbox {
+  @include sp {
+    // margin-top: -4px;
+  };
+  @include pc {
+    // margin-top: -2px;
+  };
+}
+
+
+// プライバシーポリシー
+.form-privacy-policy {
+  @include sp {
+  };
+  @include pc {
+    text-align: center;
+  };
+}
+// 「プライバシーポリシーをご確認・ご同意のうえ、
+// 上記の内容でよろしければ「送信する」ボタンで入力内容を送信してください。」
+.form-privacy-policy-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「プライバシーポリシーに同意する」
+.form-privacy-policy .form-list {
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    display: inline-block;
+    margin-top: 32px;
+  };
+}
+.form-privacy-policy .form-list-item {
+  align-items: center;
+  display: flex;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-privacy-policy .form-list-item-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-privacy-policy .form-list-item-data {
+  margin-top: 0 !important;
+}
+.form-privacy-policy .form-list-item-data-content.-checkbox,
+.form-privacy-policy .form-list-item-data-content.-checkbox .form-list-item-data-content-label {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+// -----▲ メールフォーム（form-mail） ▲-----
+
+// -----▼ 登録フォーム（form-regist） ▼-----
+.modal.-formRegist .form-section.-input + .form-section.-submit {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+// -----▲ 登録フォーム（form-regist） ▲-----
+
+// ----------▲▲ フォームの各項目レイアウト ▲▲----------

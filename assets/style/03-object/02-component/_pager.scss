@@ -1,0 +1,345 @@
+@charset "utf-8";
+
+// 「ページャー」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「ページャー」のスタイル ▼▼----------
+
+// ----▼ 共通のスタイル ▼-----
+// ページャー全体
+.wp-pagenavi {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  @include sp {
+    margin-left: -12px;
+    margin-top: 40px;
+  };
+  @include pc {
+    margin-left: -8px;
+    margin-top: 48px;
+  };
+}
+// ページャーボタン
+.wp-pagenavi a,
+.wp-pagenavi span {
+  background-color: $white;
+  font-weight: normal !important;
+  @include sp {
+    border-radius: 4px;
+    border: 1px solid $gray_c;
+    font-size: 1.4rem;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0 0 12px;
+    padding: 0;
+    width: 40px;
+  };
+  @include pc {
+    border-radius: 4px;
+    border: 1px solid $gray_c;
+    font-size: 1.6rem;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0 0 8px;
+    padding: 0;
+    width: 40px;
+  };
+}
+// ボタン（ホバー時のアニメーション）
+.wp-pagenavi a {
+  transition: .3s;
+  @include sp {
+    &:active {
+      transition: .1s;
+    }
+  };
+  @include pc {
+    &::before,
+    &::after {
+      transition: .3s;
+    }
+    &:hover,
+    &:hover::before,
+    &:hover::after {
+      transition: .1s;
+    }
+  };
+}
+.wp-pagenavi a {
+  @include sp {
+    &:active {
+      background-color: $blue;
+      border: 1px solid $blue;
+    }
+  };
+  @include pc {
+    &:hover {
+      background-color: $blue;
+      border: 1px solid $blue;
+    }
+  };
+}
+// 「<」ボタンと「>」ボタン
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink {
+  @include sp {
+    &:active {
+      color: $white;
+    }
+  };
+  @include pc {
+    &:hover {
+      color: $white;
+    }
+  };
+}
+// 「<<」ボタンとページ数ボタン、「>>」ボタン
+.wp-pagenavi .first,
+.wp-pagenavi .page,
+.wp-pagenavi .last {
+  @include sp {
+    &:active {
+      color: $white;
+    }
+  };
+  @include pc {
+    &:hover {
+      color: $white;
+    }
+  };
+}
+// ボタンの基本サイズ
+.wp-pagenavi .current,
+.wp-pagenavi .first,
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .extend,
+.wp-pagenavi .page,
+.wp-pagenavi .nextpostslink,
+.wp-pagenavi .last {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// アイコンを使っているボタン
+.wp-pagenavi .first,
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .extend,
+.wp-pagenavi .nextpostslink,
+.wp-pagenavi .last {
+}
+.wp-pagenavi .first::before,
+.wp-pagenavi .previouspostslink::before,
+.wp-pagenavi .extend::before,
+.wp-pagenavi .nextpostslink::after,
+.wp-pagenavi .last::after {
+  @include sp {
+    height: 20px;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    width: 20px;
+  };
+  @include pc {
+    height: 20px;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    width: 20px;
+  };
+}
+// ----▲ 共通のスタイル ▲-----
+
+// ----▼ ページャーボタンの種類ごとのスタイル ▼-----
+
+// 「全部のページ数（例：1/10）」ボタン
+.wp-pagenavi .pages {
+  display: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.wp-pagenavi .pages + .current,
+.wp-pagenavi .pages + .previouspostslink,
+.wp-pagenavi .pages + .first {
+  @include sp {
+    margin-left: 12px;
+  };
+  @include pc {
+    margin-left: 8px;
+  };
+}
+
+// 「ページ数」ボタン
+.wp-pagenavi .page {
+  @include sp {
+    display: none;
+  };
+  @include pc {
+  };
+}
+
+// 「<<」ボタン
+.wp-pagenavi .first {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.wp-pagenavi .first::before {
+  // background-image: url(../image/icon/icon_arrow_pager_double_blue.svg), url(../image/icon/icon_arrow_pager_double_white.svg);
+  transform: scale(-1, 1);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.wp-pagenavi .first {
+  @include sp {
+    &::before {
+      background-size: cover, 0 0;
+    }
+    &:active::before {
+      background-size: 0 0, cover;
+
+    }
+  };
+  @include pc {
+    &::before {
+      background-size: cover, 0 0;
+    }
+    &:hover::before {
+      background-size: 0 0, cover;
+    }
+  };
+}
+
+// 「<」ボタン
+.wp-pagenavi .previouspostslink {
+}
+.wp-pagenavi .previouspostslink::before {
+  // background-image: url(../image/icon/icon_arrow_pager_single_blue.svg), url(../image/icon/icon_arrow_pager_single_white.svg);
+  transform: scale(-1, 1);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.wp-pagenavi .previouspostslink {
+  @include sp {
+    &::before {
+      background-size: cover, 0 0;
+    }
+    &:active::before {
+      background-size: 0 0, cover;
+
+    }
+  };
+  @include pc {
+    &::before {
+      background-size: cover, 0 0;
+    }
+    &:hover::before {
+      background-size: 0 0, cover;
+    }
+  };
+}
+
+// 「…」
+.wp-pagenavi .extend {
+  background-color: $gray_f1;
+  @include sp {
+    display: none;
+  };
+  @include pc {
+    border: 1px solid $gray_f1;
+  };
+}
+.wp-pagenavi .extend::before {
+  // background-image: url(../image/icon/icon_pager_ellipsis.svg);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// 「>」ボタン
+.wp-pagenavi .nextpostslink {
+}
+.wp-pagenavi .nextpostslink::after {
+  // background-image: url(../image/icon/icon_arrow_pager_single_blue.svg), url(../image/icon/icon_arrow_pager_single_white.svg);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.wp-pagenavi .nextpostslink {
+  @include sp {
+    &::after {
+      background-size: cover, 0 0;
+    }
+    &:active::after {
+      background-size: 0 0, cover;
+
+    }
+  };
+  @include pc {
+    &::after {
+      background-size: cover, 0 0;
+    }
+    &:hover::after {
+      background-size: 0 0, cover;
+    }
+  };
+}
+
+// 「>>」ボタン
+.wp-pagenavi .last {
+  text-align: left;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.wp-pagenavi .last::after {
+  // background-image: url(../image/icon/icon_arrow_pager_double_blue.svg), url(../image/icon/icon_arrow_pager_double_white.svg);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.wp-pagenavi .last {
+  @include sp {
+    &::after {
+      background-size: cover, 0 0;
+    }
+    &:active::after {
+      background-size: 0 0, cover;
+
+    }
+  };
+  @include pc {
+    &::after {
+      background-size: cover, 0 0;
+    }
+    &:hover::after {
+      background-size: 0 0, cover;
+    }
+  };
+}
+
+// 「現在のページ」ボタン
+.wp-pagenavi .current {
+  background-color: $link-color;
+  color: $white;
+  @include sp {
+    border: 1px solid $blue !important;
+  };
+  @include pc {
+    border: 1px solid $blue !important;
+  };
+}
+
+// ----▲ ページャーボタンの種類ごとのスタイル ▲-----
+
+// ----------▲▲ 「ページャー」のスタイル ▲▲----------

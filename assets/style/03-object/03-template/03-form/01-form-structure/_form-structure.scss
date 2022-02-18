@@ -1,0 +1,326 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの基本構成とそれに対応したclassのまとめです。
+
+
+// ----------▼▼ フォームに使用するclass ▼▼----------
+
+// -----▼ フォームの基本構成 ▼-----
+// フォーム全体
+.form {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダー
+.form-header {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダーのタイトル
+.form-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダーの文章
+.form-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション
+.form-section {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「入力欄」
+.form-section.-input {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「プライバシーポリシー」
+.form-section.-privacyPolicy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「送信ボタン」
+.form-section.-submit {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力項目のリスト
+.form-list {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※入力項目のリスト「.form-list」は、階層の深さに合わせて
+// 「.-layer1」「.-layer2」などといったclassを追加することで
+// 階層の違いを表現する
+
+.form-list.-layer1 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list.-layer2 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list.-layer3 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// 個々の入力項目
+.form-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力項目のタイトル
+.form-list-item-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-title-label {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄
+.form-list-item-data {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（単文）
+.form-list-item-data-content.-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（テキストエリア）
+.form-list-item-data-content.-textarea {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（セレクトボックス）
+.form-list-item-data-content.-select {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// セレクトボックスのラッパー（アイコン配置用）
+.form-list-item-data-select-wrap {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（ラジオボタン）
+.form-list-item-data-content.-radio {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（チェックボックス）
+.form-list-item-data-content.-checkbox {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ラジオボタンやチェックボックスのlabel部分
+.form-list-item-data-content-label {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ラジオボタンやチェックボックスの文言（sapn）部分
+.form-list-item-data-content-label-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（日付のカレンダー入力）
+.form-list-item-data-content.-calendar {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 日付のカレンダー入力のラッパー（アイコン配置用）
+.form-list-item-data-calendar-wrap {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（ファイル）
+.form-list-item-data-content.-file {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの記入例
+.form-list-item-data-description {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォーム内の注意書き
+.form-list-item-data-note {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン
+.form-btn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「送信する」ボタン（メールフォーム用）
+.form-btn.-formContact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「検索」ボタン（検索フォーム用）
+.form-btn.-searchSubsidyAndColumn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「補助金・助成金を検索」ボタン（検索フォーム用）
+.form-btn.-formContact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「メールマガジン登録」ボタン（登録フォーム用）
+.form-btn.-registNewsletter {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「LINE登録」ボタン（登録フォーム用）
+.form-btn.-registLine {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※フォームの送信ボタンそのもののスタイルは「_button.scss」に記述
+
+// -----▲ フォームの基本構成 ▲-----
+
+// -----▼ フォームの種類 ▼-----
+// メールフォーム
+.form.form-mail {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// メールフォーム「お問い合わせ」
+.form.form-mail.-contact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム
+.form.form-search {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム「補助金・助成金検索」
+.form.form-search.-subsidy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム「キーワード検索」
+.form.form-search.-keyword {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム
+.form.form-regist {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム「メールマガジン」
+.form.form-regist.-newsletter {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム「LINE」
+.form.form-regist.-line {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ フォームの種類 ▲-----
+
+// ----------▲▲ フォームに使用するclass ▲▲----------

@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+// 要素の位置関係を制御するための汎用スタイルは、この「_base.scssに」まとめる。
+
+
+// ----------▼▼ wrapper ▼▼----------
+
+// -----▼ class ▼-----
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  @include sp {
+    min-height: 100vh;
+  };
+  @include pc {
+    min-height: 100vh;
+  };
+}
+// -----▲ class ▲-----
+
+// ----------▲▲ wrapper ▲▲----------
+
+
+// ----------▼▼ .pageContainer ▼▼----------
+// 固定ページのコンテンツ部分、最上部・最下部の余白
+.pageContainer {
+  @include sp {
+    padding: 0 0 64px;
+  };
+  @include pc {
+    padding: 48px 0 80px;
+  };
+}
+.pageContainer.Blog.PageArchiveBlog {
+  @include sp {
+    padding: 32px 0 64px;
+  };
+  @include pc {
+    padding: 56px 0 120px;
+  };
+}
+.pageContainer.Blog.PageSingleBlog {
+  @include sp {
+    padding: 32px 0 64px;
+  };
+  @include pc {
+    padding: 56px 0 120px;
+  };
+}
+.pageContainer.-thanks {
+  @include sp {
+    padding: 32px 0 64px;
+  };
+  @include pc {
+    padding: 32px 0 120px;
+  };
+}
+// ----------▲▲ .pageContainer ▲▲----------
+
+
+// ----------▼▼ .sectionContainer ▼▼----------
+// ページ内のセクション全体の最上部・最下部の余白
+.pageContainer .section:first-of-type .sectionContainer {
+  @include sp {
+    padding: 0 0 24px;
+  };
+  @include pc {
+    padding: 0 0 40px;
+  };
+}
+.pageContainer .section + .section .sectionContainer {
+  @include sp {
+    padding: 24px 0 24px;
+  };
+  @include pc {
+    padding: 40px 0 40px;
+  };
+}
+.pageContainer .section:last-of-type .sectionContainer {
+  @include sp {
+    padding: 24px 0 0;
+  };
+  @include pc {
+    padding: 40px 0 0;
+  };
+}
+.pageContainer .section:only-of-type .sectionContainer {
+  @include sp {
+    padding: 0 0 0;
+  };
+  @include pc {
+    padding: 0 0 0;
+  };
+}
+// ----------▲▲ .sectionContainer ▲▲----------
+
+
+// ----------▼▼ .anchorMargin ▼▼----------
+// アンカーリンクがあるときは、飛び先（idを付けている項目）にこのスタイルを当てて
+// ヘッダーメニューとコンテンツが被らないようにする。
+.anchorMargin::before {
+  content: "";
+  display: block;
+  visibility: hidden;
+  @include sp {
+    height: calc(50px + 16px);
+    margin-top: calc(calc(50px + 16px) * -1);
+  };
+  @include pc {
+    height: calc(80px + 24px);
+    margin-top: calc(calc(80px + 24px) * -1);
+  };
+}
+// ----------▲▲ .anchorMargin ▲▲----------
+
+
+// ----------▼▼ content-size ▼▼----------
+
+// -----▼ class ▼-----
+// SP
+@include sp {
+  .contentBox,
+  .contentBoxSp,
+  .contentBoxXS,
+  .contentBoxXSSp,
+  .contentBoxS,
+  .contentBoxSSp,
+  .contentBoxM,
+  .contentBoxMSp,
+  .contentBoxL,
+  .contentBoxLSp {
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    padding: 0;
+    width: 90%;
+  }
+  .contentBoxMax,
+  .contentBoxMaxSp {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0;
+    width: 100%;
+  }
+}
+// PC
+@include pc {
+  .contentBox,
+  .contentBoxPc,
+  .contentBoxXS,
+  .contentBoxXSPc,
+  .contentBoxS,
+  .contentBoxSPc,
+  .contentBoxM,
+  .contentBoxMPc,
+  .contentBoxL,
+  .contentBoxLPc,
+  .contentBoxMax,
+  .contentBoxMaxPc {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 40px;
+    width: 100%;
+  }
+  .contentBox,
+  .contentBoxPc {
+    max-width: calc(1000px + calc(40px * 2));
+  }
+  .contentBoxXS,
+  .contentBoxSxPc {
+    max-width: calc(480px + calc(40px * 2));
+  }
+  .contentBoxS,
+  .contentBoxSPc {
+    max-width: calc(640px + calc(40px * 2));
+  }
+  .contentBoxM,
+  .contentBoxMPc {
+    max-width: calc(800px + calc(40px * 2));
+  }
+  .contentBoxL,
+  .contentBoxLPc {
+    max-width: calc(1200px + calc(40px * 2));
+  }
+  .contentBoxMax,
+  .contentBoxMaxPc {
+  }
+}
+// -----▲ class ▲-----
+
+// ----------▲▲ content-size ▲▲----------

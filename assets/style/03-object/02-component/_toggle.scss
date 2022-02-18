@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+// 「トグル」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「トグル」のスタイル ▼▼----------
+
+
+// .js_toggleBtn：トグル
+
+
+// -----▼ トグルスタイル ▼-----
+.js_toggleBtn {
+  @include sp {
+  };
+  @include pc {
+    cursor: pointer;
+  };
+}
+// タグの基本のスタイル。
+.js_toggleContent {
+  display: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※トグルのJSは「02-main.js」に記述
+
+// -----▲ トグルスタイル ▲-----
+
+// ----------▲▲ 「トグル」のスタイル ▲▲----------

@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+// 「キャプション」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「キャプション」のスタイル ▼▼----------
+
+// キャプション
+.figcaption {
+  @include sp {
+    line-height: 1.8;
+  };
+  @include pc {
+    line-height: 1.8;
+  };
+}
+
+// キャプションのマージン
+* + .figcaption {
+  @include sp {
+    margin-top: 12px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+
+// ----------▲▲ 「キャプション」のスタイル ▲▲----------

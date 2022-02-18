@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+// サイトのデザインの基礎となる、汎用的な「関数」をこのファイルにまとめて定義する。
+
+
+// ----------▼▼ flexBox ▼▼----------
+
+// カラム数（$column）とカラム間のマージン（$margin）を入力するだけで
+// カラムひとつあたりの横幅を自動計算してくれる関数。
+// 例）カラム数を4、カラム間のマージンを40pxで固定にしたい場合のwidthの指定方法
+// → width: flexbox(4, 40px);
+
+// -----▼ function ▼-----
+@function flexBox($column, $margin) {
+  $marginAll: $margin * ($column - 1);
+  $columnWidth: calc(calc(100% - #{$marginAll}) / #{$column});
+  @return $columnWidth;
+};
+// -----▲ function ▲-----
+
+// ----------▲▲ flexBox ▲▲----------

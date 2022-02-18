@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+// 「条文（プライバシーポリシー、利用規約など）」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「条文」のスタイル ▼▼----------
+
+
+// .article-general：汎用条文スタイル
+// .article-general.-privacy：プライバシーポリシーの条文
+
+
+// -----▼ 「条文」の共通スタイル ▼-----
+.article {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.article-list {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.article-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.article-list-item + .article-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.article-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.article-content {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 条文のリスト・1階層目のスタイル
+.article-list.-layer1 {
+  @include sp {
+  };
+  @include pc {
+  };
+  & > .article-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item + .article-list-item {
+    @include sp {
+      margin-top: 48px;
+    };
+    @include pc {
+      margin-top: 80px;
+    };
+  }
+  & > .article-list-item > .article-title {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-title + .article-content {
+    @include sp {
+      margin-top: 22px;
+    };
+    @include pc {
+      margin-top: 24px;
+    };
+  }
+  & > .article-list-item > .article-content {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// 条文のリスト・2階層目のスタイル
+.article-list.-layer2 {
+  border-collapse: separate;
+  @include sp {
+    border-spacing: 0 8px;
+    margin-top: 24px;
+  };
+  @include pc {
+    border-spacing: 0 8px;
+    margin-top: 32px;
+  };
+  & > .article-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item + .article-list-item {
+    @include sp {
+      margin-top: 16px;
+    };
+    @include pc {
+      margin-top: 16px;
+    };
+  }
+  & > .article-list-item > .article-title {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-title + .article-content {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-content {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// 条文のリスト・3階層目のスタイル
+.article-list.-layer3 {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+  & > .article-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item + .article-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-title {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-title + .article-content {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-content {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// 条文のリスト・4階層目のスタイル
+.article-list.-layer4 {
+  @include sp {
+  };
+  @include pc {
+  };
+  & > .article-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item + .article-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-title {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-title + .article-content {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & > .article-list-item > .article-content {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ 「条文」の共通スタイル ▲-----
+
+// ----------▲▲ 「条文」のスタイル ▲▲----------

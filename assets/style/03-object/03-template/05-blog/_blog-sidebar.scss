@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+// ブログのサイドバーのスタイルです。
+
+
+// ---------▼▼ .Blog__sidebar ▼▼----------
+
+// -----▼ サイドメニューの見出し .Blog__sidebar > .Blog__sidebarTitle ▼-----
+.Blog__sidebarTitle {
+  color: $red;
+  font-weight: normal;
+  @include sp {
+    font-size: 1.8rem;
+  };
+  @include pc {
+    font-size: 1.8rem;
+  };
+}
+// -----▲ サイドメニューの見出し .Blog__sidebar > .Blog__sidebarTitle ▲-----
+
+// -----▼ サイドメニュー「CATEGORY」 .Blog__sidebar > .Blog__sidebarCategory ▼-----
+.Blog__sidebarCategory {
+  border: 1px solid $gray_c;
+  padding: 20px 20px 30px 20px;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Blog__sidebarPostCategoryList {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Blog__sidebarPostCategoryListItem {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+.Blog__sidebarPostCategoryListItem .Blog__sidebarPostCategoryLink {
+  text-decoration: underline;
+  @include sp {
+    font-size: 1.4rem;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    &:hover {
+      color: $red;
+      opacity: .7;
+      text-decoration: none;
+    }
+  };
+}
+// -----▲ サイドメニュー「CATEGORY」 .Blog__sidebar > .Blog__sidebarCategory ▲-----
+
+// -----▼ サイドメニュー「NEW POST」 .Blog__sidebar > .Blog__sidebarNewPost ▼-----
+.Blog__sidebarNewPost {
+  border: 1px solid $gray_c;
+  padding: 20px;
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    margin-top: 40px;
+  };
+}
+.Blog__sidebarNewPostList {
+  @include sp {
+    margin-top: 2px;
+  };
+  @include pc {
+    margin-top: -2px;
+  };
+}
+.Blog__sidebarNewPostListItem {
+  @include sp {
+    margin-top: 12px;
+  };
+  @include pc {
+    margin-top: 20px;
+  };
+}
+.Blog__newPostLink {
+  display: flex;
+  height: 100%;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Blog__newPostThumImg {
+  @include sp {
+    height: 80px;
+    width: 80px;
+  };
+  @include pc {
+    height: 100px;
+    width: 100px;
+  };
+}
+.Blog__newPostInfo {
+  position: relative;
+  @include sp {
+    margin-left: 10px;
+    width: calc(100% - 90px);
+  };
+  @include pc {
+    margin-left: 10px;
+    width: calc(100% - 110px);
+  };
+}
+.Blog__newPostTitle {
+  color: $black;
+  font-weight: normal;
+  line-height: 1.6;
+  padding-bottom: 24px;
+  @include sp {
+    font-size: 1.4rem;
+  };
+  @include pc {
+    font-size: 1.6rem;
+  };
+}
+.Blog__newPostDateAndCategory {
+  position: absolute;
+  bottom: 0;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Blog__newPostDate,
+.Blog__newPostCategory {
+  color: $gray_c;
+  display: inline-block;
+  @include sp {
+    font-size: 1.1rem;
+  };
+  @include pc {
+    font-size: 1.2rem;
+  };
+}
+.Blog__newPostDate {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Blog__newPostCategory {
+  @include mark;
+  @include sp {
+    padding-left: 20px;
+  };
+  @include pc {
+    padding-left: 16px;
+  };
+}
+// -----▲ サイドメニュー「NEW POST」 .Blog__sidebar > .Blog__sidebarNewPost ▲-----
+
+// -----▼ サイドメニュー「ARCHIVE」 .Blog__sidebar > .Blog__sidebarArchive ▼-----
+.Blog__sidebarArchive {
+  border: 1px solid $gray_c;
+  padding: 20px 20px 30px 20px;
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    margin-top: 40px;
+  };
+}
+.Blog__sidebarPostArchiveList {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Blog__sidebarPostArchiveList li {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+.Blog__sidebarPostArchiveList a {
+  text-decoration: underline;
+  @include sp {
+    font-size: 1.4rem;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    &:hover {
+      color: $red;
+      opacity: .7;
+      text-decoration: none;
+    }
+  };
+}
+// -----▲ サイドメニュー「ARCHIVE」 .Blog__sidebar > .Blog__sidebarArchive ▲-----
+
+// ---------▲▲ .Blog__sidebar ▲▲----------

@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+// ブログの「個別詳細ページ」のスタイルです。
+
+
+// ----------▼▼ 「single.php」のスタイル ▼▼----------
+
+.Blog.BlogSingle {
+
+  @include sp {
+  };
+  @include pc {
+  };
+
+  &.pageContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+  // ブログの投稿記事セクション
+  .Blog__post {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .Blog__post .sectionContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // ブログの投稿記事の内容（レイアウト）
+  .Blog__postContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // ブログの記事コンテンツのカラム
+  .Blog__postContentItem {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // メインカラム
+  .Blog__postContentItem.-main {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // サイドバー
+  // ※このサイトの投稿機能は1カラムのため、このclassは未使用
+  .Blog__postContentItem.-sidebar {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+}
+
+
+// -----▼ ブログの「個別詳細ページ」だけに必要なスタイル ▼-----
+
+.BlogSingle {
+
+  // 「個別詳細ページ」固有の内容
+  .BlogSingle__post {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+  // --▼ 記事のヘッダー .BlogSingle__postHeader ▼--
+  // 記事のヘッダー全体
+  .BlogSingle__postHeader {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .BlogSingle__postHeaderContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事のタイトル
+  .BlogSingle__postTitle {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // --▲ 記事のヘッダー .BlogSingle__postHeader ▲--
+
+  // --▼ 記事の本文 .BlogSingle__postContent ▼--
+  // 記事の本文全体
+  .BlogSingle__postContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事の本文（執筆部分）
+  .BlogSingle__postContentBody {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+  // ※ブログ本文の要素のスタイルは「_wysiwyg-component.scss」に記述
+
+  // --▲ 記事の本文 .BlogSingle__postContent ▲--
+
+  // --▼ 記事のフッター .BlogSingle__postFooter ▼--
+  // 記事のフッター全体
+  .BlogSingle__postFooter {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .BlogSingle__postFooterContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 「記事のSNSシェア」ボタン
+  .BlogSingle__postSnsBtn {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .BlogSingle__postSnsBtn .sectionContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .BlogSingle__postSnsBtnContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 他の記事のレコメンド
+  .BlogSingle__postOtherPost {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .BlogSingle__postOtherPost .sectionContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .BlogSingle__postOtherPostContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // --▲ 記事のフッター .BlogSingle__postFooter ▲--
+
+  // --▼ 記事の後のCTA .Blog__postCTA ▼--
+  // 記事の後のCTA全体
+  .Blog__postCTA {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // --▲ 記事の後のCTA .Blog__postCTA ▲--
+
+}
+
+// -----▲ ブログの「個別詳細ページ」だけに必要なスタイル ▲-----
+
+
+// ---------▲▲ 「single.php」のスタイル ▲▲----------

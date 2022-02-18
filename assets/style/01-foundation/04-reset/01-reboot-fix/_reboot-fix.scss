@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+// 「Reboot.css」に手を加えたい箇所のスタイルまとめ。
+
+
+// ---------▼▼ 「Reboot.css」の修正スタイル ▼▼----------
+
+// ----------▼▼ select ▼▼----------
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+
+// ----------▲▲ select ▲▲----------
+
+
+// ----------▼▼ Reboot.css ▼▼----------
+
+// -----▼ var ▼-----
+
+// body
+$font-family-base: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif; // 新フォントファミリー指定
+$font-size-base: 1.6rem;
+$font-weight-base: 400;
+$letter-spacing-base: .05em;
+$line-height-base: 1.8;
+$body-color: $body-text-color;
+$body-bg: $body-bg-color;
+
+// h1, h2, h3, h4, h5, h6
+$headings-margin-bottom: 0;  // とりあえずゼロ。デザイン時に値を入れるかも。
+
+// p
+$paragraph-margin-bottom: 0;  // とりあえずゼロ。デザイン時に値を入れるかも。
+
+// dt
+$dt-font-weight: bold;
+
+// a
+$link-color: $link-color;
+$link-decoration: none;
+
+// a:hover
+$link-hover-color: $link-hover-color;
+$link-hover-decoration: underline;
+
+// pre,code,kbd,samp
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// caption
+$table-cell-padding: 0.75rem;
+$table-cell-padding: 0.75rem;
+$table-caption-color: $black;
+
+// label
+$label-margin-bottom: 0.5rem;
+
+// -----▲ var ▲-----
+
+// -----▼ 個人的に追加したいベースのcss ▼-----
+
+// 擬似要素にもベースのフォントファミリーを適用
+*::before,
+*::after {
+  font-family: $font-family-base;
+}
+
+// 文字間のスタイル
+body {
+  letter-spacing: $letter-spacing-base;
+}
+
+// 文字の折り返し制限・改行の禁則処理
+body {
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+// 下方向のマージンを削除
+address {
+  margin-bottom: 0 !important;
+}
+
+// デフォルトでリストマーカーを削除
+ol, ul, dl {
+  list-style:none;
+  margin-bottom: 0 !important;
+  padding-left: 0;
+}
+
+// 余分なマージンを削除
+dd {
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+}
+label {
+  margin-bottom: 0 !important;
+}
+figure {
+  margin: 0 !important;
+}
+
+// テキストリンクにホバーしたら下線が消えるように変更
+a:hover {
+  text-decoration: none !important;
+}
+
+// 画像の基本スタイル
+picture {
+  display: block;
+}
+img {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+// プレースホルダーの文字色
+input,
+textarea {
+  &::placeholder {
+    color: $form-placeholder-color !important;
+  }
+  &::placeholder-shown {
+    color: $form-placeholder-color !important;
+  }
+  &::-webkit-input-placeholder {
+    color: $form-placeholder-color !important;
+  }
+  &::-ms-input-placeholder {
+    color: $form-placeholder-color !important;
+  }
+}
+// 入力フォームにフォーカスした時、プレースホルダーを非表示にする。
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent !important;
+  transition: color .1s;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent !important;
+  transition: color .1s;
+}
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder {
+  color: transparent !important;
+  transition: color .1s;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: transparent !important;
+  transition: color .1s;
+}
+
+// IE対策。お問い合わせフォームの入力箇所のアイコンを削除する。
+input::-ms-clear {
+  display: none;
+}
+
+// -----▲ 個人的に追加したいベースのcss ▲-----
+
+// ----------▲▲ Reboot.css ▲▲----------
+
+// ---------▲▲ 「Reboot.css」の修正スタイル ▲▲----------
