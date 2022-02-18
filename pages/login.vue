@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'PagesLogin',
   layout: 'before-login'
 }
 </script>
