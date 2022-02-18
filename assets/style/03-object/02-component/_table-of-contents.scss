@@ -1,0 +1,249 @@
+@charset "utf-8";
+
+// 「目次」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「目次」のスタイル ▼▼----------
+
+
+// #ez-toc-container：目次（「中小企業コラム」の目次）
+
+
+// -----▼ 「目次」（プラグイン『Easy Table of Contents』）の共通スタイル ▼-----
+#ez-toc-container {
+  background-color: $gray_f4;
+  border: none;
+  @include sp {
+    border-radius: 4px;
+    padding: 16px 16px 16px;
+  };
+  @include pc {
+    border-radius: 6px;
+    padding: 20px 16px 16px;
+  };
+}
+.ez-toc-title-container {
+  display: flex;
+  position: relative;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ホバー時の効果
+#ez-toc-container {
+  @include sp {
+    &:active .ez-toc-title,
+    &:active .ez-toc-title-toggle {
+      opacity: .7;
+    }
+  };
+  @include pc {
+    &:hover .ez-toc-title,
+    &:hover .ez-toc-title-toggle {
+      opacity: .7;
+    }
+  };
+}
+// 目次のタイトル
+#ez-toc-container .ez-toc-title-container .ez-toc-title {
+  color: $gray_5;
+  font-weight: bold;
+  @include sp {
+    font-size: 1.4rem !important;
+  };
+  @include pc {
+    font-size: 1.6rem !important;
+  };
+}
+// 目次のトグルボタン
+.ez-toc-title-toggle {
+  display: block;
+  position: absolute;
+  @include sp {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  };
+  @include pc {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  };
+}
+#ez-toc-container a.ez-toc-toggle {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  display: block !important;
+  @include sp {
+    height: 100%;
+    width: 100%;
+  };
+  @include pc {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+  };
+}
+#ez-toc-container a.ez-toc-toggle::before {
+  transition: transform .2s;
+  @include sp {
+    height: 14px;
+    left: 37px;
+    top: calc(50% - 8px);
+    width: 14px;
+  };
+  @include pc {
+    height: 14px;
+    left: 37px;
+    top: calc(50% - 8px);
+    width: 14px;
+  };
+}
+#ez-toc-container a.ez-toc-toggle.-open::before {
+  transform: rotate(-180deg);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+#ez-toc-container a.ez-toc-toggle.-close::before {
+  transform: rotate(0deg);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.ez-toc-toggle i.ez-toc-glyphicon {
+  display: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+#ez-toc-container nav {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+#ez-toc-container ul {
+  @include sp {
+    margin-left: 0 !important;
+  };
+  @include pc {
+    margin-left: 0 !important;
+  };
+}
+// 目次｜第一レイヤー
+#ez-toc-container ul > li > a {
+  @include sp {
+    margin-left: calc(12px * 1) !important;
+  };
+  @include pc {
+    margin-left: calc(12px * 1) !important;
+  };
+}
+// 目次｜第二レイヤー
+#ez-toc-container ul ul > li > a {
+  @include sp {
+    margin-left: calc(12px * 2) !important;
+  };
+  @include pc {
+    margin-left: calc(12px * 2) !important;
+  };
+}
+// 目次｜第三レイヤー
+#ez-toc-container ul ul ul > li > a {
+  @include sp {
+    margin-left: calc(12px * 3) !important;
+  };
+  @include pc {
+    margin-left: calc(12px * 3) !important;
+  };
+}
+// 目次｜第四レイヤー
+#ez-toc-container ul ul ul ul > li > a {
+  @include sp {
+    margin-left: calc(12px * 4) !important;
+  };
+  @include pc {
+    margin-left: calc(12px * 4) !important;
+  };
+}
+// 目次｜第五レイヤー
+#ez-toc-container ul ul ul ul ul > li > a {
+  @include sp {
+    margin-left: calc(12px * 5) !important;
+  };
+  @include pc {
+    margin-left: calc(12px * 5) !important;
+  };
+}
+.ez-toc-list > li {
+  @include sp {
+    margin: 0 !important;
+    padding: 6px 0 !important;
+  };
+  @include pc {
+    margin: 0 !important;
+    padding: 6px 0 !important;
+  };
+}
+.wysiwyg #ez-toc-container ul > li:before {
+  display: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.ez-toc-list > li + li {
+  @include sp {
+    border-top: 1px solid $gray_d;
+  };
+  @include pc {
+    border-top: 1px solid $gray_d;
+  };
+}
+// 目次のリンク
+#ez-toc-container a.ez-toc-link {
+  color: $gray_5;
+  display: block;
+  @include sp {
+    font-size: 1.4rem;
+    padding: 4px 0;
+  };
+  @include pc {
+    font-size: 1.4rem;
+    padding: 4px 0;
+  };
+}
+// 目次のリンク｜ホバー時の効果
+#ez-toc-container a.ez-toc-link {
+  @include sp {
+    &:active {
+      color: $blue;
+      text-decoration: underline !important;
+    }
+  };
+  @include pc {
+    &:hover {
+      color: $blue;
+      text-decoration: underline !important;
+    }
+  };
+}
+#ez-toc-container nav > .ez-toc-list {
+  @include sp {
+    margin-top: 8px;
+  };
+  @include pc {
+    margin-top: 8px;
+  };
+}
+// -----▲ 「目次」（プラグイン『Easy Table of Contents』）の共通スタイル ▲-----
+
+// ----------▲▲ 「目次」のスタイル ▲▲----------

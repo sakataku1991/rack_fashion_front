@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+// 「モーダル」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「モーダル」のスタイル ▼▼----------
+
+
+// .modal-form-search：「サイト内検索」のモーダル
+// .modal-form-regist：「メールマガジン・LINE登録」のモーダル
+
+
+// -----▼ 「モーダル」の共通スタイル ▼-----
+.modal {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-overlay {
+  align-items: center;
+  background-color: rgba($black, .75);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  @include sp {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  };
+  @include pc {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  };
+}
+.modal-container {
+  background-color: white;
+  overflow-y: auto;
+  position: relative;
+  @include sp {
+    box-shadow: 0px 0px 12px rgba($black_shadow, .32);
+    max-height: 80vh;
+    padding: 24px 16px 16px;
+    width: 90vw;
+  };
+  @include pc {
+    box-shadow: 0px 0px 16px rgba($black_shadow, .32);
+    max-height: 80vh;
+    padding: 48px 48px 48px;
+    width: 800px;
+  };
+}
+.modal-closeBtn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-document {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-header {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-header + .modal-content {
+  @include sp {
+    margin-top: 20px;
+  };
+  @include pc {
+    margin-top: 24px;
+  };
+}
+.modal-content {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-form {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-form-list {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-form-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-form-list-item + .modal-form-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ 「モーダル」の共通スタイル ▲-----
+
+// -----▼ 「モーダル」のアニメーションのスタイル ▼-----
+// モーダル全体｜通常は非表示
+.modal {
+  display: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// モーダル全体｜表示時
+.modal.is-open {
+  display: block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-overlay,
+.modal-container {
+  will-change: transform;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フェードイン
+@keyframes mmfadeIn {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal[aria-hidden="false"] .modal-overlay {
+  animation: mmfadeIn .2s cubic-bezier(0, 0, .2, 1);
+}
+// フェードアウト
+@keyframes mmfadeOut {
+  from { opacity: 1; }
+    to { opacity: 0; }
+}
+.modal[aria-hidden="true"] .modal-overlay {
+  animation: mmfadeOut .2s cubic-bezier(0, 0, .2, 1);
+}
+// スライドイン
+@keyframes mmslideIn {
+  from { transform: translateY(10%); }
+    to { transform: translateY(0); }
+}
+.modal[aria-hidden="false"] .modal-container {
+  animation: mmslideIn .2s cubic-bezier(0, 0, .2, 1);
+}
+// スライドアウト
+@keyframes mmslideOut {
+  from { transform: translateY(0); }
+    to { transform: translateY(-10%); }
+}
+.modal[aria-hidden="true"] .modal-container {
+  animation: mmslideOut .2s cubic-bezier(0, 0, .2, 1);
+}
+// -----▲ 「モーダル」のアニメーションのスタイル ▲-----
+
+// ※モーダルの実装にはJavascriptライブラリ「Micromodal.js」を使用
+
+// -----▼ 「サイト内検索」のモーダル ▼-----
+.modal.-formSearch {
+  @include sp {
+  };
+  @include pc {
+  };
+  .modal-container {
+    @include sp {
+    };
+    @include pc {
+      min-height: 640px;
+    };
+  }
+}
+.modal-form.-search {
+  @include sp {
+  };
+  @include pc {
+  };
+  .modal-form-list-item + .modal-form-list-item {
+    @include sp {
+      margin-top: 16px;
+    };
+    @include pc {
+      margin-top: 24px;
+    };
+  }
+}
+// -----▲ 「サイト内検索」のモーダル ▲-----
+
+// -----▼ 「メールマガジン・LINE登録」のモーダル ▼-----
+.modal.-formRegist {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.modal-form.-regist {
+  @include sp {
+  };
+  @include pc {
+  };
+  .modal-form-list {
+    @include sp {
+    };
+    @include pc {
+      display: flex;
+      justify-content: center;
+      margin-left: -40px;
+    };
+  }
+  .modal-form-list .modal-form-list-item {
+    @include sp {
+      margin-bottom: 16px;
+    };
+    @include pc {
+      margin-left: 40px;
+    };
+  }
+}
+// -----▲ 「メールマガジン・LINE登録」のモーダル ▲-----
+
+// ----------▲▲ 「モーダル」のスタイル ▲▲----------

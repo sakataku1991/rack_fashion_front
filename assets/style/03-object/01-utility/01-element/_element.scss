@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+// マルチクラスが前提の、汎用的なスタイルを定義する。
+// フォントサイズやアイコンのベーススタイルなど、
+// それ単体では何も形をなさない、「パーツ未満」の汎用スタイルをここに書く。
+
+
+// ----------▼▼ hide ▼▼----------
+
+// -----▼ class ▼-----
+// ALL
+.hideAll {display: none !important;}
+// SP
+@include sp {
+  .hideSp {display: none !important;}
+}
+// PC
+@include pc {
+  .hidePc {display: none !important;}
+}
+// -----▲ class ▲-----
+// ----------▲▲ hide ▲▲----------
+
+
+// ----------▼▼ .visuallyhidden ▼▼----------
+
+// 「見た目非表示」のコードスニペット。
+// スクリーンリーダーや検索エンジンのロボットからはコンテンツを隠さない。
+// 要素としては存在させたいが、
+// ユーザーには視覚的に見えないようにしたいという場合に使用する。
+// フォームのinputを隠す際に使う。
+
+// -----▼ class ▼-----
+.visuallyHidden {
+  border: 0;
+  clip-path: inset(50%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+// -----▲ class ▲-----
+
+// ----------▲▲ .visuallyhidden ▲▲----------
+
+
+// ----------▼▼ .telLink ▼▼----------
+
+// 電話番号リンクのラッパークラス。
+// スマホではタップして電話をかけられるが、PCではただのテキストにしたい場合に使う。
+// 電話番号のa要素の親要素としてこのクラスを当てること。
+
+// -----▼ class ▼-----
+.telLink {
+  display: inline-block;
+  @include pc {
+    cursor: text;
+  };
+}
+// -----▲ class ▲-----
+
+// ----------▲▲ .telLink ▲▲----------
+
+
+// ----------▼▼ font-weight ▼▼----------
+
+// -----▼ class ▼-----
+.bold {font-weight: bold;}
+// -----▲ class ▲-----
+
+// ----------▲▲ font-weight ▲▲----------
+
+
+// ----------▼▼ font-color ▼▼----------
+
+// -----▼ class ▼-----
+.red {color: $red;}
+// -----▲ class ▲-----
+
+// ----------▲▲ font-color ▲▲----------
+
+
+// ----------▼▼ background-color ▼▼----------
+
+// -----▼ class ▼-----
+.bg-section {
+}
+.bg-section.-white {
+  background-color: $white;
+}
+.bg-section.-gray {
+  background-color: $gray_f8;
+}
+.bg-section.-blue {
+  background-color: $blue;
+}
+.bg-section.-blue_12pct {
+  background-color: $blue_12pct;
+}
+.bg-section.-whiteCutoff {
+  position: relative;
+  z-index: 0;
+  &::after {
+    background-color: $white;
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
+}
+.bg-section.bg-img {
+  @include bgFitCov;
+}
+.bg-section.-imageCutoff {
+  position: relative;
+  z-index: 0;
+  &::after {
+    @include bgFitCov;
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
+}
+// -----▲ class ▲-----
+
+// ----------▲▲ background-color ▲▲----------
+
+
+// ----------▼▼ margin ▼▼----------
+.mtM {
+  margin-top: 40px !important;
+}
+// ----------▲▲ margin ▲▲----------

@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+// 「カテゴリー」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「カテゴリー」のスタイル ▼▼----------
+
+
+// .category-general：汎用カテゴリー
+// .category-general.-column：「中小企業コラム」のカテゴリー（汎用）
+
+
+// -----▼ 「カテゴリー」の共通スタイル ▼-----
+// カテゴリーの基本のスタイル
+.category {
+  @include sp {
+    line-height: 1;
+  };
+  @include pc {
+    line-height: 1;
+  };
+}
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.category-list-item {
+  display: inline-block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// カテゴリーのリンクのスタイル
+.category-link {
+  display: inline-block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ※リンクなしのカテゴリーのスタイル
+.category-not-link {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// カテゴリーのテキストのスタイル
+.category-text {
+  display: block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ 「カテゴリー」の共通スタイル ▲-----
+
+// -----▼ 汎用カテゴリー ▼-----
+.category-general {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.category-general .category-list {
+  @include sp {
+    margin-left: -6px;
+    margin-top: -6px;
+  };
+  @include pc {
+    margin-left: -8px;
+    margin-top: -8px;
+  };
+  .category-list-item {
+    @include sp {
+      margin-left: 6px;
+      margin-top: 6px;
+    };
+    @include pc {
+      margin-left: 8px;
+      margin-top: 8px;
+    };
+  }
+}
+.category-general {
+  .category-link {
+    transition: .3s;
+    @include sp {
+      border-radius: 4px;
+      &:active {
+        transition: .1s;
+        .category-text {
+          transition: .1s;
+        }
+      }
+    };
+    @include pc {
+      border-radius: 4px;
+      &:hover {
+        transition: .1s;
+        .category-text {
+          transition: .1s;
+        }
+      }
+    };
+  }
+  .category-text {
+    transition: .3s;
+    @include sp {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      padding: 4px 10px;
+    };
+    @include pc {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      padding: 6px 12px;
+    };
+  }
+}
+// 青色Ver.
+.category-general.-blue {
+  @include sp {
+  };
+  @include pc {
+  };
+  .category-link {
+    background-color: $blue;
+    border: 1px solid $blue;
+    @include sp {
+      &:active {
+        background-color: $blue_hover;
+        border: 1px solid $blue_hover;
+      }
+    };
+    @include pc {
+      &:hover {
+        background-color: $blue_hover;
+        border: 1px solid $blue_hover;
+      }
+    };
+  }
+  .category-text {
+    color: $white;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ 汎用カテゴリー ▲-----
+
+// -----▼ 「中小企業コラム」のカテゴリー（汎用） ▼-----
+.category-general.-column {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.category-general.-column {
+  .category-link {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category-text {
+    @include sp {
+      font-size: 1.2rem;
+      padding: 2px 8px;
+    };
+    @include pc {
+      font-size: 1.2rem;
+      padding: 4px 10px;
+    };
+  }
+}
+// -----▲ 「中小企業コラム」のカテゴリー（汎用） ▲-----
+
+// ----------▲▲ 「カテゴリー」のスタイル ▲▲----------

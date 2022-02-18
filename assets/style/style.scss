@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/*!
+---- Takuya Sakamoto Original Stylesheet Template. ----
+Thema Name:     rack
+Description:    Webアプリ『RACK』。
+Version:        1.0.0
+Last Update:    2022/01/01
+License:        GPL
+License URL:    http://www.gnu.org/licenses/gpl.html
+*/
+
+
+// ==========================================================================
+// Foundation
+// ==========================================================================
+// @import "01-foundation/*";
+@import "01-foundation/01-variable/_variable";
+@import "01-foundation/02-mixin/_mixin";
+@import "01-foundation/03-function/_function";
+@import "01-foundation/04-reset/01-reboot-fix/_reboot-fix";
+@import "01-foundation/04-reset/02-reboot/_Reboot";
+// ブラウザのデフォルトスタイルの初期化をするレイヤー。
+
+// 「01-variable」フォルダ：色やフォントサイズなどの変数をまとめて定義する。
+
+// 「02-reset」フォルダ：リセット系のcssをここに入れる。
+// スタイルの初期化には「Bootstrap」付属の「Reboot.css」を採用している。
+
+// ちなみに「_Reboot.scss」には「$font-family-base」等の変数が必要となるため、
+// 「02-reset」フォルダよりも先に「01-variable」フォルダを読み込んでいる。
+
+
+// ==========================================================================
+// Layout
+// ==========================================================================
+// @import "02-layout/*";
+@import "02-layout/01-base/_base";
+@import "02-layout/02-structure/_structure";
+// サイトの基本レイアウトを定義するためのレイヤー。
+
+// ヘッダーやフッター、メインのコンテンツエリア、サイドバーなど、
+// ページ単位で共通する大枠のレイアウトスタイルのみを記述したファイルを入れる。
+
+// 「01-base」フォルダ：土台となるwrapperやsectionの汎用スタイルを定義する。
+
+// 「02-structure」フォルダ：ヘッダー・メインコンテンツ・フッターのレイアウトのみを定義する。
+
+// このレイヤーではヘッダーやフッターの見た目や装飾に関する定義はしない。
+
+// メインコンテンツの中身のレイアウトもここでは定義しない。
+// あくまでヘッダーとフッターに対するメインコンテンツの位置やサイズ、形状のみを定義する。
+// メインコンテンツの中身は後述する「04-pages」フォルダに定義していくこと。
+
+
+// ==========================================================================
+// Object
+// ==========================================================================
+// @import "03-object/*";
+@import "03-object/_shame.scss";
+@import "03-object/01-utility/01-element/_element";
+@import "03-object/01-utility/02-image/_image";
+@import "03-object/02-component/01-text/_text";
+@import "03-object/02-component/_badge";
+@import "03-object/02-component/_banner";
+@import "03-object/02-component/_button";
+@import "03-object/02-component/_card";
+@import "03-object/02-component/_category";
+@import "03-object/02-component/_figcaption";
+@import "03-object/02-component/_link";
+@import "03-object/02-component/_list";
+@import "03-object/02-component/_map";
+@import "03-object/02-component/_margin";
+@import "03-object/02-component/_pager";
+@import "03-object/02-component/_quote";
+@import "03-object/02-component/_shame";
+@import "03-object/02-component/_table-of-contents";
+@import "03-object/02-component/_table";
+@import "03-object/02-component/_tag";
+@import "03-object/02-component/_title";
+@import "03-object/02-component/_toggle";
+@import "03-object/03-template/02-footer/_footer";
+@import "03-object/03-template/02-footer/_ft-content";
+@import "03-object/03-template/03-form/01-form-structure/_form-structure";
+@import "03-object/03-template/03-form/02-form-component/_form-component";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_calendar";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_checkbox";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_file";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_radio";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_select";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_text";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-description";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-note";
+@import "03-object/03-template/03-form/02-form-component/_form-list-item-title";
+@import "03-object/03-template/03-form/03-form-layout/_form-layout";
+@import "03-object/03-template/03-form/04-form-type/_form-regist";
+@import "03-object/03-template/03-form/04-form-type/_form-search-result";
+@import "03-object/03-template/04-modal/_modal";
+@import "03-object/03-template/05-blog/_blog-archive";
+@import "03-object/03-template/05-blog/_blog-sidebar";
+@import "03-object/03-template/05-blog/_blog-single";
+@import "03-object/03-template/05-blog/_blog";
+@import "03-object/03-template/06-basic/_article";
+@import "03-object/03-template/06-basic/_thanks-page";
+@import "03-object/03-template/07-project/_recommend-column";
+@import "03-object/03-template/07-project/_set-component";
+// サイトを構成する汎用パーツ群を定義するためのレイヤー。
+
+// 「01-frameworks」フォルダ：外部フレームワーク付属のcssファイルを格納する場所。
+
+// 「02-utility」フォルダ：パーツ未満・それ単体では形にならない「汎用お助けスタイル」を定義する。
+// @mixinも「02-utility」フォルダでまとめて定義すること。
+// cssで読み込む画像は「02-utility」フォルダ内の「02-image」フォルダでまとめて定義する。
+
+// 「03-component」フォルダ：本文やリスト、ボタンなど、それ単体でパーツとして機能するスタイルを定義する。
+
+// 「04-template」フォルダ：ヘッダーやフッターなど、大きいテンプレパーツをここで定義する。
+// パンくずリストやお問い合わせフォームなどの定番パーツ（「03-basic」フォルダ）のほか、
+// プロジェクト固有のビジュアルパターン（記事一覧や、ユーザープロフィールなど）もここ（「04-project」フォルダ）に入れる。
+
+// 「03-object」フォルダ内の、「04-template」フォルダ内にある「04-project」フォルダが
+// 「FLOCSS」でいう「Project」に相当する。
+
+
+// ==========================================================================
+// Pages
+// ==========================================================================
+// @import "04-pages/*";
+// ページごとに異なるメインコンテンツの中身（レイアウト・パーツ）のスタイルを定義するためのレイヤー。
+
+// ページ名のフォルダ+ページ名のscssファイルの1セットをページ単位で量産していくのが好ましいが、
+// 「Pages」に限り、ページ数が少ないようであれば、フォルダの連番命名ルールを無視して
+// 「04-pages」フォルダ以下に直接scssファイルを並べてしまってもOK。
+
+// しっかりページごとにフォルダを分けて整理する場合は、制作するサイトのサイトマップにフォルダ構成を合わせること。

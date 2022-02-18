@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+// サイト全体の構造を制御するためのスタイルは、この「_layout.scssに」まとめる。
+
+
+// ----------▼▼ base ▼▼----------
+
+body {
+  overscroll-behavior-y: none;
+  position: relative;
+}
+
+// ヘッダー全体
+.Header {
+  position: fixed;
+  z-index: 100;
+  @include sp {
+    height: 57px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  };
+  @include pc {
+    height: 65px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  };
+}
+
+// フッター全体
+.Footer {
+  @include sp {
+    margin-top: auto;
+  };
+  @include pc {
+    margin-top: auto;
+  };
+}
+
+// ----------▲▲ base ▲▲----------

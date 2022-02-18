@@ -1,0 +1,405 @@
+@charset "utf-8";
+
+// 「リスト」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「リスト」のスタイル ▼▼----------
+
+
+// .list：共通スタイル
+// .list.-normal：普通のリスト
+// .list.-number：連番付きリスト
+// .list.-note：注釈（※印だけ）
+// .list.-note.-number：注釈（連番付き※印）
+// .list.-def：定義リスト
+// .list-def-subsidy：定義リスト（補助金情報）
+// .list-reading-point：横並び読点区切りリスト
+// .list-slash：横並びスラッシュ区切りリスト
+
+
+// -----▼ 普通のリスト・連番のリスト・注釈 共通スタイル ▼-----
+.list {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list + .list {
+  @include sp {
+    margin-top: 20px;
+  };
+  @include pc {
+    margin-top: 20px;
+  };
+}
+.list > li {
+  @include sp {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  };
+}
+.list > li .text {
+  @include sp {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  };
+}
+.list.-normal > li,
+.list.-note:not(.-number) > li {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list > li + li,
+.list.-number > li:not(:last-of-type)::after {
+  @include sp {
+    margin-top: 14px;
+  };
+  @include pc {
+    margin-top: 12px;
+  };
+}
+.list > li .list,
+.list > li .list > li + li,
+.list.-number > li .list.-number > li:not(:last-of-type)::after {
+  @include sp {
+    margin-top: 12px;
+  };
+  @include pc {
+    margin-top: 8px;
+  };
+}
+// リスト内のテキスト（リストマークが付かない文章）
+.list-text {
+  @include sp {
+    font-size: 1.4rem;
+  };
+  @include pc {
+    font-size: 1.6rem;
+  };
+}
+// -----▲ 普通のリスト・連番のリスト・注釈 共通スタイル ▲-----
+
+// -----▼ 普通のリスト ▼-----
+.list.-normal {
+  align-items: center;
+	display: flex;
+	@include sp {
+	};
+	@include pc {
+	};
+}
+.list.-normal > li::before {
+  background-color: $list-mark-color;
+  border-radius: 50%;
+  @include sp {
+    height: 6px;
+    width: 6px;
+  };
+  @include pc {
+    height: 6px;
+    width: 6px;
+  };
+}
+.list > li .list.-normal > li::before {
+  background-color: $body-text-color;
+  @include sp {
+    height: 6px;
+    width: 6px;
+  };
+  @include pc {
+    height: 6px;
+    width: 6px;
+  };
+}
+// -----▲ 普通のリスト ▲-----
+
+// -----▼ 連番付きリスト ▼-----
+.list.-number {
+  counter-reset: list-number;
+  display: table;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-number > li {
+  display: table-row;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-number > li::before {
+  color: $list-mark-color;
+  content: counter(list-number)".";
+  counter-increment: list-number;
+  display: table-cell;
+  font-weight: bold;
+  text-align: right;
+  @include sp {
+    font-size: inherit;
+    padding-right: 8px;
+  };
+  @include pc {
+    font-size: inherit;
+    padding-right: 8px;
+  };
+}
+.list > li .list.-number > li::before {
+  color: $body-text-color;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-number > li::after {
+  content: "";
+  display: block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ 連番付きリスト ▲-----
+
+// -----▼ 注釈（※印だけ） ▼-----
+// 注釈のコメ印
+.list.-note {
+  display: flex;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-note > li::before {
+  content: "※" !important;
+  font-size: inherit;
+  @include sp {
+    margin-right: 2px;
+  };
+  @include pc {
+    margin-right: 2px;
+  };
+}
+// -----▲ 注釈（※印だけ） ▲-----
+
+// -----▼ 注釈（連番付き※印） ▼-----
+// 注釈の説明書き
+.list.-note.-number {
+  counter-reset: list-numNote;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 注釈のコメ印
+.list.-note.-number > li::before {
+  color: $body-text-color;
+  content: '※'counter(list-numNote) !important;
+  counter-increment: list-numNote;
+  font-size: inherit;
+  font-weight: normal;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ 注釈（連番付き※印） ▲-----
+
+// -----▼ 定義リスト ▼-----
+.title-def + .list.-def {
+  @include sp {
+    margin-top: 12px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+.list.-def {
+  border-bottom: 1px solid $gray_c;
+  border-top: 1px solid $gray_c;
+  @include sp {
+    font-size: 1.4rem;
+  };
+  @include pc {
+    font-size: 1.6rem;
+  };
+}
+.list-def-item {
+  @include sp {
+    line-height: 1.6;
+  };
+  @include pc {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.6;
+  };
+}
+.list-def-item + .list-def-item {
+  border-top: 1px solid $gray_c;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list-def-item:nth-of-type(odd) {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list-def-item:nth-of-type(even) {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list-def-item > dt {
+  color: $blue;
+  font-weight: bold;
+  @include sp {
+    padding: 12px 12px 2px 12px;
+  };
+  @include pc {
+    padding: 16px 0 16px 24px;
+    width: 14%;
+  };
+}
+.list-def-item > dd {
+  @include sp {
+    padding: 2px 12px 12px 24px;
+  };
+  @include pc {
+    padding: 16px 16px 16px 16px;
+    width: 86%;
+  };
+}
+// -----▲ 定義リスト ▲-----
+
+// -----▼ 定義リスト（補助金情報） ▼-----
+.list-def-subsidy {
+  @include sp {
+    border: 1px solid $gray_c;
+    font-size: 1.4rem;
+  };
+  @include pc {
+    border: 1px solid $gray_c;
+    font-size: 1.6rem;
+  };
+}
+.list-def-subsidy-item {
+  @include sp {
+    line-height: 1.6;
+  };
+  @include pc {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.6;
+  };
+}
+.list-def-subsidy-item + .list-def-subsidy-item {
+  @include sp {
+  };
+  @include pc {
+    border-top: 1px solid $gray_c;
+  };
+}
+.list-def-subsidy-item:nth-of-type(odd) {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list-def-subsidy-item:nth-of-type(even) {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list-def-subsidy-item > dt {
+  @include sp {
+    background-color: $blue;
+    color: $white;
+    padding: 6px 12px 6px 12px;
+  };
+  @include pc {
+    font-weight: bold;
+    padding: 8px 16px 8px 16px;
+    width: 20%;
+  };
+}
+.list-def-subsidy-item > dd {
+  @include sp {
+    padding: 8px 12px 16px 24px;
+  };
+  @include pc {
+    border-left: 1px solid $gray_c;
+    padding: 8px 16px 8px 16px;
+    width: 80%;
+  };
+}
+// -----▲ 定義リスト（補助金情報） ▲-----
+
+// -----▼ 横並び読点区切りリスト ▼-----
+.list-reading-point {
+  @include sp {
+    line-height: 1.6;
+  };
+  @include pc {
+    line-height: 1.6;
+  };
+}
+.list-reading-point > li {
+  display: inline;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list-reading-point > li + li::before {
+  content: "、";
+  font-size: inherit;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ 横並び読点区切りリスト ▲-----
+
+// -----▼ 横並びスラッシュ区切りリスト ▼-----
+.list-slash {
+  @include sp {
+    line-height: 1.6;
+  };
+  @include pc {
+    line-height: 1.6;
+  };
+}
+.list-slash > li {
+  display: inline;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list-slash > li + li::before {
+  content: "／";
+  font-size: inherit;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ 横並びスラッシュ区切りリスト ▲-----
+
+// ----------▲▲ 「リスト」のスタイル ▲▲----------

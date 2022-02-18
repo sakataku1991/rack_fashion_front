@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+// 「テーブル」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「テーブル」のスタイル ▼▼----------
+
+
+// -----▼ 全ての表の共通スタイル ▼-----
+.table {
+  border: 2px solid rgba($table-color, 1);
+  table-layout: fixed;
+  width: 100%;
+}
+// 表の行
+.table-row + .table-row {
+  border-top: 1px dashed rgba($table-color, 1);
+}
+// 表の見出し
+.table-heading {
+  background-color: $table-color;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  @include sp {
+    font-size: 1.4rem;
+    padding: 10px;
+  };
+  @include pc {
+    font-size: 1.4rem;
+    padding: 20px;
+  };
+}
+// 表のデータ
+.table-data {
+  background-color: $white;
+  text-align: center;
+  @include sp {
+    font-size: 1.4rem;
+    padding: 10px;
+  };
+  @include pc {
+    font-size: 1.4rem;
+    padding: 20px;
+  };
+}
+.table-heading + .table-data {
+  border-left: 1px dashed $table-color;
+}
+// -----▲ 全ての表の共通スタイル ▲-----
+
+
+// -----▼ 表（見出し1列・データ1列） ▼-----
+
+// 「表（見出し1列・データ1列）」の表の見出し
+.table-one-col .table-heading {
+  @include sp {
+    width: 20%;
+  };
+  @include pc {
+    width: 30%;
+  };
+}
+// 「表（見出し1列・データ1列）」の表のデータ
+.table-one-col .table-data {
+  @include sp {
+    width: 80%;
+  };
+  @include pc {
+    width: 70%;
+  };
+}
+
+// -----▲ 表（見出し1列・データ1列） ▲-----
+
+
+// -----▼ 表（見出し1行・データ複数列） ▼-----
+
+// 「表（見出し1行・データ複数列）」の見出し行とデータ行の間
+.table-thead + .table-tbody {
+  border-top: 2px solid rgba($table-color, 1);
+}
+// 「表（見出し1行・データ複数列）」の表の見出し
+.table-mult-col .table-heading {
+  text-align: center;
+}
+// 「表（見出し1行・データ複数列）」の表の見出しと見出しの間
+.table-heading + .table-heading {
+  border-left: 1px dashed rgba($table-color, 1);
+}
+// 「表（見出し1行・データ複数列）」の表のデータとデータの間
+.table-data + .table-data {
+  border-left: 1px dashed rgba($table-color, 1);
+}
+
+// -----▼ スマホ版で横にスクロールする表にするときに使う ▼-----
+// スクロールする表の領域全体
+.table-scroll {
+  @include sp {
+    // ↓スクロールバーの表示と両立できないので慣性スクロールはなし...。
+    // -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    padding-bottom: 14px;
+  };
+}
+// スクロールバーの横幅指定
+.table-scroll::-webkit-scrollbar {
+  @include sp {
+    height: 12px;
+    margin-top: 10px;
+  };
+}
+// スクロールバーの背景色
+.table-scroll::-webkit-scrollbar-track {
+  @include sp {
+    background-color: #f8eded;
+    border-radius: 10px;
+  };
+}
+// スクロールバーの色・角丸指定
+.table-scroll::-webkit-scrollbar-thumb {
+  @include sp {
+    background-color: $table-color;
+    border-radius: 10px;
+  };
+}
+// スクロールする表の横幅
+.table-scroll .table-mult-col {
+  @include sp {
+    width: 800px;
+  };
+}
+// -----▲ スマホ版で横にスクロールする表にするときに使う ▲-----
+
+// -----▲ 表（見出し1行・データ複数列） ▲-----
+
+
+// -----▼ 表（1行目と1列目が見出しで、残りのセルにデータ） ▼-----
+
+// -----▲ 表（1行目と1列目が見出しで、残りのセルにデータ） ▲-----
+
+
+// ----------▲▲ 「テーブル」のスタイル ▲▲----------

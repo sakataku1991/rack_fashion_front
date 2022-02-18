@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+// 「検索結果」のスタイルのテンプレートです。
+
+
+// ----------▼▼ 「検索結果」のスタイル ▼▼----------
+
+// -----▼ 「検索結果」の共通スタイル ▼-----
+.feas-result-count-and-sort {
+  @include sp {
+  };
+  @include pc {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  };
+}
+.feas-result-count {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「全◯件中」
+.feas-result-count-all-post {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.feas-result-count-all-post-info {
+  @include sp {
+    line-height: 1.5;
+  };
+  @include pc {
+    line-height: 1.5;
+  };
+}
+.feas-result-count-all-post-unit {
+  @include sp {
+    font-size: 1.4rem;
+    vertical-align: 1px;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    vertical-align: 1px;
+  };
+}
+.feas-result-count-all-post-number {
+  font-weight: bold;
+  @include sp {
+    font-size: 2.8rem;
+  };
+  @include pc {
+    font-size: 3.2rem;
+  };
+}
+// 「検索条件」＋「ヒット数、並び替えボタン」
+.BlogArchive__postArchiveTitle + .feas-result-count-and-sort {
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    margin-top: 40px;
+  };
+}
+// 「ヒット数」＋「並び替えボタン」
+.feas-result-count + .feas-result-sort {
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+  };
+}
+// 並び替えボタン
+.feas-result-sort {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※並び替えボタンのスタイルは「_button.scss」に記述
+
+// -----▲ 「検索結果」の共通スタイル ▲-----
+
+// ----------▲▲ 「検索結果」のスタイル ▲▲----------

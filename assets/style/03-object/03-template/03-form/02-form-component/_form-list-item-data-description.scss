@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+// 「フォームの記入例」
+
+
+// ----------▼▼ 「フォームの記入例」のスタイル ▼▼----------
+
+// フォームの記入例
+.form-list-item-data-description {
+  color: $blue_grayText;
+  @include sp {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  };
+}
+
+// ----------▲▲ 「フォームの記入例」のスタイル ▲▲----------

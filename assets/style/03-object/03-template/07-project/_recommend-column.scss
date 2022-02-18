@@ -1,0 +1,258 @@
+@charset "utf-8";
+
+// 「中小企業向けコラム」のレコメンドのスタイルです。
+
+
+// ----------▼▼ 「中小企業向けコラム」のレコメンド　recommend-column ▼▼----------
+
+.Rec-Column {
+  @include sp {
+    border-top: 1px solid $gray_c;
+  };
+  @include pc {
+    border-top: 1px solid $gray_c;
+  };
+}
+.Rec-Column .sectionContainer {
+  @include sp {
+    padding: 40px 0 64px !important;
+  };
+  @include pc {
+    padding: 80px 0 80px !important;
+  };
+}
+.Rec-Column__content {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// -----▼ 人気の補助金・助成金コラム ▼-----
+.Rec-Column__popularColumn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Rec-Column__popularColumnTitle {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Rec-Column__popularColumnArticles {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 24px;
+  };
+}
+// -----▲ 人気の補助金・助成金コラム ▲-----
+
+// -----▼ カテゴリーとタグのレイアウト ▼-----
+.Rec-Column__categoryAndTag {
+  @include sp {
+    margin-top: 40px;
+  };
+  @include pc {
+    display: flex;
+    margin-left: -64px;
+    margin-top: 80px;
+  };
+}
+.Rec-Column__category,
+.Rec-Column__tag {
+  @include sp {
+  };
+  @include pc {
+    margin-left: 64px;
+  };
+}
+// -----▲ カテゴリーとタグのレイアウト ▲-----
+
+// -----▼ カテゴリーからコラムを探す ▼-----
+.Rec-Column__category {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Rec-Column__categoryTitle {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Rec-Column__categoryContainer {
+  @include sp {
+    margin-top: 12px;
+  };
+  @include pc {
+    margin-top: 24px;
+  };
+}
+
+.Rec-Column__category {
+  @include sp {
+  };
+  @include pc {
+  };
+  // カテゴリー
+  .category {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category-list {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category-list-item {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category-link {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category-text {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 親カテゴリー
+  .category.-parent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category.-parent > .category-list {
+    display: block;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category.-parent > .category-list > .category-list-item {
+    display: list-item;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category.-parent > .category-list > .category-list-item + .category-list-item {
+    @include sp {
+      margin-top: 20px;
+    };
+    @include pc {
+      margin-top: 24px;
+    };
+  }
+  .category.-parent > .category-list > .category-list-item > .category-link {
+    background-color: transparent;
+    border: none;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category.-parent > .category-list > .category-list-item > .category-link > .category-text {
+    color: $black;
+    font-weight: bold;
+    @include sp {
+      font-size: 1.5rem;
+      &:active {
+        color: $link-color;
+        text-decoration: underline;
+      }
+    };
+    @include pc {
+      font-size: 1.6rem;
+      &:hover {
+        color: $link-color;
+        text-decoration: underline;
+      }
+    };
+  }
+  // 子カテゴリー
+  .category.-child {
+    @include sp {
+      margin-top: 6px;
+    };
+    @include pc {
+      margin-top: 8px;
+    };
+  }
+  .category.-child > .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    @include sp {
+      margin-left: -8px;
+      margin-top: -8px;
+    };
+    @include pc {
+      margin-left: -8px;
+      margin-top: -8px;
+    };
+  }
+  .category.-child > .category-list > .category-list-item {
+    @include sp {
+      margin-left: 8px;
+      margin-top: 8px;
+    };
+    @include pc {
+      margin-left: 8px;
+      margin-top: 8px;
+    };
+  }
+  .category.-child > .category-list > .category-list-item > .category-link {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .category.-child > .category-list > .category-list-item > .category-link > .category-text {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ カテゴリーからコラムを探す ▲-----
+
+// -----▼ タグからコラムを探す ▼-----
+.Rec-Column__tag {
+  @include sp {
+    margin-top: 48px;
+  };
+  @include pc {
+  };
+}
+.Rec-Column__tagTitle {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Rec-Column__tagContainer {
+  @include sp {
+    margin-top: 12px;
+  };
+  @include pc {
+    margin-top: 24px;
+  };
+}
+// -----▲ タグからコラムを探す ▲-----
+
+// ---------▲▲ 「中小企業向けコラム」のレコメンド　recommend-column ▲▲----------

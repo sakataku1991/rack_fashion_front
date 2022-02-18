@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+// 「リンク」のスタイルのテンプレートです（アイコン付きのリンク）。
+
+
+// ----▼ テキストリンク（内部リンク） ▼-----
+.text-link {
+  color: $link-color;
+  text-decoration: underline;
+  word-break: break-all;
+  @include sp {
+    &:active {
+      color: $link-hover-color;
+      opacity: .7;
+      text-decoration: none !important;
+    }
+  };
+  @include pc {
+    &:hover {
+      color: $link-hover-color;
+      opacity: 0.7;
+      text-decoration: none !important;
+    }
+  };
+}
+.text .text-link,
+.list-text .text-link {
+  margin: 0 6px;
+}
+// p要素（.text付きの）内かつ文頭にあるテキストリンクの場合には、
+// この「.-noMarginLeft」クラスを付けてpadding-leftを消す。
+.text-link.-noMarginLeft {
+  margin-left: 0;
+}
+// ----▲ テキストリンク（内部リンク） ▲-----
+
+// ----▼ テキストリンク（外部リンク） ▼-----
+.text-link.-tab {
+  &::after {
+    // background-image: url(../image/icon/icon_link-external_blue.svg);
+    content: "";
+    display: inline-block;
+  }
+  @include sp {
+    &::after {
+      height: 16px;
+      margin-left: 4px;
+      margin-right: 6px;
+      width: 16px;
+    }
+  };
+  @include pc {
+    &::after {
+      height: 16px;
+      margin-left: 4px;
+      margin-right: 6px;
+      width: 16px;
+    }
+  };
+}
+.text-link.-tab.-white::after {
+  // background-image: url(../image/icon/icon_link-external_white.svg);
+}
+// ----▲ テキストリンク（外部リンク） ▲-----
+
+// ----------▲▲ 「リンク」のスタイル ▲▲----------

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+// 「フッター」の「フッターコンテンツ」のスタイルです。
+
+
+// ----------▼▼ フッターコンテンツ .Footer_content ▼▼----------
+
+.Footer_content {
+  @include sp {
+
+  };
+  @include pc {
+  };
+}
+.Footer_content .sectionContainer {
+  @include sp {
+    padding: 56px 0 48px;
+  };
+  @include pc {
+    padding: 32px 0 40px;
+  };
+}
+.FtContent__contentContent {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ----------▲▲ フッターコンテンツ .Footer_content ▲▲----------

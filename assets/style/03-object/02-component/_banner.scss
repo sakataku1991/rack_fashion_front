@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+// 「バナー」のスタイルのテンプレートです。
+
+
+// ---------▼▼ 「バナー」のスタイル ▼▼----------
+
+// ----▼ 「バナー」の基本スタイル ▼-----
+.bnr {
+  display: block;
+  @include sp {
+  };
+  @include pc {
+    cursor: pointer;
+  };
+}
+.bnr-img {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ホバー時の効果
+.bnr {
+  .bnr-img {
+    transition: .3s;
+  }
+  @include sp {
+    &:active {
+      .bnr-img {
+        filter: opacity(80%);
+        transition: .1s;
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .bnr-img {
+        filter: opacity(80%);
+        transition: .1s;
+      }
+    }
+  };
+}
+// ----▲ 「バナー」の基本スタイル ▲-----
+
+// ----▼ 「リンクのないバナー」の基本スタイル ▼-----
+.bnr.-noLink {
+  pointer-events: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ----▲ 「リンクのないバナー」の基本スタイル ▲-----
+
+// ---------▲▲ 「バナー」のスタイル ▲▲----------

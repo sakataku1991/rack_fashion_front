@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+// 入力項目「セレクトボックス」
+
+
+// ----------▼▼ 入力項目「セレクトボックス」のスタイル ▼▼----------
+
+// セレクトボックス
+// セレクトボックスのアイコン
+.form-list-item-data-select-wrap {
+  position: relative;
+}
+.form-list-item-data-select-wrap::after {
+  pointer-events: none;
+  z-index: 1;
+}
+// 上下の矢印マーク
+.form-list-item-data-select-wrap .icon-arrowInputSelect {
+  pointer-events: none;
+  position: absolute;
+  @include sp {
+    height: 24px;
+    right: 6px;
+    top: calc(50% - calc(24px / 2));
+    width: 24px;
+  };
+  @include pc {
+    height: 24px;
+    right: 6px;
+    top: calc(50% - calc(24px / 2));
+    width: 24px;
+  };
+}
+.form-list-item-data-select-wrap .form-list-item-data-content.-select {
+  margin-top: 0;
+}
+// 入力欄（セレクトボックス）
+.form-list-item-data-content.-select {
+  appearance: none;
+  @include sp {
+    // height: 40px;
+    padding: 3px 42px 3px 12px;
+  };
+  @include pc {
+    cursor: pointer;
+    // height: 50px;
+    padding: 3px 42px 3px 16px;
+  };
+}
+
+// ----------▲▲ 入力項目「セレクトボックス」のスタイル ▲▲----------

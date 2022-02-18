@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+// 入力項目「ラジオボタン」
+
+
+// ----------▼▼ 入力項目「ラジオボタン」のスタイル ▼▼----------
+
+// -----▼ ラジオボタンの共通スタイル ▼-----
+// 入力項目全体（ラジオボタン）
+.form-list-item-data-content.-radio {
+  @include sp {
+  };
+  @include pc {
+  };
+  // 入力欄（ラジオボタン）
+  .form-list-item-data-content-label {
+    @include sp {
+      line-height: 1.4;
+    };
+    @include pc {
+      line-height: 1.4;
+    };
+  }
+  // ラジオボタンのinputは非表示
+  input[type="radio"] {
+    @include visuallyHidden;
+  }
+  // ラジオボタンの文言
+  .form-list-item-data-content-label-text {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// ホバー時の効果
+.form-list-item-data-content.-radio .form-list-item-data-content-label {
+  @include sp {
+    &:active {
+      .form-list-item-data-content-label-text {
+        color: $main-color;
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .form-list-item-data-content-label-text {
+        color: $main-color;
+      }
+    }
+  };
+}
+// チェック時の効果
+.form-list-item-data-content.-radio input[type="radio"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text {
+    color: $main-color;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ ラジオボタンの共通スタイル ▲-----
+
+// -----▼ ラジオボタン「◯＋チェックマーク」のスタイル ▼-----
+// 入力項目全体（ラジオボタン）
+.form-list-item-data-content.-radio.-check {
+  @include sp {
+  };
+  @include pc {
+  };
+  // 入力欄（ラジオボタン）
+  .form-list-item-data-content-label {
+    @include sp {
+    };
+    @include pc {
+			cursor: pointer;
+    };
+  }
+  // ラジオボタンの文言
+  .form-list-item-data-content-label-text {
+    @include mark;
+    @include sp {
+      font-size: 1.5rem;
+      padding: 0 0 0 30px;
+    };
+    @include pc {
+      font-size: 1.4rem;
+      padding: 0 0 0 30px;
+    };
+  }
+  // ラジオボタンの「◯」
+  .form-list-item-data-content-label-text::before {
+    border-radius: 50% !important;
+    @include sp {
+      height: 24px;
+      left: 0;
+      top: calc(50% - calc(24px / 2));
+      width: 24px;
+    };
+    @include pc {
+      height: 24px;
+      left: 0;
+      top: calc(50% - calc(24px / 2));
+      width: 24px;
+    };
+  }
+  // ラジオボタンのチェックマーク
+  .form-list-item-data-content-label-text::after {
+    background-color: $main-color;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(2);
+    @include sp {
+      height: 16px;
+      left: 4px;
+      top: calc(50% - calc(16px / 2));
+      width: 16px;
+    };
+    @include pc {
+      height: 16px;
+      left: 4px;
+      top: calc(50% - calc(16px / 2));
+      width: 16px;
+    };
+  }
+}
+// ホバー時の効果
+.form-list-item-data-content.-radio.-check .form-list-item-data-content-label {
+  @include sp {
+    &:active {
+      .form-list-item-data-content-label-text {
+      }
+      .form-list-item-data-content-label-text::before {
+        border-color: $main-color;
+        box-shadow: 0 0 6px 1px $main-color;
+      }
+      .form-list-item-data-content-label-text::after {
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .form-list-item-data-content-label-text {
+      }
+      .form-list-item-data-content-label-text::before {
+        border-color: $main-color;
+        box-shadow: 0 0 6px 1px $main-color;
+      }
+      .form-list-item-data-content-label-text::after {
+      }
+    }
+  };
+}
+// フォーカス時の効果
+.form-list-item-data-content.-radio.-check input[type="radio"]:focus-visible {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text {
+    color: $main-color;
+    text-decoration: underline;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// チェック時の効果
+.form-list-item-data-content.-radio.-check input[type="radio"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text {
+    font-weight: bold;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & + .form-list-item-data-content-label-text::before {
+    border-color: $main-color;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & + .form-list-item-data-content-label-text::after {
+    opacity: 1;
+    transform: scale(1);
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// アニメーションのスピード
+.form-list-item-data-content.-radio.-check .form-list-item-data-content-label {
+  .form-list-item-data-content-label-text::after {
+    transition: transform .2s;
+  }
+  @include sp {
+    &:active {
+    }
+  };
+  @include pc {
+    &:hover {
+    }
+  };
+}
+.form-list-item-data-content.-radio.-check input[type="checkbox"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text::after {
+    transition: transform .2s;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ ラジオボタン「◯＋チェックマーク」のスタイル ▲-----
+
+// ----------▲▲ 入力項目「ラジオボタン」のスタイル ▲▲----------

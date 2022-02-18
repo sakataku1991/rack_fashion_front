@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+// 「文章」まわりのスタイルのテンプレートです。
+
+
+// ---------▼▼ 「文章」のスタイル ▼▼----------
+
+// ----▼ 通常の文章 ▼-----
+.text {
+  @include sp {
+    font-size: 1.6rem;
+    line-height: 30px;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    line-height: 2.0;
+  };
+}
+.text + .text {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+.title-2 + .text-box {
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    margin-top: 32px;
+  };
+}
+.title-3 + .text-box {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+// ----▲ 通常の文章 ▲-----
+
+// ----▼ テキストの強調 ▼-----
+// ただの太字
+.text-strong {
+  font-weight: bold;
+  padding: 0 6px;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 太字＋文字色変更（赤）
+.text-strong.-red {
+  color: $red;
+}
+// テキストの強調の左側のパディングを削除
+.text-strong.-noPaddingLeft {
+  padding-left: 0;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.text-strong.-noPaddingLeftSp {
+  @include sp {
+    padding-left: 0;
+  };
+  @include pc {
+  };
+}
+.text-strong.-noPaddingLeftPc {
+  @include sp {
+  };
+  @include pc {
+    padding-left: 0;
+  };
+}
+// ----▲ テキストの強調 ▲-----
+
+// ----▼ テキストを選択したときの色 ▼-----
+// ::selection {
+// 	background-color: rgba($red, 0.7);
+// 	color: $white;
+// }
+// .js_topMenuPc .GNav a::selection,
+// .js_topMenuPc .GNav span::selection  {
+// 	background-color: rgba($black, 0.7) !important;
+// }
+// .FtSMap p::selection,
+// .FtSMap a::selection  {
+// 	background-color: rgba($black, 0.7) !important;
+// }
+// ----▲ テキストを選択したときの色 ▲-----
+
+// ---------▲▲ 「文章」のスタイル ▲▲----------

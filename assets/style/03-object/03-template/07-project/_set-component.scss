@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+// 複数のコンポーネントを組み合わせた汎用パーツのスタイルです。
+
+
+// ----▼ 「見出し」＋「文章（複数の段落）」 ▼-----
+.set-outline {
+  @include sp {
+    padding-left: 24px;
+  };
+  @include pc {
+  };
+}
+.set-outline-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.set-outline-title.title-orange-h-line {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※「.set-outline-title」は「.title-orange-h-line」とセットで使うこと
+
+.set-outline-text-container {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 32px;
+  };
+}
+.set-outline-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.set-outline-text.text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※「.set-outline-text」は「.text」とセットで使うこと
+
+// ----▲ 「見出し」＋「文章（複数の段落）」 ▲-----

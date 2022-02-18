@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+// 入力項目「チェックボックス」
+
+
+// ----------▼▼ 入力項目「チェックボックス」のスタイル ▼▼----------
+
+// -----▼ チェックボックスの共通スタイル ▼-----
+// 入力項目全体（チェックボックス）
+.form-list-item-data-content.-checkbox {
+  @include sp {
+  };
+  @include pc {
+  };
+  // 入力欄（チェックボックス）
+  .form-list-item-data-content-label {
+    @include sp {
+      line-height: 1.4;
+    };
+    @include pc {
+      line-height: 1.4;
+    };
+  }
+  // チェックボックスのinputは非表示
+  input[type="checkbox"] {
+    @include visuallyHidden;
+  }
+  // チェックボックスの文言
+  .form-list-item-data-content-label-text {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// ホバー時の効果
+.form-list-item-data-content.-checkbox .form-list-item-data-content-label {
+  @include sp {
+    &:active {
+      .form-list-item-data-content-label-text {
+        // color: $main-color;
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .form-list-item-data-content-label-text {
+        // color: $main-color;
+      }
+    }
+  };
+}
+// チェック時の効果
+.form-list-item-data-content.-checkbox input[type="checkbox"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label {
+    color: $main-color;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ チェックボックスの共通スタイル ▲-----
+
+// -----▼ チェックボックス「ボックス＋チェックマーク」のスタイル ▼-----
+// 入力項目全体（チェックボックス）
+.form-list-item-data-content.-checkbox.-check {
+  @include sp {
+  };
+  @include pc {
+  };
+  // 入力欄（チェックボックス）
+  .form-list-item-data-content-label {
+    @include sp {
+    };
+    @include pc {
+      cursor: pointer;
+    };
+  }
+  // チェックボックスの文言
+  .form-list-item-data-content-label-text {
+    @include mark;
+    @include sp {
+      font-size: 1.4rem;
+      padding: 0 0 0 32px;
+    };
+    @include pc {
+      font-size: 1.4rem;
+      padding: 0 0 0 32px;
+    };
+  }
+  // チェックボックスの「□」
+  .form-list-item-data-content-label-text::before {
+    @include sp {
+      height: 24px;
+      left: 0;
+      top: calc(50% - 12px);
+      width: 24px;
+    };
+    @include pc {
+      height: 24px;
+      left: 0;
+      top: calc(50% - 12px);
+      width: 24px;
+    };
+  }
+  // チェックボックスのチェックマーク
+  .form-list-item-data-content-label-text::after {
+    border-right-style: none !important;
+    border-top-style: none !important;
+    transform: rotate(-45deg) scale(0, 0);
+    @include sp {
+      border: 4px solid $white;
+      height: 11px;
+      left: 4px;
+      top: calc(50% - 7px);
+      width: 16px;
+    };
+    @include pc {
+      border: 4px solid $white;
+      height: 11px;
+      left: 4px;
+      top: calc(50% - 7px);
+      width: 16px;
+    };
+  }
+}
+// ホバー時の効果
+.form-list-item-data-content.-checkbox.-check .form-list-item-data-content-label {
+  @include sp {
+    &:active {
+      .form-list-item-data-content-label-text {
+      }
+      .form-list-item-data-content-label-text::before {
+        border-color: $main-color;
+        box-shadow: 0 0 6px 1px $main-color;
+      }
+      .form-list-item-data-content-label-text::after {
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .form-list-item-data-content-label-text {
+      }
+      .form-list-item-data-content-label-text::before {
+        border-color: $main-color;
+        box-shadow: 0 0 6px 1px $main-color;
+      }
+      .form-list-item-data-content-label-text::after {
+      }
+    }
+  };
+}
+// フォーカス時の効果
+.form-list-item-data-content.-checkbox.-check input[type="checkbox"]:focus-visible {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text {
+    color: $main-color;
+    text-decoration: underline;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// チェック時の効果
+.form-list-item-data-content.-checkbox.-check input[type="checkbox"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text {
+    font-weight: bold;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & + .form-list-item-data-content-label-text::before {
+    background-color: $main-color;
+    border-color: $main-color;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  & + .form-list-item-data-content-label-text::after {
+    transform: rotate(-45deg) scale(1, 1);
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// アニメーションのスピード
+.form-list-item-data-content.-checkbox.-check .form-list-item-data-content-label {
+  .form-list-item-data-content-label-text::after {
+    transition: transform .2s cubic-bezier(.45, 1.8, .5, .75);
+  }
+  @include sp {
+    &:active {
+    }
+  };
+  @include pc {
+    &:hover {
+    }
+  };
+}
+.form-list-item-data-content.-checkbox.-check input[type="checkbox"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text::after {
+    transition: transform .2s cubic-bezier(.45, 1.8, .5, .75);
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ チェックボックス「ボックス＋チェックマーク」のスタイル ▲-----
+
+// -----▼ チェックボックス「塗りつぶし」のスタイル ▼-----
+.form-list-item-data-content.-checkbox.-fill {
+  display: flex;
+  flex-wrap: wrap;
+  @include sp {
+    margin-left: -6px;
+    margin-top: -6px;
+  };
+  @include pc {
+    margin-left: -8px;
+    margin-top: -8px;
+  };
+  // 入力欄（チェックボックス）
+  .form-list-item-data-content-label {
+    @include sp {
+      margin-left: 6px;
+      margin-top: 6px;
+    };
+    @include pc {
+      margin-left: 8px;
+      margin-top: 8px;
+    };
+  }
+  // チェックボックスの文言
+  .form-list-item-data-content-label-text {
+    background-color: $gray_f5;
+    border: 1px solid $gray_c;
+    @include sp {
+      border-radius: 4px;
+    };
+    @include pc {
+      cursor: pointer;
+      border-radius: 4px;
+    };
+  }
+  .form-list-item-data-content-label-text {
+    color: $gray_5;
+    font-weight: bold;
+    @include sp {
+      font-size: 1.2rem;
+      padding: 4px 10px 4px 10px;
+    };
+    @include pc {
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 4px 10px 4px 10px;
+    };
+  }
+}
+// ホバー時の効果
+.form-list-item-data-content.-checkbox.-fill .form-list-item-data-content-label {
+  @include sp {
+    &:active {
+      .form-list-item-data-content-label-text {
+        background-color: $blue_12pct;
+        border: 1px solid $blue;
+      }
+      .form-list-item-data-content-label-text {
+        color: $blue;
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .form-list-item-data-content-label-text {
+        background-color: $blue_12pct;
+        border: 1px solid $blue;
+      }
+      .form-list-item-data-content-label-text {
+        color: $blue;
+      }
+    }
+  };
+}
+// フォーカス時の効果
+.form-list-item-data-content.-checkbox.-fill input[type="checkbox"]:focus-visible {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text {
+    @include sp {
+      box-shadow: 0 0 6px 2px $main-color;
+    };
+    @include pc {
+      box-shadow: 0 0 6px 2px $main-color;
+    };
+  }
+}
+// チェック時の効果
+.form-list-item-data-content.-checkbox.-fill input[type="checkbox"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label-text {
+    background-color: $blue;
+    @include sp {
+      border: 1px solid $blue;
+    };
+    @include pc {
+      border: 1px solid $blue;
+    };
+  }
+  & + .form-list-item-data-content-label-text {
+    color: $white;
+    font-weight: bold;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// アニメーションのスピード
+.form-list-item-data-content.-checkbox.-fill .form-list-item-data-content-label {
+  .form-list-item-data-content-label-text {
+    transition: .3s;
+  }
+  @include sp {
+    &:active {
+      .form-list-item-data-content-label-text {
+        transition: .1s;
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .form-list-item-data-content-label-text {
+        transition: .1s;
+      }
+    }
+  };
+}
+.form-list-item-data-content.-checkbox.-fill input[type="checkbox"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .form-list-item-data-content-label {
+    transition: .1s;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// -----▲ チェックボックス「塗りつぶし」のスタイル ▲-----
+
+// ----------▲▲ 入力項目「チェックボックス」のスタイル ▲▲----------

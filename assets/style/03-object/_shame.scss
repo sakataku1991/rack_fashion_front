@@ -1,0 +1,377 @@
+@charset "utf-8";
+
+// 急拵えのスタイルまとめです。
+// 将来的に修正したいスタイル。
+
+
+// ----------▼▼ 対Vuetifyスタイル ▼▼----------
+
+// -----▼ フォームのレイアウト ▼-----
+// フォームの内容
+.form-header + .v-application {
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    margin-top: 24px;
+  };
+}
+.form-list-item-data-description {
+  @include sp {
+    margin-bottom: 0 !important;
+  };
+  @include pc {
+    margin-bottom: 0 !important;
+  };
+}
+// -----▲ フォームのレイアウト ▲-----
+
+// -----▼ 入力項目 ▼-----
+// 入力欄の下線の削除
+.v-text-field > .v-input__control > .v-input__slot:before,
+.v-text-field > .v-input__control > .v-input__slot:after {
+  display: none !important;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄が「エラー」のときのスタイル
+.form-list-item-data-content.-text.error--text,
+.form-list-item-data-content.-textarea.error--text,
+.form-list-item-data-content.-radio.error--text,
+.form-list-item-data-content.-select.error--text {
+  background-color: $error_bg !important;
+  @include sp {
+    border: 1px solid $error !important;
+  };
+  @include pc {
+    border: 1px solid $error !important;
+  };
+}
+.theme--light.v-messages {
+  color: $error !important;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content.error--text .v-counter {
+  color: $error !important;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄が「disabled」のときのスタイル
+.btn.theme--light.v-btn.v-btn--disabled.v-btn--has-bg {
+  background-color: $gray_c !important;
+  @include sp {
+    border: 1px solid $gray_c !important;
+  };
+  @include pc {
+    border: 1px solid $gray_c !important;
+  };
+}
+// ラジオボタン
+.form-list-item-data-content.-radio .v-input--radio-group__input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include sp {
+    gap: 32px;
+  };
+  @include pc {
+    gap: 24px;
+  };
+}
+.v-input--radio-group--column .v-radio {
+  @include sp {
+    margin-bottom: 0 !important;
+  };
+  @include pc {
+    margin-bottom: 0 !important;
+  };
+}
+.form-list-item-data-content.-radio .v-label {
+  @include mark;
+  color: $black;
+  @include sp {
+    font-size: 1.4rem;
+    padding: 0 0 0 5px;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    padding: 0 0 0 5px;
+  };
+}
+// ラジオボタンの「◯」
+.form-list-item-data-content.-radio .v-icon::before {
+  background-color: $blue_bgLight;
+  border-radius: 50% !important;
+  content: "" !important;
+  @include sp {
+    border: 1px solid $blue_grayBorder;
+    height: 24px;
+    left: 0;
+    top: calc(50% - calc(24px / 2));
+    width: 24px;
+  };
+  @include pc {
+    border: 1px solid $blue_grayBorder;
+    height: 24px;
+    left: 0;
+    top: calc(50% - calc(24px / 2));
+    width: 24px;
+  };
+}
+// ラジオボタンのチェックマーク
+.form-list-item-data-content.-radio .v-icon::after {
+  background-color: $main-color;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(2);
+  @include sp {
+    height: 16px;
+    left: 4px;
+    top: calc(50% - calc(16px / 2));
+    width: 16px;
+  };
+  @include pc {
+    height: 16px;
+    left: 4px;
+    top: calc(50% - calc(16px / 2));
+    width: 16px;
+  };
+}
+// ホバー時の効果
+.form-list-item-data-content.-radio.-check .v-radio {
+  @include sp {
+    &:active {
+      .v-label {
+      }
+      .v-label::before {
+        border-color: $main-color;
+        box-shadow: 0 0 6px 1px $main-color;
+      }
+      .v-label::after {
+      }
+    }
+  };
+  @include pc {
+    &:hover {
+      .v-label {
+      }
+      .v-label::before {
+        border-color: $main-color;
+        box-shadow: 0 0 6px 1px $main-color;
+      }
+      .v-label::after {
+      }
+    }
+  };
+}
+// フォーカス時の効果
+.form-list-item-data-content.-radio.-check input[type="radio"]:focus-visible {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .v-label {
+    color: $main-color;
+    text-decoration: underline;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+.v-input--selection-controls__input:hover .v-input--selection-controls__ripple:before {
+  background-color: rgba($blue_rgb, .48) !important;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content.-radio .v-ripple__container,
+.v-input--selection-controls .v-radio--is-focused .v-input--selection-controls__ripple:before {
+  background-color: rgba($blue_rgb, .24) !important;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// チェック時の効果
+.form-list-item-data-content.-radio .v-icon.primary--text {
+  font-weight: bold;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content.-radio .v-icon.primary--text::before {
+  border-color: $main-color;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content.-radio .v-icon.primary--text::after {
+  opacity: 1;
+  transform: scale(1);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// アニメーションのスピード
+.form-list-item-data-content.-radio.-check .form-list-item-data-content-label {
+  .v-label::after {
+    transition: transform .2s;
+  }
+  @include sp {
+    &:active {
+    }
+  };
+  @include pc {
+    &:hover {
+    }
+  };
+}
+.form-list-item-data-content.-radio.-check input[type="checkbox"]:checked {
+  @include sp {
+  };
+  @include pc {
+  };
+  & + .v-label::after {
+    transition: transform .2s;
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+}
+// バリデーション
+.v-text-field__details {
+  @include sp {
+    margin-top: 4px;
+  };
+  @include pc {
+    margin-top: 4px;
+  };
+}
+// ulの謎のパディング
+.v-application ul,
+.v-application ol {
+  @include sp {
+    padding-left: 0 !important;
+  };
+  @include pc {
+    padding-left: 0 !important;
+  };
+}
+// -----▲ 入力項目 ▲-----
+
+// -----▼ ボタン ▼-----
+// ボタン
+.btn.v-btn {
+  box-shadow: none !important;
+  display: block !important;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ボタン（タップ時やホバー時のアニメーション）
+.btn.v-btn {
+  transition:
+    background-color 0.3s ease-out,
+    border 0.3s ease-out,
+    color 0.3s ease-out,
+    filter 0.3s ease-out !important;
+  @include sp {
+    &:active {
+      transition:
+        background-color 0.1s ease-out,
+        border 0.1s ease-out,
+        color 0.1s ease-out,
+        filter 0.1s ease-out !important;
+    }
+  };
+  @include pc {
+    &:hover {
+      transition:
+        background-color 0.1s ease-out,
+        border 0.1s ease-out,
+        color 0.1s ease-out,
+        filter 0.1s ease-out !important;
+    }
+  };
+}
+// いらないアニメーション
+.btn.v-btn::before {
+  display: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 青Ver.
+.btn.-normal.-blue.theme--light.v-btn.v-btn--has-bg {
+  background-color: $blue;
+  border: 1px solid $blue;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 青Ver.のホバー時
+.btn.-normal.-blue.theme--light.v-btn.v-btn--has-bg {
+  @include sp {
+    &:active {
+      background-color: $blue_hover;
+      border: 1px solid $blue_hover;
+    }
+  };
+  @include pc {
+    &:hover {
+      background-color: $blue_hover;
+      border: 1px solid $blue_hover;
+    }
+  };
+}
+// ボタンの文字
+.btn.v-btn .v-btn__content {
+  font-weight: bold;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// disabled時のボタン
+.btn.theme--light.v-btn.v-btn--disabled.v-btn--has-bg .v-btn__content {
+  color: rgba($white_rgb, .5);
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「登録する」ボタン
+.btn.v-btn.btn-signup {
+  @include sp {
+    font-size: 1.6rem !important;
+    height: auto !important;
+    padding: 11px 24px 11px !important;
+    width: 64% !important;
+  };
+  @include pc {
+    font-size: 1.8rem !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    padding: 12px 24px 12px !important;
+    width: 300px !important;
+  };
+}
+// -----▲ ボタン ▲-----
+
+// ----------▲▲ 対Vuetifyスタイル ▲▲----------

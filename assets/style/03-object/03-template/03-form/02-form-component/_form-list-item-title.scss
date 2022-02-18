@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+// 「入力項目のタイトル」
+
+
+// ----------▼▼ 「入力項目のタイトル」のスタイル ▼▼----------
+
+// 入力項目のタイトル（基本）
+.form-list-item-title {
+  font-weight: bold;
+  @include sp {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  };
+}
+.form-list-item-title-label {
+  @include sp {
+    letter-spacing: $lsAV80;
+  };
+  @include pc {
+    cursor: text;
+    letter-spacing: $lsAV80;
+  };
+}
+// 入力項目のタイトル
+// （「必須」か「任意」が付くやつ）
+.form-list-item.-required > .form-list-item-title > .form-list-item-title-label,
+.form-list-item.-optional > .form-list-item-title > .form-list-item-title-label {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「必須」か「任意」か
+.form-list-item.-required > .form-list-item-title > .form-list-item-title-label::after,
+.form-list-item.-optional > .form-list-item-title > .form-list-item-title-label::after {
+  font-weight: normal;
+  @include sp {
+    font-size: 1.2rem;
+    letter-spacing: $lsAV100;
+    line-height: 1;
+    margin-left: 6px;
+    vertical-align: 1px;
+  };
+  @include pc {
+    cursor: default;
+    font-size: 1.2rem;
+    letter-spacing: $lsAV100;
+    line-height: 1;
+    margin-left: 8px;
+    vertical-align: 2px;
+  };
+}
+// 「必須」のタグ
+.form-list-item.-required > .form-list-item-title > .form-list-item-title-label::after {
+  color: $error;
+  content: "必須";
+}
+// 「任意」のタグ
+.form-list-item.-optional > .form-list-item-title > .form-list-item-title-label::after {
+  color: $gray_5;
+  content: "任意";
+}
+
+// ----------▲▲ 「入力項目のタイトル」のスタイル ▲▲----------

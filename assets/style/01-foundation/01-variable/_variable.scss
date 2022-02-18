@@ -1,0 +1,353 @@
+@charset "utf-8";
+
+// サイトのデザインの基礎となる、汎用的な値を「グローバル変数」としてこのファイルにまとめて定義する。
+
+
+// ----------▼▼ device-size ▼▼----------
+
+// スマホ
+$sp: 767px;
+
+// タブレット
+$tb: 768px;
+
+// パソコン
+$pc: 768px;
+
+// Retinaディスプレイ（画像用）
+$retina: 2;
+
+// ----------▲▲ device-size ▲▲----------
+
+// ----------▼▼ font-family ▼▼----------
+
+// 代替フォントの適用
+html {font-display: swap;}
+
+// ----------▲▲ font-family ▲▲----------
+
+
+// ----------▼▼ font-size ▼▼----------
+
+html {
+  // ルートのフォントサイズ。この数値は変えない！
+  // 主要ブラウザのデフォルトのフォントサイズは 16px = 100% = 1rem 。
+  // rem計算を容易（ 1rem = 10px ）にするために
+  // デフォルトフォントサイズ = 62.5% に変更している
+  // （ 16pxの62.5% = 10px = 1rem ）。
+  // デフォルトフォントサイズを「6.25%」にしないのは、
+  // ブラウザ側で10px未満の最小フォントサイズが設定されている場合に
+  // その最小フォントサイズの数値がすべてのrem指定の数値に影響してしまうから
+  // （通常「6.25%」は「1px」となるが、最小フォントサイズが設定されていると
+  // 1rem = 最小フォントサイズの数値 となってしまう）。
+  font-size: 62.5% !important;
+}
+body {
+  // こっちの数値がサイトのデフォルトのフォントサイズになる。
+  // なので本文の基準フォントサイズによって書き変えること！
+  // まあでも大体は1.4emか1.6emの2択になると思う。
+  // 単位が「em」なのはChromeのバグ対策のため
+  // （bodyにremを指定していると、Chromeはbodyをルートとして解釈してしまう）。
+  font-size: 1.6em !important;
+}
+
+// -----▼ var ▼-----
+
+// -----▲ var ▲-----
+
+// ----------▲▲ font-size ▲▲----------
+
+
+// ----------▼▼ font-weight ▼▼----------
+
+// -----▼ var ▼-----
+// -----▲ var ▲-----
+
+// ----------▲▲ font-weight ▲▲----------
+
+
+// ----------▼▼ color ▼▼----------
+
+// -----▼ var ▼-----
+
+:root {
+  // --c-primary: #3ea8ff;
+  --c-primary-darker: #0f83fd;
+  // --c-body: #000000d1;
+  --c-body-content: #3e3f48;
+  --c-gray: #93a5b1;
+  --c-gray-lighter: #acbcc7;
+  --c-gray-darker: #6e7b85;
+  --c-gray-border: #cfdce6;
+  --c-gray-border-lighter: #5c93bb2b;
+  --c-base-bg: #fff;
+  --c-primary-bg: #edf2f7;
+  --c-primary-bg-darker: #c6d5e2;
+  --c-primary-bg-lighter: #f1f5f9;
+  --c-primary-bg-lightest: #eff6fb99;
+  --c-blue-bg: #e0efff;
+  --c-blue-bg-lighter: #e6f2ff;
+  --c-contrast: #1b1b1d;
+  // --c-error: #ff6868;
+  // --c-error-bg: #fff0f0;
+  // --c-like: #f76685;
+  // --c-like-bg: #ffeaf4;
+  --c-closed-bg: #545c77;
+  --c-focus-shadow: #bfdcff;
+  --font-base: -apple-system,"BlinkMacSystemFont","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif,"Segoe UI Emoji";
+}
+
+:root {
+  // メインカラーとそのバリエーション
+  --c-primary: #1c6ecd;
+  --c-primary-rgb: 28, 110, 205;
+  --c-primary-lighter: #dae8f7;
+  --c-body: #222;
+  // 汎用カラー
+  --c-black: #000;
+  --c-black-rgb: 0, 0, 0;
+  --c-white: #fff;
+  --c-white-rgb: 255, 255, 255;
+  --c-ghost: rgba(0, 0, 0, 0);
+  // エラー
+  --c-error: #fd3b30;
+  --c-error-bg: #feeeee;
+  // 成功・完了・OK
+  --c-success: #1ccd30;
+  // 削除
+  --c-delete: #f26760;
+  --c-delete-border: #fbcecc;
+  --c-delete-bg: #f7e9e9;
+  // 通知
+  --c-notification: #fd3b30;
+  // いいね！
+  --c-like: #ea3f60;
+  --c-like-rgb: 234, 63, 96;
+  --c-like-bg: #fcebf2;
+  // 性別
+  --c-gender-all: #555;
+  --c-gender-all-rgb: 85, 85, 85;
+  --c-gender-men: #0064d8;
+  --c-gender-men-rgb: 0, 100, 216;
+  --c-gender-women: #f26868;
+  --c-gender-women-rgb: 242, 104, 104;
+  // アイテムの色
+  --c-color-1: #fff;
+  --c-color-2: #313131;
+  --c-color-3: #aab2be;
+  --c-color-4: #81604c;
+  --c-color-5: #e0d1ad;
+  --c-color-6: #9ed563;
+  --c-color-7: #4dbee9;
+  --c-color-8: #ad8eef;
+  --c-color-9: #fed14c;
+  --c-color-10: #f8afd7;
+  --c-color-11: #ef5663;
+  --c-color-12: #f98140;
+  //// 各種SNS
+  // Twitter
+  --c-twitter: #1d9bf0;
+  --c-twitter-darker: #1574b3;
+  // Facebook
+  --c-facebook: #1877f2;
+  --c-facebook-darker: #1259b5;
+  // 「通知」「お知らせ」系
+  // （↓他所の色を流用しているものはコメントアウト）
+  // --c-info-blue: #1c6ecd;
+  // --c-info-red: #ea3f60;
+  // --c-info-green: #1ccd30;
+  --c-info-yellow: #e0b31f;
+}
+
+// メインカラーとそのバリエーション
+$blue: var(--c-primary);
+$blue_rgb: var(--c-primary-rgb);
+$blue_16pct: var(--c-primary-lighter);
+$blue_grayBoader: #d8dfe6;  // TODO 要カスタムプロパティ化
+$blue_grayIcon: #818d99;  // TODO 要カスタムプロパティ化
+$blue_grayText: #8c8d8f;  // TODO 要カスタムプロパティ化
+$blue_noticeGrayText: #78797a;  // TODO 要カスタムプロパティ化（通知カードのRACK IDと通知時間で使用）
+$blue_bgLight: #edf4fb;  // TODO 要カスタムプロパティ化（リンクホバー時の背景色など）
+$blue_grayBorder: #dbe5ef;  // TODO 要カスタムプロパティ化（サインイン・ログインフォーム系の入力欄で使用）
+$blue_placeholder: #97abc2;  // TODO 要カスタムプロパティ化（サインイン・ログインフォーム系の入力欄で使用）
+$blue_hsb_b32: #0c2d52;  // TODO 要カスタムプロパティ化（ダッシュボードのメニュー背景で使用）
+
+// 汎用カラー
+$black: var(--c-black);
+$black_rgb: var(--c-black-rgb);
+$white: var(--c-white);
+$white_rgb: var(--c-white-rgb);
+$ghost: var(--c-ghost);
+
+// エラー
+$error: var(--c-error);
+$error_bg: var(--c-error-bg);
+
+// 成功・完了・OK
+$success: var(--c-success);
+
+// 削除
+$delete: var(--c-delete);
+// $delete_hsb_s6b97: var(--c-delete-bg);
+$delete_bg: var(--c-delete-bg);
+// $delete_32pct: var(--c-delete-border);
+$delete_border: var(--c-delete-border);
+
+// 通知
+$notification: var(--c-notification);
+
+// いいね！
+$like: var(--c-like);
+$like_rgb: var(--c-like-rgb);
+$like_bg: var(--c-like-bg);
+
+// 性別
+$gender-all: var(--c-gender-all);
+$gender-all_rgb: var(--c-gender-all-rgb);
+$gender-men: var(--c-gender-men);
+$gender-men_rgb: var(--c-gender-men-rgb);
+$gender-women: var(--c-gender-women);
+$gender-women_rgb: var(--c-gender-women-rgb);
+
+// アイテムの色
+$color-1: var(--c-color-1);
+$color-2: var(--c-color-2);
+$color-3: var(--c-color-3);
+$color-4: var(--c-color-4);
+$color-5: var(--c-color-5);
+$color-6: var(--c-color-6);
+$color-7: var(--c-color-7);
+$color-8: var(--c-color-8);
+$color-9: var(--c-color-9);
+$color-10: var(--c-color-10);
+$color-11: var(--c-color-11);
+$color-12: var(--c-color-12);
+$color-13: linear-gradient(45deg, #f4f4f4 0%,#aaaaaa 50%,#e4e4e4 100%);
+$color-14: linear-gradient(45deg, #ffeea8 0%,#d9b61d 50%,#fff3c1 100%);
+$color-15:
+  radial-gradient(at 50% 50%, hsla(0,0%,100%,1) 0, transparent 54%),
+  radial-gradient(at 99% 64%, hsla(23,26%,41%,1) 0, transparent 46%),
+  radial-gradient(at 49% 0%, hsla(89,58%,62%,1) 0, transparent 49%),
+  radial-gradient(at 99% 18%, hsla(197,78%,61%,1) 0, transparent 44%),
+  radial-gradient(at 0% 69%, hsla(260,76%,75%,1) 0, transparent 43%),
+  radial-gradient(at 4% 12%, hsla(45,99%,65%,1) 0, transparent 43%),
+  radial-gradient(at 27% 98%, hsla(328,84%,83%,1) 0, transparent 47%),
+  radial-gradient(at 59% 97%, hsla(355,83%,64%,1) 0, transparent 54%),
+  radial-gradient(at 89% 86%, hsla(22,94%,62%,1) 0, transparent 59%);
+
+//// 各種SNS
+
+// Twitter
+$twitter: var(--c-twitter);
+// $twitter_hsb_b70: #1574b3;
+$twitter_hover: var(--c-twitter-darker);
+
+// Facebook
+$facebook: var(--c-facebook);
+// $facebook_hsb_b71: #1259b5;
+$facebook_hover: var(--c-facebook-darker);
+
+// 「通知」「お知らせ」系
+// $info_blue: var(--c-info-blue);
+$info_blue: $blue;
+// $info_red: var(--c-info-red);
+$info_red: $like;
+// $info_green: var(--c-info-green);
+$info_green: $success;
+$info_yellow: var(--c-info-yellow);
+
+
+$blue_hsb_b24: #00213d;
+$blue_hsb_s60: #155399;
+$blue_hover: $blue_hsb_s60;
+$blue_20pct: #d1e2f5;  // TODO 要カスタムプロパティ化（「btn-publicLink」「btn-viewPublicedQuestion」のホバー時の色に使用）
+$blue_12pct: #e3edf9;
+
+
+$black: var(--c-body);
+$black_bg: #333;
+$black_0: #000;
+$black_shadow: #000;
+$black_5: #555;
+$white: #fff;
+$white_demi: #fafafa;
+
+$gray_lightBlue: #f6f7f7;
+$gray_fa: #fafafa;
+$gray_f8: #f8f8f8;
+$gray_f5: #f5f5f5;
+$gray_f4: #f4f4f4;
+$gray_f3: #f3f3f3;
+$gray_f2: #f2f2f2;
+$gray_f1: #f1f1f1;
+$gray_f0: #f0f0f0;
+$gray_e: #eee;
+$gray_ea: #eaeaea;
+$gray_e6: #e6e6e6;
+$gray_e4: #e4e4e4;
+$gray_d: #ddd;
+$gray_c: #ccc;
+$gray_b: #bbb;
+$gray_a: #aaa;
+$gray_9: #999;
+$gray_8: #888;
+$gray_7: #777;
+$gray_6: #666;
+$gray_5: #555;
+$gray_4: #444;
+
+
+$red: #d40000;
+
+$red_hsb_bm16: #a80a12;
+$red_8percent: #fcecec;
+$red_12percent: #fae1e3;
+$red_hover: $red_hsb_bm16;
+
+$red_text: $red;
+$red_6pct: #fdf0f0;
+$red_8pct: #fcebeb;
+
+
+// 各種ベースカラー
+$body-text-color: $black;  // body全体の文字色
+$body-bg-color: $white;  // body全体の背景色
+$form-placeholder-color: $gray_b;  // フォームのプレースホルダーの文字色
+
+// メインカラーのコンポーネントへの反映
+$main-color: $blue;  //// メインカラー
+$link-color: $blue;  // リンクの色
+$link-hover-color: $main-color;  // リンクのホバー時の色
+$tag-color: $gray_c;  // タグの色
+$list-mark-color: $main-color;  // リストのマークの色
+$table-color: $main-color;  // テーブルの色
+$breadcrumb-text-color: $black;  // パンくずリストの非リンクテキストの文字色
+$breadcrumb-text-hover-color: $black;  // パンくずリストのリンクテキストのホバー時の文字色
+$component-shadow: $blue_hsb_b24;  // パンくずリストのリンクテキストのホバー時の文字色
+
+// -----▲ var ▲-----
+
+// ----------▲▲ color ▲▲----------
+
+
+// ----------▼▼ letter-spacing ▼▼----------
+
+// -----▼ var ▼-----
+$lsAV0: 0;
+$lsAV25: .025em;
+$lsAV50: .05em;
+$lsAV75: .075em;
+$lsAV80: .08em;
+$lsAV100: .1em;
+$lsAV120: .12em;
+$lsAV150: .15em;
+$lsAV200: .2em;
+$lsAV250: .25em;
+$lsAV300: .3em;
+$lsAV350: .35em;
+$lsAV400: .4em;
+$lsAV450: .45em;
+$lsAV500: .5em;
+// -----▲ var ▲-----
+
+// ----------▲▲ letter-spacing ▲▲----------

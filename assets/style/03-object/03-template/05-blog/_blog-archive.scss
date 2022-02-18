@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+// ブログの「一覧ページ」のスタイルです。
+// ※「taxonomy.php」や「search.php」のスタイルもこのファイルにまとめて記述する。
+
+
+// ----------▼▼ 「archive.php」のスタイル ▼▼----------
+
+.Blog.BlogArchive {
+
+  @include sp {
+  };
+  @include pc {
+  };
+
+  &.pageContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+  // ブログの投稿記事セクション
+  .Blog__post {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  .Blog__post .sectionContainer {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // ブログの投稿記事の内容（レイアウト）
+  .Blog__postContent {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // ブログの記事コンテンツのカラム
+  .Blog__postContentItem {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // メインカラム
+  .Blog__postContentItem.-main {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // サイドバー
+  // ※このサイトの投稿機能は1カラムのため、このclassは未使用
+  .Blog__postContentItem.-sidebar {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+}
+
+
+// -----▼ ブログの「一覧ページ」だけに必要なスタイル ▼-----
+
+.BlogArchive {
+
+  // 「一覧ページ」固有の内容
+  .BlogArchive__post {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事のカード
+  .BlogArchive__postCard {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事一覧
+  .BlogArchive__postCardList {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+}
+
+// -----▲ ブログの「一覧ページ」だけに必要なスタイル ▲-----
+
+
+// -----▼ ブログの「タクソノミー一覧ページ」だけに必要なスタイル ▼-----
+
+.BlogArchive.-taxonomy {
+
+  // 「タクソノミー一覧ページ」固有の内容
+  .BlogArchive__post {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事一覧の見出し
+  .BlogArchive__postArchiveTitle {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 「記事一覧の見出し」＋「記事のカード」
+  .BlogArchive__postArchiveTitle + .BlogArchive__postCard {
+    @include sp {
+      margin-top: 32px;
+    };
+    @include pc {
+      margin-top: 40px;
+    };
+  }
+  // 記事のカード
+  .BlogArchive__postCard {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事一覧
+  .BlogArchive__postCardList {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+}
+
+// -----▲ ブログの「タクソノミー一覧ページ」だけに必要なスタイル ▲-----
+
+
+// -----▼ ブログの「検索結果ページ」だけに必要なスタイル ▼-----
+
+.BlogArchive.-search {
+
+  // 「検索結果ページ」固有の内容
+  .BlogArchive__post {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事一覧の見出し
+  .BlogArchive__postArchiveTitle {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 「検索結果（検索条件、ヒット数、並び替えボタン）」＋「記事のカード」
+  #feas-result + .BlogArchive__postCard {
+    @include sp {
+      margin-top: 24px;
+    };
+    @include pc {
+      margin-top: 40px;
+    };
+  }
+  // 記事のカード
+  .BlogArchive__postCard {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+  // 記事一覧
+  .BlogArchive__postCardList {
+    @include sp {
+    };
+    @include pc {
+    };
+  }
+
+}
+
+// -----▲ ブログの「検索結果ページ」だけに必要なスタイル ▲-----
+
+
+// ---------▲▲ 「archive.php」のスタイル ▲▲----------
