@@ -19,10 +19,6 @@ export default {
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     'plugins/axios'
@@ -54,6 +50,11 @@ export default {
   },
 
   vuetify: {
+    // カスタムCSSのファイルパス
+    customVariables: ['~/assets/style/variables.scss'],
+    // カスタムCSSを有効にするフラグ
+    // Doc: https://vuetifyjs.com/en/features/sass-variables/#nuxt-install
+    treeShake: true,
     theme: {
       themes: {
         light: {
@@ -68,6 +69,22 @@ export default {
         }
       }
     }
+  },
+
+  // 汎用CSSの読み込み
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: [
+    // '~/assets/style/style.scss'
+  ],
+
+  // カスタムCSSの読み込み（変数・mixinのみ）
+  // Doc: https://github.com/nuxt-community/style-resources-module
+  styleResources: {
+    scss: [
+      // '~/assets/style/01-foundation/01-variable/_variable.scss',
+      // '~/assets/style/01-foundation/02-mixin/_mixin.scss',
+      // '~/assets/style/01-foundation/03-function/_function.scss'
+    ]
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
