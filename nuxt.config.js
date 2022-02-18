@@ -34,7 +34,9 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/vuetify
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -49,6 +51,23 @@ export default {
     // baseURL: 'http://localhost:3000'
     // クロスドメインで認証情報を共有する
     // Doc: https://axios.nuxtjs.org/options/#credentials
+  },
+
+  vuetify: {
+    theme: {
+      themes: {
+        light: {
+          primary: '4080be',
+          info: '4fc1e9',
+          success: '44d69e',
+          warning: 'feb65e',
+          error: 'fb8678',
+          background: 'f6f6f4',
+          black: '222',
+          appblue: '1c6ecd'
+        }
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
