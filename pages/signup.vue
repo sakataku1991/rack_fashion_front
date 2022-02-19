@@ -11,12 +11,15 @@
         />
         <user-form-rack-id
           :rack_id.sync="params.user.rack_id"
+          set-validation
         />
         <user-form-email
           :email.sync="params.user.email"
+          placeholder
         />
         <user-form-password
           :password.sync="params.user.password"
+          set-validation
         />
         <!-- フォームの送信ボタンはコンポーネント化せず、フォームのpageファイルに持たせること！  送信ボタンは送信するページに持たせる！ -->
         <v-btn
