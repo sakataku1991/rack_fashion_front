@@ -48,6 +48,7 @@
     "hot": "コメント数"
   },
   "menus": {
+    "question": "質問",
     "about": "サイトについて",
     "products": "製品",
     "price": "価格",

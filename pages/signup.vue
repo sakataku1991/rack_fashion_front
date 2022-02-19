@@ -42,7 +42,7 @@
 export default {
   name: 'PagesSignup',
   layout: 'before-login',
-  data () {
+  data ({ $store }) {
     return {
       isValid: false,
       loading: false,
@@ -53,7 +53,8 @@ export default {
           email: '',
           password: ''
         }
-      }
+      },
+      redirectPath: $store.state.afterSigningUp.mypagePath
     }
   },
   methods: {
@@ -63,6 +64,7 @@ export default {
         this.formReset()
         this.loading = false
       }, 1500)
+      this.$router.push(this.redirectPath)
     },
     formReset () {
       this.$refs.form.reset()

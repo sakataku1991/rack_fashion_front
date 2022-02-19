@@ -1,19 +1,29 @@
 // このファイルにアプリ共通の値やメソッドを設定していく（Vuex）
-const redirectPath = 'mypage'
-const homePath = 'projects'
+const homePath = 'index'
+const mypagePath = 'mypage'
+// const dashboardPath = 'dashboard'
 
 // 共通の変数
 export const state = () => ({
   styles: {
     homeAppBarHeight: 56
   },
+  // ログイン前・ログイン後両方の共通変数・パスの指定
+  allTime: {
+  },
+  // 会員登録時の共通変数・パスの指定
+  afterSigningUp: {
+    mypagePath: {
+      name: mypagePath
+    }
+  },
   // ログイン時の共通変数・パスの指定
   loggedIn: {
-    redirectPath: {
-      name: redirectPath
+    homePath: {
+      name: homePath
     },
     rememberPath: {
-      name: homePath,
+      name: mypagePath,
       params: {}
     },
     // ログイン後アクセス不可ルート一覧
@@ -25,7 +35,13 @@ export const state = () => ({
   },
   question: {
     current: null,
-    list: []
+    list: [
+      { id: 1, name: 'Question01', updatedAt: '2020-04-01T12:00:00+09:00' },
+      { id: 2, name: 'Question02', updatedAt: '2020-04-05T12:00:00+09:00' },
+      { id: 3, name: 'Question03', updatedAt: '2020-04-03T12:00:00+09:00' },
+      { id: 4, name: 'Question04', updatedAt: '2020-04-04T12:00:00+09:00' },
+      { id: 5, name: 'Question05', updatedAt: '2020-04-01T12:00:00+09:00' }
+    ]
   },
   user: {
     current: null,

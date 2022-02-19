@@ -52,11 +52,11 @@ export default {
       loading: false,
       params: {
         user: {
-          email: '',
-          password: ''
+          email: 'a@a.a',
+          password: 'password'
         }
       },
-      redirectPath: $store.state.loggedIn.redirectPath
+      redirectPath: $store.state.loggedIn.homePath
     }
   },
   methods: {

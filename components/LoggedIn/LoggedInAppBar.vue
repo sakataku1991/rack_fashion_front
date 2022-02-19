@@ -10,7 +10,7 @@
     color="white"
   >
     <nuxt-link
-      :to="redirectPath"
+      to="/"
       class="text-decoration-none"
     >
       <app-logo />
@@ -26,10 +26,5 @@
 
 <script>
 export default {
-  data ({ $store }) {
-    return {
-      redirectPath: $store.state.loggedIn.redirectPath
-    }
-  }
 }
 </script>

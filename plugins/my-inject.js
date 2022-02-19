@@ -6,7 +6,7 @@ class MyInject {
     this.error = ctx.error
   }
 
-  // i18nの「ページタイトル」変換用のメソッド
+  // i18nの「ページタイトル」変換
   pageTitle (routeName) {
     const jsonPath = `pages.${routeName.replace(/-/g, '.')}`
     const title = this.app.i18n.t(jsonPath)
@@ -26,7 +26,7 @@ class MyInject {
     return { name, params: { id } }
   }
 
-  // プロジェクトリンク
+  // 「質問」のリンク
   questionLinkTo (id, name = 'question-id-dashboard') {
     return { name, params: { id } }
   }
