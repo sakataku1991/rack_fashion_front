@@ -63,13 +63,13 @@
                 block
                 :height="card.height"
                 :elevation="card.elevation"
-                :to="$my.questionLinkTo(question.id)"
+                :to="$my.questionLinkTo(question.rack_id)"
                 class="v-btn text-capitalize"
               >
                 <v-card-title
                   class="pb-1 d-block text-truncate"
                 >
-                  {{ question.name }}
+                  {{ question.title }}
                 </v-card-title>
                 <v-card-text
                   class="caption"
@@ -113,13 +113,13 @@
             hide-default-footer
           >
             <template
-              #[`item.name`]="{ item }"
+              #[`item.title`]="{ item }"
             >
               <nuxt-link
-                :to="$my.questionLinkTo(item.id)"
+                :to="$my.questionLinkTo(item.rack_id)"
                 class="text-decoration-none"
               >
-                {{ item.name }}
+                {{ item.title }}
               </nuxt-link>
             </template>
             <template
@@ -156,8 +156,8 @@ export default {
       },
       tableHeaders: [
         {
-          text: '名前',
-          value: 'name'
+          text: '質問のタイトル',
+          value: 'title'
         },
         {
           text: '更新日',
@@ -182,6 +182,5 @@ export default {
 
 <style lang="scss" scoped>
 #question {
-
 }
 </style>

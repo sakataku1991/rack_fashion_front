@@ -21,14 +21,19 @@ class MyInject {
     return dateTimeFormat.format(new Date(dateStr))
   }
 
-  // ユーザーリンク
-  userLinkTo (id, name = 'user-id-mypage') {
-    return { name, params: { id } }
+  // ユーザーの「マイページ」のリンク
+  userMypageLinkTo (rack_id, name = 'rack_id-mypage') {
+    return { name, params: { rack_id } }
+  }
+
+  // ユーザーの「ダッシュボード」のリンク
+  userDashboardLinkTo (rack_id, name = 'rack_id-dashboard') {
+    return { name, params: { rack_id } }
   }
 
   // 「質問」のリンク
-  questionLinkTo (id, name = 'question-id-dashboard') {
-    return { name, params: { id } }
+  questionLinkTo (rack_id, name = 'rack_id-questions-question') {
+    return { name, params: { rack_id } }
   }
 
   // apiエラーハンドラー

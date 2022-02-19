@@ -36,16 +36,22 @@ export const state = () => ({
   question: {
     current: null,
     list: [
-      { id: 1, name: 'Question01', updatedAt: '2020-04-01T12:00:00+09:00' },
-      { id: 2, name: 'Question02', updatedAt: '2020-04-05T12:00:00+09:00' },
-      { id: 3, name: 'Question03', updatedAt: '2020-04-03T12:00:00+09:00' },
-      { id: 4, name: 'Question04', updatedAt: '2020-04-04T12:00:00+09:00' },
-      { id: 5, name: 'Question05', updatedAt: '2020-04-01T12:00:00+09:00' }
+      { id: 1, rack_id: 'rack_id1', title: 'Question01', updatedAt: '2020-04-01T12:00:00+09:00' },
+      { id: 2, rack_id: 'rack_id2', title: 'Question02', updatedAt: '2020-04-05T12:00:00+09:00' },
+      { id: 3, rack_id: 'rack_id3', title: 'Question03', updatedAt: '2020-04-03T12:00:00+09:00' },
+      { id: 4, rack_id: 'rack_id4', title: 'Question04', updatedAt: '2020-04-04T12:00:00+09:00' },
+      { id: 5, rack_id: 'rack_id5', title: 'Question05', updatedAt: '2020-04-01T12:00:00+09:00' }
     ]
   },
   user: {
     current: null,
-    list: []
+    list: [
+      { id: 1, name: 'user1', rack_id: 'rack_id1', updatedAt: '2020-04-01T12:00:00+09:00' },
+      { id: 2, name: 'user2', rack_id: 'rack_id2', updatedAt: '2020-04-05T12:00:00+09:00' },
+      { id: 3, name: 'user3', rack_id: 'rack_id3', updatedAt: '2020-04-03T12:00:00+09:00' },
+      { id: 4, name: 'user4', rack_id: 'rack_id4', updatedAt: '2020-04-04T12:00:00+09:00' },
+      { id: 5, name: 'user5', rack_id: 'rack_id5', updatedAt: '2020-04-01T12:00:00+09:00' }
+    ]
   },
   auth: {
     token: null,
