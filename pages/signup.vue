@@ -4,6 +4,7 @@
       #user-form-card-content
     >
       <v-form
+        ref="form"
         v-model="isValid"
       >
         <user-form-name
@@ -23,15 +24,16 @@
         />
         <!-- フォームの送信ボタンはコンポーネント化せず、フォームのpageファイルに持たせること！  送信ボタンは送信するページに持たせる！ -->
         <v-btn
-          :disabled="!isValid"
+          :disabled="!isValid || loading"
+          :loading="loading"
           block
           color="appblue"
           class="white--text"
+          @click="signup"
         >
           登録する
         </v-btn>
       </v-form>
-      {{ params }}
     </template>
   </user-form-card>
 </template>
@@ -43,6 +45,7 @@ export default {
   data () {
     return {
       isValid: false,
+      loading: false,
       params: {
         user: {
           name: '',
@@ -50,6 +53,21 @@ export default {
           email: '',
           password: ''
         }
+      }
+    }
+  },
+  methods: {
+    signup () {
+      this.loading = true
+      setTimeout(() => {
+        this.formReset()
+        this.loading = false
+      }, 1500)
+    },
+    formReset () {
+      this.$refs.form.reset()
+      for (const key in this.params.user) {
+        this.params.user[key] = ''
       }
     }
   }
