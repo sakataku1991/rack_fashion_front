@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'PagesDashboard',
-  layout: 'logged-in',
+  layout: 'dashboard',
   // アクセスしてほしくないページのアクセス制限
   validate ({ route }) {
     // 「dashboard」ページへのアクセス制限

@@ -27,8 +27,8 @@ class MyInject {
   }
 
   // ユーザーの「ダッシュボード」のリンク
-  userDashboardLinkTo (rack_id, name = 'rack_id-dashboard') {
-    return { name, params: { rack_id } }
+  userDashboardLinkTo (name = 'name') {
+    return { name, params: { name } }
   }
 
   // 「質問」のリンク

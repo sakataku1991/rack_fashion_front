@@ -67,14 +67,30 @@
       "settings": "アカウント設定",
       "password": "パスワード変更"
     },
-    "question": {
-      "id": {
-        "dashboard": "ダッシュボード",
-        "layouts": "レイアウト",
-        "pages": "ページ",
-        "components": "コンポーネント",
-        "settings": "設定",
-        "help": "ヘルプ"
+    "dashboard": {
+      "settings": "アカウント設定",
+      "settings": {
+        "account": "アカウント",
+        "profile": "プロフィール"
+      },
+      "relationships": "つながり",
+      "relationships": {
+        "following": "フォロー",
+        "followers": "フォロワー"
+      },
+      "items": "マイアイテム",
+      "items": {
+        "questions": "質問",
+        "comments": "コメント",
+        "tickets": "閲覧チケット",
+        "liked": "いいね！した記事",
+        "comments_can_be_viewed": "チケットを使用した記事",
+        "browsing_history": "記事の閲覧履歴"
+      },
+      "informations": "インフォメーション",
+      "informations": {
+        "notifications": "通知",
+        "news": "お知らせ"
       }
     }
   },

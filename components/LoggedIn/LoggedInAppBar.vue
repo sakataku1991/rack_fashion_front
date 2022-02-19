@@ -9,6 +9,8 @@
     :clipped-left="clippedLeft"
     color="white"
   >
+    <slot name="navigation-toggle-button" />
+
     <nuxt-link
       to="/"
       class="text-decoration-none"
@@ -26,5 +28,11 @@
 
 <script>
 export default {
+  props: {
+    clippedLeft: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
