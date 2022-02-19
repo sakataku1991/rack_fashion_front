@@ -1,5 +1,5 @@
 // このファイルにアプリ共通の値やメソッドを設定していく（Vuex）
-const redirectPath = 'dashboard'
+const redirectPath = 'mypage'
 const homePath = 'projects'
 
 // 共通の変数
