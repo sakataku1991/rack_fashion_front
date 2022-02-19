@@ -14,7 +14,7 @@
 <script>
 export default {
   props: {
-    rack_id: {
+    rackId: {
       type: String,
       default: ''
     },
@@ -25,13 +25,13 @@ export default {
   },
   computed: {
     setRackId: {
-      get () { return this.rack_id },
-      set (newVal) { return this.$emit('update:rack_id', newVal) }
+      get () { return this.rackId },
+      set (newVal) { return this.$emit('update:rackId', newVal) }
     },
     form () {
       const min = '3'
       const max = '16'
-      const msg = `${min}〜${max}文字。RACK IDは半角英数字・アンダースコアが使えます`
+      const msg = `${min}〜${max}文字。RACK IDは半角英数字・アンダースコアが使えます。`
       // ログインページ = 入力必須のバリデーションのみ
       // 会員登録ページ = 入力必須に加えて、3文字以上、＋16文字以下＋書式チェック、のバリデーション
       // 入力必須

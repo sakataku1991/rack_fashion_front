@@ -9,8 +9,8 @@
     :type="toggle.type"
     label="パスワード"
     :placeholder="form.placeholder"
-    @click:append="show = !show"
     outlined
+    @click:append="show = !show"
   />
 </template>
 
@@ -38,7 +38,7 @@ export default {
     },
     form () {
       const min = '8'
-      const msg = `${min}文字以上。パスワードは半角英数字・ハイフン・アンダースコアが使えます`
+      const msg = `${min}文字以上。パスワードは半角英数字・ハイフン・アンダースコアが使えます。`
       // ログインページ = 入力必須のバリデーションのみ
       // 会員登録ページ = 入力必須に加えて、8文字以上、＋72文字以下＋書式チェック、のバリデーション
       // 入力必須
@@ -50,7 +50,7 @@ export default {
       // バリデーションに引っかかった時のエラーメッセージ
       const hint = this.setValidation ? msg : undefined
       // プレースホルダー
-      const placeholder = this.setValidation ? min : undefined
+      const placeholder = this.setValidation ? `${min}文字以上` : undefined
       return { rules, hint, placeholder }
     },
     toggle () {

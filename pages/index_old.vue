@@ -5,7 +5,6 @@
       tile
       color="transparent"
     >
-
       <v-card-title>
         Usersテーブルの取得
       </v-card-title>
@@ -13,7 +12,7 @@
         <v-simple-table dense>
           <template
             v-if="users.length"
-            v-slot:default
+            #default
           >
             <thead>
               <tr>
@@ -80,7 +79,7 @@
       </v-card-title>
       <v-card-text>
         <v-simple-table dense>
-          <template v-slot:default>
+          <template #default>
             <thead>
               <tr>
                 <th>en</th>
@@ -99,7 +98,6 @@
           </template>
         </v-simple-table>
       </v-card-text>
-
     </v-card>
   </v-container>
 </template>

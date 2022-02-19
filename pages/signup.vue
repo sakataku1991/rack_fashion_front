@@ -11,7 +11,7 @@
           :name.sync="params.user.name"
         />
         <user-form-rack-id
-          :rack_id.sync="params.user.rack_id"
+          :rack-id.sync="params.user.rack_id"
           set-validation
         />
         <user-form-email

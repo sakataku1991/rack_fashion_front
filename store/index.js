@@ -1,4 +1,5 @@
 // このファイルにアプリ共通の値やメソッドを設定していく（Vuex）
+const redirectPath = 'dashboard'
 const homePath = 'projects'
 
 // 共通の変数
@@ -6,9 +7,10 @@ export const state = () => ({
   styles: {
     homeAppBarHeight: 56
   },
+  // ログイン時の共通変数・パスの指定
   loggedIn: {
-    homePath: {
-      name: homePath
+    redirectPath: {
+      name: redirectPath
     },
     rememberPath: {
       name: homePath,

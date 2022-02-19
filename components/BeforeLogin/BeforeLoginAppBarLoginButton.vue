@@ -5,12 +5,12 @@
     color="black"
     to="/login"
   >
-    {{ $t('pages.login') }}
+    {{ $my.pageTitle('login') }}
   </v-btn>
 </template>
 
 <script>
 export default {
-  name: 'ComponentsAppLoginButton'
+  name: 'ComponentsBeforeLoginAppBarLoginButton'
 }
 </script>
