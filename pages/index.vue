@@ -91,8 +91,6 @@ import HomeCompany from '~/components/Home/HomeCompany'
 
 export default {
   name: 'PagesIndex',
-  middleware: ['get-user-current'],
-  // middleware: ['get-question-list'],
   components: {
     HomeQuestion,
     HomeAbout,
@@ -101,6 +99,7 @@ export default {
     HomeContact,
     HomeCompany
   },
+  middleware: ['get-user-current'], // get-question-list
   data () {
     return {
       imgHeight: 500,
