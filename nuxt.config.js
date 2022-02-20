@@ -53,6 +53,11 @@ export default {
     appName: process.env.APP_NAME
   },
 
+  // すべてのページで、layoutsやpagesよりも先に読み込む
+  router: {
+    middleware: ['silent-refresh-token']
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // 環境変数API_URLが優先される
