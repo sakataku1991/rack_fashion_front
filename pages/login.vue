@@ -74,7 +74,15 @@ export default {
     },
     authSuccessful (response) {
       console.log('authSuccessful', response)
+      this.$auth.login(response)
+      console.log('token', this.$auth.token)
+      console.log('expires', this.$auth.expires)
+      console.log('payload', this.$auth.payload)
+      console.log('user', this.$auth.user)
+      // 記憶ルートへリダイレクト
       this.$router.push(this.redirectPath)
+      // 記憶ルートを初期値に戻す
+      this.$store.dispatch('getRememberPath', this.loggedInHomePath)
     },
     authFailure ({ response }) {
       // トースター出力
