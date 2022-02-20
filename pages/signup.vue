@@ -6,12 +6,13 @@
       <v-form
         ref="form"
         v-model="isValid"
+        @submit.prevent="signup"
       >
         <user-form-name
           :name.sync="params.user.name"
         />
         <user-form-rack-id
-          :rack_id.sync="params.user.rack_id"
+          :rack-id.sync="params.user.rack_id"
           set-validation
         />
         <user-form-email
@@ -24,12 +25,12 @@
         />
         <!-- フォームの送信ボタンはコンポーネント化せず、フォームのpageファイルに持たせること！  送信ボタンは送信するページに持たせる！ -->
         <v-btn
+          type="submit"
           :disabled="!isValid || loading"
           :loading="loading"
           block
           color="appblue"
           class="white--text"
-          @click="signup"
         >
           登録する
         </v-btn>
@@ -42,18 +43,19 @@
 export default {
   name: 'PagesSignup',
   layout: 'before-login',
-  data () {
+  data ({ $store }) {
     return {
       isValid: false,
       loading: false,
       params: {
         user: {
-          name: '',
-          rack_id: '',
-          email: '',
-          password: ''
+          name: 'さかたく',
+          rack_id: 'sakataku1991',
+          email: 'sakataku1991@gmail.com',
+          password: 'password'
         }
-      }
+      },
+      redirectPath: $store.state.afterSigningUp.mypagePath
     }
   },
   methods: {
@@ -63,6 +65,7 @@ export default {
         this.formReset()
         this.loading = false
       }, 1500)
+      this.$router.push(this.redirectPath)
     },
     formReset () {
       this.$refs.form.reset()

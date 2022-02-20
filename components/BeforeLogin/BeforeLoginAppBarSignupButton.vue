@@ -5,12 +5,12 @@
     color="appblue"
     to="/signup"
   >
-    {{ $t('pages.signup') }}
+    {{ $my.pageTitle('signup') }}
   </v-btn>
 </template>
 
 <script>
 export default {
-  name: 'ComponentsAppSignupButton'
+  name: 'ComponentsBeforeLoginAppBarSignupButton'
 }
 </script>

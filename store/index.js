@@ -1,17 +1,29 @@
 // このファイルにアプリ共通の値やメソッドを設定していく（Vuex）
-const homePath = 'projects'
+const homePath = 'index'
+const mypagePath = 'mypage'
+// const dashboardPath = 'dashboard'
 
 // 共通の変数
 export const state = () => ({
   styles: {
     homeAppBarHeight: 56
   },
+  // ログイン前・ログイン後両方の共通変数・パスの指定
+  allTime: {
+  },
+  // 会員登録時の共通変数・パスの指定
+  afterSigningUp: {
+    mypagePath: {
+      name: mypagePath
+    }
+  },
+  // ログイン時の共通変数・パスの指定
   loggedIn: {
     homePath: {
       name: homePath
     },
     rememberPath: {
-      name: homePath,
+      name: mypagePath,
       params: {}
     },
     // ログイン後アクセス不可ルート一覧
@@ -23,11 +35,23 @@ export const state = () => ({
   },
   question: {
     current: null,
-    list: []
+    list: [
+      { id: 1, rack_id: 'rack_id1', title: 'Question01', updatedAt: '2020-04-01T12:00:00+09:00' },
+      { id: 2, rack_id: 'rack_id2', title: 'Question02', updatedAt: '2020-04-05T12:00:00+09:00' },
+      { id: 3, rack_id: 'rack_id3', title: 'Question03', updatedAt: '2020-04-03T12:00:00+09:00' },
+      { id: 4, rack_id: 'rack_id4', title: 'Question04', updatedAt: '2020-04-04T12:00:00+09:00' },
+      { id: 5, rack_id: 'rack_id5', title: 'Question05', updatedAt: '2020-04-01T12:00:00+09:00' }
+    ]
   },
   user: {
     current: null,
-    list: []
+    list: [
+      { id: 1, name: 'user1', rack_id: 'rack_id1', updatedAt: '2020-04-01T12:00:00+09:00' },
+      { id: 2, name: 'user2', rack_id: 'rack_id2', updatedAt: '2020-04-05T12:00:00+09:00' },
+      { id: 3, name: 'user3', rack_id: 'rack_id3', updatedAt: '2020-04-03T12:00:00+09:00' },
+      { id: 4, name: 'user4', rack_id: 'rack_id4', updatedAt: '2020-04-04T12:00:00+09:00' },
+      { id: 5, name: 'user5', rack_id: 'rack_id5', updatedAt: '2020-04-01T12:00:00+09:00' }
+    ]
   },
   auth: {
     token: null,
@@ -78,19 +102,16 @@ export const mutations = {
 
 // アプリ全体のメソッド
 export const actions = {
-  getQuestionList ({ commit }, projects) {
-    projects = projects || []
-    commit('setQuestionList', projects)
+  getQuestionList ({ commit }, questions) {
+    questions = questions || []
+    commit('setQuestionList', questions)
   },
   // { state, getters, commit, dispatch, rootState, rootGetters }
   // rootState => ルート(store/index.js)のstateを取得(rootState = state)
   getCurrentQuestion ({ state, commit }, params) {
-    let currentQuestion = null
-    if (params && params.id) {
-      const id = Number(params.id)
-      currentQuestion =
-        state.question.list.find(question => question.id === id) || null
-    }
+    const id = Number(params.id)
+    const currentQuestion =
+      state.question.list.find(question => question.id === id) || null
     commit('setCurrentQuestion', currentQuestion)
   },
   // ユーザー
@@ -98,9 +119,13 @@ export const actions = {
     users = users || []
     commit('setUserList', users)
   },
-  getCurrentUser ({ commit }, user) {
-    commit('setCurrentUser', user)
+  getCurrentUser ({ state, commit }, params) {
+    const id = Number(params.id)
+    const currentUser =
+      state.user.list.find(user => user.id === id) || null
+    commit('setCurrentUser', currentUser)
   },
+  // AuthToken
   getAuthToken ({ commit }, token) {
     commit('setAuthToken', token)
   },

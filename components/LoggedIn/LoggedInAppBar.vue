@@ -4,9 +4,13 @@
   <!-- Doc: https://vuetifyjs.com/ja/api/v-app-bar/ -->
   <v-app-bar
     app
-    :height="homeAppBarHeight"
+    dense
+    elevation="1"
+    :clipped-left="clippedLeft"
     color="white"
   >
+    <slot name="navigation-toggle-button" />
+
     <nuxt-link
       to="/"
       class="text-decoration-none"
@@ -14,22 +18,20 @@
       <app-logo />
     </nuxt-link>
 
-    <app-title
-      class="hidden-mobile-and-down"
-    />
+    <app-title />
 
     <v-spacer />
 
-    <before-login-app-bar-signup-button />
-    <before-login-app-bar-login-button />
+    <logged-in-app-bar-account-menu />
   </v-app-bar>
 </template>
 
 <script>
 export default {
-  data ({ $store }) {
-    return {
-      homeAppBarHeight: $store.state.styles.homeAppBarHeight
+  props: {
+    clippedLeft: {
+      type: Boolean,
+      default: false
     }
   }
 }

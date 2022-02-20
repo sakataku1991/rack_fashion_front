@@ -45,7 +45,6 @@
           v-for="(menu, i) in menus"
           :key="`menu-${i}`"
         >
-
           <v-col
             :id="menu.title"
             cols="12"
@@ -83,6 +82,7 @@
 
 <script>
 // 「:is」でコンポーネントを呼び出す場合は、以下のようにコンポーネントを「import」して「components」する必要がある
+import HomeQuestion from '~/components/Home/HomeQuestion'
 import HomeAbout from '~/components/Home/HomeAbout'
 import HomeProducts from '~/components/Home/HomeProducts'
 import HomePrice from '~/components/Home/HomePrice'
@@ -92,6 +92,7 @@ import HomeCompany from '~/components/Home/HomeCompany'
 export default {
   name: 'PagesIndex',
   components: {
+    HomeQuestion,
     HomeAbout,
     HomeProducts,
     HomePrice,
@@ -102,6 +103,7 @@ export default {
     return {
       imgHeight: 500,
       menus: [
+        { title: 'question', subtitle: '最近の質問の一覧' },
         { title: 'about', subtitle: 'このサイトはブログ"独学プログラマ"で公開されているチュートリアルのデモアプリケーションです' },
         { title: 'products', subtitle: '他にはない優れた機能の数々' },
         { title: 'price', subtitle: '会社の成長に合わせた3つのプラン' },
