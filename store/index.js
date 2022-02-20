@@ -102,19 +102,16 @@ export const mutations = {
 
 // アプリ全体のメソッド
 export const actions = {
-  getQuestionList ({ commit }, projects) {
-    projects = projects || []
-    commit('setQuestionList', projects)
+  getQuestionList ({ commit }, questions) {
+    questions = questions || []
+    commit('setQuestionList', questions)
   },
   // { state, getters, commit, dispatch, rootState, rootGetters }
   // rootState => ルート(store/index.js)のstateを取得(rootState = state)
   getCurrentQuestion ({ state, commit }, params) {
-    let currentQuestion = null
-    if (params && params.id) {
-      const id = Number(params.id)
-      currentQuestion =
-        state.question.list.find(question => question.id === id) || null
-    }
+    const id = Number(params.id)
+    const currentQuestion =
+      state.question.list.find(question => question.id === id) || null
     commit('setCurrentQuestion', currentQuestion)
   },
   // ユーザー
@@ -122,9 +119,13 @@ export const actions = {
     users = users || []
     commit('setUserList', users)
   },
-  getCurrentUser ({ commit }, user) {
-    commit('setCurrentUser', user)
+  getCurrentUser ({ state, commit }, params) {
+    const id = Number(params.id)
+    const currentUser =
+      state.user.list.find(user => user.id === id) || null
+    commit('setCurrentUser', currentUser)
   },
+  // AuthToken
   getAuthToken ({ commit }, token) {
     commit('setAuthToken', token)
   },

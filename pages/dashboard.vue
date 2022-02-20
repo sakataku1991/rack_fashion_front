@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    {{ $store.state.user.current }}
     <nuxt-child />
   </v-container>
 </template>

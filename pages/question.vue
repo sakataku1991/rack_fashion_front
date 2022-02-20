@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    「pages」の「question.vue」
     <nuxt-child />
   </v-container>
 </template>

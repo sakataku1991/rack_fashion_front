@@ -1,12 +1,18 @@
 <template>
   <v-app>
-    <nuxt />
+    <before-login-app-bar />
+    <v-main>
+      「layouts」の「question.vue」
+      <nuxt />
+    </v-main>
+    <app-footer />
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'LayoutsQuestion'
+  name: 'LayoutsQuestion',
+  middleware: 'get-question-current'
 }
 </script>
 

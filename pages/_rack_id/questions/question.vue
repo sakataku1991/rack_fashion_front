@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'PagesRackidQuestionsQuestion',
-  layout: 'before-login'
+  name: 'PagesRackidQuestionsQuestion'
 }
 </script>

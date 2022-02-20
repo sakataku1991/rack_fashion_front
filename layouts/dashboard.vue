@@ -1,6 +1,5 @@
 <template>
   <v-app>
-
     <!-- 「ダッシュボード」のツールバー -->
     <logged-in-app-bar
       clipped-left
@@ -32,6 +31,7 @@
 <script>
 export default {
   name: 'LayoutsDashboard',
+  middleware: ['get-user-current'],
   data () {
     return {
       drawer: null

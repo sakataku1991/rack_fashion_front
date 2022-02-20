@@ -7,6 +7,7 @@
       <v-form
         ref="form"
         v-model="isValid"
+        @submit.prevent="login"
       >
         <user-form-email
           :email.sync="params.user.email"
@@ -27,12 +28,12 @@
           class="px-0"
         >
           <v-btn
+            type="submit"
             :disabled="!isValid || loading"
             :loading="loading"
             block
             color="appblue"
             class="white--text"
-            @click="login"
           >
             ログイン
           </v-btn>

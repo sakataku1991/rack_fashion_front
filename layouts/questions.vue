@@ -11,7 +11,8 @@
 
 <script>
 export default {
-  name: 'LayoutsQuestions'
+  name: 'LayoutsQuestions',
+  middleware: ['get-question-current']
 }
 </script>
 
