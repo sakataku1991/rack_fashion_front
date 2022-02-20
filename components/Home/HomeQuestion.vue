@@ -63,7 +63,7 @@
                 block
                 :height="card.height"
                 :elevation="card.elevation"
-                :to="$my.questionLinkTo(question.rack_id)"
+                :to="$my.questionLinkTo(question.author_rack_id)"
                 class="v-btn text-capitalize"
               >
                 <v-card-title
@@ -116,7 +116,7 @@
               #[`item.title`]="{ item }"
             >
               <nuxt-link
-                :to="$my.questionLinkTo(item.rack_id)"
+                :to="$my.questionLinkTo(item.author_rack_id)"
                 class="text-decoration-none"
               >
                 {{ item.title }}

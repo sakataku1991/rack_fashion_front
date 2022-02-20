@@ -33,16 +33,12 @@ export const state = () => ({
       'login'
     ]
   },
+  // 「質問」のデータ
   question: {
     current: null,
-    list: [
-      { id: 1, rack_id: 'rack_id1', title: 'Question01', updatedAt: '2020-04-01T12:00:00+09:00' },
-      { id: 2, rack_id: 'rack_id2', title: 'Question02', updatedAt: '2020-04-05T12:00:00+09:00' },
-      { id: 3, rack_id: 'rack_id3', title: 'Question03', updatedAt: '2020-04-03T12:00:00+09:00' },
-      { id: 4, rack_id: 'rack_id4', title: 'Question04', updatedAt: '2020-04-04T12:00:00+09:00' },
-      { id: 5, rack_id: 'rack_id5', title: 'Question05', updatedAt: '2020-04-01T12:00:00+09:00' }
-    ]
+    list: []
   },
+  // 「ユーザー」のデータ
   user: {
     current: null,
     list: [
