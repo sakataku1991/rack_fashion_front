@@ -91,7 +91,8 @@ import HomeCompany from '~/components/Home/HomeCompany'
 
 export default {
   name: 'PagesIndex',
-  middleware: ['get-question-list'],
+  middleware: ['get-user-current'],
+  // middleware: ['get-question-list'],
   components: {
     HomeQuestion,
     HomeAbout,
