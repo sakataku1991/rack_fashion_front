@@ -57,6 +57,7 @@ export default {
     // baseURL: 'http://localhost:3000'
     // クロスドメインで認証情報を共有する
     // Doc: https://axios.nuxtjs.org/options/#credentials
+    credentials: true
   },
 
   vuetify: {

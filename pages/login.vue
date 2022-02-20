@@ -10,10 +10,10 @@
         @submit.prevent="login"
       >
         <user-form-email
-          :email.sync="params.user.email"
+          :email.sync="params.auth.email"
         />
         <user-form-password
-          :password.sync="params.user.password"
+          :password.sync="params.auth.password"
         />
         <!-- フォームの送信ボタンはコンポーネント化せず、フォームのpageファイルに持たせること！  送信ボタンは送信するページに持たせる！ -->
         <v-card-actions>
@@ -52,8 +52,9 @@ export default {
       isValid: false,
       loading: false,
       params: {
-        user: {
-          email: 'a@a.a',
+        auth: {
+          // TODO 本番環境反映前には以下の値を削除する！
+          email: 'user0@example.com',
           password: 'password'
         }
       },
@@ -61,9 +62,28 @@ export default {
     }
   },
   methods: {
-    login () {
+    async login () {
       this.loading = true
+      if (this.isValid) {
+        await this.$axios.$post('/api/v1/auth_token', this.params)
+          .then(response => this.authSuccessful(response))
+          .catch(error => this.authFailure(error))
+      }
+      this.loading = false
       this.$router.push(this.redirectPath)
+    },
+    authSuccessful (response) {
+      console.log('authSuccessful', response)
+      this.$router.push(this.redirectPath)
+    },
+    authFailure ({ response }) {
+      // トースター出力
+      if (response && response.status === 404) {
+        const msg = 'ユーザーが見つかりません😥'
+        return this.$store.dispatch('getToast', { msg })
+      }
+      // エラー処理
+      return this.$my.apiErrorHandler(response)
     }
   }
 }
