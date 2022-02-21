@@ -20,11 +20,13 @@ export const state = () => ({
   },
   // ログイン時の共通変数・パスの指定
   loggedIn: {
+    // ログイン後の初期表示画面
     homePath: {
       name: homePath
     },
+    // 記憶したルート
     rememberPath: {
-      name: mypagePath,
+      name: homePath,
       params: {}
     },
     // ログイン後アクセス不可ルート一覧

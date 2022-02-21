@@ -58,32 +58,36 @@ export default {
           password: 'password'
         }
       },
-      redirectPath: $store.state.loggedIn.homePath
+      // 記憶したルート
+      redirectPath: $store.state.loggedIn.rememberPath,
+      // ログイン後の初期表示画面
+      loggedInHomePath: $store.state.loggedIn.homePath
     }
   },
   methods: {
+    // ログイン処理
     async login () {
       this.loading = true
       if (this.isValid) {
         await this.$axios.$post('/api/v1/auth_token', this.params)
+          // ログイン成功時の処理
           .then(response => this.authSuccessful(response))
+          // ログイン失敗時の処理
           .catch(error => this.authFailure(error))
       }
       this.loading = false
       this.$router.push(this.redirectPath)
     },
+    // ログイン成功時の処理
     authSuccessful (response) {
-      console.log('authSuccessful', response)
+      // ログイン後のレスポンス
       this.$auth.login(response)
-      console.log('token', this.$auth.token)
-      console.log('expires', this.$auth.expires)
-      console.log('payload', this.$auth.payload)
-      console.log('user', this.$auth.user)
-      // 記憶ルートへリダイレクト
+      // 記憶したルート（redirectPath）へリダイレクトし
       this.$router.push(this.redirectPath)
-      // 記憶ルートを初期値に戻す
+      // 記憶ルートを初期値（loggedInHomePath）に戻す
       this.$store.dispatch('getRememberPath', this.loggedInHomePath)
     },
+    // ログイン失敗時の処理
     authFailure ({ response }) {
       // トースター出力
       if (response && response.status === 404) {
