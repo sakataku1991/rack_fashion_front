@@ -22,6 +22,7 @@
 
     <before-login-app-bar-signup-button />
     <before-login-app-bar-login-button />
+    <before-login-app-bar-logout-button />
   </v-app-bar>
 </template>
 
