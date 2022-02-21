@@ -30,6 +30,7 @@ export const state = () => ({
       params: {}
     },
     // ログイン後アクセス不可ルート一覧
+    // （「middleware」の「logged-in-redirect.js」）
     redirectPaths: [
       'signup',
       'login'

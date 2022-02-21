@@ -11,6 +11,8 @@
 
 <script>
 export default {
-  name: 'LayoutsBeforeLogin'
+  name: 'LayoutsBeforeLogin',
+  // ログイン済みユーザーにアクセスさせない、リダイレクト処理
+  middleware: ['logged-in-redirect']
 }
 </script>
