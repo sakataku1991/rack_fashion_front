@@ -1,3 +1,4 @@
+// アプリ全体で共通で使用する、オリジナルの関数や値
 class MyInject {
   // Nuxtのcontextを使用するには、constructor内で初期化する
   constructor (ctx) {
@@ -36,7 +37,7 @@ class MyInject {
     return { name, params: { rack_id } }
   }
 
-  // apiエラーハンドラー
+  // APIのエラーハンドラー
   apiErrorHandler (response) {
     // ネットワークエラーの場合はresponseが存在しないので500を代入
     const statusCode = (response) ? response.status : 500
