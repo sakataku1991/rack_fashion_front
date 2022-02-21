@@ -76,7 +76,6 @@ export default {
           .catch(error => this.authFailure(error))
       }
       this.loading = false
-      this.$router.push(this.redirectPath)
     },
     // ログイン成功時の処理
     authSuccessful (response) {
