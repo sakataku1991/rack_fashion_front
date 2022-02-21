@@ -30,7 +30,7 @@
             class="subheading"
             :style="{ letterSpacing: '5px' }"
           >
-            中小企業に特化した事業計画策定ツール
+            {{ $store.state.user.current }}
           </h4>
         </v-col>
       </v-row>
@@ -99,6 +99,7 @@ export default {
     HomeContact,
     HomeCompany
   },
+  // middleware: ['get-user-current'],
   data () {
     return {
       imgHeight: 500,

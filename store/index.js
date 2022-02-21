@@ -5,6 +5,7 @@ const mypagePath = 'mypage'
 
 // 共通の変数
 export const state = () => ({
+  // ヘッダー
   styles: {
     homeAppBarHeight: 56
   },
@@ -19,45 +20,39 @@ export const state = () => ({
   },
   // ログイン時の共通変数・パスの指定
   loggedIn: {
+    // ログイン後の初期表示画面
     homePath: {
       name: homePath
     },
+    // 記憶したルート
     rememberPath: {
-      name: mypagePath,
+      name: homePath,
       params: {}
     },
     // ログイン後アクセス不可ルート一覧
+    // （「middleware」の「logged-in-redirect.js」）
     redirectPaths: [
-      'index',
       'signup',
       'login'
     ]
   },
+  // 「質問」のデータ
   question: {
     current: null,
-    list: [
-      { id: 1, rack_id: 'rack_id1', title: 'Question01', updatedAt: '2020-04-01T12:00:00+09:00' },
-      { id: 2, rack_id: 'rack_id2', title: 'Question02', updatedAt: '2020-04-05T12:00:00+09:00' },
-      { id: 3, rack_id: 'rack_id3', title: 'Question03', updatedAt: '2020-04-03T12:00:00+09:00' },
-      { id: 4, rack_id: 'rack_id4', title: 'Question04', updatedAt: '2020-04-04T12:00:00+09:00' },
-      { id: 5, rack_id: 'rack_id5', title: 'Question05', updatedAt: '2020-04-01T12:00:00+09:00' }
-    ]
+    list: []
   },
+  // 「ユーザー」のデータ
   user: {
     current: null,
-    list: [
-      { id: 1, name: 'user1', rack_id: 'rack_id1', updatedAt: '2020-04-01T12:00:00+09:00' },
-      { id: 2, name: 'user2', rack_id: 'rack_id2', updatedAt: '2020-04-05T12:00:00+09:00' },
-      { id: 3, name: 'user3', rack_id: 'rack_id3', updatedAt: '2020-04-03T12:00:00+09:00' },
-      { id: 4, name: 'user4', rack_id: 'rack_id4', updatedAt: '2020-04-04T12:00:00+09:00' },
-      { id: 5, name: 'user5', rack_id: 'rack_id5', updatedAt: '2020-04-01T12:00:00+09:00' }
-    ]
+    list: []
   },
+  // AuthToken
   auth: {
     token: null,
     expires: 0,
     payload: {}
   },
+  // トースト通知
   toast: {
     msg: null,
     color: 'error',
@@ -109,9 +104,12 @@ export const actions = {
   // { state, getters, commit, dispatch, rootState, rootGetters }
   // rootState => ルート(store/index.js)のstateを取得(rootState = state)
   getCurrentQuestion ({ state, commit }, params) {
-    const id = Number(params.id)
-    const currentQuestion =
-      state.question.list.find(question => question.id === id) || null
+    let currentQuestion = null
+    if (params && params.id) {
+      const id = Number(params.id)
+      currentQuestion =
+        state.question.list.find(question => question.id === id) || null
+    }
     commit('setCurrentQuestion', currentQuestion)
   },
   // ユーザー
@@ -119,11 +117,8 @@ export const actions = {
     users = users || []
     commit('setUserList', users)
   },
-  getCurrentUser ({ state, commit }, params) {
-    const id = Number(params.id)
-    const currentUser =
-      state.user.list.find(user => user.id === id) || null
-    commit('setCurrentUser', currentUser)
+  getCurrentUser ({ commit }, user) {
+    commit('setCurrentUser', user)
   },
   // AuthToken
   getAuthToken ({ commit }, token) {
