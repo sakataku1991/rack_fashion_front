@@ -9,6 +9,7 @@
 export default {
   name: 'PagesDashboard',
   layout: 'dashboard',
+  middleware: ['authentication'],
   // アクセスしてほしくないページのアクセス制限
   validate ({ route }) {
     // 「dashboard」ページへのアクセス制限

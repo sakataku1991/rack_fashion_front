@@ -99,7 +99,7 @@ export default {
     HomeContact,
     HomeCompany
   },
-  middleware: ['get-user-current'], // get-question-list
+  // middleware: ['get-user-current'],
   data () {
     return {
       imgHeight: 500,

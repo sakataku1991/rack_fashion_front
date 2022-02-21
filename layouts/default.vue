@@ -7,6 +7,7 @@
 <script>
 export default {
   name: 'LayoutsDefault'
+  // middleware: ['get-question-list', 'get-question-current']
 }
 </script>
 
