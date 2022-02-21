@@ -12,7 +12,7 @@
 <script>
 export default {
   name: 'LayoutsQuestion',
-  middleware: 'get-question-current'
+  middleware: ['get-question-list', 'get-question-current']
 }
 </script>
 
