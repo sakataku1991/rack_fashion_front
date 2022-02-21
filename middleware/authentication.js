@@ -1,6 +1,6 @@
-export default async ({ $auth, route, redirect }) => {
+export default async ({ $auth, store, route, redirect }) => {
   // リダイレクトを必要としないパス
-  const notRedirectPaths = ['account', 'project']
+  const notRedirectPaths = ['account', 'question']
   if (notRedirectPaths.includes(route.name)) {
     return false
   }
@@ -12,12 +12,10 @@ export default async ({ $auth, route, redirect }) => {
 
     const msg = 'まずはログインしてください'
     const color = 'info'
-    // TODO test
-    console.log(msg, color)
-    // TODO トースター出力
-    // store.dispatch('getToast', { msg, color })
-    // TODO アクセスルート記憶
-    // store.dispatch('getRememberPath', route)
+    // トースター出力
+    store.dispatch('getToast', { msg, color })
+    // アクセスルート記憶
+    store.dispatch('getRememberPath', route)
     return redirect('/login')
   }
 }

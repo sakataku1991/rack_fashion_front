@@ -5,6 +5,7 @@ const mypagePath = 'mypage'
 
 // 共通の変数
 export const state = () => ({
+  // ヘッダー
   styles: {
     homeAppBarHeight: 56
   },
@@ -42,11 +43,13 @@ export const state = () => ({
     current: null,
     list: []
   },
+  // AuthToken
   auth: {
     token: null,
     expires: 0,
     payload: {}
   },
+  // トースト通知
   toast: {
     msg: null,
     color: 'error',
