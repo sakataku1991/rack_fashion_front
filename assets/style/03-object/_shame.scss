@@ -6,6 +6,18 @@
 
 // ----------▼▼ 対Vuetifyスタイル ▼▼----------
 
+// -----▼ 全体へ影響 ▼-----
+// pタグ
+.v-application p {
+  @include sp {
+    margin-bottom: 0 !important;
+  };
+  @include pc {
+    margin-bottom: 0 !important;
+  };
+}
+// -----▲ 全体へ影響 ▲-----
+
 // -----▼ フォームのレイアウト ▼-----
 // フォームの内容
 .form-header + .v-application {

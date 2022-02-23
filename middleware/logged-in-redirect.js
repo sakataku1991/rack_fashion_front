@@ -1,3 +1,4 @@
+// ログイン済みユーザーのリダイレクト設定
 export default ({ $auth, store, route, redirect }) => {
   // ログイン済ユーザーをリダイレクトさせる
   const redirectPaths = store.state.loggedIn.redirectPaths

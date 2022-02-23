@@ -1,115 +1,233 @@
 <template>
-  <v-app-bar
+  <header id="header" class="Header">
+    <div class="contentBoxSp contentBoxMaxPc">
+      <div class="Header__content">
+        <!-- 「RACK」のロゴ -->
+        <div class="Header__brandCI">
+          <h1 class="Header__brandLogo">
+            <link-logo
+              class="Header__brandLogoLink"
+            />
+          </h1>
+        </div>
+        <nav class="Header__actionArea">
+          <div class="Header__actionIcons">
+            <!-- 検索ボタン -->
+            <div class="Header__actionIconsSearch">
+              <button-search-link
+                class="Header__actionIconsSearchBtn"
+              />
+            </div>
+          </div>
+          <div class="Header__actionButtons">
+            <!-- 「ログイン」ボタン -->
+            <button-login
+              class="Header__actionButtonsLoginBtn"
+            />
+            <!-- 「会員登録」ボタン -->
+            <button-signup
+              class="Header__actionButtonsSignupBtn"
+            />
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- <v-app-bar
     app
-    :dark="!isScrollPoint"
     :height="homeAppBarHeight"
-    :color="toolbarStyle.color"
-    :elevation="toolbarStyle.elevation"
+    color="white"
   >
-    <!-- 子供コンポーネントに「@click」を追加する時は、「native」拡張子を付けること！ -->
-    <app-logo
-      @click.native="$vuetify.goTo('#scroll-top')"
-    />
-    <app-title
-      class="hidden-mobile-and-down"
-    />
+    <nuxt-link
+      to="/"
+      class="text-decoration-none"
+    >
+      <app-logo />
+    </nuxt-link>
 
     <v-spacer />
 
-    <v-toolbar-items
-      class="ml-2 hidden-ipad-and-down"
-    >
-      <v-btn
-        v-for="(menu, i) in menus"
-        :key="`menu-btn-${i}`"
-        text
-        :class="{ 'hidden-sm-and-down': (menu.title === 'about') }"
-        @click="$vuetify.goTo(`#${menu.title}`)"
-      >
-        {{ $t(`menus.${menu.title}`) }}
-      </v-btn>
-    </v-toolbar-items>
-
-    <before-login-app-bar-signup-button />
+    // ログインボタン
     <before-login-app-bar-login-button />
-    <before-login-app-bar-logout-button />
 
-    <v-menu
-      bottom
-      nudge-left="110"
-      nudge-width="100"
-    >
-      <template
-        #activator="{ on }"
-      >
-        <v-app-bar-nav-icon
-          class="hidden-ipad-and-up"
-          v-on="on"
-        />
-      </template>
-      <v-list
-        dense
-        class="hidden-ipad-and-up"
-      >
-        <v-list-item
-          v-for="(menu, i) in menus"
-          :key="`menu-list-${i}`"
-          exact
-          @click="$vuetify.goTo(`#${menu.title}`)"
-        >
-          <v-list-item-title>
-            {{ $t(`menus.${menu.title}`) }}
-          </v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-  </v-app-bar>
+    // 会員登録ボタン
+    <before-login-app-bar-signup-button />
+  </v-app-bar> -->
 </template>
 
 <script>
 export default {
-  name: 'ComponentsHomeAppBar',
-  // 環境変数の呼び出し
-  props: {
-    menus: {
-      type: Array,
-      default: () => []
-    },
-    imgHeight: {
-      type: Number,
-      default: 0
-    }
-  },
-  // 「$store」でVuex（index.js）の値を呼び出している
+  name: 'ComponentsBeforeLoginAppBar',
   data ({ $store }) {
     return {
-      scrollY: 0,
-      homeAppBarHeight: $store.state.styles.homeAppBarHeight
-    }
-  },
-  computed: {
-    isScrollPoint () {
-      return this.scrollY > (this.imgHeight - this.homeAppBarHeight)
-    },
-    toolbarStyle () {
-      const color = this.isScrollPoint ? 'white' : 'transparent'
-      const elevation = this.isScrollPoint ? 4 : 0
-      return { color, elevation }
-    }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
-  },
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.onScroll)
-  },
-  methods: {
-    onScroll () {
-      this.scrollY = window.scrollY
+      homeAppBarHeight: $store.state.styles.homeAppBarHeight,
+      isActivePopoverMenuUserInformation: false,
+      isActivePopoverMenuUserAvatar: false
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+// ヘッダー全体
+.Header {
+  align-items: center;
+  background-color: $white;
+  display: flex;
+  @include sp {
+    border-bottom: 1px solid $blue_grayBoader;
+  };
+  @include pc {
+    border-bottom: 1px solid $blue_grayBoader;
+  };
+}
+// ヘッダーの中身
+.Header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  @include sp {
+  };
+  @include pc {
+    height: 100%;
+  };
+}
+// ヘッダーのロゴ部分全体
+.Header__brandCI {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「RACK」のロゴ
+.Header__brandLogo {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Header__brandLogoLink {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ヘッダーのアクション部分全体
+.Header__actionArea {
+  align-items: center;
+  display: flex;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ヘッダーのアクション｜アイコン系
+.Header__actionIcons {
+  align-items: center;
+  display: flex;
+  @include sp {
+    gap: 8px;
+  };
+  @include pc {
+    gap: 12px;
+  };
+}
+// 検索ボタン
+.Header__actionIconsSearch {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Header__actionIconsSearchBtn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// インフォメーション（通知・お知らせ）ボタン
+.Header__actionIconsNotification {
+  position: relative;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Header__actionIconsNotificationBtn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 通知のバッヂ（赤い丸）
+.Header__actionIconsNotificationBadge {
+  position: absolute;
+  @include sp {
+    right: -1px;
+    top: -1px;
+  };
+  @include pc {
+    right: 2px;
+    top: 2px;
+  };
+}
+.Header__actionIconsNotificationPopover {
+  position: absolute !important;
+  @include sp {
+    left: calc(50% - calc(100vw / 2));
+    top: 57px;
+  };
+  @include pc {
+    left: calc(50% - calc(320px / 2));
+    top: 46px;
+  };
+}
+// ヘッダーのアクション｜ボタン系
+.Header__actionButtons {
+  align-items: center;
+  display: flex;
+  @include sp {
+    gap: 12px;
+    margin-left: 20px;
+  };
+  @include pc {
+    gap: 16px;
+    margin-left: 24px;
+  };
+}
+// 「ログイン」ボタン
+.Header__actionButtonsLoginBtn {
+  @include sp {
+    padding: 2px 6px;
+  };
+  @include pc {
+    padding: 3px 12px;
+  };
+}
+::v-deep .Header__actionButtonsLoginBtn .btn-text {
+  @include sp {
+    font-size: 1.3rem;
+  };
+  @include pc {
+    font-size: 1.4rem;
+  };
+}
+// 「会員登録」ボタン
+.Header__actionButtonsSignupBtn {
+  @include sp {
+    padding: 2px 6px;
+  };
+  @include pc {
+    padding: 3px 12px;
+  };
+}
+::v-deep .Header__actionButtonsSignupBtn .btn-text {
+  @include sp {
+    font-size: 1.3rem;
+  };
+  @include pc {
+    font-size: 1.4rem;
+  };
+}
 </style>

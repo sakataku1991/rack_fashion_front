@@ -1,10 +1,5 @@
 <template>
   <v-app>
-    <home-app-bar
-      :menus="menus"
-      :img-height="imgHeight"
-    />
-
     <v-img
       id="scroll-top"
       dark
@@ -24,7 +19,7 @@
           <h1
             class="display-1 mb-4"
           >
-            未来を作ろう。ワクワクしよう。
+            RACKへようこそ！
           </h1>
           <h4
             class="subheading"
@@ -76,40 +71,34 @@
         </v-row>
       </v-container>
     </v-sheet>
-    <app-footer />
   </v-app>
 </template>
 
 <script>
 // 「:is」でコンポーネントを呼び出す場合は、以下のようにコンポーネントを「import」して「components」する必要がある
+import HomeUser from '~/components/Home/HomeUser'
 import HomeQuestion from '~/components/Home/HomeQuestion'
-import HomeAbout from '~/components/Home/HomeAbout'
-import HomeProducts from '~/components/Home/HomeProducts'
-import HomePrice from '~/components/Home/HomePrice'
-import HomeContact from '~/components/Home/HomeContact'
-import HomeCompany from '~/components/Home/HomeCompany'
 
 export default {
   name: 'PagesIndex',
+  layout: 'before-login',
   components: {
-    HomeQuestion,
-    HomeAbout,
-    HomeProducts,
-    HomePrice,
-    HomeContact,
-    HomeCompany
+    HomeUser,
+    HomeQuestion
   },
-  // middleware: ['get-user-current'],
+  middleware: ['get-user-list'],
+  async asyncData ({ $axios }) {
+    let users = []
+    await $axios.$get('/api/v1/users').then(res => (users = res))
+    const userKeys = Object.keys(users[0] || {})
+    return { users, userKeys }
+  },
   data () {
     return {
       imgHeight: 500,
       menus: [
-        { title: 'question', subtitle: '最近の質問の一覧' },
-        { title: 'about', subtitle: 'このサイトはブログ"独学プログラマ"で公開されているチュートリアルのデモアプリケーションです' },
-        { title: 'products', subtitle: '他にはない優れた機能の数々' },
-        { title: 'price', subtitle: '会社の成長に合わせた3つのプラン' },
-        { title: 'contact', subtitle: 'お気軽にご連絡を' },
-        { title: 'company', subtitle: '私たちの会社' }
+        { title: 'user', subtitle: 'ユーザーの一覧' },
+        { title: 'question', subtitle: '質問の一覧' }
       ]
     }
   }

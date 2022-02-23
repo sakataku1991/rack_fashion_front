@@ -1,26 +1,31 @@
 <template>
-  <v-avatar
-    color="black"
-    size="34"
-    class="my-app-log"
+  <img
+    :src="image_src"
+    alt="『RACK』のロゴ"
+    class="logo logo-rack"
+    height="20"
+    width="100"
   >
-    <span
-      class="white--text text-subtitle-2"
-    >
-      RACK
-    </span>
-  </v-avatar>
 </template>
 
 <script>
 export default {
-  name: 'ComponentsAppLogo'
+  name: 'ComponentsAppLogo',
+  data () {
+    return {
+      image_src: require('@/assets/image/logo/logo_rack.svg')
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.my-app-log {
-  margin-right: 8px;
-  cursor: pointer;
+.logo-rack {
+  @include sp {
+    margin: 0;
+  };
+  @include pc {
+    margin: 0;
+  };
 }
 </style>
