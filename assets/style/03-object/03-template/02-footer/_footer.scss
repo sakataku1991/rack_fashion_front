@@ -136,7 +136,7 @@
   };
 }
 .Footer__brandMediaKitLink {
-  color: $gray_b;
+  color: $gray_b !important;
   @include sp {
     font-size: 1.2rem;
   };
@@ -215,7 +215,7 @@
   };
 }
 .Footer__sitemapListItemLink {
-  color: $white;
+  color: $white !important;
   @include sp {
     font-size: 1.4rem;
   };
