@@ -19,10 +19,10 @@
       <div class="card-dashboardUserInfo-bio-data">
         <div class="card-dashboardUserInfo-bio-data-name">
           <h1 class="card-dashboardUserInfo-bio-data-name-userName">
-            さかたく
+            {{ $store.state.user.current.name }}
           </h1>
           <p class="card-dashboardUserInfo-bio-data-name-rackId">
-            @sakataku1991
+            @{{ $store.state.user.current.rack_id }}
           </p>
         </div>
         <div class="card-dashboardUserInfo-profile">

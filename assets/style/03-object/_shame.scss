@@ -105,6 +105,14 @@
     margin-bottom: 0 !important;
   };
 }
+.v-application--is-ltr .v-input--selection-controls__input {
+  @include sp {
+    margin-right: 0 !important;
+  };
+  @include pc {
+    margin-right: 0 !important;
+  };
+}
 .form-list-item-data-content.-radio .v-label {
   @include mark;
   color: $black;
@@ -119,22 +127,32 @@
 }
 // ラジオボタンの「◯」
 .form-list-item-data-content.-radio .v-icon::before {
-  background-color: $blue_bgLight;
+  background-color: $white;
   border-radius: 50% !important;
   content: "" !important;
   @include sp {
-    border: 1px solid $blue_grayBorder;
+    border: 1px solid $gray_a;
     height: 24px;
     left: 0;
     top: calc(50% - calc(24px / 2));
     width: 24px;
   };
   @include pc {
-    border: 1px solid $blue_grayBorder;
+    border: 1px solid $gray_a;
     height: 24px;
     left: 0;
     top: calc(50% - calc(24px / 2));
     width: 24px;
+  };
+}
+// ラジオボタンの「◯」（認証系のフォームでの色）
+.form.-authentication .form-list-item-data-content.-radio .v-icon::before {
+  background-color: $blue_bgLight;
+  @include sp {
+    border: 1px solid $blue_grayBorder;
+  };
+  @include pc {
+    border: 1px solid $blue_grayBorder;
   };
 }
 // ラジオボタンのチェックマーク

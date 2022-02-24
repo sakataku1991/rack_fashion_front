@@ -2,7 +2,7 @@
   <div class="Menu__userAvatar">
     <div class="Menu__userAvatarHeader">
       <nuxt-link
-        to="/dashboard"
+        to="/dashboard/settings/profile"
         class="Menu__userAvatarHeaderLink"
         ontouchstart=""
       >

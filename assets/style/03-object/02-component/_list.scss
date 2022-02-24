@@ -91,12 +91,18 @@
 
 // -----▼ 普通のリスト ▼-----
 .list.-normal {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-normal > li {
   align-items: center;
-	display: flex;
-	@include sp {
-	};
-	@include pc {
-	};
+  display: flex;
+  @include sp {
+  };
+  @include pc {
+  };
 }
 .list.-normal > li::before {
   background-color: $list-mark-color;
@@ -175,6 +181,12 @@
 // -----▼ 注釈（※印だけ） ▼-----
 // 注釈のコメ印
 .list.-note {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-note > li {
   display: flex;
   @include sp {
   };

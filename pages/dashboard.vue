@@ -1,20 +1,29 @@
 <template>
-  <v-container>
-    {{ $store.state.user.current }}
+  <div id="Dashboard" class="Dashboard">
     <nuxt-child />
-  </v-container>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'PagesDashboard',
   layout: 'dashboard',
-  // ログインしていないとアクセスできないようにする設定（authentication）
+  // ログインしていないとアクセスできないようにする設定
   middleware: ['authentication'],
-  // アクセスしてほしくないページのアクセス制限
+  // アクセスしてほしくないページ（ディレクトリ）のアクセス制限
   validate ({ route }) {
     // 「dashboard」ページへのアクセス制限
     return route.name !== 'dashboard'
   }
 }
 </script>
+
+<style lang="scss" scoped>
+// ダッシュボード全体
+.Dashboard {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+</style>

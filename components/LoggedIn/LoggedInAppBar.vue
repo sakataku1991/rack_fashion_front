@@ -164,10 +164,10 @@ export default {
 }
 // インフォメーション（通知・お知らせ）ボタン
 .Header__actionIconsNotification {
+  position: relative;
   @include sp {
   };
   @include pc {
-    position: relative;
   };
 }
 .Header__actionIconsNotificationBtn {
