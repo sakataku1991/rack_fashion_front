@@ -78,7 +78,7 @@
       <div class="Form__help">
         <p class="Form__helpResetPassword text">
           <nuxt-link
-            to="/reset_password"
+            to="/reset-password"
             class="Form__helpResetPasswordLink text-link"
             ontouchstart=""
           >
