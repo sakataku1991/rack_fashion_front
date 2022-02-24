@@ -1,6 +1,15 @@
 <template>
-  <section class="section Question">
-    <div class="Question__content">
+  <section class="section Search">
+    <div class="Search__content">
+      <div class="Search__form">
+        <!-- 検索フォーム -->
+        <form-search />
+      </div>
+      <div class="Search__result">
+        <!-- 検索結果 -->
+        <result-search />
+      </div>
+      <!-- TODO 以下の質問一覧は後で消す！ -->
       <div class="Question__questionArticles">
         <ul class="Question__questionList">
           <li
@@ -21,28 +30,55 @@
 
 <script>
 export default {
-  name: 'PagesIndex',
-  layout: 'before-login',
-  middleware: ['logged-in-redirect', 'get-user-list'],
-  async asyncData ({ $axios }) {
-    let users = []
-    await $axios.$get('/api/v1/users').then(res => (users = res))
-    const userKeys = Object.keys(users[0] || {})
-    return { users, userKeys }
-  },
-  data () {
-    return {
-      imgHeight: 500,
-      menus: [
-        { title: 'user', subtitle: 'ユーザーの一覧' },
-        { title: 'question', subtitle: '質問の一覧' }
-      ]
-    }
-  }
+  name: 'PagesSearch',
+  layout: 'search'
 }
 </script>
 
 <style lang="scss" scoped>
+.Search {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Search__content {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム
+.Search__form {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索結果
+.Search__form + .Search__result {
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    margin-top: 32px;
+  };
+}
+.Search__result {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// TODO 以下の質問一覧のスタイルは後で消す！
+.Search__result + .Question__questionArticles {
+  @include sp {
+    margin-top: 40px;
+  };
+  @include pc {
+    margin-top: 48px;
+  };
+}
 .Question__questionArticles {
   @include sp {
   };

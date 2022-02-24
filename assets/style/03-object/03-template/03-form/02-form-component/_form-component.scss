@@ -400,8 +400,9 @@
   };
 }
 // 入力欄が「エラー」のときのスタイル
+// TODO テキストエリアのエラー時の色！
 .form-list-item-data-content.-text:invalid,
-.form-list-item-data-content.-textarea:invalid,
+// .form-list-item-data-content.-textarea:invalid,
 .form-list-item-data-content.-radio:invalid,
 .form-list-item-data-content.-select:invalid {
   background-color: $error_bg !important;

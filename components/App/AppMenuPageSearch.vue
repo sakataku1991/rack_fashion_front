@@ -3,7 +3,6 @@
     <div class="contentBoxSp">
       <div class="Menu__content">
         <div class="Menu__allQuestion">
-          <menu-gender />
           <menu-category />
           <menu-color />
           <menu-sort />
@@ -18,7 +17,7 @@
 
 <script>
 export default {
-  name: 'ComponentsBeforeLoginAppMenu'
+  name: 'ComponentsAppMenuPageSearch'
 }
 </script>
 
@@ -39,28 +38,12 @@ export default {
   background-color: $gray_f4;
   position: relative;
   @include sp {
+    border-radius: 8px;
   };
   @include pc {
     border-radius: 10px;
     padding: 0px 0 40px;
     z-index: 0;
-  };
-}
-.MenuGender {
-  background-color: $gray_f8 !important;
-  position: absolute;
-  @include sp {
-  };
-  @include pcContentWidth {
-  };
-  @include pc {
-    border-radius: 10px;
-    left: 0;
-    min-width: calc(220px + 40px + calc(calc(148px * 3) + calc(32px * 2)));
-    padding: 10px 24px 10px 260px;
-    top: 0;
-    width: calc(100vw - calc(calc(40px + 220px) + calc(40px + 40px)));
-    z-index: -1;
   };
 }
 .Menu__allQuestion + .Menu__myQuestion {
@@ -85,26 +68,24 @@ export default {
     background-color: $white;
   };
   @include pc {
-    background-color: $gray_f4;
+    // background-color: $gray_f4;
   };
 }
-// 「性別」メニューの被り対策用のスタイル
-.MenuItem.MenuGender + .MenuItem {
+.Menu__allQuestion .MenuItem:first-of-type {
   @include sp {
   };
   @include pc {
-    border-radius: 10px 0 0 0;
     padding-top: 18px;
   };
 }
-.MenuItem:not(.MenuGender, :last-of-type) {
+.Menu__allQuestion .MenuItem:not(.MenuGender, :last-of-type) {
   @include sp {
   };
   @include pc {
     padding-bottom: 24px;
   };
 }
-.MenuItem:not(.MenuGender) + .MenuItem {
+.Menu__allQuestion .MenuItem:not(.MenuGender) + .MenuItem {
   @include sp {
     border-top: 1px solid $gray_e4;
   };

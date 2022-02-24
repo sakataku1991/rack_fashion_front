@@ -1,88 +1,17 @@
 <template>
   <div class="Question__post">
     <div class="Question__postContent">
-      <div class="Question__postShare -sticky">
-        <sticky-user-actions-for-question />
-      </div>
       <div class="Question__postBodyAndSidebar">
         <section class="Question__postBody">
           <div class="Question__postBodyMain">
             <div class="contentBoxSp">
               <!-- 質問の本文 -->
-              <card-question-main-content />
-              <!-- TODO ※実際はhideしてしまっているやつを条件分岐でスマホ・PCの出し分けをすること！ -->
-              <div class="Question__postBodyMainQuestionInfo hidePc">
-                <!-- 質問の補足情報 -->
-                <sidebar-question-detail />
-                <!-- 質問したユーザー -->
-                <sidebar-question-user />
-              </div>
-            </div>
-          </div>
-          <div class="Question__postBodyComment">
-            <div class="contentBoxSp">
-              <div class="Question__postBodyCommentBrowse">
-                <p class="Question__postBodyCommentBrowseResult">
-                  <icon-base
-                    class="icon icon-commentOutline"
-                    height="20"
-                    icon-name="comment-outline"
-                    width="20"
-                  >
-                    <icon-comment-outline />
-                  </icon-base>
-                  <span class="Question__postBodyCommentBrowseResultText -count">
-                    <span class="Question__postBodyCommentBrowseResultText -countNumber">2</span>
-                    <span class="Question__postBodyCommentBrowseResultText -countUnit">件</span>
-                  </span>
-                  <span class="Question__postBodyCommentBrowseResultText -message">のコメントがあります</span>
-                </p>
-                <div class="Question__postBodyCommentBrowseMore">
-                  <button-browse-comments />
-                </div>
-              </div>
-              <div class="Question__postBodyCommentContent">
-                <div class="Question__postBodyPostedComments">
-                  <h2 class="Question__postBodyPostedCommentsTitle title-section -center">
-                    コメント
-                  </h2>
-                  <div class="Question__postBodyPostedCommentsContent">
-                    <ul class="Question__postBodyPostedCommentsList">
-                      <li class="Question__postBodyPostedCommentsListItem">
-                        <card-comment />
-                      </li>
-                      <li class="Question__postBodyPostedCommentsListItem">
-                        <card-comment />
-                      </li>
-                      <li class="Question__postBodyPostedCommentsListItem">
-                        <card-comment />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="Question__postBodySendComment">
-                  <h2 class="Question__postBodySendCommentTitle title-section -center">
-                    コメントを送る
-                  </h2>
-                  <div class="Question__postBodySendCommentContent">
-                    <form-comment />
-                  </div>
-                </div>
-              </div>
+              <p class="text">
+                {{ $route.fullPath }}
+              </p>
             </div>
           </div>
         </section>
-        <!-- TODO ※実際は条件分岐で出し分けること！ -->
-        <aside id="Sidebar" class="Sidebar Question__postSidebar hideSp">
-          <div class="Sidebar__content">
-            <div class="Sidebar__questionInfo">
-              <!-- 質問の補足情報 -->
-              <sidebar-question-detail />
-              <!-- 質問したユーザー -->
-              <sidebar-question-user />
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
   </div>
@@ -90,18 +19,13 @@
 
 <script>
 export default {
-  name: 'PagesQuestion',
-  layout: 'question',
+  name: 'PagesNewsSingle',
+  layout: 'news',
   data () {
     return {
       image_src: require('@/assets/image/thum/thum_post-question_dummy.jpg')
     }
   }
-  // // アクセスしてほしくないページのアクセス制限
-  // validate ({ route }) {
-  //   // 「question」ページへのアクセス制限
-  //   return route.name !== 'question'
-  // }
 }
 </script>
 

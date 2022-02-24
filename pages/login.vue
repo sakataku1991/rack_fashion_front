@@ -203,8 +203,10 @@ export default {
 }
 .Form__helpResetPasswordLink {
   @include sp {
+    margin: 0;
   };
   @include pc {
+    margin: 0;
   };
 }
 .Form__helpResetPassword + .Form__helpSignup {
@@ -223,8 +225,10 @@ export default {
 }
 .Form__helpSignupLink {
   @include sp {
+    margin: 0;
   };
   @include pc {
+    margin: 0;
   };
 }
 // フォーム全体

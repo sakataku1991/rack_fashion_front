@@ -105,7 +105,7 @@
               </li>
               <li class="Footer__sitemapListItem">
                 <nuxt-link
-                  to="#"
+                  to="/#"
                   class="Footer__sitemapListItemLink"
                   ontouchstart=""
                 >

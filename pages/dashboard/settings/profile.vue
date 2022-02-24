@@ -124,7 +124,7 @@
                               <div class="form-list-item-data-description">
                                 <ul class="list -note">
                                   <li>
-                                    あなたの性別の情報は、<br>・あなたがRACKにログインしているときの「質問」の一覧表示<br>・あなたが「質問」を投稿するとき（「質問」の性別情報<br>にのみ利用されます。
+                                    あなたの性別の情報は、<br>・あなたがRACKにログインしているときの「質問」の一覧表示<br>・あなたが「質問」を投稿するとき（「質問」の性別情報）<br>にのみ利用されます。
                                   </li>
                                   <li>
                                     他のユーザーがあなたの性別を見ることはできません。
@@ -778,7 +778,7 @@ export default {
     width: 64%;
   };
   @include pc {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     height: 100% !important;
     margin-right: 0 !important;
     padding: 12px 24px 12px !important;

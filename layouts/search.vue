@@ -1,33 +1,29 @@
 <template>
-  <v-app>
-    <div id="wrapper" class="wrapper">
-      <before-login-app-bar />
-      <!-- <logged-in-app-bar /> -->
-      <app-toaster />
-      <div class="Content">
-        <div class="contentBoxMaxPc">
-          <div class="pageContainer PageTop">
-            <before-login-app-menu />
-            <main id="Main" class="Main">
-              <div class="contentBoxSp">
-                <div class="Main__content">
-                  <nuxt />
-                </div>
+  <div id="wrapper" class="wrapper">
+    <before-login-app-bar />
+    <app-toaster />
+    <div class="Content">
+      <div class="contentBoxMaxPc">
+        <div class="pageContainer PageTop">
+          <app-menu-page-search />
+          <main id="Main" class="Main">
+            <div class="contentBoxSp">
+              <div class="Main__content">
+                <nuxt />
               </div>
-            </main>
-            <before-login-app-sidebar />
-          </div>
+            </div>
+          </main>
+          <before-login-app-sidebar />
         </div>
       </div>
-      <app-footer />
     </div>
-  </v-app>
+    <app-footer />
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'LayoutsBeforeLogin',
-  middleware: ['logged-in-redirect']
+  name: 'LayoutsSearch'
 }
 </script>
 
@@ -63,7 +59,6 @@ export default {
     padding-top: 32px;
   };
   @include pc {
-    padding-top: calc(53px + 40px);
     width: 100%;
   };
 }

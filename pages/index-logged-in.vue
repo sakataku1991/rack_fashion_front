@@ -1,115 +1,86 @@
 <template>
-  <v-app>
-    <v-img
-      id="scroll-top"
-      dark
-      src="https://picsum.photos/id/20/1920/1080?blur=5"
-      gradient="to top right, rgba(19,84,122,.6), rgba(128,208,199,.9)"
-      :height="imgHeight"
-    >
-      <v-row
-        align="center"
-        justify="center"
-        :style="{ height: `${imgHeight}px` }"
-      >
-        <v-col
-          cols="12"
-          class="text-center"
-        >
-          <h1
-            class="display-1 mb-4"
+  <section class="section Question">
+    <div class="Question__content">
+      <div class="Question__questionArticles">
+        <ul class="Question__questionList">
+          <li
+            v-for="n in 12"
+            :key="n"
+            class="Question__questionListItem"
           >
-            RACKへようこそ！
-          </h1>
-          <h4
-            class="subheading"
-            :style="{ letterSpacing: '5px' }"
-          >
-            {{ $store.state.user.current }}
-          </h4>
-          <nuxt-link
-            :to="currentUserRackID + '/mypage'"
-            class="text-link"
-            ontouchstart=""
-          >
-            マイページ
-          </nuxt-link>
-        </v-col>
-      </v-row>
-    </v-img>
-
-    <v-sheet>
-      <v-container
-        fluid
-        :style="{ maxWidth: '1280px' }"
-      >
-        <v-row
-          v-for="(menu, i) in menus"
-          :key="`menu-${i}`"
-        >
-          <v-col
-            :id="menu.title"
-            cols="12"
-          >
-            <v-card
-              flat
-            >
-              <v-card-title
-                class="justify-center display-1"
-              >
-                {{ $t(`menus.${menu.title}`) }}
-              </v-card-title>
-              <v-card-text
-                class="text-center"
-              >
-                {{ menu.subtitle }}
-              </v-card-text>
-            </v-card>
-          </v-col>
-
-          <v-col
-            cols="12"
-          >
-            <!-- 「:is」はコンポーネントに置き換わる -->
-            <div
-              :is="`home-${menu.title}`"
-            />
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
-  </v-app>
+            <card-question />
+          </li>
+        </ul>
+      </div>
+      <div class="Question__questionArticlesPager">
+        <pager />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-// 「:is」でコンポーネントを呼び出す場合は、以下のようにコンポーネントを「import」して「components」する必要がある
-import HomeUser from '~/components/Home/HomeUser'
-import HomeQuestion from '~/components/Home/HomeQuestion'
-
 export default {
-  name: 'PagesIndexLoggedIn',
+  name: 'PagesIndex',
   layout: 'logged-in',
-  components: {
-    HomeUser,
-    HomeQuestion
-  },
-  middleware: ['get-user-list'],
+  middleware: ['authentication', 'get-user-list'],
   async asyncData ({ $axios }) {
     let users = []
     await $axios.$get('/api/v1/users').then(res => (users = res))
     const userKeys = Object.keys(users[0] || {})
     return { users, userKeys }
   },
-  data ({ $store }) {
+  data () {
     return {
       imgHeight: 500,
       menus: [
         { title: 'user', subtitle: 'ユーザーの一覧' },
         { title: 'question', subtitle: '質問の一覧' }
-      ],
-      // マイページのリンク
-      currentUserRackID: $store.state.user.current.rack_id
+      ]
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.Question__questionArticles {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Question__questionList {
+  display: flex;
+  flex-wrap: wrap;
+  @include sp {
+    gap: 32px 16px;
+  };
+  @include pc {
+    gap: 56px 32px;
+  };
+}
+.Question__questionListItem {
+  @include sp {
+    width: flexBox(2, 16px);
+  };
+  @include pc {
+    flex: 1;
+    min-width: 208px;
+    width: 100%;
+  };
+}
+.Question__questionArticles + .Question__questionArticlesPager {
+  @include sp {
+    margin-top: 40px;
+  };
+  @include pc {
+    margin-top: 48px;
+  };
+}
+.Question__questionArticlesPager {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+</style>

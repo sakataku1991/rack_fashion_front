@@ -1,32 +1,29 @@
 <template>
-  <v-app>
-    <div id="wrapper" class="wrapper">
-      <logged-in-app-bar />
-      <!-- <app-toaster /> -->
-      <before-login-app-bar />
-      <div class="Content">
-        <div class="contentBoxMaxPc">
-          <div class="pageContainer PageTop">
-            <before-login-app-menu />
-            <main id="Main" class="Main">
-              <div class="contentBoxSp">
-                <div class="Main__content">
-                  <nuxt />
-                </div>
+  <div id="wrapper" class="wrapper">
+    <before-login-app-bar />
+    <app-toaster />
+    <div class="Content">
+      <div class="contentBoxMaxPc">
+        <div class="pageContainer PageTop">
+          <nav id="Menu" class="Menu" />
+          <main id="Main" class="Main">
+            <div class="contentBoxSp">
+              <div class="Main__content">
+                <nuxt />
               </div>
-            </main>
-            <before-login-app-sidebar />
-          </div>
+            </div>
+          </main>
+          <before-login-app-sidebar />
         </div>
       </div>
-      <app-footer />
     </div>
-  </v-app>
+    <app-footer />
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'LayoutsDefault'
+  name: 'LayoutsResultSearch'
 }
 </script>
 
@@ -59,9 +56,9 @@ export default {
 }
 .Main {
   @include sp {
+    padding: 32px 0 120px;
   };
   @include pc {
-    margin-top: calc(53px + 40px);
     width: 100%;
   };
 }
