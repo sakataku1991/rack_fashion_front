@@ -7,10 +7,10 @@
         ontouchstart=""
       >
         <p class="Menu__userAvatarHeaderUserName">
-          さかたく
+          {{ $store.state.user.current.name }}
         </p>
         <p class="Menu__userAvatarHeaderRackID">
-          @sakataku1991
+          @{{ $store.state.user.current.rack_id }}
         </p>
       </nuxt-link>
     </div>

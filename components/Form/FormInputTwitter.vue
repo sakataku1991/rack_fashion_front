@@ -35,8 +35,12 @@ export default {
   },
   computed: {
     setTwitter: {
-      get () { return this.twitter },
-      set (newVal) { return this.$emit('update:twitter', newVal) }
+      get () {
+        return this.twitter
+      },
+      set (newVal) {
+        return this.$emit('update:twitter', newVal)
+      }
     }
   }
 }

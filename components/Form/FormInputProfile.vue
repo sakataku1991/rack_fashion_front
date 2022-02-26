@@ -27,7 +27,7 @@ export default {
       max,
       rules: [
         // 160文字以内
-        v => (!!v && max >= v.length) || `${max}文字以内で入力してください`
+        v => (max >= v.length) || `${max}文字以内で入力してください`
       ]
     }
   },

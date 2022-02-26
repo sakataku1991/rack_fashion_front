@@ -27,17 +27,18 @@ export default {
 
 <style lang="scss" scoped>
 .btn-userAvatar {
+  overflow: hidden;
   @include sp {
+    border-radius: 50%;
   };
   @include pc {
+    border-radius: 50%;
   };
 }
 .btn-userAvatar-img {
   @include sp {
-    border-radius: 50%;
   };
   @include pc {
-    border-radius: 50%;
   };
 }
 // ホバー時の効果

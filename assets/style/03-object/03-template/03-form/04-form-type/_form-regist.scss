@@ -8,8 +8,9 @@
 // -----▼ ユーザー認証系フォームの共通スタイル ▼-----
 .form.-authentication {
   // 入力欄の背景色と枠線
-  .form-list-item-data-content.-text,
-  .form-list-item-data-content.-textarea,
+  input.form-list-item-data-content.-text,
+  .form-list-item-data-content.-text input,
+  .form-list-item-data-content.-textarea textarea,
   .form-list-item-data-content.-select,
   .form-list-item-data-content.-radio .form-list-item-data-content-label-text::before,
   .form-list-item-data-content.-checkbox.-check .form-list-item-data-content-label-text::before,
@@ -25,6 +26,44 @@
       border: 1px solid $blue_grayBorder;
     };
   }
+}
+// 「パスワード」限定のスタイル
+.form-list-item.-password .form-list-item-data-content.-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item.-password .form-list-item-data-content.-text input {
+  @include sp {
+    border: none;
+  };
+  @include pc {
+    border: none;
+  };
+}
+.form-list-item.-password .v-input__slot {
+  background-color: $blue_bgLight;
+  display: flex;
+  @include sp {
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid $blue_grayBorder;
+    padding-right: 12px;
+  };
+  @include pc {
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid $blue_grayBorder;
+    padding-right: 16px;
+  };
+}
+.form-list-item.-password .v-text-field .v-input__append-inner {
+  align-self: auto !important;
+  @include sp {
+  };
+  @include pc {
+  };
 }
 // プレースホルダーの文字色
 .form.-authentication {

@@ -22,6 +22,7 @@
     <section class="section MyContent">
       <div class="contentBoxM">
         <div class="MyContent__content">
+          <!-- {{ $store.state.user.current }} -->
           <div class="MyContent__profile">
             <section class="section Form">
               <div class="Form__content">
@@ -29,8 +30,9 @@
                   <v-form
                     id="formProfile"
                     ref="form"
-                    @submit.prevent="profile"
+                    v-model="isValid"
                     class="form form-profile"
+                    @submit.prevent="profile"
                   >
                     <div class="form-section -input">
                       <div class="form-section-input-image">
@@ -40,8 +42,7 @@
                               <label
                                 for="yourAvatar"
                                 class="form-list-item-title-label"
-                              >
-                              </label>
+                              />
                             </dt>
                             <dd class="form-list-item-data">
                               <label
@@ -49,6 +50,14 @@
                                 class="form-list-item-data-label"
                               >
                                 <p class="form-profile-avatar">
+                                  <icon-base
+                                    class="form-profile-avatar-icon icon icon-addAPhoto"
+                                    height="24"
+                                    icon-name="add-a-photo"
+                                    width="24"
+                                  >
+                                    <icon-add-a-photo />
+                                  </icon-base>
                                   <img
                                     :src="image_src_avatar"
                                     alt="ユーザーアバター"
@@ -99,7 +108,7 @@
                               </label>
                             </dt>
                             <dd class="form-list-item-data">
-                              <p class="text">
+                              <p class="form-list-item-data-text">
                                 @{{ $store.state.user.current.rack_id }}
                               </p>
                               <p class="form-list-item-data-description">
@@ -200,6 +209,7 @@
                       <div class="form-btn -formProfile">
                         <v-btn
                           type="submit"
+                          :disabled="!isValid || loading"
                           :loading="loading"
                           value="保存する"
                           ontouchstart=""
@@ -238,22 +248,62 @@ export default {
       ],
       image_src_avatar: require('@/assets/image/icon_sakataku1991.png'),
       image_src_picture: require('@/assets/image/thum/thum_form-comment_picture-placeholder.png'),
+      isValid: false,
+      loading: false,
       params: {
         user: {
-          name: 'さかたく',
-          rack_id: 'sakataku1991',
-          sex: '',
-          profile: 'よろしくお願いします。',
-          instagram: '',
-          twitter: '',
-          homepage: ''
+          id: this.$store.state.user.current.id,
+          name: this.$store.state.user.current.name,
+          rack_id: this.$store.state.user.current.rack_id,
+          // sex: this.$store.state.user.current.sex,
+          profile: this.$store.state.user.current.profile,
+          instagram: this.$store.state.user.current.instagram,
+          twitter: this.$store.state.user.current.twitter,
+          homepage: this.$store.state.user.current.homepage
         }
       }
     }
   },
-  computed: {
-    currentQuestion () {
-      return this.$store.state.question.current
+  methods: {
+    // プロフィール編集処理
+    async profile () {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 1500)
+      if (this.isValid) {
+        await this.$axios.$patch(`/api/v1/users/${this.params.user.id}`, this.params)
+          // プロフィール編集成功時の処理
+          .then(response => this.updateSuccessful(response))
+          // プロフィール編集失敗時の処理
+          .catch(error => this.updateFailure(error))
+      }
+      this.loading = false
+    },
+    // プロフィール編集成功時の処理
+    updateSuccessful (response) {
+      // プロフィール編集後のレスポンス
+      this.profile(response)
+      for (const key in this.params.user) {
+        this.params.user[key] = ''
+      }
+      // ページを更新
+      location.reload()
+      // トースター出力
+      if (response && response.status === 200) {
+        const msg = 'プロフィールを更新しました'
+        return this.$store.dispatch('getToast', { msg })
+      }
+    },
+    // プロフィール編集失敗時の処理
+    updateFailure ({ response }) {
+      // トースター出力
+      if (response && response.status === 422) {
+        const msg = 'プロフィールの更新に失敗しました'
+        return this.$store.dispatch('getToast', { msg })
+      }
+      // エラー処理
+      return this.$my.apiErrorHandler(response)
     }
   }
 }
@@ -297,10 +347,10 @@ export default {
 // マイコンテンツ
 .MyContent {
   @include sp {
-    padding: 32px 0 64px;
+    padding: 32px 0 80px;
   };
   @include pc {
-    padding: 40px 0 80px;
+    padding: 40px 0 120px;
   };
 }
 .MyContent__content {
@@ -434,6 +484,7 @@ export default {
   @include sp {
   };
   @include pc {
+    padding-top: 8px;
     width: calc(100% - calc(104px + 24px));
   };
 }
@@ -463,10 +514,10 @@ export default {
 }
 .form-section.-input .form-list.-layer1 > .form-list-item + .form-list-item  {
   @include sp {
-    margin-top: 36px;
+    margin-top: 12px;
   };
   @include pc {
-    margin-top: 32px;
+    margin-top: 16px;
   };
 }
 .form-list-item-title {
@@ -542,10 +593,39 @@ export default {
   @include pc {
   };
 }
+.form-list-item.-avatar .form-list-item-data-label {
+  @include sp {
+    display: block;
+    margin: 0 auto;
+  };
+  @include pc {
+  };
+}
 .form-profile-avatar {
+  position: relative;
+  z-index: 0;
   @include sp {
   };
   @include pc {
+  };
+}
+// 「画像を追加」のアイコン
+.form-profile-avatar-icon {
+  color: rgba($white_rgb, 0.8);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  @include sp {
+    height: 24px;
+    left: calc(50% - calc(24px / 2));
+    top: calc(50% - calc(24px / 2));
+    width: 24px;
+  };
+  @include pc {
+    height: 24px;
+    left: calc(50% - calc(24px / 2));
+    top: calc(50% - calc(24px / 2));
+    width: 24px;
   };
 }
 .form-profile-avatar-img {
@@ -587,15 +667,19 @@ export default {
 // ホバー時の効果
 .form-list-item.-avatar .form-list-item-data-label {
   @include sp {
-    filter: brightness(60%);
-    &:active {
+    .form-profile-avatar-img {
+      filter: brightness(60%);
+    }
+    &:active .form-profile-avatar-img {
       filter: brightness(40%);
     }
   };
   @include pc {
     cursor: pointer;
-    filter: brightness(60%);
-    &:hover {
+    .form-profile-avatar-img {
+      filter: brightness(60%);
+    }
+    &:hover .form-profile-avatar-img {
       filter: brightness(40%);
     }
   };
@@ -620,7 +704,33 @@ export default {
   @include pc {
   };
 }
-.form-list-item.-rackID .form-list-item-data-content.-text {
+.form-list-item.-rackID .form-list-item-title + .form-list-item-data {
+  @include sp {
+    margin-top: 6px;
+  };
+  @include pc {
+    margin-top: 8px;
+  };
+}
+.form-list-item.-rackID .form-list-item-data-text {
+  @include sp {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  };
+}
+.form-list-item.-rackID .form-list-item-data-text + .form-list-item-data-description {
+  @include sp {
+    margin-top: 8px;
+  };
+  @include pc {
+    margin-top: 8px;
+  };
+}
+.form-list-item.-rackID .form-list-item-data-description {
   @include sp {
   };
   @include pc {
@@ -758,10 +868,10 @@ export default {
 // 「保存する」ボタン
 .form-section.-input + .form-section.-submit {
   @include sp {
-    margin-top: 56px;
+    margin-top: 32px;
   };
   @include pc {
-    margin-top: 48px;
+    margin-top: 24px;
   };
 }
 .form-section.-submit {

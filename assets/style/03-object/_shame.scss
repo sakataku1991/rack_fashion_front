@@ -39,6 +39,15 @@
 // -----▲ フォームのレイアウト ▲-----
 
 // -----▼ 入力項目 ▼-----
+// 入力欄上のパディングを削除
+.v-text-field {
+  @include sp {
+    padding-top: 0 !important;
+  };
+  @include pc {
+    padding-top: 0 !important;
+  };
+}
 // 入力欄の下線の削除
 .v-text-field > .v-input__control > .v-input__slot:before,
 .v-text-field > .v-input__control > .v-input__slot:after {
@@ -49,10 +58,10 @@
   };
 }
 // 入力欄が「エラー」のときのスタイル
-.form-list-item-data-content.-text.error--text,
-.form-list-item-data-content.-textarea.error--text,
-.form-list-item-data-content.-radio.error--text,
-.form-list-item-data-content.-select.error--text {
+.form-list-item-data-content.-text.error--text input,
+.form-list-item-data-content.-textarea.error--text textarea,
+.form-list-item-data-content.-radio.error--text input,
+.form-list-item-data-content.-select.error--text input {
   background-color: $error_bg !important;
   @include sp {
     border: 1px solid $error !important;
@@ -290,7 +299,14 @@
     margin-top: 4px;
   };
 }
-// ulの謎のパディング
+.v-messages__message {
+  @include sp {
+    line-height: 1.5 !important;
+  };
+  @include pc {
+  };
+}
+// ulの謎のパディングにサヨラナ
 .v-application ul,
 .v-application ol {
   @include sp {

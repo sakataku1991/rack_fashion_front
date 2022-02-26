@@ -35,8 +35,12 @@ export default {
   },
   computed: {
     setInstagram: {
-      get () { return this.instagram },
-      set (newVal) { return this.$emit('update:instagram', newVal) }
+      get () {
+        return this.instagram
+      },
+      set (newVal) {
+        return this.$emit('update:instagram', newVal)
+      }
     }
   }
 }

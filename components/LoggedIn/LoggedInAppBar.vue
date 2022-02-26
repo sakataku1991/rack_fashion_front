@@ -20,13 +20,15 @@
             </div>
             <!-- インフォメーション（通知・お知らせ）ボタン -->
             <div class="Header__actionIconsNotification">
-              <button-notification
-                class="Header__actionIconsNotificationBtn"
-                @click.native="isActivePopoverMenuUserInformation = !isActivePopoverMenuUserInformation"
-              />
-              <badge-notification
-                class="Header__actionIconsNotificationBadge"
-              />
+              <div class="Header__actionIconsNotificationBtnContainer">
+                <button-notification
+                  class="Header__actionIconsNotificationBtn"
+                  @click.native="isActivePopoverMenuUserInformation = !isActivePopoverMenuUserInformation"
+                />
+                <badge-notification
+                  class="Header__actionIconsNotificationBadge"
+                />
+              </div>
               <!-- インフォメーション（通知・お知らせ）メニューのポップオーバー -->
               <popover-menu-user-information
                 v-show="isActivePopoverMenuUserInformation"
@@ -92,7 +94,6 @@ export default {
   display: flex;
   @include sp {
     border-bottom: 1px solid $blue_grayBoader;
-    position: relative;
   };
   @include pc {
     border-bottom: 1px solid $blue_grayBoader;
@@ -164,8 +165,16 @@ export default {
 }
 // インフォメーション（通知・お知らせ）ボタン
 .Header__actionIconsNotification {
-  position: relative;
   @include sp {
+  };
+  @include pc {
+    position: relative;
+  };
+}
+// ボタンとバッヂのコンテナー
+.Header__actionIconsNotificationBtnContainer {
+  @include sp {
+    position: relative;
   };
   @include pc {
   };

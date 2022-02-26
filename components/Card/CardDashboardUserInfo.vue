@@ -27,7 +27,7 @@
         </div>
         <div class="card-dashboardUserInfo-profile">
           <p class="card-dashboardUserInfo-profile-text">
-            ジーンズが好きです。90年代の古着とか探しています。
+            {{ $store.state.user.current.profile }}
           </p>
         </div>
         <div class="card-dashboardUserInfo-bio-data-links">
