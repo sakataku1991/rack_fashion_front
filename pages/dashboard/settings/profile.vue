@@ -22,7 +22,12 @@
     <section class="section MyContent">
       <div class="contentBoxM">
         <div class="MyContent__content">
-          <!-- {{ $store.state.user.current }} -->
+          <!-- <p class="text">
+            {{ $store.state.user.current }}
+          </p>
+          <p class="text">
+            アバターの画像URL→{{ $store.state.user.current.avatar_image_url }}
+          </p> -->
           <div class="MyContent__profile">
             <section class="section Form">
               <div class="Form__content">
@@ -49,33 +54,18 @@
                                 tabindex="0"
                                 class="form-list-item-data-label"
                               >
-                                <p class="form-profile-avatar">
-                                  <icon-base
-                                    class="form-profile-avatar-icon icon icon-addAPhoto"
-                                    height="24"
-                                    icon-name="add-a-photo"
-                                    width="24"
-                                  >
-                                    <icon-add-a-photo />
-                                  </icon-base>
-                                  <img
-                                    :src="image_src_avatar"
-                                    alt="ユーザーアバター"
-                                    class="form-profile-avatar-img"
-                                  >
-                                </p>
-                                <p class="form-profile-avatar-text">
-                                  アイコンを変更
-                                </p>
-                                <input
-                                  id="userAvatar"
+                                <form-input-avatar
+                                  :avatar.sync="params.user.avatar"
+                                />
+                                <!-- <input
+                                  id="yourAvatar"
                                   type="file"
-                                  name="userAvatar"
+                                  name="yourAvatar"
                                   accept="image/png, image/jpeg, image/gif"
                                   autocomplete="off"
                                   tabindex="-1"
                                   class="form-list-item-data-content -file hideAll"
-                                >
+                                > -->
                               </label>
                             </dd>
                           </div>
@@ -142,7 +132,7 @@
                               </div>
                             </dd>
                           </div>
-                          <div class="form-list-item -userProfile">
+                          <div class="form-list-item -profile">
                             <dt class="form-list-item-title">
                               <label
                                 for="youruserProfile"
@@ -234,6 +224,7 @@
 export default {
   name: 'PagesDashboardSettingsProfile',
   layout: 'dashboard',
+  // middleware: ['get-user-current'],
   // falseを返すページのアクセスを制限する
   validate ({ route }) {
     return route.name !== 'account'
@@ -246,8 +237,6 @@ export default {
       tabs: [
         { name: 'プロフィール', slug: 'dashboard/settings/profile' }
       ],
-      image_src_avatar: require('@/assets/image/icon_sakataku1991.png'),
-      image_src_picture: require('@/assets/image/thum/thum_form-comment_picture-placeholder.png'),
       isValid: false,
       loading: false,
       params: {
@@ -259,7 +248,9 @@ export default {
           profile: this.$store.state.user.current.profile,
           instagram: this.$store.state.user.current.instagram,
           twitter: this.$store.state.user.current.twitter,
-          homepage: this.$store.state.user.current.homepage
+          homepage: this.$store.state.user.current.homepage,
+          avatar: this.$store.state.user.current.avatar,
+          avatar_image_url: this.$store.state.user.current.avatar_image_url
         }
       }
     }
@@ -628,6 +619,19 @@ export default {
     width: 24px;
   };
 }
+.form-profile-avatar-v-avatar {
+  display: block;
+  @include sp {
+    border-radius: 50%;
+    height: 88px !important;
+    width: 88px !important;
+  };
+  @include pc {
+    border-radius: 50%;
+    height: 104px !important;
+    width: 104px !important;
+  };
+}
 .form-profile-avatar-img {
   @include sp {
     border-radius: 50%;
@@ -642,10 +646,10 @@ export default {
 }
 .form-profile-avatar + .form-profile-avatar-text {
   @include sp {
-    margin-top: 8px;
+    margin-top: 10px;
   };
   @include pc {
-    margin-top: 8px;
+    margin-top: 10px;
   };
 }
 .form-profile-avatar-text {
@@ -671,7 +675,7 @@ export default {
       filter: brightness(60%);
     }
     &:active .form-profile-avatar-img {
-      filter: brightness(40%);
+      filter: brightness(56%);
     }
   };
   @include pc {
@@ -680,7 +684,7 @@ export default {
       filter: brightness(60%);
     }
     &:hover .form-profile-avatar-img {
-      filter: brightness(40%);
+      filter: brightness(56%);
     }
   };
 }
@@ -765,27 +769,28 @@ export default {
   @include pc {
   };
 }
-// 入力欄（「メールアドレス」）
-.form-list-item.-gender + .form-list-item.-email {
+// 入力欄（「自己紹介」）
+.form-list-item.-gender + .form-list-item.-profile {
   @include sp {
-    margin-top: 30px !important;
-  };
-  @include pc {
     margin-top: 28px !important;
   };
+  @include pc {
+    margin-top: 32px !important;
+  };
 }
-.form-list-item.-email {
+.form-list-item.-profile {
   @include sp {
   };
   @include pc {
   };
 }
-.form-list-item.-email .form-list-item-data-content.-text {
+.form-list-item.-profile .form-list-item-data-content.-text {
   @include sp {
   };
   @include pc {
   };
 }
+// TODO 「自己紹介」以下の項目のスタイル設定を用意する！
 // 入力欄（「パスワード」）
 .form-list-item.-password {
   @include sp {

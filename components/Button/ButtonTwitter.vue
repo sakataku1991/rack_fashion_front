@@ -1,6 +1,6 @@
 <template>
   <a
-    href="#"
+    :href="iconButton.link"
     target="_blank"
     rel="noopener noreferrer"
     class="btn -icon btn-twitter"
@@ -18,7 +18,20 @@
 
 <script>
 export default {
-  name: 'ComponentsButtonTwitter'
+  name: 'ComponentsButtonTwitter',
+  props: {
+    twitter: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    iconButton () {
+      // const name = 'Twitter'
+      const link = 'https://twitter.com/' + this.twitter
+      return { link }
+    }
+  }
 }
 </script>
 

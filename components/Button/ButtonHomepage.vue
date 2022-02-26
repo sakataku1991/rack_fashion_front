@@ -1,6 +1,6 @@
 <template>
   <a
-    href="#"
+    :href="iconButton.link"
     target="_blank"
     rel="noopener noreferrer"
     class="btn -icon btn-home"
@@ -18,7 +18,20 @@
 
 <script>
 export default {
-  name: 'ComponentsButtonHome'
+  name: 'ComponentsButtonHomepage',
+  props: {
+    homepage: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    iconButton () {
+      // const name = 'ホームページ'
+      const link = this.homepage
+      return { link }
+    }
+  }
 }
 </script>
 

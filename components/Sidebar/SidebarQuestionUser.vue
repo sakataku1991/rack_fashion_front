@@ -25,7 +25,7 @@
                 <button-twitter />
               </li>
               <li class="SidebarQuestionUser__userBioAuthorLinksListItem">
-                <button-home />
+                <button-homepage />
               </li>
             </ul>
           </div>

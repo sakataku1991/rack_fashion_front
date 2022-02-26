@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .btn-userAvatar {
+  display: inline-block;
   overflow: hidden;
   @include sp {
     border-radius: 50%;
