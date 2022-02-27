@@ -1,5 +1,5 @@
 <template>
-  <span class="data data-category">トップス</span>
+  <span class="data data-category">パンツ</span>
 </template>
 
 <script>

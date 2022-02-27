@@ -12,7 +12,7 @@
         <category />
       </p>
       <h1 class="Question__postBodyMainHeaderTitle">
-        <span class="Question__postBodyMainHeaderTitleText">濃いめのグレーのシャツを探しています</span>
+        <span class="Question__postBodyMainHeaderTitleText">今風なサイズ感の色落ちデニムを探しています</span>
       </h1>
     </header>
     <div class="Question__postBodyMainHeaderDateAndLike">
@@ -48,7 +48,7 @@
     </div>
     <div class="Question__postBodyMainTextBox">
       <p class="Question__postBodyMainText">
-        休日など、カジュアルに着ることができるグレーのシャツを探しています。おすすめのブランドがあれば教えていただけると嬉しいです。予算は1〜2万円です。よろしくお願いします。
+        当方男性です。太いブリーチ加工の色落ちデニムを探しています。COMOLIの5Pパンツに似たものがあれば教えていただきたいです。予算は3万円です。よろしくお願いします。
       </p>
     </div>
   </div>

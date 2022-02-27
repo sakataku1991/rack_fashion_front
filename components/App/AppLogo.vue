@@ -22,9 +22,11 @@ export default {
 <style lang="scss" scoped>
 .logo-rack {
   @include sp {
+    aspect-ratio: 5 / 1;
     margin: 0;
   };
   @include pc {
+    aspect-ratio: 5 / 1;
     margin: 0;
   };
 }

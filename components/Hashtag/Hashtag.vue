@@ -1,13 +1,13 @@
 <template>
   <nuxt-link
-    to="/hashtag/シャツ"
+    to="/hashtag/デニム"
     class="hashtag"
     ontouchstart=""
   >
     <data-hashtag
       class="hashtag-text"
     >
-      シャツ
+      デニム
     </data-hashtag>
   </nuxt-link>
 </template>

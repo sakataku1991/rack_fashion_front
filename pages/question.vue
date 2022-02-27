@@ -32,7 +32,7 @@
                     <icon-comment-outline />
                   </icon-base>
                   <span class="Question__postBodyCommentBrowseResultText -count">
-                    <span class="Question__postBodyCommentBrowseResultText -countNumber">2</span>
+                    <span class="Question__postBodyCommentBrowseResultText -countNumber">3</span>
                     <span class="Question__postBodyCommentBrowseResultText -countUnit">件</span>
                   </span>
                   <span class="Question__postBodyCommentBrowseResultText -message">のコメントがあります</span>

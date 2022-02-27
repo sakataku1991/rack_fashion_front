@@ -1,6 +1,6 @@
 <template>
-  <p class="data data-color color-guide color-3">
-    <span class="color-guide-text">グレー</span>
+  <p class="data data-color color-guide color-7">
+    <span class="color-guide-text">ブルー</span>
   </p>
 </template>
 

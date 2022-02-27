@@ -32,8 +32,8 @@ export default {
   };
 }
 .Menu__content {
-  background-color: $gray_f8;
   @include sp {
+    background-color: $gray_f8;
     box-shadow: 0px 2px 4px rgba($black_rgb, .08);
     margin: 0 -5vw;
     padding: 24px 5vw 24px;
@@ -109,6 +109,13 @@ export default {
   @include sp {
   };
   @include pc {
+  };
+}
+.Menu__allQuestion + .Menu__myQuestion {
+  @include sp {
+  };
+  @include pc {
+    margin-top: 32px;
   };
 }
 .Menu__myQuestion {

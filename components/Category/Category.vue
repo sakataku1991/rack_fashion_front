@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    to="/category/トップス"
+    to="/category/パンツ"
     class="category"
     ontouchstart=""
   >

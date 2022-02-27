@@ -29,8 +29,8 @@ export default {
   };
 }
 .Menu__content {
-  background-color: $gray_f8;
   @include sp {
+    background-color: $gray_f8;
     box-shadow: 0px 2px 4px rgba($black_rgb, .08);
     margin: 0 -5vw;
     padding: 24px 5vw 24px;
