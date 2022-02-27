@@ -22,13 +22,13 @@
     <section class="section MyContent">
       <div class="contentBoxM">
         <div class="MyContent__content">
-          <p class="text">
+          <!-- <p class="text">
             {{ $store.state.user.current }}
             {{ $store.state.user.current.sex_id }}
-          </p>
-          <p class="text">
+          </p> -->
+          <!-- <p class="text">
             アバターの画像URL→{{ $store.state.user.current.avatar_image_url }}
-          </p>
+          </p> -->
           <div class="MyContent__profile">
             <section class="section Form">
               <div class="Form__content">

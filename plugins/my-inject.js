@@ -7,7 +7,7 @@ class MyInject {
     this.error = ctx.error
   }
 
-  // i18nの「ページタイトル」変換
+  // i18nページタイトル変換
   pageTitle (routeName) {
     const jsonPath = `pages.${routeName.replace(/-/g, '.')}`
     const title = this.app.i18n.t(jsonPath)

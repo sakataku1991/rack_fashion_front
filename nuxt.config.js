@@ -11,8 +11,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no, address=no, email=no' }
+      { name: 'format-detection', content: 'telephone=no, address=no, email=no' },
+      { hid: 'description', name: 'description', content: 'RACKはファッション情報に特化したQ＆Aサイトです。服の着こなしや流行りのブランドについてなど、ファッションに関して知りたいことを気軽に質問してみましょう。' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'RACK' },
+      { hid: 'og:title', property: 'og:title', content: 'RACK｜ファッション情報専門Q＆Aサイト' },
+      { hid: 'og:url', property: 'og:url', content: 'https://www.rack-fashion.com/' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:image', property: 'og:image', content: '/logo_rack_ogp_for-sns.png' },
+      { hid: 'og:description', property: 'og:description', content: 'RACKはファッション情報に特化したQ＆Aサイトです。服の着こなしや流行りのブランドについてなど、ファッションに関して知りたいことを気軽に質問してみましょう。' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

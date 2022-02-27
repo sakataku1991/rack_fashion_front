@@ -26,11 +26,12 @@
 
 // ----▼ ページタイトル ▼-----
 .title-page {
-  font-size: 1em;  // 「user agent stylesheet」対策として必要。
   text-align: center;
   @include sp {
+    font-size: 1em;  // 「user agent stylesheet」対策として必要。
   };
   @include pc {
+    font-size: 1em;  // 「user agent stylesheet」対策として必要。
   };
 }
 // ページタイトルの文字セット全体
