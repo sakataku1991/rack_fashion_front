@@ -10,6 +10,9 @@
           />
           <menu-sort />
         </div>
+        <div class="Menu__myQuestion hideSp">
+          <menu-my-item />
+        </div>
       </div>
     </div>
   </nav>
@@ -17,7 +20,7 @@
 
 <script>
 export default {
-  name: 'ComponentsBeforeLoginAppMenu'
+  name: 'ComponentsLoggedInAppMenu'
 }
 </script>
 
@@ -49,6 +52,7 @@ export default {
     z-index: 0;
   };
 }
+// 「性別」
 .MenuGender {
   background-color: $gray_f8 !important;
   @include sp {
@@ -105,6 +109,23 @@ export default {
   @include sp {
   };
   @include pc {
+  };
+}
+.Menu__myQuestion {
+  background-color: $gray_f4;
+  @include sp {
+    border-radius: 8px;
+  };
+  @include pc {
+    border-radius: 10px;
+    padding: 18px 0 18px;
+  };
+}
+.MenuItem {
+  @include sp {
+  };
+  @include pc {
+    background-color: $gray_f4;
   };
 }
 // 「性別」メニューの被り対策用のスタイル

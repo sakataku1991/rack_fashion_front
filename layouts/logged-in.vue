@@ -6,7 +6,7 @@
       <div class="Content">
         <div class="contentBoxMaxPc">
           <div class="pageContainer PageTop">
-            <before-login-app-menu />
+            <logged-in-app-menu />
             <main id="Main" class="Main">
               <div class="contentBoxSp">
                 <div class="Main__content">
@@ -14,7 +14,7 @@
                 </div>
               </div>
             </main>
-            <before-login-app-sidebar />
+            <logged-in-app-sidebar />
           </div>
         </div>
       </div>
@@ -64,6 +64,13 @@ export default {
   @include pc {
     margin-top: calc(53px + 40px);
     width: 100%;
+  };
+}
+.Main__content {
+  @include sp {
+    padding-top: 32px;
+  };
+  @include pc {
   };
 }
 .Sidebar {

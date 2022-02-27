@@ -1,29 +1,111 @@
 <template>
   <section class="MenuItem MenuColor">
     <div class="MenuColor__color">
-      <h2 class="MenuColor__colorTitle">
-        アイテムの色
-      </h2>
-      <ul class="MenuColor__colorList">
-        <li
-          v-for="(color, i) in colors"
-          :key="`color-${i}`"
-          class="MenuColor__colorListItem"
-        >
-          <nuxt-link
-            :to="`/color/${color.slug}`"
-            class="MenuColor__colorListItemLink"
-            ontouchstart=""
+      <div class="hidePc">
+        <dl class="MenuColor__colorDefList form-list -layer1">
+          <div class="MenuColor__colorDefListItem -color form-list-item -questionColor">
+            <dt class="MenuColor__colorDefListItemTitle form-list-item-title">
+              <label
+                for="questionColor"
+                class="form-list-item-title-label"
+              >
+                アイテムの色
+              </label>
+            </dt>
+            <dd class="MenuColor__colorDefListItemData form-list-item-data">
+              <div class="form-list-item-data-select-wrap">
+                <select
+                  id="questionColor"
+                  name="questionColor"
+                  class="form-list-item-data-content -select"
+                >
+                  <option value="">
+                    色を選択
+                  </option>
+                  <option value="ホワイト">
+                    ホワイト
+                  </option>
+                  <option value="ブラック">
+                    ブラック
+                  </option>
+                  <option value="グレー">
+                    グレー
+                  </option>
+                  <option value="ブラウン">
+                    ブラウン
+                  </option>
+                  <option value="ベージュ">
+                    ベージュ
+                  </option>
+                  <option value="グリーン">
+                    グリーン
+                  </option>
+                  <option value="ブルー">
+                    ブルー
+                  </option>
+                  <option value="パープル">
+                    パープル
+                  </option>
+                  <option value="イエロー">
+                    イエロー
+                  </option>
+                  <option value="ピンク">
+                    ピンク
+                  </option>
+                  <option value="レッド">
+                    レッド
+                  </option>
+                  <option value="オレンジ">
+                    オレンジ
+                  </option>
+                  <option value="シルバー">
+                    シルバー
+                  </option>
+                  <option value="ゴールド">
+                    ゴールド
+                  </option>
+                  <option value="その他">
+                    その他
+                  </option>
+                </select>
+                <icon-base
+                  class="icon icon-arrowInputSelect"
+                  height="24"
+                  icon-name="arrow-input-select"
+                  width="24"
+                >
+                  <icon-arrow-input-select />
+                </icon-base>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="hideSp">
+        <h2 class="MenuColor__colorTitle">
+          アイテムの色
+        </h2>
+        <ul class="MenuColor__colorList">
+          <li
+            v-for="(color, i) in colors"
+            :key="`color-${i}`"
+            class="MenuColor__colorListItem"
           >
-            <p
-              class="MenuColor__colorListItemLinkText color-guide"
-              :class="`color-${color.number}`"
+            <nuxt-link
+              :to="`/color/${color.slug}`"
+              class="MenuColor__colorListItemLink"
+              ontouchstart=""
             >
-              <span class="MenuColor__colorListItemLinkTextColor color-guide-text">{{ $t(`colors.${color.name}`) }}</span>
-            </p>
-          </nuxt-link>
-        </li>
-      </ul>
+              <p
+                class="MenuColor__colorListItemLinkText color-guide"
+                :class="`color-${color.number}`"
+              >
+                <span class="MenuColor__colorListItemLinkTextColor color-guide-text">{{ $t(`colors.${color.name}`) }}</span>
+              </p>
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
@@ -68,6 +150,38 @@ export default {
   @include pc {
   };
 }
+// 【スマホ版限定】・「アイテムの色」のセレクトボックス
+.MenuColor__colorDefList {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.MenuColor__colorDefListItem {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.MenuColor__colorDefListItemTitle {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.MenuColor__colorDefListItemTitle + .MenuColor__colorDefListItemData {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.MenuColor__colorDefListItemData {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 【PC版限定】・「アイテムの色」のメニュー
 .MenuColor__colorTitle {
   font-weight: bold;
   @include sp {

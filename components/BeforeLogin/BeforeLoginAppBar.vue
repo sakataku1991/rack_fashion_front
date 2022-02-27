@@ -178,10 +178,12 @@ export default {
 // 「ログイン」ボタン
 .Header__actionButtonsLoginBtn {
   @include sp {
-    padding: 2px 6px;
+    line-height: 1.5 !important;
+    padding: 4px 6px;
   };
   @include pc {
-    padding: 3px 12px;
+    line-height: 1.5 !important;
+    padding: 5px 12px;
   };
 }
 ::v-deep .Header__actionButtonsLoginBtn .btn-text {
@@ -195,10 +197,12 @@ export default {
 // 「会員登録」ボタン
 .Header__actionButtonsSignupBtn {
   @include sp {
-    padding: 2px 6px;
+    line-height: 1.5 !important;
+    padding: 4px 6px;
   };
   @include pc {
-    padding: 3px 12px;
+    line-height: 1.5 !important;
+    padding: 5px 12px;
   };
 }
 ::v-deep .Header__actionButtonsSignupBtn .btn-text {

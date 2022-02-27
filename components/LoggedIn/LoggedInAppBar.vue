@@ -271,10 +271,12 @@ export default {
 // 「質問する」ボタン
 .Header__actionButtonsQuestionBtn {
   @include sp {
-    padding: 2px 12px;
+    line-height: 1.5 !important;
+    padding: 4px 12px;
   };
   @include pc {
-    padding: 3px 12px;
+    line-height: 1.5 !important;
+    padding: 5px 12px;
   };
 }
 ::v-deep .Header__actionButtonsQuestionBtn .btn-text {

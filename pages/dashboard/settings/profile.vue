@@ -22,12 +22,13 @@
     <section class="section MyContent">
       <div class="contentBoxM">
         <div class="MyContent__content">
-          <!-- <p class="text">
+          <p class="text">
             {{ $store.state.user.current }}
+            {{ $store.state.user.current.sex_id }}
           </p>
           <p class="text">
             アバターの画像URL→{{ $store.state.user.current.avatar_image_url }}
-          </p> -->
+          </p>
           <div class="MyContent__profile">
             <section class="section Form">
               <div class="Form__content">
@@ -244,7 +245,7 @@ export default {
           id: this.$store.state.user.current.id,
           name: this.$store.state.user.current.name,
           rack_id: this.$store.state.user.current.rack_id,
-          // sex: this.$store.state.user.current.sex,
+          sex: this.$store.state.user.current.sex,
           profile: this.$store.state.user.current.profile,
           instagram: this.$store.state.user.current.instagram,
           twitter: this.$store.state.user.current.twitter,
@@ -722,7 +723,7 @@ export default {
     line-height: 1.5;
   };
   @include pc {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.5;
   };
 }
@@ -731,7 +732,7 @@ export default {
     margin-top: 8px;
   };
   @include pc {
-    margin-top: 8px;
+    margin-top: 12px;
   };
 }
 .form-list-item.-rackID .form-list-item-data-description {

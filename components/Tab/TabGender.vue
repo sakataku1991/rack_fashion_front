@@ -14,7 +14,7 @@
           tabindex="0"
           ontouchstart=""
         >
-          <span class="btn-text">{{ $t(`sexes.${sex.sex}`) }}</span>
+          <span class="btn-text">{{ $t(`sexes.${sex.gender}`) }}</span>
         </nuxt-link>
       </li>
     </ul>
@@ -27,9 +27,9 @@ export default {
   data () {
     return {
       sexes: [
-        { sex: 'all', slug: 'all', code: '9' },
-        { sex: 'men', slug: 'men', code: '1' },
-        { sex: 'women', slug: 'women', code: '2' }
+        { gender: 'all', slug: 'all', code: '9' },
+        { gender: 'men', slug: 'men', code: '1' },
+        { gender: 'women', slug: 'women', code: '2' }
       ]
     }
   }
@@ -51,6 +51,7 @@ export default {
     border-radius: 3px;
     gap: 1px;
     padding: 4px;
+    width: 100%;
   };
   @include pc {
     border-radius: 4px;

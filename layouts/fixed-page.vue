@@ -1,22 +1,24 @@
 <template>
-  <div id="wrapper" class="wrapper">
-    <before-login-app-bar />
-    <app-toaster />
-    <div class="Content">
-      <div class="contentBoxXS">
-        <div class="pageContainer PageLogin">
-          <main id="Main" class="Main">
-            <div class="">
-              <div class="Main__content">
-                <nuxt />
+  <v-app>
+    <div id="wrapper" class="wrapper">
+      <before-login-app-bar />
+      <app-toaster />
+      <div class="Content">
+        <div class="contentBoxXS">
+          <div class="pageContainer PageLogin">
+            <main id="Main" class="Main">
+              <div class="">
+                <div class="Main__content">
+                  <nuxt />
+                </div>
               </div>
-            </div>
-          </main>
+            </main>
+          </div>
         </div>
       </div>
+      <app-footer />
     </div>
-    <app-footer />
-  </div>
+  </v-app>
 </template>
 
 <script>

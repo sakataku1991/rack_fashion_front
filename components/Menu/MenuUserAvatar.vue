@@ -7,10 +7,11 @@
         ontouchstart=""
       >
         <p class="Menu__userAvatarHeaderUserName">
-          {{ $store.state.user.current.name }}
+          <!-- TODO 「watch」を使ってログイン前・ログイン時の表示替えをする！ -->
+          <!-- {{ $store.state.user.current.name }} -->さかたく
         </p>
         <p class="Menu__userAvatarHeaderRackID">
-          @{{ $store.state.user.current.rack_id }}
+          <!-- @{{ $store.state.user.current.rack_id }} -->@rack_id0
         </p>
       </nuxt-link>
     </div>

@@ -1,38 +1,40 @@
 <template>
-  <div id="wrapper" class="wrapper">
-    <before-login-app-bar />
-    <app-toaster />
-    <article class="Content">
-      <div class="">
-        <div class="pageContainer PageSingleQuestion">
-          <!-- <before-login-app-menu /> -->
-          <main id="Main" class="Main">
-            <div class="contentBoxPc">
-              <div class="Main__content">
-                <nuxt />
+  <v-app>
+    <div id="wrapper" class="wrapper">
+      <before-login-app-bar />
+      <app-toaster />
+      <article class="Content">
+        <div class="">
+          <div class="pageContainer PageSingleQuestion">
+            <!-- <before-login-app-menu /> -->
+            <main id="Main" class="Main">
+              <div class="contentBoxPc">
+                <div class="Main__content">
+                  <nuxt />
+                </div>
               </div>
+            </main>
+            <!-- <before-login-app-sidebar /> -->
+            <div class="Recommend">
+              <!-- 同じアイテムカテゴリーの質問 -->
+              <recommend-same-category-questions
+                class="Recommend__section"
+              />
+              <!-- カテゴリーから質問を探す -->
+              <recommend-all-categories
+                class="Recommend__section"
+              />
+              <!-- 最近投稿された質問 -->
+              <recommend-latest-questions
+                class="Recommend__section"
+              />
             </div>
-          </main>
-          <!-- <before-login-app-sidebar /> -->
-          <div class="Recommend">
-            <!-- 同じアイテムカテゴリーの質問 -->
-            <recommend-same-category-questions
-              class="Recommend__section"
-            />
-            <!-- カテゴリーから質問を探す -->
-            <recommend-all-categories
-              class="Recommend__section"
-            />
-            <!-- 最近投稿された質問 -->
-            <recommend-latest-questions
-              class="Recommend__section"
-            />
           </div>
         </div>
-      </div>
-    </article>
-    <app-footer />
-  </div>
+      </article>
+      <app-footer />
+    </div>
+  </v-app>
 </template>
 
 <script>

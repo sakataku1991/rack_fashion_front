@@ -1,13 +1,14 @@
 <template>
-  <nav id="Menu" class="Menu">
+  <nav id="Menu" class="Menu hideSp">
     <div class="contentBoxSp">
       <div class="Menu__content">
         <div class="Menu__allQuestion">
+          <menu-gender />
           <menu-category />
           <menu-color />
           <menu-sort />
         </div>
-        <div class="Menu__myQuestion hideSp">
+        <div class="Menu__myQuestion">
           <menu-my-item />
         </div>
       </div>
@@ -44,6 +45,13 @@ export default {
     border-radius: 10px;
     padding: 0px 0 40px;
     z-index: 0;
+  };
+}
+::v-deep .Tab__gender {
+  @include sp {
+  };
+  @include pc {
+    display: none;
   };
 }
 .Menu__allQuestion + .Menu__myQuestion {

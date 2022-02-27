@@ -111,7 +111,7 @@ export default {
 }
 .MenuMyItem__myItem {
   @include sp {
-    padding: 12px 0 8px;
+    padding: 16px 0 8px;
   };
   @include pc {
   };

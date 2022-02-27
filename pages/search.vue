@@ -58,7 +58,6 @@ export default {
 // 検索結果
 .Search__form + .Search__result {
   @include sp {
-    margin-top: 24px;
   };
   @include pc {
     margin-top: 32px;

@@ -2,7 +2,6 @@
   <v-app>
     <div id="wrapper" class="wrapper">
       <before-login-app-bar />
-      <!-- <logged-in-app-bar /> -->
       <app-toaster />
       <div class="Content">
         <div class="contentBoxMaxPc">
@@ -60,11 +59,17 @@ export default {
 }
 .Main {
   @include sp {
-    padding-top: 32px;
   };
   @include pc {
     padding-top: calc(53px + 40px);
     width: 100%;
+  };
+}
+.Main__content {
+  @include sp {
+    padding-top: 32px;
+  };
+  @include pc {
   };
 }
 .Sidebar {

@@ -1,25 +1,27 @@
 <template>
-  <div id="wrapper" class="wrapper">
-    <logged-in-app-bar />
-    <app-toaster />
-    <div class="Content">
-      <div class="">
-        <div class="pageContainer PageSingleQuestion">
-          <!-- <before-login-app-menu /> -->
-          <main id="Main" class="Main">
-            <div class="contentBoxPc">
-              <div class="Main__content">
-                <nuxt />
+  <v-app>
+    <div id="wrapper" class="wrapper">
+      <logged-in-app-bar />
+      <app-toaster />
+      <div class="Content">
+        <div class="">
+          <div class="pageContainer PageSingleQuestion">
+            <!-- <before-login-app-menu /> -->
+            <main id="Main" class="Main">
+              <div class="contentBoxPc">
+                <div class="Main__content">
+                  <nuxt />
+                </div>
               </div>
-            </div>
-          </main>
-          <!-- <before-login-app-sidebar /> -->
+            </main>
+            <!-- <before-login-app-sidebar /> -->
+          </div>
         </div>
       </div>
+      <!-- トースト通知 -->
+      <toast-base />
     </div>
-    <!-- トースト通知 -->
-    <toast-base />
-  </div>
+  </v-app>
 </template>
 
 <script>
