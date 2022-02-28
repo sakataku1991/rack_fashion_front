@@ -1,25 +1,30 @@
 <template>
   <section class="MenuItem MenuSort">
     <div class="MenuSort__sort">
-      <h2 class="MenuSort__sortTitle">
-        質問を並び替える
-      </h2>
-      <ul class="MenuSort__sortList">
-        <li
-          v-for="(sort, i) in sorts"
-          :key="`sort-${i}`"
-          class="MenuSort__sortListItem"
-        >
-          <nuxt-link
-            :to="`/?order=${sort.slug}`"
-            aria-selected="false"
-            class="MenuSort__sortListItemLink"
-            ontouchstart=""
+      <div class="hidePc">
+        <tab-sort />
+      </div>
+      <div class="hideSp">
+        <h2 class="MenuSort__sortTitle">
+          質問を並び替える
+        </h2>
+        <ul class="MenuSort__sortList">
+          <li
+            v-for="(sort, i) in sorts"
+            :key="`sort-${i}`"
+            class="MenuSort__sortListItem"
           >
-            {{ $t(`sorts.${sort.name}`) }}
-          </nuxt-link>
-        </li>
-      </ul>
+            <nuxt-link
+              :to="`/?order=${sort.slug}`"
+              aria-selected="false"
+              class="MenuSort__sortListItemLink"
+              ontouchstart=""
+            >
+              {{ $t(`sorts.${sort.name}`) }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>

@@ -60,6 +60,9 @@ export default {
 // フォーム全体
 .form-search-container {
   @include sp {
+    background-color: $gray_f8;
+    margin: 0 -5vw;
+    padding: 24px 5vw 4px;
   };
   @include pc {
   };

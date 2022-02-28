@@ -5,7 +5,7 @@
     :rules="form.rules"
     :hint="form.hint"
     :hide-details="!setValidation"
-    :counter="setValidation"
+    :counter="max"
     name="yourRackID"
     spellcheck="false"
     autocomplete="off"
@@ -25,6 +25,12 @@ export default {
     setValidation: {
       type: Boolean,
       default: false
+    }
+  },
+  data () {
+    const max = 16
+    return {
+      max
     }
   },
   computed: {

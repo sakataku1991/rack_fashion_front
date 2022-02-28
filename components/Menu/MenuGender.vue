@@ -13,8 +13,10 @@ export default {
 <style lang="scss" scoped>
 .MenuGender {
   @include sp {
+    width: 100%;
   };
   @include pc {
+    width: 100%;
   };
 }
 .MenuGender__gender {

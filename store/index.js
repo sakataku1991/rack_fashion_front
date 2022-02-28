@@ -123,6 +123,15 @@ export const actions = {
   getCurrentUser ({ commit }, user) {
     commit('setCurrentUser', user)
   },
+  // getCurrentUser ({ state, commit }, params) {
+  //   let currentUser = null
+  //   if (params && params.id) {
+  //     const id = Number(params.id)
+  //     currentUser =
+  //       state.user.list.find(user => user.id === id) || null
+  //   }
+  //   commit('setCurrentUser', currentUser)
+  // },
   // AuthToken
   getAuthToken ({ commit }, token) {
     commit('setAuthToken', token)

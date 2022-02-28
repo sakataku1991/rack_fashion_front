@@ -19,31 +19,34 @@
       <div class="card-dashboardUserInfo-bio-data">
         <div class="card-dashboardUserInfo-bio-data-name">
           <h1 class="card-dashboardUserInfo-bio-data-name-userName">
-            さかたく
+            {{ $store.state.user.current.name }}
           </h1>
           <p class="card-dashboardUserInfo-bio-data-name-rackId">
-            @sakataku1991
+            @{{ $store.state.user.current.rack_id }}
           </p>
         </div>
         <div class="card-dashboardUserInfo-profile">
           <p class="card-dashboardUserInfo-profile-text">
-            ジーンズが好きです。90年代の古着とか探しています。
+            {{ $store.state.user.current.profile }}
           </p>
         </div>
         <div class="card-dashboardUserInfo-bio-data-links">
           <ul class="card-dashboardUserInfo-bio-data-links-list">
             <li class="card-dashboardUserInfo-bio-data-links-list-item">
               <button-instagram
+                :instagram="params.user.instagram"
                 class="card-dashboardUserInfo-bio-data-links-list-item-btn"
               />
             </li>
             <li class="card-dashboardUserInfo-bio-data-links-list-item">
               <button-twitter
+                :twitter="params.user.twitter"
                 class="card-dashboardUserInfo-bio-data-links-list-item-btn"
               />
             </li>
             <li class="card-dashboardUserInfo-bio-data-links-list-item">
-              <button-home
+              <button-homepage
+                :homepage="params.user.homepage"
                 class="card-dashboardUserInfo-bio-data-links-list-item-btn"
               />
             </li>
@@ -87,7 +90,14 @@ export default {
   name: 'ComponentsCardDashboardUserInfo',
   data () {
     return {
-      image_src_avatar: require('@/assets/image/icon_sakataku1991.png')
+      image_src_avatar: require('@/assets/image/icon_sakataku1991.png'),
+      params: {
+        user: {
+          instagram: this.$store.state.user.current.instagram,
+          twitter: this.$store.state.user.current.twitter,
+          homepage: this.$store.state.user.current.homepage
+        }
+      }
     }
   }
 }

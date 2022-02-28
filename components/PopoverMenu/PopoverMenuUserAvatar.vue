@@ -16,6 +16,7 @@ export default {
   background-color: $white;
   position: relative;
   @include sp {
+    box-shadow: 0px 4px 10px -2px rgba($black_rgb, .16);
   };
   @include pc {
     border-radius: 6px;

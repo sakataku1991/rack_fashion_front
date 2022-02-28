@@ -44,7 +44,7 @@ export default {
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   @include sp {
-    max-height: 100%;
+    max-height: calc(100vh - calc(57px + 46px));
     min-height: 136px;
   };
   @include pc {
@@ -55,7 +55,7 @@ export default {
 // インフォメーションの内容（白グラデの最下部隠し）
 .Menu__userInformationContent {
   @include sp {
-    padding-bottom: 48px;
+    padding-bottom: 64px;
   };
   @include pc {
     padding-bottom: 48px;

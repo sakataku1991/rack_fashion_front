@@ -15,7 +15,7 @@
           さかたく
         </p>
         <p class="form-comment-author-rack-id">
-          @sakataku199
+          @sakataku1991
         </p>
       </div>
     </header>

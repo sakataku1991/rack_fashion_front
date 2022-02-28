@@ -20,13 +20,15 @@
             </div>
             <!-- インフォメーション（通知・お知らせ）ボタン -->
             <div class="Header__actionIconsNotification">
-              <button-notification
-                class="Header__actionIconsNotificationBtn"
-                @click.native="isActivePopoverMenuUserInformation = !isActivePopoverMenuUserInformation"
-              />
-              <badge-notification
-                class="Header__actionIconsNotificationBadge"
-              />
+              <div class="Header__actionIconsNotificationBtnContainer">
+                <button-notification
+                  class="Header__actionIconsNotificationBtn"
+                  @click.native="isActivePopoverMenuUserInformation = !isActivePopoverMenuUserInformation"
+                />
+                <badge-notification
+                  class="Header__actionIconsNotificationBadge"
+                />
+              </div>
               <!-- インフォメーション（通知・お知らせ）メニューのポップオーバー -->
               <popover-menu-user-information
                 v-show="isActivePopoverMenuUserInformation"
@@ -92,7 +94,6 @@ export default {
   display: flex;
   @include sp {
     border-bottom: 1px solid $blue_grayBoader;
-    position: relative;
   };
   @include pc {
     border-bottom: 1px solid $blue_grayBoader;
@@ -168,6 +169,14 @@ export default {
   };
   @include pc {
     position: relative;
+  };
+}
+// ボタンとバッヂのコンテナー
+.Header__actionIconsNotificationBtnContainer {
+  @include sp {
+    position: relative;
+  };
+  @include pc {
   };
 }
 .Header__actionIconsNotificationBtn {
@@ -262,10 +271,12 @@ export default {
 // 「質問する」ボタン
 .Header__actionButtonsQuestionBtn {
   @include sp {
-    padding: 2px 12px;
+    line-height: 1.5 !important;
+    padding: 4px 12px;
   };
   @include pc {
-    padding: 3px 12px;
+    line-height: 1.5 !important;
+    padding: 5px 12px;
   };
 }
 ::v-deep .Header__actionButtonsQuestionBtn .btn-text {

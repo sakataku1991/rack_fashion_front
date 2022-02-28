@@ -43,7 +43,7 @@
               />
             </li>
             <li class="card-mypageUserInfo-bio-data-links-list-item">
-              <button-home
+              <button-homepage
                 class="card-mypageUserInfo-bio-data-links-list-item-btn"
               />
             </li>

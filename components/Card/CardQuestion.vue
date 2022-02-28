@@ -17,11 +17,11 @@
       </div>
       <div class="card-question-article-info">
         <h2 class="card-question-title">
-          質問のタイトルが入ります。質問のタイトルが入りま
+          今風なサイズ感の色落ちデニムを探しています
         </h2>
         <div class="card-question-category">
           <p class="category-text">
-            アイテムカテゴリー
+            パンツ
           </p>
         </div>
         <div class="card-question-author-avatar-and-date">

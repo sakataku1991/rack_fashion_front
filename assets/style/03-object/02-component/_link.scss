@@ -25,7 +25,7 @@
 }
 .text .text-link,
 .list-text .text-link {
-  margin: 0 6px;
+  // margin: 0 6px;
 }
 // p要素（.text付きの）内かつ文頭にあるテキストリンクの場合には、
 // この「.-noMarginLeft」クラスを付けてpadding-leftを消す。
@@ -36,26 +36,9 @@
 
 // ----▼ テキストリンク（外部リンク） ▼-----
 .text-link.-tab {
-  &::after {
-    // background-image: url(../image/icon/icon_link-external_blue.svg);
-    content: "";
-    display: inline-block;
-  }
   @include sp {
-    &::after {
-      height: 16px;
-      margin-left: 4px;
-      margin-right: 6px;
-      width: 16px;
-    }
   };
   @include pc {
-    &::after {
-      height: 16px;
-      margin-left: 4px;
-      margin-right: 6px;
-      width: 16px;
-    }
   };
 }
 .text-link.-tab.-white::after {

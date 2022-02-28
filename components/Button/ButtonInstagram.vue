@@ -1,6 +1,6 @@
 <template>
   <a
-    href="#"
+    :href="iconButton.link"
     target="_blank"
     rel="noopener noreferrer"
     class="btn -icon btn-instagram"
@@ -18,7 +18,20 @@
 
 <script>
 export default {
-  name: 'ComponentsButtonInstagram'
+  name: 'ComponentsButtonInstagram',
+  props: {
+    instagram: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    iconButton () {
+      // const name = 'Instagram'
+      const link = 'https://www.instagram.com/' + this.instagram + '/'
+      return { link }
+    }
+  }
 }
 </script>
 

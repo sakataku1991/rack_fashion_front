@@ -13,7 +13,7 @@
           さかたく
         </nuxt-link>
         <p class="card-comment-author-rack-id-and-posting-time">
-          <span class="card-comment-author-rack-id">@sakataku199</span><span class="card-comment-author-posting-time">・2時間前</span>
+          <span class="card-comment-author-rack-id">@sakataku1991</span><span class="card-comment-author-posting-time">・2時間前</span>
         </p>
       </div>
     </aside>

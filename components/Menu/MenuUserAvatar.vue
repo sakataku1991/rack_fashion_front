@@ -2,15 +2,16 @@
   <div class="Menu__userAvatar">
     <div class="Menu__userAvatarHeader">
       <nuxt-link
-        to="/dashboard"
+        to="/dashboard/settings/profile"
         class="Menu__userAvatarHeaderLink"
         ontouchstart=""
       >
         <p class="Menu__userAvatarHeaderUserName">
-          さかたく
+          <!-- TODO 「watch」を使ってログイン前・ログイン時の表示替えをする！ -->
+          <!-- {{ $store.state.user.current.name }} -->さかたく
         </p>
         <p class="Menu__userAvatarHeaderRackID">
-          @sakataku1991
+          <!-- @{{ $store.state.user.current.rack_id }} -->@rack_id0
         </p>
       </nuxt-link>
     </div>

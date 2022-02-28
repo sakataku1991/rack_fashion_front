@@ -48,8 +48,8 @@
               id="formSignup"
               ref="form"
               v-model="isValid"
-              @submit.prevent="signup"
               class="form form-signup -authentication"
+              @submit.prevent="signup"
             >
               <div class="form-section -input">
                 <dl class="form-list -layer1">
@@ -728,7 +728,7 @@ export default {
     margin-top: 56px;
   };
   @include pc {
-    margin-top: 48px;
+    margin-top: 56px;
   };
 }
 .form-section.-submit {

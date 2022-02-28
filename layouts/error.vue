@@ -1,45 +1,47 @@
 <template>
-  <v-container
-    fill-height
-  >
-    <v-row>
-      <v-col
-        cols="12"
-      >
-        <v-card-title
-          class="justify-center"
+  <v-app>
+    <v-container
+      fill-height
+    >
+      <v-row>
+        <v-col
+          cols="12"
         >
-          {{ error.statusCode }}
-        </v-card-title>
-        <v-card-text
-          class="text-center"
-        >
-          {{ errorMessage }}
-        </v-card-text>
-        <v-card-actions
-          class="justify-center"
-        >
-          <v-icon>
-            mdi-emoticon-sick-outline
-          </v-icon>
-        </v-card-actions>
-        <v-card-actions
-          class="justify-center"
-        >
-          <v-btn
-            icon
-            x-large
-            color="appblue"
-            @click="redirect"
+          <v-card-title
+            class="justify-center"
+          >
+            {{ error.statusCode }}
+          </v-card-title>
+          <v-card-text
+            class="text-center"
+          >
+            {{ errorMessage }}
+          </v-card-text>
+          <v-card-actions
+            class="justify-center"
           >
             <v-icon>
-              mdi-home
+              mdi-emoticon-sick-outline
             </v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-col>
-    </v-row>
-  </v-container>
+          </v-card-actions>
+          <v-card-actions
+            class="justify-center"
+          >
+            <v-btn
+              icon
+              x-large
+              color="appblue"
+              @click="redirect"
+            >
+              <v-icon>
+                mdi-home
+              </v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
 
 <script>

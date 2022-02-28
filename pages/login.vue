@@ -78,7 +78,7 @@
       <div class="Form__help">
         <p class="Form__helpResetPassword text">
           <nuxt-link
-            to="/reset_password"
+            to="/reset-password"
             class="Form__helpResetPasswordLink text-link"
             ontouchstart=""
           >
@@ -203,8 +203,10 @@ export default {
 }
 .Form__helpResetPasswordLink {
   @include sp {
+    margin: 0;
   };
   @include pc {
+    margin: 0;
   };
 }
 .Form__helpResetPassword + .Form__helpSignup {
@@ -223,8 +225,10 @@ export default {
 }
 .Form__helpSignupLink {
   @include sp {
+    margin: 0;
   };
   @include pc {
+    margin: 0;
   };
 }
 // フォーム全体
