@@ -6,8 +6,7 @@
     class="text-link -tab"
     ontouchstart=""
   >
-    {{ linkTextTabContact.text }}
-    <span class="text-link-text"></span>
+    <span class="text-link-text">{{ linkTextTabContact.text }}</span>
     <icon-base
       class="icon icon-openInNew"
       height="18"

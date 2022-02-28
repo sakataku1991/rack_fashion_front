@@ -22,13 +22,13 @@
     <section class="section MyContent">
       <div class="contentBoxM">
         <div class="MyContent__content">
-          <!-- <p class="text">
+          <p class="text">
             {{ $store.state.user.current }}
             {{ $store.state.user.current.sex_id }}
-          </p> -->
-          <!-- <p class="text">
+          </p>
+          <p class="text">
             アバターの画像URL→{{ $store.state.user.current.avatar_image_url }}
-          </p> -->
+          </p>
           <div class="MyContent__profile">
             <section class="section Form">
               <div class="Form__content">
@@ -246,6 +246,10 @@ export default {
           name: this.$store.state.user.current.name,
           rack_id: this.$store.state.user.current.rack_id,
           sex: this.$store.state.user.current.sex,
+          sex_id: this.$store.state.user.current.sex_id,
+          gender: this.$store.state.user.current.gender,
+          code: this.$store.state.user.current.code,
+          email: this.$store.state.user.current.email,
           profile: this.$store.state.user.current.profile,
           instagram: this.$store.state.user.current.instagram,
           twitter: this.$store.state.user.current.twitter,

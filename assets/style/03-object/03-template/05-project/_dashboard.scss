@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// 「ダッシュボード」ページのコンポーネントのスタイルです。
+
+
+// ----------▼▼ ダッシュボードのコンポーネント　dashboard ▼▼----------
+
+// -----▼ 見出し ▼-----
+.title-dashboard-content {
+  @include sp {
+    padding: 12px 12px 8px;
+  };
+  @include pc {
+    padding: 20px 16px 4px;
+  };
+}
+.title-dashboard-content-child {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ※各見出しのスタイルは「_title.scss」にも記述
+// -----▲ 見出し ▲-----
+
+// -----▼ セクション ▼-----
+.dashboard-section {
+  background-color: $white;
+  overflow: hidden;
+  @include sp {
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba($black_rgb, .04);
+  };
+  @include pc {
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba($black_rgb, .06);
+  };
+}
+.dashboard-section + .dashboard-section {
+  @include sp {
+    margin-top: 24px;
+  };
+  @include pc {
+    margin-top: 32px;
+  };
+}
+// -----▲ セクション ▲-----
+
+// ---------▲▲ ダッシュボードのコンポーネント　dashboard ▲▲----------
