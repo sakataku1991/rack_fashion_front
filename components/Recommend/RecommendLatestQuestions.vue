@@ -30,10 +30,10 @@ export default {
 <style lang="scss" scoped>
 .LatestQuestions {
   @include sp {
-    padding: 32px 0 40px;
+    padding: 32px 0 80px;
   };
   @include pc {
-    padding: 32px 0 40px;
+    padding: 32px 0 56px;
   };
 }
 .LatestQuestions__content {

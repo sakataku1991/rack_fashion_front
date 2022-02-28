@@ -535,7 +535,7 @@
 // アラート時の表示色
 .title-taxonomy-archive.-alert {
   border: 1px solid $red;
-  background-color: $red_8pct;
+  // background-color: $red_8pct;
   text-align: center;
   @include sp {
     border-radius: 4px;
