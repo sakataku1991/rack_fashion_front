@@ -168,12 +168,12 @@
                 <ul class="Guideline__dateInfoList">
                   <li class="Guideline__dateInfoListItem -enactmentDate">
                     <p class="Guideline__dateInfoText text">
-                      <span class="Guideline__dateInfoTextSpan -date"><time itemprop="datePublished" datetime="2022-03-01" class="Guideline__dateInfoDateTime">2022年3月1日</time></span><span class="Guideline__dateInfoTextSpan -action">制定</span>
+                      <span class="Guideline__dateInfoTextSpan -date"><time itemprop="datePublished" datetime="2022-03-01" class="Guideline__dateInfoDateTime">2022年2月1日</time></span><span class="Guideline__dateInfoTextSpan -action">制定</span>
                     </p>
                   </li>
                   <li class="Guideline__dateInfoListItem -revisionDate">
                     <p class="Guideline__dateInfoText text">
-                      <span class="Guideline__dateInfoTextSpan -date"><time itemprop="dateModified" datetime="2022-03-05" class="Guideline__dateInfoDateTime">2022年3月5日</time></span><span class="Guideline__dateInfoTextSpan -action">改訂</span>
+                      <span class="Guideline__dateInfoTextSpan -date"><time itemprop="dateModified" datetime="2022-03-05" class="Guideline__dateInfoDateTime">2022年2月5日</time></span><span class="Guideline__dateInfoTextSpan -action">改訂</span>
                     </p>
                   </li>
                 </ul>
@@ -273,10 +273,10 @@ export default {
 }
 .Guideline__enjoyDescriptionListItem + .Guideline__enjoyDescriptionListItem {
   @include sp {
-    margin-top: 24px;
+    margin-top: 28px;
   };
   @include pc {
-    margin-top: 24px;
+    margin-top: 32px;
   };
 }
 .Guideline__enjoyDescriptionListItemTitle {
@@ -346,10 +346,10 @@ export default {
 }
 .Guideline__ruleDescriptionListItem + .Guideline__ruleDescriptionListItem {
   @include sp {
-    margin-top: 24px;
+    margin-top: 28px;
   };
   @include pc {
-    margin-top: 24px;
+    margin-top: 32px;
   };
 }
 .Guideline__ruleDescriptionListItemTitle {
