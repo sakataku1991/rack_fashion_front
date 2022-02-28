@@ -104,15 +104,10 @@
                 </nuxt-link>
               </li>
               <li class="Footer__sitemapListItem">
-                <a
-                  href="https://forms.gle/w6bRTyA7XhoGzBVM8"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <link-text-tab
+                  :linkTextTabContact="linkTextTabContact"
                   class="Footer__sitemapListItemLink"
-                  ontouchstart=""
-                >
-                  お問い合わせ
-                </a>
+                />
               </li>
             </ul>
           </div>
@@ -133,7 +128,10 @@ export default {
   data ({ $config: { appName } }) {
     return {
       appName,
-      height: 32
+      height: 32,
+      linkTextTabContact: {
+        href: 'https://forms.gle/w6bRTyA7XhoGzBVM8', text: 'お問い合わせフォーム'
+      }
     }
   },
   computed: {
@@ -150,6 +148,119 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// フッター全体
+.Footer {
+  background-color: $black;
+  @include sp {
+    padding: 0 0 0;
+  };
+  @include pc {
+    padding: 0 0 0;
+  };
+}
+// フッターの中身
+.Footer__content {
+  @include sp {
+    padding: 48px 0 48px;
+  };
+  @include pc {
+    display: flex;
+    justify-content: space-between;
+    padding: 56px 0 64px;
+  };
+}
+
+// -----▼ フッターのサービス情報 .Footer__brandInfo ▼-----
+.Footer__brandInfo {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ロゴとテキスト
+.Footer__brandCI {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Footer__brandCILogo {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Footer__brandCILogoLink {
+  display: block;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Footer__brandCILogoLinkImg {
+  margin-left: 0;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Footer__brandCILogo + .Footer__brandCIText {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 16px;
+  };
+}
+.Footer__brandCIText {
+  color: $white;
+  @include sp {
+    font-size: 1.3rem;
+    line-height: 1;
+  };
+  @include pc {
+    font-size: 1.3rem;
+    line-height: 1;
+  };
+}
+// SNSリンク
+.Footer__brandCI + .Footer__brandSNS {
+  @include sp {
+    margin-top: 22px;
+  };
+  @include pc {
+    margin-top: 20px;
+  };
+}
+.Footer__brandSNS {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Footer__brandSNSList {
+  display: flex;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Footer__brandSNSListItem {
+  @include sp {
+    line-height: 1;
+  };
+  @include pc {
+    line-height: 1;
+  };
+}
+.Footer__brandSNSListItem + .Footer__brandSNSListItem {
+  @include sp {
+    margin-left: 18px;
+  };
+  @include pc {
+    margin-left: 14px;
+  };
+}
 // 「Twitter」ボタン
 .btn-sns.-twitterCircle {
   color: $white;
@@ -192,4 +303,164 @@ export default {
     }
   };
 }
+// メディアキット
+.Footer__brandSNS + .Footer__brandMediaKit {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 14px;
+  };
+}
+.Footer__brandMediaKit {
+  @include sp {
+    line-height: 1;
+  };
+  @include pc {
+    line-height: 1;
+  };
+}
+.Footer__brandMediaKitLink {
+  color: $gray_b !important;
+  @include sp {
+    font-size: 1.2rem;
+  };
+  @include pc {
+    font-size: 1.2rem;
+  };
+}
+// ホバー時の効果
+.Footer__brandMediaKitLink {
+  @include sp {
+    &:active {
+      color: $gray_b;
+      text-decoration: underline !important;
+    }
+  };
+  @include pc {
+    cursor: pointer;
+    &:hover {
+      color: $gray_b;
+      text-decoration: underline !important;
+    }
+  };
+}
+// -----▲ フッターのサービス情報 .Footer__brandInfo ▲-----
+
+// -----▼ フッターのサイトマップ .Footer__sitemap ▼-----
+.Footer__brandInfo + .Footer__sitemap {
+  @include sp {
+    margin-top: 40px;
+  };
+  @include pc {
+  };
+}
+.Footer__sitemap {
+  @include sp {
+  };
+  @include pc {
+    display: flex;
+  };
+}
+.Footer__sitemapUnit {
+  @include sp {
+  };
+  @include pc {
+    width: calc(calc(1000px - calc(40px * 3)) / 4);
+  };
+}
+.Footer__sitemapUnit + .Footer__sitemapUnit {
+  @include sp {
+    margin-top: 40px;
+  };
+  @include pc {
+    margin-left: 40px;
+  };
+}
+.Footer__sitemapList {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Footer__sitemapListItem {
+  @include sp {
+    line-height: 1;
+  };
+  @include pc {
+    line-height: 1;
+  };
+}
+.Footer__sitemapListItem + .Footer__sitemapListItem {
+  @include sp {
+    margin-top: 20px;
+  };
+  @include pc {
+    margin-top: 20px;
+  };
+}
+.Footer__sitemapListItemLink {
+  color: $white !important;
+  @include sp {
+    font-size: 1.4rem;
+    text-decoration: none ;
+  };
+  @include pc {
+    font-size: 1.4rem;
+    text-decoration: none ;
+  };
+}
+// ホバー時の効果
+.Footer__sitemapListItemLink {
+  @include sp {
+    &:active {
+      color: $white;
+      text-decoration: underline !important;
+    }
+  };
+  @include pc {
+    cursor: pointer;
+    &:hover {
+      color: $white;
+      text-decoration: underline !important;
+    }
+  };
+}
+// 「お問い合わせ」の別タブのアイコン
+::v-deep .Footer__sitemapListItemLink.text-link.-tab .icon {
+  @include sp {
+    height: 16px;
+    padding-bottom: 2px;
+    width: 16px;
+  };
+  @include pc {
+    height: 16px;
+    padding-bottom: 2px;
+    width: 16px;
+  };
+}
+// -----▲ フッターのサイトマップ .Footer__sitemap ▲-----
+
+// -----▼ フッターのコピーライト .Footer__copyright ▼-----
+.Footer__copyright {
+  @include sp {
+    border-top: 1px solid $gray_7;
+    padding: 14px 0;
+  };
+  @include pc {
+    border-top: 1px solid $gray_7;
+    padding: 16px 0;
+  };
+}
+.FtCr__copyrightText {
+  color: $white;
+  text-align: center;
+  @include sp {
+    font-size: 1.2rem;
+  };
+  @include pc {
+    font-size: 1.2rem;
+  };
+}
+// -----▲ フッターのコピーライト .Footer__copyright ▲-----
 </style>

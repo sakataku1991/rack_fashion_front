@@ -466,11 +466,11 @@ export default {
 .Guideline__dateContent {
   @include sp {
     border-top: 1px solid $gray_e4;
-    padding-top: 64px;
+    padding-top: 28px;
   };
   @include pc {
     border-top: 1px solid $gray_e4;
-    padding-top: 80px;
+    padding-top: 32px;
   };
 }
 .Guideline__dateInfo {

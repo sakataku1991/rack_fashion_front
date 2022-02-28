@@ -19,7 +19,7 @@
               <div class="Faq__answerPublic">
                 <ul class="Faq__answerPublicList">
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       RACK（ラック）は何ができるサイトですか？
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -27,14 +27,18 @@
                         RACKはファッション情報に特化したQ＆Aサイトです。RACKの登録ユーザー同士で、ファッション関係の情報を交換したり共有することができます。<br>詳しくは以下のページをご参照ください。
                       </p>
                       <p class="text">
-                        <nuxt-link to="/about" target="_blank" rel="noopener noreferrer" class="text-link" ontouchstart="">
+                        <nuxt-link
+                          to="/about"
+                          class="text-link"
+                          ontouchstart=""
+                        >
                           はじめての方へ
                         </nuxt-link>
                       </p>
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       質問するにはどうすればいいですか？
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -42,14 +46,18 @@
                         まずはRACKへの会員登録をお願いいたします。<br>質問内容の閲覧は当サイトの会員以外の方も可能ですが、質問に付いているコメントの閲覧や、質問やコメントの投稿は、会員の方に限定の機能となっております。
                       </p>
                       <p class="text">
-                        <nuxt-link to="/signup" target="_blank" rel="noopener noreferrer" class="text-link" ontouchstart="">
+                        <nuxt-link
+                          to="/signup"
+                          class="text-link"
+                          ontouchstart=""
+                        >
                           会員登録
                         </nuxt-link>
                       </p>
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       質問にコメントするにはどうすればいいですか？
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -59,7 +67,7 @@
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       「閲覧チケット」とは何ですか？
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -83,7 +91,7 @@
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       RACKからの通知をOFFにしたい
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -93,7 +101,7 @@
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       ログインできない場合はどうすればいいですか？
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -101,7 +109,11 @@
                         パスワードを忘れてしまった場合は、パスワードのリセットの手続きを行なってください。
                       </p>
                       <p class="text">
-                        <nuxt-link to="/change-password" target="_blank" rel="noopener noreferrer" class="text-link" ontouchstart="">
+                        <nuxt-link
+                          to="/change-password"
+                          class="text-link"
+                          ontouchstart=""
+                        >
                           パスワードのリセット
                         </nuxt-link>
                       </p>
@@ -111,7 +123,7 @@
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       不具合を見つけた場合はどこに連絡すればいいですか？
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -126,7 +138,7 @@
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       とあるユーザーをブロック（あるいはミュート）したい
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -136,7 +148,7 @@
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       荒らし的なユーザーがいて困っている
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -154,7 +166,7 @@
                     </div>
                   </li>
                   <li class="Faq__answerPublicListItem">
-                    <h2 class="Faq__answerPublicListItemTitle title-3">
+                    <h2 class="Faq__answerPublicListItemTitle title-faq">
                       RACKを退会したい
                     </h2>
                     <div class="Faq__answerPublicListItemData">
@@ -162,7 +174,11 @@
                         以下の「アカウントを削除」ページより退会の手続きを行なってください。
                       </p>
                       <p class="text">
-                        <nuxt-link to="/#" target="_blank" rel="noopener noreferrer" class="text-link" ontouchstart="">
+                        <nuxt-link
+                          to="/#"
+                          class="text-link"
+                          ontouchstart=""
+                        >
                           アカウントを削除
                         </nuxt-link>
                       </p>
@@ -247,10 +263,10 @@ export default {
 }
 .Faq__answerPublicListItemTitle + .Faq__answerPublicListItemData {
   @include sp {
-    margin-top: 10px;
+    margin-top: 8px;
   };
   @include pc {
-    margin-top: 12px;
+    margin-top: 10px;
   };
 }
 .Faq__answerPublicListItemData {
