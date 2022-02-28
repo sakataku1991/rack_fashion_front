@@ -11,6 +11,6 @@ build:
     WORKDIR: app
     # API_URLのみ「heroku.yml」で管理
     # ↑「heroku config:set API_URL=hoge」だと「nuxt.config.js」の「axios」にうまく渡せないため
-    API_URL: "https://rack-fashion-api.herokuapp.com"
+    API_URL: "https://api.rack-fashion.com"
 run:
   web: yarn run start

@@ -108,6 +108,7 @@
 .list.-normal > li::before {
   background-color: $list-mark-color;
   border-radius: 50%;
+  flex-shrink: 0;
   content: "";
   @include sp {
     height: 6px;
@@ -199,6 +200,7 @@
 }
 .list.-note > li::before {
   content: "※" !important;
+  flex-shrink: 0;
   font-size: inherit;
   @include sp {
     margin-right: 2px;
