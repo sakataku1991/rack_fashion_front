@@ -1,6 +1,7 @@
+// ログイン前ユーザーのリダイレクト設定
 export default async ({ $auth, store, route, redirect }) => {
   // リダイレクトを必要としないパス
-  const notRedirectPaths = ['account', 'question']
+  const notRedirectPaths = ['account', 'mypage', 'dashboard']
   if (notRedirectPaths.includes(route.name)) {
     return false
   }

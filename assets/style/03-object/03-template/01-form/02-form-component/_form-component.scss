@@ -1,0 +1,437 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+
+
+// ----------▼▼ フォームの各種パーツのスタイル ▼▼----------
+
+// -----▼ フォームの基本構成 ▼-----
+// フォーム全体
+.form {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダー
+.form-header {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダーのタイトル
+.form-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのヘッダーの文章
+.form-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション
+.form-section {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「入力欄」
+.form-section.-input {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「プライバシーポリシー」
+.form-section.-privacyPolicy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームのセクション「送信ボタン」
+.form-section.-submit {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力項目のリスト
+.form-list {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※入力項目のリスト「.form-list」は、階層の深さに合わせて
+// 「.-layer1」「.-layer2」などといったclassを追加することで
+// 階層の違いを表現する
+
+.form-list.-layer1 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list.-layer2 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list.-layer3 {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// 個々の入力項目
+.form-list-item {
+  list-style: none;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力項目のタイトル
+.form-list-item-title {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-title-label {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄
+.form-list-item-data {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（単文）
+.form-list-item-data-content.-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（テキストエリア）
+.form-list-item-data-content.-textarea {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（セレクトボックス）
+.form-list-item-data-content.-select {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// セレクトボックスのラッパー（アイコン配置用）
+.form-list-item-data-select-wrap {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（ラジオボタン）
+.form-list-item-data-content.-radio {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（チェックボックス）
+.form-list-item-data-content.-checkbox {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ラジオボタンやチェックボックスのlabel部分
+.form-list-item-data-content-label {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// ラジオボタンやチェックボックスの文言（sapn）部分
+.form-list-item-data-content-label-text {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（日付のカレンダー入力）
+.form-list-item-data-content.-calendar {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 日付のカレンダー入力のラッパー（アイコン配置用）
+.form-list-item-data-calendar-wrap {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄（ファイル）
+.form-list-item-data-content.-file {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの記入例
+.form-list-item-data-description {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォーム内の注意書き
+.form-list-item-data-note {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン
+.form-btn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「送信する」ボタン（メールフォーム用）
+.form-btn.-formContact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「検索」ボタン（検索フォーム用）
+.form-btn.-searchSubsidyAndColumn {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「補助金・助成金を検索」ボタン（検索フォーム用）
+.form-btn.-formContact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「メールマガジン登録」ボタン（登録フォーム用）
+.form-btn.-registNewsletter {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// フォームの送信ボタン「LINE登録」ボタン（登録フォーム用）
+.form-btn.-registLine {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+
+// ※フォームの送信ボタンそのもののスタイルは「_button.scss」に記述
+
+// -----▲ フォームの基本構成 ▲-----
+
+// -----▼ フォームの種類 ▼-----
+// メールフォーム
+.form.form-mail {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// メールフォーム「お問い合わせ」
+.form.form-mail.-contact {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム
+.form.form-search {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム「補助金・助成金検索」
+.form.form-search.-subsidy {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 検索フォーム「キーワード検索」
+.form.form-search.-keyword {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム
+.form.form-regist {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム「メールマガジン」
+.form.form-regist.-newsletter {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 登録フォーム「LINE」
+.form.form-regist.-line {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// -----▲ フォームの種類 ▲-----
+
+
+
+
+// -----▼ 入力項目（共通） ▼-----
+// 入力欄
+.form-list-item-data {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item-data-content input,
+.form-list-item-data-content textarea {
+  -webkit-appearance: none;
+  color: $black;
+  @include sp {
+    font-size: 1.6rem;
+  };
+  @include pc {
+    font-size: 1.6rem;
+  };
+}
+.input.form-list-item-data-content.-text,
+.form-list-item-data-content.-text input,
+.form-list-item-data-content.-textarea textarea {
+  @include sp {
+    line-height: 1.6 !important;
+  };
+  @include pc {
+    line-height: 1.6 !important;
+  };
+}
+.form-list-item-data-content.-select {
+  @include sp {
+    line-height: 1.8 !important;
+  };
+  @include pc {
+    line-height: 1.8 !important;
+  };
+}
+// 入力欄の背景色と枠線
+input.form-list-item-data-content.-text,
+.form-list-item-data-content.-text input,
+input.form-list-item-data-content.-textarea,
+.form-list-item-data-content.-textarea textarea,
+.form-list-item-data-content.-select,
+.form-list-item-data-content.-radio .form-list-item-data-content-label-text::before,
+.form-list-item-data-content.-checkbox.-check .form-list-item-data-content-label-text::before,
+.form-list-item-data-content.-checkbox.-fill .form-list-item-data-content-label-text,
+.form-list-item-data-content.-calendar {
+  background-color: $white;
+  @include sp {
+    border-radius: 4px;
+    border: 1px solid $gray_a;
+  };
+  @include pc {
+    border-radius: 4px;
+    border: 1px solid $gray_a;
+  };
+}
+// プレースホルダーの文字色
+.form-list-item-data-content.-text,
+.form-list-item-data-content.-textarea {
+// ※プレースホルダーの文字色のスタイルは「_reboot-fix.scss」に記述
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 入力欄の横幅
+.form-list-item-data-content.-text,
+.form-list-item-data-content.-textarea,
+.form-list-item-data-content.-select,
+.form-list-item-data-content.-calendar {
+  @include sp {
+    width: 100%;
+  };
+  @include pc {
+    width: 100%;
+  };
+}
+// 入力欄が「disabled」のときのスタイル
+.form-list-item-data-content.-text:disabled,
+.form-list-item-data-content.-textarea:disabled,
+.form-list-item-data-content.-radio:disabled,
+.form-list-item-data-content.-select.-disabled {
+  background-color: $gray_ea !important;
+  @include sp {
+    border: 1px solid $gray_a !important;
+  };
+  @include pc {
+    border: 1px solid $gray_a !important;
+  };
+}
+// 入力欄が「エラー」のときのスタイル
+// TODO テキストエリアのエラー時の色！
+.form-list-item-data-content.-text:invalid input,
+.form-list-item-data-content.-textarea:invalid textarea,
+.form-list-item-data-content.-radio:invalid input,
+.form-list-item-data-content.-select:invalid input {
+  background-color: $error_bg !important;
+  @include sp {
+    border: 1px solid $error !important;
+  };
+  @include pc {
+    border: 1px solid $error !important;
+  };
+}
+// -----▲ 入力項目（共通） ▲-----
+
+// ----------▲▲ フォームの各種パーツのスタイル ▲▲----------

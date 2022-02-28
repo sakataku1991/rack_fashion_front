@@ -20,10 +20,11 @@
             class="mb-4"
           />
 
-          <!-- 「質問」の追加 -->
+          <!-- 「質問」 -->
           <v-row
             align="center"
           >
+            <!-- 「質問」の追加 -->
             <v-col
               cols="12"
               :sm="card.sm"
@@ -45,7 +46,7 @@
                   <div
                     class="caption myblue--text"
                   >
-                    質問を追加
+                    質問を投稿する
                   </div>
                 </div>
               </v-btn>

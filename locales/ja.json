@@ -48,6 +48,7 @@
     "hot": "コメント数"
   },
   "menus": {
+    "user": "ユーザー",
     "question": "質問",
     "about": "サイトについて",
     "products": "製品",
@@ -63,22 +64,24 @@
     "signup": "会員登録",
     "login": "ログイン",
     "logout": "ログアウト",
-    "account": {
-      "settings": "アカウント設定",
-      "password": "パスワード変更"
-    },
+    "about": "はじめての方へ",
+    "administrator": "運営者",
+    "news": "お知らせ",
+    "guideline": "コミュニティガイドライン",
+    "faq": "よくある質問",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "media kit": "メディアキット",
+    "404": "404 Not Found",
     "dashboard": {
-      "settings": "アカウント設定",
       "settings": {
         "account": "アカウント",
         "profile": "プロフィール"
       },
-      "relationships": "つながり",
       "relationships": {
         "following": "フォロー",
         "followers": "フォロワー"
       },
-      "items": "マイアイテム",
       "items": {
         "questions": "質問",
         "comments": "コメント",
@@ -87,7 +90,6 @@
         "comments_can_be_viewed": "チケットを使用した記事",
         "browsing_history": "記事の閲覧履歴"
       },
-      "informations": "インフォメーション",
       "informations": {
         "notifications": "通知",
         "news": "お知らせ"

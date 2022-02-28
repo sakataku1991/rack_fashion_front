@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+// 【全フォーム共通】フォームの各種パーツのスタイル集です。
+// 入力項目「テキスト」
+
+
+// ----------▼▼ 入力項目「テキスト」のスタイル ▼▼----------
+
+// テキスト
+// 入力欄（単文）
+input.form-list-item-data-content.-text,
+.form-list-item-data-content.-text input {
+  @include sp {
+    height: 48px;
+    max-height: 100%;
+    padding: 9px 12px;
+  };
+  @include pc {
+    height: 48px;
+    max-height: 100%;
+    padding: 9px 16px;
+  };
+}
+// 入力欄（文章）
+input.form-list-item-data-content.-textarea,
+.form-list-item-data-content.-textarea textarea {
+  display: block;
+  @include sp {
+    height: 160px;
+    padding: 9px 12px;
+  };
+  @include pc {
+    height: 120px;
+    max-height: 400px;
+    min-height: 120px;
+    padding: 9px 16px;
+  };
+}
+
+// ----------▲▲ 入力項目「テキスト」のスタイル ▲▲----------

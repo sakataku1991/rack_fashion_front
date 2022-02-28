@@ -1,117 +1,86 @@
 <template>
-  <v-app>
-    <home-app-bar
-      :menus="menus"
-      :img-height="imgHeight"
-    />
-
-    <v-img
-      id="scroll-top"
-      dark
-      src="https://picsum.photos/id/20/1920/1080?blur=5"
-      gradient="to top right, rgba(19,84,122,.6), rgba(128,208,199,.9)"
-      :height="imgHeight"
-    >
-      <v-row
-        align="center"
-        justify="center"
-        :style="{ height: `${imgHeight}px` }"
-      >
-        <v-col
-          cols="12"
-          class="text-center"
-        >
-          <h1
-            class="display-1 mb-4"
+  <section class="section Question">
+    <div class="Question__content">
+      <div class="Question__questionArticles">
+        <ul class="Question__questionList">
+          <li
+            v-for="n in 12"
+            :key="n"
+            class="Question__questionListItem"
           >
-            未来を作ろう。ワクワクしよう。
-          </h1>
-          <h4
-            class="subheading"
-            :style="{ letterSpacing: '5px' }"
-          >
-            中小企業に特化した事業計画策定ツール
-          </h4>
-        </v-col>
-      </v-row>
-    </v-img>
-
-    <v-sheet>
-      <v-container
-        fluid
-        :style="{ maxWidth: '1280px' }"
-      >
-        <v-row
-          v-for="(menu, i) in menus"
-          :key="`menu-${i}`"
-        >
-          <v-col
-            :id="menu.title"
-            cols="12"
-          >
-            <v-card
-              flat
-            >
-              <v-card-title
-                class="justify-center display-1"
-              >
-                {{ $t(`menus.${menu.title}`) }}
-              </v-card-title>
-              <v-card-text
-                class="text-center"
-              >
-                {{ menu.subtitle }}
-              </v-card-text>
-            </v-card>
-          </v-col>
-
-          <v-col
-            cols="12"
-          >
-            <!-- 「:is」はコンポーネントに置き換わる -->
-            <div
-              :is="`home-${menu.title}`"
-            />
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
-    <app-footer />
-  </v-app>
+            <card-question />
+          </li>
+        </ul>
+      </div>
+      <div class="Question__questionArticlesPager">
+        <pager />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-// 「:is」でコンポーネントを呼び出す場合は、以下のようにコンポーネントを「import」して「components」する必要がある
-import HomeQuestion from '~/components/Home/HomeQuestion'
-import HomeAbout from '~/components/Home/HomeAbout'
-import HomeProducts from '~/components/Home/HomeProducts'
-import HomePrice from '~/components/Home/HomePrice'
-import HomeContact from '~/components/Home/HomeContact'
-import HomeCompany from '~/components/Home/HomeCompany'
-
 export default {
   name: 'PagesIndex',
-  components: {
-    HomeQuestion,
-    HomeAbout,
-    HomeProducts,
-    HomePrice,
-    HomeContact,
-    HomeCompany
+  layout: 'before-login',
+  middleware: ['logged-in-redirect', 'get-user-list'],
+  async asyncData ({ $axios }) {
+    let users = []
+    await $axios.$get('/api/v1/users').then(res => (users = res))
+    const userKeys = Object.keys(users[0] || {})
+    return { users, userKeys }
   },
-  // middleware: ['get-user-current'],
   data () {
     return {
       imgHeight: 500,
       menus: [
-        { title: 'question', subtitle: '最近の質問の一覧' },
-        { title: 'about', subtitle: 'このサイトはブログ"独学プログラマ"で公開されているチュートリアルのデモアプリケーションです' },
-        { title: 'products', subtitle: '他にはない優れた機能の数々' },
-        { title: 'price', subtitle: '会社の成長に合わせた3つのプラン' },
-        { title: 'contact', subtitle: 'お気軽にご連絡を' },
-        { title: 'company', subtitle: '私たちの会社' }
+        { title: 'user', subtitle: 'ユーザーの一覧' },
+        { title: 'question', subtitle: '質問の一覧' }
       ]
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.Question__questionArticles {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.Question__questionList {
+  display: flex;
+  flex-wrap: wrap;
+  @include sp {
+    gap: 32px 16px;
+  };
+  @include pc {
+    gap: 56px 32px;
+  };
+}
+.Question__questionListItem {
+  @include sp {
+    width: flexBox(2, 16px);
+  };
+  @include pc {
+    flex: 1;
+    min-width: 208px;
+    width: 100%;
+  };
+}
+.Question__questionArticles + .Question__questionArticlesPager {
+  @include sp {
+    margin-top: 40px;
+  };
+  @include pc {
+    margin-top: 48px;
+  };
+}
+.Question__questionArticlesPager {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+</style>

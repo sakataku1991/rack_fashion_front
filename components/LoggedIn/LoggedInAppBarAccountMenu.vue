@@ -20,9 +20,6 @@
     <v-list
       dense
     >
-      <v-subheader>
-        ログイン中のユーザー
-      </v-subheader>
 
       <v-list-item>
         <v-list-item-content>
@@ -32,12 +29,7 @@
         </v-list-item-content>
       </v-list-item>
 
-      <!-- 「v-divider」はhrタグ -->
       <v-divider />
-
-      <v-subheader>
-        アカウント
-      </v-subheader>
 
       <template
         v-for="(menu, i) in menus"
@@ -70,11 +62,18 @@
 
 <script>
 export default {
+  name: 'LoggedInAppBarAccountMenu',
   data () {
     return {
       menus: [
-        { name: 'account-settings', icon: 'mdi-account-cog' },
-        { name: 'account-password', icon: 'mdi-lock-outline' },
+        { name: 'account-questions', icon: 'mdi-edit' },
+        { name: 'account-answers', icon: 'mdi-account-cog' },
+        { name: 'account-tickets', icon: 'mdi-account-cog' },
+        { name: 'account-liked', icon: 'mdi-account-cog', divider: true },
+        { name: 'account-answers-can-be-viewed', icon: 'mdi-account-cog' },
+        { name: 'account-browsing-history', icon: 'mdi-account-cog' },
+        { name: 'account-settings', icon: 'mdi-account-cog', divider: true },
+        // { name: 'account-password', icon: 'mdi-lock-outline' },
         { name: 'logout', icon: 'mdi-logout-variant', divider: true }
       ]
     }

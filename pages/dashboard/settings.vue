@@ -1,7 +1,5 @@
 <template>
-  <div>
-    {{ $route.fullPath }}
-  </div>
+  <nuxt-child />
 </template>
 
 <script>

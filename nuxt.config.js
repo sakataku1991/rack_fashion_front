@@ -11,8 +11,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no, address=no, email=no' }
+      { name: 'format-detection', content: 'telephone=no, address=no, email=no' },
+      { hid: 'description', name: 'description', content: 'RACKはファッション情報に特化したQ＆Aサイトです。服の着こなしや流行りのブランドについてなど、ファッションに関して知りたいことを気軽に質問してみましょう。' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'RACK' },
+      { hid: 'og:title', property: 'og:title', content: 'RACK｜ファッション情報専門Q＆Aサイト' },
+      { hid: 'og:url', property: 'og:url', content: 'https://www.rack-fashion.com/' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:image', property: 'og:image', content: '/logo_rack_ogp_for-sns.png' },
+      { hid: 'og:description', property: 'og:description', content: 'RACKはファッション情報に特化したQ＆Aサイトです。服の着こなしや流行りのブランドについてなど、ファッションに関して知りたいことを気軽に質問してみましょう。' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -68,40 +74,40 @@ export default {
   },
 
   vuetify: {
-    // カスタムCSSのファイルパス
-    customVariables: ['~/assets/style/variables.scss'],
-    // カスタムCSSを有効にするフラグ
-    // Doc: https://vuetifyjs.com/en/features/sass-variables/#nuxt-install
-    treeShake: true,
-    theme: {
-      themes: {
-        light: {
-          primary: '4080be',
-          info: '4fc1e9',
-          success: '44d69e',
-          warning: 'feb65e',
-          error: 'fb8678',
-          background: 'f6f6f4',
-          black: '222',
-          appblue: '1c6ecd'
-        }
-      }
-    }
+    // // カスタムCSSのファイルパス
+    // customVariables: ['~/assets/style/variables.scss'],
+    // // カスタムCSSを有効にするフラグ
+    // // Doc: https://vuetifyjs.com/en/features/sass-variables/#nuxt-install
+    // treeShake: true,
+    // theme: {
+    //   themes: {
+    //     light: {
+    //       primary: '4080be',
+    //       info: '4fc1e9',
+    //       success: '44d69e',
+    //       warning: 'feb65e',
+    //       error: 'fb8678',
+    //       background: 'f6f6f4',
+    //       black: '222',
+    //       appblue: '1c6ecd'
+    //     }
+    //   }
+    // }
   },
 
   // 汎用CSSの読み込み
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '~/assets/style/style.scss'
+    '~/assets/style/style.scss'
   ],
 
   // カスタムCSSの読み込み（変数・mixinのみ）
   // Doc: https://github.com/nuxt-community/style-resources-module
   styleResources: {
     scss: [
-      // '~/assets/style/01-foundation/01-variable/_variable.scss',
-      // '~/assets/style/01-foundation/02-mixin/_mixin.scss',
-      // '~/assets/style/01-foundation/03-function/_function.scss'
+      '~/assets/style/01-foundation/01-variable/_variable.scss',
+      '~/assets/style/01-foundation/02-mixin/_mixin.scss',
+      '~/assets/style/01-foundation/03-function/_function.scss'
     ]
   },
 

@@ -91,22 +91,32 @@
 
 // -----▼ 普通のリスト ▼-----
 .list.-normal {
-  align-items: center;
-	display: flex;
-	@include sp {
-	};
-	@include pc {
-	};
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-normal > li {
+  display: flex;
+  @include sp {
+    gap: 8px;
+  };
+  @include pc {
+    gap: 8px;
+  };
 }
 .list.-normal > li::before {
   background-color: $list-mark-color;
   border-radius: 50%;
+  content: "";
   @include sp {
     height: 6px;
+    margin-top: calc(0.8em - calc(6px / 2));  // この高さ指定の0.8emは、「line-height: 1.6;」の半分となる値
     width: 6px;
   };
   @include pc {
     height: 6px;
+    margin-top: calc(0.8em - calc(6px / 2));  // この高さ指定の0.8emは、「line-height: 1.6;」の半分となる値
     width: 6px;
   };
 }
@@ -175,6 +185,12 @@
 // -----▼ 注釈（※印だけ） ▼-----
 // 注釈のコメ印
 .list.-note {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.list.-note > li {
   display: flex;
   @include sp {
   };

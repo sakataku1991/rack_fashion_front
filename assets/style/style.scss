@@ -5,7 +5,7 @@
 Thema Name:     rack
 Description:    Webアプリ『RACK』。
 Version:        1.0.0
-Last Update:    2022/01/01
+Last Update:    2022/03/01
 License:        GPL
 License URL:    http://www.gnu.org/licenses/gpl.html
 */
@@ -15,9 +15,10 @@ License URL:    http://www.gnu.org/licenses/gpl.html
 // Foundation
 // ==========================================================================
 // @import "01-foundation/*";
-@import "01-foundation/01-variable/_variable";
-@import "01-foundation/02-mixin/_mixin";
-@import "01-foundation/03-function/_function";
+// 以下の3ファイルのみ「nuxt.config.js」の「styleResources」で読み込み（コンポーネントで変数を使えるようにするため）
+// @import "01-foundation/01-variable/_variable";
+// @import "01-foundation/02-mixin/_mixin";
+// @import "01-foundation/03-function/_function";
 @import "01-foundation/04-reset/01-reboot-fix/_reboot-fix";
 @import "01-foundation/04-reset/02-reboot/_Reboot";
 // ブラウザのデフォルトスタイルの初期化をするレイヤー。
@@ -79,31 +80,29 @@ License URL:    http://www.gnu.org/licenses/gpl.html
 @import "03-object/02-component/_tag";
 @import "03-object/02-component/_title";
 @import "03-object/02-component/_toggle";
-@import "03-object/03-template/02-footer/_footer";
-@import "03-object/03-template/02-footer/_ft-content";
-@import "03-object/03-template/03-form/01-form-structure/_form-structure";
-@import "03-object/03-template/03-form/02-form-component/_form-component";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_calendar";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_checkbox";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_file";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_radio";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_select";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-content_text";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-description";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-data-note";
-@import "03-object/03-template/03-form/02-form-component/_form-list-item-title";
-@import "03-object/03-template/03-form/03-form-layout/_form-layout";
-@import "03-object/03-template/03-form/04-form-type/_form-regist";
-@import "03-object/03-template/03-form/04-form-type/_form-search-result";
-@import "03-object/03-template/04-modal/_modal";
-@import "03-object/03-template/05-blog/_blog-archive";
-@import "03-object/03-template/05-blog/_blog-sidebar";
-@import "03-object/03-template/05-blog/_blog-single";
-@import "03-object/03-template/05-blog/_blog";
-@import "03-object/03-template/06-basic/_article";
-@import "03-object/03-template/06-basic/_thanks-page";
-@import "03-object/03-template/07-project/_recommend-column";
-@import "03-object/03-template/07-project/_set-component";
+@import "03-object/03-template/01-form/01-form-structure/_form-structure";
+@import "03-object/03-template/01-form/02-form-component/_form-component";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-content_calendar";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-content_checkbox";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-content_file";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-content_radio";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-content_select";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-content_text";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-description";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-data-note";
+@import "03-object/03-template/01-form/02-form-component/_form-list-item-title";
+@import "03-object/03-template/01-form/03-form-layout/_form-layout";
+@import "03-object/03-template/01-form/04-form-type/_form-regist";
+@import "03-object/03-template/01-form/04-form-type/_form-search-result";
+@import "03-object/03-template/02-modal/_modal";
+@import "03-object/03-template/03-blog/_blog-archive";
+@import "03-object/03-template/03-blog/_blog-sidebar";
+@import "03-object/03-template/03-blog/_blog-single";
+@import "03-object/03-template/03-blog/_blog";
+@import "03-object/03-template/04-basic/_article";
+@import "03-object/03-template/04-basic/_thanks-page";
+@import "03-object/03-template/05-project/_recommend-column";
+@import "03-object/03-template/05-project/_set-component";
 // サイトを構成する汎用パーツ群を定義するためのレイヤー。
 
 // 「01-frameworks」フォルダ：外部フレームワーク付属のcssファイルを格納する場所。

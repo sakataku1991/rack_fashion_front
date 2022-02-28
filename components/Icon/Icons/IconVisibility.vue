@@ -1,0 +1,22 @@
+<template>
+  <g id="visibility_black_24dp" transform="translate(-823 -1089)">
+    <path
+      id="box"
+      d="M0,0H24V24H0Z"
+      transform="translate(823 1089)"
+      fill="none"
+    />
+    <path
+      id="visibility"
+      d="M12,4.5A11.827,11.827,0,0,0,1,12a11.817,11.817,0,0,0,22,0A11.827,11.827,0,0,0,12,4.5ZM12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Zm0-8a3,3,0,1,0,3,3A3,3,0,0,0,12,9Z"
+      transform="translate(823 1089)"
+      fill="currentColor"
+    />
+  </g>
+</template>
+
+<script>
+export default {
+  name: 'ComponentsIconVisibility'
+}
+</script>

@@ -1,6 +1,8 @@
 // このファイルにアプリ共通の値やメソッドを設定していく（Vuex）
-const homePath = 'index'
-const mypagePath = 'mypage'
+// const beforeLoginHomePath = 'index'
+const loggedInHomePath = 'index-logged-in'
+// const temporarySignedUpPath = 'temporary-signed-up'
+const temporarySignedUpPath = 'index-logged-in'
 // const dashboardPath = 'dashboard'
 
 // 共通の変数
@@ -13,25 +15,26 @@ export const state = () => ({
   allTime: {
   },
   // 会員登録時の共通変数・パスの指定
-  afterSigningUp: {
-    mypagePath: {
-      name: mypagePath
+  signedUp: {
+    temporarySignedUpPath: {
+      name: temporarySignedUpPath
     }
   },
   // ログイン時の共通変数・パスの指定
   loggedIn: {
     // ログイン後の初期表示画面
     homePath: {
-      name: homePath
+      name: loggedInHomePath
     },
     // 記憶したルート
     rememberPath: {
-      name: homePath,
+      name: loggedInHomePath,
       params: {}
     },
     // ログイン後アクセス不可ルート一覧
     // （「middleware」の「logged-in-redirect.js」）
     redirectPaths: [
+      'index',
       'signup',
       'login'
     ]
@@ -120,6 +123,15 @@ export const actions = {
   getCurrentUser ({ commit }, user) {
     commit('setCurrentUser', user)
   },
+  // getCurrentUser ({ state, commit }, params) {
+  //   let currentUser = null
+  //   if (params && params.id) {
+  //     const id = Number(params.id)
+  //     currentUser =
+  //       state.user.list.find(user => user.id === id) || null
+  //   }
+  //   commit('setCurrentUser', currentUser)
+  // },
   // AuthToken
   getAuthToken ({ commit }, token) {
     commit('setAuthToken', token)
