@@ -119,9 +119,9 @@
                         以下のお問い合わせフォームより、不具合の内容についてご報告いただけますと幸いです。
                       </p>
                       <p class="text">
-                        <nuxt-link to="/#" target="_blank" rel="noopener noreferrer" class="text-link" ontouchstart="">
-                          お問い合わせフォーム
-                        </nuxt-link>
+                        <link-text-tab
+                          :linkTextTabContact="linkTextTabContact"
+                        />
                       </p>
                     </div>
                   </li>
@@ -144,9 +144,9 @@
                         以下のお問い合わせフォームより、対象ユーザーの<br>①ユーザー名<br>②RACK ID<br>③具体的な荒らしの内容<br>以上の3点を必ず記載してください。
                       </p>
                       <p class="text">
-                        <nuxt-link to="/#" target="_blank" rel="noopener noreferrer" class="text-link" ontouchstart="">
-                          お問い合わせフォーム
-                        </nuxt-link>
+                        <link-text-tab
+                          :linkTextTabContact="linkTextTabContact"
+                        />
                       </p>
                       <p class="text">
                         活動内容を調査したのち、個別に対処させていただきます。
@@ -181,7 +181,14 @@
 <script>
 export default {
   name: 'PagesFaq',
-  layout: 'fixed-page'
+  layout: 'fixed-page',
+  data () {
+    return {
+      linkTextTabContact: {
+        href: 'https://forms.gle/w6bRTyA7XhoGzBVM8', text: 'お問い合わせフォーム'
+      }
+    }
+  }
 }
 </script>
 

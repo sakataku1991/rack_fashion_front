@@ -104,13 +104,15 @@
                 </nuxt-link>
               </li>
               <li class="Footer__sitemapListItem">
-                <nuxt-link
-                  to="/#"
+                <a
+                  href="https://forms.gle/w6bRTyA7XhoGzBVM8"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="Footer__sitemapListItemLink"
                   ontouchstart=""
                 >
                   お問い合わせ
-                </nuxt-link>
+                </a>
               </li>
             </ul>
           </div>
