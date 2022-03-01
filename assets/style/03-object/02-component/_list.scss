@@ -211,11 +211,11 @@
   flex-shrink: 0;
   font-size: inherit;
   @include sp {
-    margin-right: 2px;
+    margin-right: 3px;
     margin-top: -2px;
   };
   @include pc {
-    margin-right: 2px;
+    margin-right: 3px;
     margin-top: -2px;
   };
 }

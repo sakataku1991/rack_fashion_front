@@ -23,7 +23,7 @@
       <div class="contentBoxMPc">
         <div class="MyContent__content">
           <div class="MyContent__questionArticles">
-            <h2 class="title-2">
+            <h2 class="title-3">
               現在保有している閲覧チケット
             </h2>
           </div>

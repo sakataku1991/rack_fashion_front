@@ -22,13 +22,13 @@
     <section class="section MyContent">
       <div class="contentBoxM">
         <div class="MyContent__content">
-          <p class="text">
+          <!-- <p class="text">
             {{ $store.state.user.current }}
             {{ $store.state.user.current.sex_id }}
-          </p>
-          <p class="text">
+          </p> -->
+          <!-- <p class="text">
             アバターの画像URL→{{ $store.state.user.current.avatar_image_url }}
-          </p>
+          </p> -->
           <div class="MyContent__profile">
             <section class="section Form">
               <div class="Form__content">
@@ -44,7 +44,7 @@
                       <div class="form-section-input-image">
                         <dl class="form-list -layer1">
                           <div class="form-list-item -avatar">
-                            <dt class="form-list-item-title hideAll">
+                            <dt class="form-list-item-title visuallyHidden">
                               <label
                                 for="yourAvatar"
                                 class="form-list-item-title-label"
@@ -65,7 +65,7 @@
                                   accept="image/png, image/jpeg, image/gif"
                                   autocomplete="off"
                                   tabindex="-1"
-                                  class="form-list-item-data-content -file hideAll"
+                                  class="form-list-item-data-content -file visuallyHidden"
                                 > -->
                               </label>
                             </dd>

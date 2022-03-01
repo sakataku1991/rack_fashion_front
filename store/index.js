@@ -1,4 +1,5 @@
 // このファイルにアプリ共通の値やメソッドを設定していく（Vuex）
+
 // const beforeLoginHomePath = 'index'
 const loggedInHomePath = 'index-logged-in'
 // const temporarySignedUpPath = 'temporary-signed-up'

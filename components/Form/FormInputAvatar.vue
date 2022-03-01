@@ -50,7 +50,7 @@
       accept="image/png, image/jpeg, image/gif"
       name="yourAvatar"
       placeholder="アイコンを変更"
-      class="form-list-item-data-content -file hideAll"
+      class="form-list-item-data-content -file visuallyHidden"
       v-on="$listeners"
       @change="onImagePicked"
     />
