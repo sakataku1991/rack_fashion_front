@@ -202,7 +202,7 @@ export default {
       this.loading = true
       setTimeout(() => {
         this.loading = false
-      }, 1500)
+      }, 3000)
       if (this.isValid) {
         await this.$axios.$delete(`/api/v1/users/${this.params.user.id}`, this.params)
           // 退会成功時の処理
