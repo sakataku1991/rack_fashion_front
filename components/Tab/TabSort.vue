@@ -2,18 +2,20 @@
   <div class="Tab__sort">
     <ul class="Tab__sortList">
       <li
-        v-for="(sort, i) in sorts"
-        :key="`sort-${i}`"
+        v-for="(tab, i) in tabs"
+        :key="`tab-${i}`"
+        :class="[{ 'is-active': currentTab === `tab-${i}` }]"
         class="Tab__sortListItem"
+        @click="currentTab = `tab-${i}`"
       >
         <!-- TODO アクティブなタグは「aria-selected="true"」にする！ -->
         <nuxt-link
-          :to="`/?order=${sort.slug}`"
+          :to="`/?order=${tab.slug}`"
           aria-selected="false"
           class="Tab__sortListItemBtn btn -sort btn-sortQuestion"
           ontouchstart=""
         >
-          <span class="btn-text">{{ $t(`sorts.${sort.name}`) }}</span>
+          <span class="btn-text">{{ $t(`sorts.${tab.name}`) }}</span>
         </nuxt-link>
       </li>
     </ul>
@@ -25,7 +27,8 @@ export default {
   name: 'ComponentsTabSort',
   data () {
     return {
-      sorts: [
+      currentTab: 'tab-0',
+      tabs: [
         { name: 'new', slug: 'new' },
         { name: 'popular', slug: 'popular' },
         { name: 'hot', slug: 'hot' }
@@ -49,11 +52,13 @@ export default {
     border-radius: 3px;
     gap: 1px;
     padding: 4px;
+    padding-left: 4px !important;
   };
   @include pc {
     border-radius: 4px;
     gap: 1px;
     padding: 3px;
+    padding-left: 3px !important;
     width: fit-content;
   };
 }
@@ -148,6 +153,16 @@ export default {
 }
 // アクティブ時の効果
 .btn-sortQuestion[aria-selected=true] {
+  background-color: $white;
+  pointer-events: none;
+  @include sp {
+    box-shadow: 0px 2px 3px rgba($black_rgb, 0.12);
+  };
+  @include pc {
+    box-shadow: 0px 2px 3px rgba($black_rgb, 0.12);
+  };
+}
+.Tab__sortListItem.is-active .btn-sortQuestion {
   background-color: $white;
   pointer-events: none;
   @include sp {

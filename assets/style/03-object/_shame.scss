@@ -16,6 +16,14 @@
     margin-bottom: 0 !important;
   };
 }
+// ulタグ、olタグ
+.v-application .v-application--wrap ul,
+.v-application .v-application--wrap ol {
+  @include sp {
+  };
+  @include pc {
+  };
+}
 // -----▲ 全体へ影響 ▲-----
 
 // -----▼ フォームのレイアウト ▼-----

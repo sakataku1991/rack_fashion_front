@@ -87,6 +87,14 @@
     font-size: 1.6rem;
   };
 }
+// 「削除」
+.list > li.-delete {
+  color: $delete;
+  @include sp {
+  };
+  @include pc {
+  };
+}
 // -----▲ 普通のリスト・連番のリスト・注釈 共通スタイル ▲-----
 
 // -----▼ 普通のリスト ▼-----
@@ -203,10 +211,12 @@
   flex-shrink: 0;
   font-size: inherit;
   @include sp {
-    margin-right: 2px;
+    margin-right: 3px;
+    margin-top: -2px;
   };
   @include pc {
-    margin-right: 2px;
+    margin-right: 3px;
+    margin-top: -2px;
   };
 }
 // -----▲ 注釈（※印だけ） ▲-----

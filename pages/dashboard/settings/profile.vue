@@ -44,7 +44,7 @@
                       <div class="form-section-input-image">
                         <dl class="form-list -layer1">
                           <div class="form-list-item -avatar">
-                            <dt class="form-list-item-title hideAll">
+                            <dt class="form-list-item-title visuallyHidden">
                               <label
                                 for="yourAvatar"
                                 class="form-list-item-title-label"
@@ -65,7 +65,7 @@
                                   accept="image/png, image/jpeg, image/gif"
                                   autocomplete="off"
                                   tabindex="-1"
-                                  class="form-list-item-data-content -file hideAll"
+                                  class="form-list-item-data-content -file visuallyHidden"
                                 > -->
                               </label>
                             </dd>
@@ -234,7 +234,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        'プロフィール',
+        'tab-0',
       tabs: [
         { name: 'プロフィール', slug: 'dashboard/settings/profile' }
       ],
@@ -246,6 +246,10 @@ export default {
           name: this.$store.state.user.current.name,
           rack_id: this.$store.state.user.current.rack_id,
           sex: this.$store.state.user.current.sex,
+          sex_id: this.$store.state.user.current.sex_id,
+          gender: this.$store.state.user.current.gender,
+          code: this.$store.state.user.current.code,
+          email: this.$store.state.user.current.email,
           profile: this.$store.state.user.current.profile,
           instagram: this.$store.state.user.current.instagram,
           twitter: this.$store.state.user.current.twitter,

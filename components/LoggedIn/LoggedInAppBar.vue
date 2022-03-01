@@ -272,7 +272,7 @@ export default {
 .Header__actionButtonsQuestionBtn {
   @include sp {
     line-height: 1.5 !important;
-    padding: 4px 12px;
+    padding: 3px 12px;
   };
   @include pc {
     line-height: 1.5 !important;

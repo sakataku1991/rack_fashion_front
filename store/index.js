@@ -1,9 +1,14 @@
 // このファイルにアプリ共通の値やメソッドを設定していく（Vuex）
-// const beforeLoginHomePath = 'index'
-const loggedInHomePath = 'index-logged-in'
+
+// 会員登録後のリダイレクト先
 // const temporarySignedUpPath = 'temporary-signed-up'
 const temporarySignedUpPath = 'index-logged-in'
+// ログイン後のリダイレクト先
+// const beforeLoginHomePath = 'index'
+const loggedInHomePath = 'index-logged-in'
 // const dashboardPath = 'dashboard'
+// アカウント削除（退会）後のリダイレクト先
+const afterDeleteAccountPath = 'bye-bye'
 
 // 共通の変数
 export const state = () => ({
@@ -38,6 +43,12 @@ export const state = () => ({
       'signup',
       'login'
     ]
+  },
+  // 退会後の共通変数・パスの指定
+  deleteAccount: {
+    afterDeleteAccountPath: {
+      name: afterDeleteAccountPath
+    }
   },
   // 「質問」のデータ
   question: {

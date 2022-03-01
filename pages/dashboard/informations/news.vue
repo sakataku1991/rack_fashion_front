@@ -54,7 +54,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        'お知らせ',
+        'tab-1',
       tabs: [
         { name: '通知', slug: 'dashboard/informations/notifications' },
         { name: 'お知らせ', slug: 'dashboard/informations/news' }

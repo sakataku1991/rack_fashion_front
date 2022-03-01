@@ -200,7 +200,7 @@ export default {
 .Header__actionButtonsLoginBtn {
   @include sp {
     line-height: 1.5 !important;
-    padding: 4px 6px;
+    padding: 3px 6px;
   };
   @include pc {
     line-height: 1.5 !important;
@@ -219,7 +219,7 @@ export default {
 .Header__actionButtonsSignupBtn {
   @include sp {
     line-height: 1.5 !important;
-    padding: 4px 6px;
+    padding: 3px 6px;
   };
   @include pc {
     line-height: 1.5 !important;

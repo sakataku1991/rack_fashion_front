@@ -23,18 +23,9 @@
       <div class="contentBoxMPc">
         <div class="MyContent__content">
           <div class="MyContent__questionArticles">
-            <ul class="MyContent__questionList">
-              <li
-                v-for="n in 12"
-                :key="n"
-                class="MyContent__questionListItem"
-              >
-                <card-question />
-              </li>
-            </ul>
-          </div>
-          <div class="MyContent__questionArticlesPager">
-            <pager />
+            <h2 class="title-2">
+              メールアドレスの変更
+            </h2>
           </div>
         </div>
       </div>
@@ -44,7 +35,7 @@
 
 <script>
 export default {
-  name: 'PagesDashboardItemsComments',
+  name: 'PagesDashboardSettingsAccountEmail',
   layout: 'dashboard',
   // falseを返すページのアクセスを制限する
   validate ({ route }) {
@@ -56,7 +47,7 @@ export default {
       currentTab:
         'tab-0',
       tabs: [
-        { name: 'コメントした記事', slug: 'dashboard/items/comments' }
+        { name: 'アカウント', slug: 'dashboard/settings/account' }
       ]
     }
   },
@@ -141,22 +132,16 @@ export default {
   };
 }
 .MyContent__questionList {
-  display: flex;
-  flex-wrap: wrap;
   @include sp {
-    gap: 32px 16px;
   };
   @include pc {
-    gap: 56px 32px;
   };
 }
 .MyContent__questionListItem {
   @include sp {
-    width: flexBox(2, 16px);
+    width: 100%;
   };
   @include pc {
-    flex: 1;
-    min-width: 208px;
     width: 100%;
   };
 }

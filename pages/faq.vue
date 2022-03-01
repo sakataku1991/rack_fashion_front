@@ -24,7 +24,7 @@
                     </h2>
                     <div class="Faq__answerPublicListItemData">
                       <p class="text">
-                        RACKはファッション情報に特化したQ＆Aサイトです。RACKの登録ユーザー同士で、ファッション関係の情報を交換したり共有することができます。<br>詳しくは以下のページをご参照ください。
+                        RACKはファッション情報に特化したQ＆Aサイトです。<br>RACKの登録ユーザー同士で、ファッション関係の情報を交換したり共有することができます。詳しくは以下のページをご参照ください。
                       </p>
                       <p class="text">
                         <nuxt-link
