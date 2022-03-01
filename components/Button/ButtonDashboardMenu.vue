@@ -20,13 +20,19 @@ export default {
 .btn-dashboardMenu {
   @include sp {
     border-radius: 50%;
-    height: 48px;
-    width: 48px;
+    box-shadow:
+      0px 0px 8px rgb($blue_hsb_s20b48_rgb / 20%),
+      0px 1px 3px 1px rgb($blue_hsb_s20b48_rgb / 25%) ;
+    height: 56px;
+    width: 56px;
   };
   @include pc {
     border-radius: 50%;
-    height: 48px;
-    width: 48px;
+    box-shadow:
+      0px 0px 8px rgb($blue_hsb_s20b48_rgb / 20%),
+      0px 1px 3px 1px rgb($blue_hsb_s20b48_rgb / 25%) ;
+    height: 56px;
+    width: 56px;
   };
 }
 .btn-text {

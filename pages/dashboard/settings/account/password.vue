@@ -45,7 +45,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        'アカウント',
+        'tab-0',
       tabs: [
         { name: 'アカウント', slug: 'dashboard/settings/account' }
       ]

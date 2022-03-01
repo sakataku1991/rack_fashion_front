@@ -17,7 +17,7 @@
           accept="image/png, image/jpeg, image/gif"
           autocomplete="off"
           tabindex="-1"
-          class="form-list-item-data-content -file hideAll"
+          class="form-list-item-data-content -file visuallyHidden"
         >
       </label>
       <div class="NewQuestion__postBodyMainHeaderCategory">
@@ -79,7 +79,7 @@
       <div class="NewQuestion__postBodyMainHeaderTitle">
         <dl class="form-list -layer1">
           <div class="form-list-item -questionTitle">
-            <dt class="form-list-item-title hideAll">
+            <dt class="form-list-item-title visuallyHidden">
               <label
                 for="questionText"
                 class="form-list-item-title-label"
@@ -138,7 +138,7 @@
     <div class="NewQuestion__postBodyMainTextBox">
       <dl class="form-list -layer1">
         <div class="form-list-item -questionText">
-          <dt class="form-list-item-title hideAll">
+          <dt class="form-list-item-title visuallyHidden">
             <label
               for="questionText"
               class="form-list-item-title-label"

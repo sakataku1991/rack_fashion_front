@@ -10,6 +10,7 @@
 // .title-section：セクションの見出し
 
 // .title-faq：「よくある質問」の見出し
+// .title-dashboard：「ダッシュボード」のコンテンツの見出し
 
 
 // .title-modal：モーダルの見出し
@@ -145,6 +146,35 @@
   };
 }
 // ----▲ 「よくある質問」の見出し ▲-----
+
+// ----▼ 「ダッシュボード」のコンテンツの見出し ▼-----
+.title-dashboard-content {
+  font-weight: bold;
+  @include sp {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 2.0rem;
+    line-height: 1.5;
+  };
+}
+// ----▲ 「ダッシュボード」のコンテンツの見出し ▲-----
+
+// ----▼ 「ダッシュボード」のコンテンツ内のアイテムの見出し ▼-----
+.title-dashboard-content-child {
+  font-weight: bold;
+  @include sp {
+    color: $gray_5;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  };
+  @include pc {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  };
+}
+// ----▲ 「ダッシュボード」のコンテンツ内のアイテムの見出し ▲-----
 
 // ----▼ モーダルの見出し ▼-----
 .title-modal {

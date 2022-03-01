@@ -28,7 +28,7 @@
       <div class="form-section -input">
         <dl class="form-list -layer1">
           <div class="form-list-item -picture">
-            <dt class="form-list-item-title hideAll">
+            <dt class="form-list-item-title visuallyHidden">
               <label
                 for="yourPicture"
                 class="form-list-item-title-label"
@@ -53,7 +53,7 @@
                   accept="image/png, image/jpeg, image/gif"
                   autocomplete="off"
                   tabindex="-1"
-                  class="form-list-item-data-content -file hideAll"
+                  class="form-list-item-data-content -file visuallyHidden"
                 >
               </label>
             </dd>
@@ -61,7 +61,7 @@
           <div class="form-list-item -commentAndLink">
             <div class="form-list -layer2">
               <div class="form-list-item -yourComment">
-                <dt class="form-list-item-title hideAll">
+                <dt class="form-list-item-title visuallyHidden">
                   <label
                     for="yourComment"
                     class="form-list-item-title-label"

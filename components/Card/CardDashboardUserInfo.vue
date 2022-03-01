@@ -121,7 +121,7 @@ export default {
   z-index: 1;
   @include sp {
     right: 0;
-    top: 16px;
+    top: calc(16px + calc(64px / 2) - calc(30px / 2));
   };
   @include pc {
     right: 0;

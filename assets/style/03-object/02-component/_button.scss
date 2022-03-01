@@ -236,6 +236,38 @@
     }
   };
 }
+// 「削除」Ver.
+.btn.-normal.-delete {
+  background-color: $delete !important;
+  border: 1px solid $delete !important;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.btn.-normal.-delete .btn-text,
+.btn.-normal.-delete.btn-text {
+  color: $white;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「削除」Ver.のホバー時
+.btn.-normal.-delete {
+  @include sp {
+    &:active {
+      background-color: $delete_hover !important;
+      border: 1px solid $delete_hover !important;
+    }
+  };
+  @include pc {
+    &:hover {
+      background-color: $delete_hover !important;
+      border: 1px solid $delete_hover !important;
+    }
+  };
+}
 // -----▲ 基本のボタン｜ノーマル ▲-----
 
 // -----▼ 基本のボタン｜ボーダー ▼-----
@@ -382,6 +414,35 @@
       background-color: $blue_12pct;
       border: 1px solid $blue_16pct;
       color: $blue;
+    }
+  };
+}
+// 「削除」Ver.
+.btn.-outlined.-delete {
+  border: 1px solid $delete;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.btn.-outlined.-delete .btn-text,
+.btn.-outlined.-delete.btn-text {
+  color: $delete;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「削除」Ver.のホバー時
+.btn.-outlined.-delete {
+  @include sp {
+    &:active {
+      background-color: $delete_bg;
+    }
+  };
+  @include pc {
+    &:hover {
+      background-color: $delete_bg;
     }
   };
 }

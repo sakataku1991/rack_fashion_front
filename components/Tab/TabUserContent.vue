@@ -5,10 +5,10 @@
       class="Tab__userItemsList"
     >
       <li
-        v-for="tab in tabs"
-        :key="tab"
+        v-for="(tab, i) in tabs"
+        :key="`tab-${i}`"
         class="Tab__userItemsListItem"
-        :class="[{ 'is-active': currentTab === tab }]"
+        :class="[{ 'is-active': currentTab === `tab-${i}` }]"
       >
         <!-- v-model="setCurrentTab" -->
         <!-- @click="currentTab = tab" -->
@@ -178,19 +178,22 @@ export default {
 .Tab__userItemsListItem.is-active .Tab__userItemsListItemBtn .Tab__userItemsListItemBtnText::after {
   content: "";
   background-color: $blue;
+  box-sizing: content-box;
   position: absolute;
   @include sp {
     bottom: 0;
     border-radius: 50px;
     height: 3px;
-    left: calc(50% - calc(100% / 2));
+    left: calc(50% - calc(calc(100% + calc(4px * 2)) / 2));
+    padding: 0 4px;
     width: 100%;
   };
   @include pc {
     bottom: 0;
     border-radius: 50px;
     height: 4px;
-    left: calc(50% - calc(100% / 2));
+    left: calc(50% - calc(calc(100% + calc(6px * 2)) / 2));
+    padding: 0 6px;
     width: 100%;
   };
 }
