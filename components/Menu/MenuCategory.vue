@@ -169,6 +169,8 @@ export default {
   text-align: center;
   @include sp {
     border: 1px solid $gray_e6;
+    font-size: 1.4rem;
+        padding: 4px 42px 4px 12px;
     width: 100%;
   };
   @include pc {

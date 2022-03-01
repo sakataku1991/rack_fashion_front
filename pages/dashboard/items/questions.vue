@@ -57,7 +57,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        '投稿した質問',
+        'tab-0',
       tabs: [
         { name: '投稿した質問', slug: 'dashboard/items/questions' }
       ]

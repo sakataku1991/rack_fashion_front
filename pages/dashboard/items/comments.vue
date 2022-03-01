@@ -54,7 +54,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        'コメントした記事',
+        'tab-0',
       tabs: [
         { name: 'コメントした記事', slug: 'dashboard/items/comments' }
       ]

@@ -1,20 +1,21 @@
 <template>
   <div class="Tab__gender">
     <ul class="Tab__genderList">
-      <!-- TODO アクティブなタブの「li」タグには「is-active」クラスを付ける！ -->
       <li
-        v-for="(sex, i) in sexes"
-        :key="`sex-${i}`"
+        v-for="(tab, i) in tabs"
+        :key="`tab-${i}`"
         class="Tab__genderListItem"
+        :class="[{ 'is-active': currentTab === `tab-${i}` }]"
+        @click="currentTab = `tab-${i}`"
       >
         <nuxt-link
-          :to="`/?gender=${sex.slug}`"
+          :to="`/?gender=${tab.slug}`"
           class="Tab__genderListItemBtn btn -tab btn-tabGender"
-          :class="`-${sex.slug}`"
+          :class="`-${tab.slug}`"
           tabindex="0"
           ontouchstart=""
         >
-          <span class="btn-text">{{ $t(`sexes.${sex.gender}`) }}</span>
+          <span class="btn-text">{{ $t(`sexes.${tab.gender}`) }}</span>
         </nuxt-link>
       </li>
     </ul>
@@ -26,7 +27,8 @@ export default {
   name: 'ComponentsTabGender',
   data () {
     return {
-      sexes: [
+      currentTab: 'tab-0',
+      tabs: [
         { gender: 'all', slug: 'all', code: '9' },
         { gender: 'men', slug: 'men', code: '1' },
         { gender: 'women', slug: 'women', code: '2' }
@@ -51,12 +53,14 @@ export default {
     border-radius: 3px;
     gap: 1px;
     padding: 4px;
+    padding-left: 4px !important;
     width: 100%;
   };
   @include pc {
     border-radius: 4px;
     gap: 1px;
     padding: 3px;
+    padding-left: 3px !important;
     width: fit-content;
   };
 }

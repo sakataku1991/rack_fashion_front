@@ -54,7 +54,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        'フォロー中',
+        'tab-0',
       tabs: [
         { name: 'フォロー中', slug: 'dashboard/relationships/following' },
         { name: 'フォロワー', slug: 'dashboard/relationships/followers' }

@@ -45,7 +45,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        '閲覧チケット',
+        'tab-0',
       tabs: [
         { name: '閲覧チケット', slug: 'dashboard/items/tickets' }
       ]

@@ -234,7 +234,7 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        'プロフィール',
+        'tab-0',
       tabs: [
         { name: 'プロフィール', slug: 'dashboard/settings/profile' }
       ],
