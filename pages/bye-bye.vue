@@ -5,7 +5,7 @@
         <!-- ページタイトル -->
         <h1 class="title-page">
           <span class="title-page-item">
-            <span class="title-page-text">{{ $my.pageTitle('administrator') }}</span>
+            <span class="title-page-text">{{ $my.pageTitle('bye bye') }}</span>
           </span>
         </h1><!-- /ページタイトル -->
       </div>
@@ -24,6 +24,7 @@
                   ...いつの日かまたご利用していただけると嬉しいです！
                 </p>
               </div>
+              <p class=""></p>
             </div>
           </div>
         </div>

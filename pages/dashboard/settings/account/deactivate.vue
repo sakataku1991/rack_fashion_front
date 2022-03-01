@@ -68,6 +68,8 @@
               <div class="MyContent__deleteAccountRequestForm">
                 <v-form
                   id="formDeleteAccount"
+                  ref="form"
+                  v-model="isValid"
                   class="form form-deleteAccount"
                   @submit.prevent="deleteAccount"
                 >
@@ -147,6 +149,8 @@
                       </a>
                       <v-btn
                         type="submit"
+                        :disabled="!isValid || loading"
+                        :loading="loading"
                         value="アカウントを削除"
                         ontouchstart=""
                         class="btn -normal -delete btn-deleteAccount btn-text"
@@ -173,8 +177,15 @@ export default {
   validate ({ route }) {
     return route.name !== 'account'
   },
-  data () {
+  data ({ $store }) {
     return {
+      isValid: false,
+      loading: false,
+      params: {
+        user: {
+          id: this.$store.state.user.current.id
+        }
+      },
       dashboardPath: 'question-id-dashboard',
       currentTab:
         'アカウント',
@@ -182,18 +193,18 @@ export default {
         { name: 'アカウント', slug: 'dashboard/settings/account' }
       ],
       // 「退会完了」ページのリンク
-      deleteAccountNextPath: $store.state.signedUp.temporarySignedUpPath
+      deleteAccountNextPath: $store.state.deleteAccount.afterDeleteAccountPath
     }
   },
   methods: {
     // 退会処理
-    async signup () {
+    async deleteAccount () {
       this.loading = true
       setTimeout(() => {
         this.loading = false
       }, 1500)
       if (this.isValid) {
-        await this.$axios.$post('/api/v1/users', this.params)
+        await this.$axios.$delete(`/api/v1/users/${this.params.user.id}`, this.params)
           // 退会成功時の処理
           .then(response => this.deleteAccountSuccessful(response))
           // 退会失敗時の処理
@@ -204,16 +215,13 @@ export default {
     // 退会成功時の処理
     deleteAccountSuccessful (response) {
       // 退会後のレスポンス
-      // this.signup(response)
+      this.deleteAccount(response)
       // フォーム内容をリセット
       this.$refs.form.reset()
-      for (const key in this.params.user) {
-        this.params.user[key] = ''
-      }
       // マイページ（deleteAccountNextPath）へリダイレクトする
       // this.$router.go(this.deleteAccountNextPath)
-      this.$router.go({ path: this.$router.currentRoute.path, force: true })
-      this.$router.push(this.deleteAccountNextPath)
+      // this.$router.go({ path: this.$router.currentRoute.path, force: true })
+      this.$router.replace(this.deleteAccountNextPath)
     },
     // 退会失敗時の処理
     deleteAccountFailure ({ response }) {

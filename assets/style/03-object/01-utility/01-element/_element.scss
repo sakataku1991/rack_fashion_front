@@ -129,6 +129,30 @@
 // ----------▲▲ background-color ▲▲----------
 
 
+// ----------▼▼ text-align ▼▼----------
+
+// -----▼ class ▼-----
+// common
+.taL {text-align: left !important;}
+.taC {text-align: center !important;}
+.taR {text-align: right !important;}
+// SP
+@include sp {
+	.taLSp {text-align: left !important;}
+	.taCSp {text-align: center !important;}
+	.taRSp {text-align: right !important;}
+}
+// PC
+@include pc {
+	.taLPc {text-align: left !important;}
+	.taCPc {text-align: center !important;}
+	.taRPc {text-align: right !important;}
+}
+// -----▲ class ▲-----
+
+// ----------▲▲ text-align ▲▲----------
+
+
 // ----------▼▼ margin ▼▼----------
 .mtM {
   margin-top: 40px !important;
