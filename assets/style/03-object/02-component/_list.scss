@@ -87,6 +87,14 @@
     font-size: 1.6rem;
   };
 }
+// 「削除」
+.list > li.-delete {
+  color: $delete;
+  @include sp {
+  };
+  @include pc {
+  };
+}
 // -----▲ 普通のリスト・連番のリスト・注釈 共通スタイル ▲-----
 
 // -----▼ 普通のリスト ▼-----

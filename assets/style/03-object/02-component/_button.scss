@@ -385,6 +385,35 @@
     }
   };
 }
+// 「削除」Ver.
+.btn.-outlined.-delete {
+  border: 1px solid $delete;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.btn.-outlined.-delete .btn-text,
+.btn.-outlined.-delete.btn-text {
+  color: $delete;
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 「削除」Ver.のホバー時
+.btn.-outlined.-delete {
+  @include sp {
+    &:active {
+      background-color: $delete_bg;
+    }
+  };
+  @include pc {
+    &:hover {
+      background-color: $delete_bg;
+    }
+  };
+}
 // -----▲ 基本のボタン｜ボーダー ▲-----
 
 // -----▼ 基本のボタン｜アイコン ▼-----

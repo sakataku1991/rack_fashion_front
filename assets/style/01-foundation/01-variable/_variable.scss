@@ -156,6 +156,9 @@ body {
   // --c-info-red: #ea3f60;
   // --c-info-green: #1ccd30;
   --c-info-yellow: #e0b31f;
+  // メニューボタンの影の色
+  --c-blue-hsb-s20b48: #626d7a;
+  --c-blue-hsb-s20b48-rgb: 98, 109, 122;
 }
 
 // メインカラーとそのバリエーション
@@ -259,6 +262,10 @@ $info_yellow: var(--c-info-yellow);
 $blue_hsb_b24: #00213d;
 $blue_hsb_s56b70: #4f7db3;  // TODO 要カスタムプロパティ化（「form-profile-avatar-text」のアバター編集フォームのテキストの色に使用）
 $blue_hsb_s60: #155399;
+
+$blue_hsb_s20b48: var(--c-blue-hsb-s20b48);  // TODO 要カスタムプロパティ化（「btn-dashboardMenu」の影の色に使用）
+$blue_hsb_s20b48_rgb: var(--c-blue-hsb-s20b48-rgb);  // TODO 要カスタムプロパティ化（「btn-dashboardMenu」の影の色に使用）
+
 $blue_hover: $blue_hsb_s60;
 $blue_20pct: #d1e2f5;  // TODO 要カスタムプロパティ化（「btn-publicLink」「btn-viewPublicedQuestion」のホバー時の色に使用）
 $blue_12pct: #e3edf9;

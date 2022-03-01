@@ -8,6 +8,7 @@
 // -----▼ 見出し ▼-----
 .title-dashboard-content {
   @include sp {
+    border-bottom: 1px solid $gray_e4;
     padding: 12px 12px 8px;
   };
   @include pc {

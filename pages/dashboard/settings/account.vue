@@ -98,51 +98,107 @@
             <h2 class="title-dashboard-content">
               通知設定
             </h2>
-            <div class="MyContent__notificationSettingsDef">
-              <dl class="MyContent__notificationSettingsDefList">
-                <div class="MyContent__notificationSettingsDefListItem">
-                  <dt class="MyContent__notificationSettingsDefListItemTitle">
-                    <p class="MyContent__notificationSettingsDefListItemTitleText title-dashboard-content-child">
-                      通知方法
-                    </p>
-                  </dt>
-                  <dd class="MyContent__notificationSettingsDefListItemData">
-                    <div class="agga">
-                      <ul class="easfaf11">
-                        <li class="aesgag1">
-                          メール
-                        </li>
-                        <li class="aesgag1">
-                          Web
-                        </li>
-                      </ul>
-                    </div>
-                  </dd>
-                </div>
-                <div class="MyContent__notificationSettingsDefListItem">
-                  <dt class="MyContent__notificationSettingsDefListItemTitle">
-                    <p class="MyContent__notificationSettingsDefListItemTitleText title-dashboard-content-child">
-                      通知する内容
-                    </p>
-                  </dt>
-                  <dd class="MyContent__notificationSettingsDefListItemData">
-                    <div class="agga">
-                      <ul class="easfaf11">
-                        <li class="aesgag1">
-                          誰かにフォローされたとき
-                        </li>
-                        <li class="aesgag1">
-                          自分の質問にコメントがついたとき
-                        </li>
-                        <li class="aesgag1">
-                          自分が書いたコメントが「役に立った」に選ばれたとき
-                        </li>
-                      </ul>
-                    </div>
-                  </dd>
-                </div>
-              </dl>
-            </div>
+            <v-form
+              id="formNotice"
+              class="form form-notice"
+              @submit.prevent="notice"
+            >
+              <div class="MyContent__notificationSettingsDef form-section -input">
+                <dl class="MyContent__notificationSettingsDefList form-list -layer1">
+                  <div class="MyContent__notificationSettingsDefListItem form-list-item -noticeMethod">
+                    <dt class="MyContent__notificationSettingsDefListItemTitle">
+                      <p class="MyContent__notificationSettingsDefListItemTitleText title-dashboard-content-child">
+                        通知方法
+                      </p>
+                    </dt>
+                    <dd class="MyContent__notificationSettingsDefListItemData">
+                      <div class="form-list-item-data-content -checkbox -check">
+                        <ul class="form-list -layer2">
+                          <li class="form-list-item">
+                            <label
+                              class="form-list-item-data-content-label"
+                            >
+                              <input
+                                type="checkbox"
+                                name="email"
+                                value="1"
+                                checked
+                              >
+                              <span class="form-list-item-data-content-label-text">メール</span>
+                            </label>
+                          </li>
+                          <li class="form-list-item">
+                            <label
+                              class="form-list-item-data-content-label"
+                            >
+                              <input
+                                type="checkbox"
+                                name="website"
+                                value="1"
+                                checked
+                              >
+                              <span class="form-list-item-data-content-label-text">Web</span>
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </dd>
+                  </div>
+                  <div class="MyContent__notificationSettingsDefListItem form-list-item -noticeContent">
+                    <dt class="MyContent__notificationSettingsDefListItemTitle">
+                      <p class="MyContent__notificationSettingsDefListItemTitleText title-dashboard-content-child">
+                        通知する内容
+                      </p>
+                    </dt>
+                    <dd class="MyContent__notificationSettingsDefListItemData">
+                      <div class="form-list-item-data-content -checkbox -check">
+                        <ul class="form-list -layer2">
+                          <li class="form-list-item">
+                            <label
+                              class="form-list-item-data-content-label"
+                            >
+                              <input
+                                type="checkbox"
+                                name="followed"
+                                value="1"
+                                checked
+                              >
+                              <span class="form-list-item-data-content-label-text">誰かにフォローされたとき</span>
+                            </label>
+                          </li>
+                          <li class="form-list-item">
+                            <label
+                              class="form-list-item-data-content-label"
+                            >
+                              <input
+                                type="checkbox"
+                                name="commented"
+                                value="1"
+                                checked
+                              >
+                              <span class="form-list-item-data-content-label-text">自分の質問にコメントがついたとき</span>
+                            </label>
+                          </li>
+                          <li class="form-list-item">
+                            <label
+                              class="form-list-item-data-content-label"
+                            >
+                              <input
+                                type="checkbox"
+                                name="liked"
+                                value="1"
+                                checked
+                              >
+                              <span class="form-list-item-data-content-label-text">自分の質問が「いいね！」されたとき</span>
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </v-form>
           </div>
           <!-- RACKの退会・アカウントの削除 -->
           <div class="MyContent__deleteAccount dashboard-section">
@@ -152,7 +208,7 @@
             <div class="MyContent__deleteAccountMessage">
               <p class="MyContent__deleteAccountMessageText">
                 <ul class="list -note">
-                  <li>
+                  <li class="-delete">
                     一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
                   </li>
                 </ul>
@@ -160,7 +216,7 @@
               <p class="MyContent__deleteAccountMessageBtn">
                   <nuxt-link
                     to="/dashboard/settings/account/deactivate"
-                    class="btn -outlined -blue btn-change"
+                    class="btn -outlined -delete btn-deleteAccount"
                     ontouchstart=""
                   >
                     <span class="btn-text">アカウントの削除はこちらから</span>
@@ -306,8 +362,8 @@ export default {
     padding: 6px 12px 6px 12px;
   };
   @include pc {
-    background-color: $white;
-    padding: 12px 8px 12px 16px;
+    min-width: 160px;
+    padding: 12px 5px 12px 16px;
     width: 20%;
   };
 }
@@ -320,13 +376,28 @@ export default {
 .MyContent__basicInformationDefListItemData {
   position: relative;
   @include sp {
-    background-color: $white;
     padding: 8px calc(12px + 52px + 10px) 16px 12px;
   };
   @include pc {
-    background-color: $white;
-    padding: 12px calc(16px + 52px + 12px) 12px 8px;
+    padding: 12px calc(16px + 52px + 12px) 12px 5px;
     width: 80%;
+  };
+}
+// 最後のだけ下パディングを多めに取る
+.MyContent__basicInformationDefListItem:last-of-type .MyContent__basicInformationDefListItemTitle {
+  @include sp {
+    padding: 6px 12px 6px 12px;
+  };
+  @include pc {
+    padding: 12px 8px 18px 16px;
+  };
+}
+.MyContent__basicInformationDefListItem:last-of-type .MyContent__basicInformationDefListItemData {
+  @include sp {
+    padding: 8px calc(12px + 52px + 10px) 16px 12px;
+  };
+  @include pc {
+    padding: 12px calc(16px + 52px + 12px) 18px 8px;
   };
 }
 .MyContent__basicInformationDefListItemDataText {
@@ -417,13 +488,57 @@ export default {
   @include pc {
   };
 }
+// 通知方法
+.form-list-item.-noticeMethod {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item.-noticeMethod .form-list.-layer2 {
+  display: flex;
+  @include sp {
+    gap: 28px;
+  };
+  @include pc {
+    gap: 32px;
+  };
+}
+.form-list-item.-noticeMethod .form-list.-layer2 .form-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+// 通知する内容
+.form-list-item.-noticeContent {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.form-list-item.-noticeContent .form-list.-layer2 {
+  display: flex;
+  flex-direction: column;
+  @include sp {
+    gap: 16px;
+  };
+  @include pc {
+    gap: 12px;
+  };
+}
+.form-list-item.-noticeContent .form-list.-layer2 .form-list-item {
+  @include sp {
+  };
+  @include pc {
+  };
+}
 .MyContent__notificationSettingsDefListItemTitle {
   @include sp {
     background-color: $gray_fa;
     padding: 6px 12px 6px 12px;
   };
   @include pc {
-    background-color: $white;
     padding: 12px 16px 3px 16px;
   };
 }
@@ -435,15 +550,21 @@ export default {
 }
 .MyContent__notificationSettingsDefListItemData {
   @include sp {
-    background-color: $white;
     padding: 8px 12px 16px 12px;
   };
   @include pc {
-    background-color: $white;
     padding: 3px 16px 12px 16px;
   };
 }
-
+// 最後のだけ下パディングを多めに取る
+.MyContent__notificationSettingsDefListItem:last-of-type .MyContent__notificationSettingsDefListItemData {
+  @include sp {
+    padding: 8px 12px 16px 12px;
+  };
+  @include pc {
+    padding: 3px 16px 18px 16px;
+  };
+}
 // RACKの退会・アカウントの削除
 .MyContent__deleteAccount {
   @include sp {
@@ -453,14 +574,50 @@ export default {
 }
 .MyContent__deleteAccountMessage {
   @include sp {
+    padding: 14px 12px 20px 12px;
   };
   @include pc {
+    padding: 10px 16px 18px 16px;
+  };
+}
+.MyContent__deleteAccountMessageText {
+  @include sp {
+  };
+  @include pc {
+  };
+}
+.MyContent__deleteAccountMessageText .list.-note li {
+  @include sp {
+    font-size: 1.4rem;
+  };
+  @include pc {
+    font-size: 1.4rem;
+  };
+}
+.MyContent__deleteAccountMessageText + .MyContent__deleteAccountMessageBtn {
+  @include sp {
+    margin-top: 16px;
+  };
+  @include pc {
+    margin-top: 12px;
   };
 }
 .MyContent__deleteAccountMessageBtn {
   @include sp {
   };
   @include pc {
+  };
+}
+.MyContent__deleteAccountMessageBtn .btn-deleteAccount {
+  @include sp {
+    min-width: 240px;
+    padding: 4px 8px 4px;
+    width: 80%;
+  };
+  @include pc {
+    margin-left: 0;
+    padding: 4px 8px 4px;
+    width: 240px;
   };
 }
 </style>
