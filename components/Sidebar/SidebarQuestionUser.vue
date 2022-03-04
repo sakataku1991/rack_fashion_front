@@ -6,7 +6,7 @@
         <div class="SidebarQuestionUser__userBioAuthor">
           <div class="SidebarQuestionUser__userBioAuthorName">
             <nuxt-link
-              to="/mypage/items/questions"
+              to="/rack_id0/items/questions"
               class="SidebarQuestionUser__userBioAuthorNameUserName"
               ontouchstart=""
             >

@@ -49,6 +49,7 @@
     <div class="Question__postBodyMainTextBox">
       <p class="Question__postBodyMainText">
         当方男性です。太いブリーチ加工の色落ちデニムを探しています。COMOLIの5Pパンツに似たものがあれば教えていただきたいです。予算は3万円です。よろしくお願いします。
+        <!-- {{ $store.state.question.current.body }} -->
       </p>
     </div>
   </div>

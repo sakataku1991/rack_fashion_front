@@ -53,7 +53,7 @@
           <ul class="card-mypageUserInfo-bio-data-relationships-list">
             <li class="card-mypageUserInfo-bio-data-relationships-list-item">
               <nuxt-link
-                to="/mypage/relationships/following"
+                to="/rack_id0/relationships/following"
                 class="card-mypageUserInfo-bio-data-relationships-list-item-link"
                 ontouchstart=""
               >
@@ -63,7 +63,7 @@
             </li>
             <li class="card-mypageUserInfo-bio-data-relationships-list-item">
               <nuxt-link
-                to="/mypage/relationships/followers"
+                to="/rack_id0/relationships/followers"
                 class="card-mypageUserInfo-bio-data-relationships-list-item-link"
                 ontouchstart=""
               >

@@ -173,6 +173,7 @@
 export default {
   name: 'PagesDashboardSettingsAccountDeactivate',
   layout: 'dashboard',
+  scrollToTop: true,
   // falseを返すページのアクセスを制限する
   validate ({ route }) {
     return route.name !== 'account'

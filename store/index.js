@@ -50,13 +50,13 @@ export const state = () => ({
       name: afterDeleteAccountPath
     }
   },
-  // 「質問」のデータ
-  question: {
+  // 「ユーザー」のデータ
+  user: {
     current: null,
     list: []
   },
-  // 「ユーザー」のデータ
-  user: {
+  // 「質問」のデータ
+  question: {
     current: null,
     list: []
   },

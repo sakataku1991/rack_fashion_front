@@ -45,7 +45,7 @@
 <script>
 
 export default {
-  name: 'PagesMypageItemsQuestionsLiked',
+  name: 'PagesRackidItemsQuestionsLiked',
   // falseを返すページのアクセスを制限する
   validate ({ route }) {
     return route.name !== 'account'
@@ -54,11 +54,11 @@ export default {
     return {
       dashboardPath: 'question-id-dashboard',
       currentTab:
-        'いいね！した記事',
+        'tab-2',
       tabs: [
-        { name: '投稿した質問', slug: 'mypage/items/questions' },
-        { name: 'コメントした記事', slug: 'mypage/items/comments' },
-        { name: 'いいね！した記事', slug: 'mypage/items/questions?type=liked' }
+        { name: '投稿した質問', slug: '/questions' },
+        { name: 'コメントした記事', slug: '/comments' },
+        { name: 'いいね！した記事', slug: '/questions?type=liked' }
       ]
     }
   },

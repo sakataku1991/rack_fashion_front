@@ -214,13 +214,13 @@
                 </ul>
               </p>
               <p class="MyContent__deleteAccountMessageBtn">
-                  <a
-                    href="/dashboard/settings/account/deactivate"
+                  <nuxt-link
+                    to="/dashboard/settings/account/deactivate"
                     class="btn -outlined -delete btn-deleteAccount"
                     ontouchstart=""
                   >
                     <span class="btn-text">アカウントの削除はこちらから</span>
-                  </a>
+                  </nuxt-link>
               </p>
             </div>
           </div>

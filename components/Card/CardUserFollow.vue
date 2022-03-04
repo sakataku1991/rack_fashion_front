@@ -9,7 +9,7 @@
       <div class="card-userFollow-userName-and-actionButton">
         <div class="card-userFollow-userName">
           <nuxt-link
-            to="/mypage/items/questions"
+            to="/rack_id0/items/questions"
             class="card-userFollow-userName-userName"
             ontouchstart=""
           >

@@ -14,7 +14,7 @@
       />
       <div class="card-information-news-content-user-and-date">
         <nuxt-link
-          to="/mypage/items/questions"
+          to="/rack_id0/items/questions"
           class="card-information-news-content-user-name"
           ontouchstart=""
         >
@@ -27,7 +27,7 @@
       <p class="card-information-news-content-message">
         <span class="card-information-news-content-message-user-name">
           <nuxt-link
-            to="/mypage/items/questions"
+            to="/rack_id0/items/questions"
             class="card-information-news-content-message-user-name-link"
             ontouchstart=""
           >
