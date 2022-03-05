@@ -22,7 +22,7 @@ export default {
   };
 }
 .data-gender.-all,
-.data-gender.-other,
+.data-gender.-others,
 .data-gender.-null {
   color: $gender-all;
   @include sp {

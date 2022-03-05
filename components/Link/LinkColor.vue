@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    to="#"
+    :to="`/?color=${$store.state.question.current.color.code}`"
     class="link link-color"
     ontouchstart=""
   >
