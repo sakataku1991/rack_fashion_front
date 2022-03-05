@@ -1,7 +1,7 @@
 <template>
   <article class="card-question-article">
     <nuxt-link
-      :to="`${question.user.rack_id}/questions/${question.id}`"
+      to="/question"
       class="card-question-article-link"
       ontouchstart=""
     >
@@ -11,13 +11,13 @@
       <div class="card-question-thumbnail">
         <img
           :src="image_src_picture"
-          :alt="`${question.title}`"
+          alt="「質問」のサムネイル画像"
           class="card-question-thumbnail-img"
         >
       </div>
       <div class="card-question-article-info">
         <h2 class="card-question-title">
-          {{ question.title }}
+          今風なサイズ感の色落ちデニムを探しています
         </h2>
         <div class="card-question-category">
           <p class="category-text">
@@ -36,7 +36,7 @@
           </p>
           <div class="card-question-date-and-like">
             <p class="card-question-date">
-              <time itemprop="datePublished" datetime="2022-01-01" class="card-question-date-time">{{ $my.dateFormat(question.created_at) }}</time>
+              <time itemprop="datePublished" datetime="2022-01-01" class="card-question-date-time">2022/01/01</time>
             </p>
             <div class="card-question-like">
               <button-like />
@@ -51,12 +51,6 @@
 <script>
 export default {
   name: 'ComponentsCardQuestion',
-  props: {
-    question: {
-      type: Object,
-      default: () => {}
-    }
-  },
   data () {
     return {
       image_src_avatar: require('@/assets/image/icon_sakataku1991.png'),
