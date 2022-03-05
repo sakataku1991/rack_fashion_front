@@ -4,14 +4,14 @@
     "login": "ログイン"
   },
   "sexes": {
-    "not known": "不明",
-    "male": "男性",
-    "female": "女性",
-    "not applicable": "その他",
     "all": "すべて",
     "men": "メンズ",
     "women": "レディース"
   },
+  "not known": "不明",
+  "male": "男性",
+  "female": "女性",
+  "not applicable": "その他",
   "categories": {
     "jackets": "アウター",
     "tops": "トップス",

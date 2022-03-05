@@ -1,5 +1,5 @@
 <template>
-  <span class="data data-gender -men">メンズ</span>
+  <span class="data data-gender" :class="`-${$store.state.question.current.sex.alias}`">{{ $t(`${$store.state.question.current.sex.name}`) }}</span>
 </template>
 
 <script>
@@ -21,7 +21,9 @@ export default {
   @include pc {
   };
 }
-.data-gender.-all {
+.data-gender.-all,
+.data-gender.-other,
+.data-gender.-null {
   color: $gender-all;
   @include sp {
   };
