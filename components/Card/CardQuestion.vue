@@ -21,7 +21,7 @@
         </h2>
         <div class="card-question-category">
           <p class="category-text">
-            パンツ
+            {{ $t(`${question.category.name}`) }}
           </p>
         </div>
         <div class="card-question-author-avatar-and-date">
@@ -171,7 +171,7 @@ export default {
     line-height: 1.5;
   };
   @include pc {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     line-height: 1.5;
   };
 }
@@ -243,7 +243,7 @@ export default {
     line-height: 1.5;
   };
   @include pc {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     line-height: 1.5;
   };
 }
