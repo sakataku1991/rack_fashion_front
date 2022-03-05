@@ -25,11 +25,13 @@
           <div class="MyContent__questionArticles">
             <ul class="MyContent__questionList">
               <li
-                v-for="n in 12"
-                :key="n"
+                v-for="(question, i) in recentQuestions.slice(0, 12)"
+                :key="`card-question-${i}`"
                 class="MyContent__questionListItem"
               >
-                <card-question />
+                <card-question
+                  :question="question"
+                />
               </li>
             </ul>
           </div>
@@ -46,11 +48,11 @@
 
 export default {
   name: 'PagesRackidItemsQuestions',
-  scrollToTop: true,
   // falseを返すページのアクセスを制限する
   validate ({ route }) {
     return route.name !== 'account'
   },
+  scrollToTop: true,
   data () {
     return {
       dashboardPath: 'question-id-dashboard',
@@ -66,6 +68,16 @@ export default {
   computed: {
     currentQuestion () {
       return this.$store.state.question.current
+    },
+    // 最近の「質問」（日付データを表示）
+    recentQuestions () {
+      const copyQuestions = Array.from(this.$store.state.question.list)
+      // 日付によるソート
+      return copyQuestions.sort((a, b) => {
+        if (a.createdAt > b.createdAt) { return -1 }
+        if (a.createdAt < b.createdAt) { return 1 }
+        return 0
+      })
     }
   }
 }

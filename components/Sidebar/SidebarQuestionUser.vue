@@ -6,14 +6,14 @@
         <div class="SidebarQuestionUser__userBioAuthor">
           <div class="SidebarQuestionUser__userBioAuthorName">
             <nuxt-link
-              to="/rack_id0/items/questions"
+              :to="`/${$store.state.question.current.user.rack_id}/items/questions`"
               class="SidebarQuestionUser__userBioAuthorNameUserName"
               ontouchstart=""
             >
-              さかたく
+              {{ $store.state.question.current.user.name }}
             </nuxt-link>
             <p class="SidebarQuestionUser__userBioAuthorNameRackId">
-              @sakataku1991
+              @{{ $store.state.question.current.user.rack_id }}
             </p>
           </div>
           <div class="SidebarQuestionUser__userBioAuthorLinks">
@@ -33,7 +33,7 @@
       </div>
       <div class="SidebarQuestionUser__userProfile">
         <p class="SidebarQuestionUser__userProfileText">
-          ジーンズが好きです。90年代の古着とか探しています。
+          {{ $store.state.question.current.user.profile }}
         </p>
       </div>
       <div class="SidebarQuestionUser__userFollow">
