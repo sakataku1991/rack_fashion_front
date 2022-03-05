@@ -57,8 +57,8 @@ export default {
         'tab-1',
       tabs: [
         { name: '投稿した質問', slug: '/questions' },
-        { name: 'コメントした記事', slug: '/comments' },
-        { name: 'いいね！した記事', slug: '/questions?type=liked' }
+        { name: 'コメントした質問', slug: '/comments' },
+        { name: 'いいね！した質問', slug: '/questions?type=liked' }
       ]
     }
   },

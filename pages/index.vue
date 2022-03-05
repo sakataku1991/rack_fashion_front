@@ -2,70 +2,15 @@
   <section class="section Question">
     <div class="Question__content">
       <div class="Question__questionArticles">
-        <!-- <ul class="Question__questionList">
-          <li
-            v-for="n in 12"
-            :key="n"
-            class="Question__questionListItem"
-          >
-            <card-question />
-          </li>
-        </ul> -->
-
         <ul class="Question__questionList">
           <li
             v-for="(question, i) in recentQuestions.slice(0, 12)"
             :key="`card-question-${i}`"
             class="Question__questionListItem"
           >
-            <article class="card-question-article">
-              <!-- TODO 「questionLinkTo」を使ったリンクのコードに修正する！ -->
-              <nuxt-link
-                :to="`${question.user_id}/questions/${question.id}`"
-                class="card-question-article-link"
-                ontouchstart=""
-              >
-                <div class="card-question-badge">
-                  <badge-comment />
-                </div>
-                <div class="card-question-thumbnail">
-                  <img
-                    :src="image_src_picture"
-                    :alt="`${question.title}`"
-                    class="card-question-thumbnail-img"
-                  >
-                </div>
-                <div class="card-question-article-info">
-                    <h2 class="card-question-title">
-                      {{ question.title }}
-                    </h2>
-                  <div class="card-question-category">
-                    <p class="category-text">
-                      パンツ
-                    </p>
-                  </div>
-                  <div class="card-question-author-avatar-and-date">
-                    <p class="card-question-author-avatar">
-                      <img
-                        :src="image_src_avatar"
-                        alt="sakataku199のアイコン"
-                        class="card-question-author-avatar-img"
-                        height="22"
-                        width="22"
-                      >
-                    </p>
-                    <div class="card-question-date-and-like">
-                      <p class="card-question-date">
-                        <time itemprop="datePublished" datetime="2022-01-01" class="card-question-date-time">2022/01/01</time>
-                      </p>
-                      <div class="card-question-like">
-                        <button-like />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
-            </article>
+            <card-question
+              :question="question"
+            />
           </li>
         </ul>
       </div>
@@ -244,7 +189,7 @@ export default {
     line-height: 1.6;
   };
   @include pc {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.5;
   };
 }

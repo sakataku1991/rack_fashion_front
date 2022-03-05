@@ -102,7 +102,7 @@
                     class="MenuDashboard__menuListItemLink"
                     ontouchstart=""
                   >
-                    コメントした記事
+                    コメントした質問
                   </nuxt-link>
                 </li>
                 <li class="MenuDashboard__menuListItem -tickets">
@@ -120,7 +120,7 @@
                     class="MenuDashboard__menuListItemLink"
                     ontouchstart=""
                   >
-                    いいね！した記事
+                    いいね！した質問
                   </nuxt-link>
                 </li>
                 <li class="MenuDashboard__menuListItem -commentsCanBeViewed">
@@ -129,7 +129,7 @@
                     class="MenuDashboard__menuListItemLink"
                     ontouchstart=""
                   >
-                    チケットを使用した記事
+                    チケットを使用した質問
                   </nuxt-link>
                 </li>
                 <li class="MenuDashboard__menuListItem -browsingHistory">
@@ -138,7 +138,7 @@
                     class="MenuDashboard__menuListItemLink"
                     ontouchstart=""
                   >
-                    記事の閲覧履歴
+                    質問の閲覧履歴
                   </nuxt-link>
                 </li>
               </ul>
@@ -498,7 +498,7 @@ export default {
   @include pc {
   };
 }
-// 「コメントした記事」
+// 「コメントした質問」
 .MenuDashboard__menuListItem.-comments {
   @include sp {
   };
@@ -514,7 +514,7 @@ export default {
     padding-bottom: 10px;
   };
 }
-// 「いいね！した記事」
+// 「いいね！した質問」
 .MenuDashboard__menuListItem.-tickets + .MenuDashboard__menuListItem.-liked {
   @include mark;
   @include sp {
@@ -524,7 +524,7 @@ export default {
     padding-top: 11px;
   };
 }
-// 「閲覧チケット」と「いいね！した記事」間の横線
+// 「閲覧チケット」と「いいね！した質問」間の横線
 .MenuDashboard__menuListItem.-tickets + .MenuDashboard__menuListItem.-liked::before {
   @include sp {
     background-color: $gray_e4;
@@ -547,14 +547,14 @@ export default {
   @include pc {
   };
 }
-// 「チケットを使用した記事」
+// 「チケットを使用した質問」
 .MenuDashboard__menuListItem.-commentsCanBeViewed {
   @include sp {
   };
   @include pc {
   };
 }
-// 「記事の閲覧履歴」
+// 「質問の閲覧履歴」
 .MenuDashboard__menuListItem.-browsingHistory {
   @include sp {
   };

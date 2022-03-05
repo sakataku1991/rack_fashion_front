@@ -30,7 +30,7 @@
                 >
                   <icon-comment-outline />
                 </icon-base>
-                <span class="MenuMyItem__myItemListItemLinkText">コメントした記事</span>
+                <span class="MenuMyItem__myItemListItemLinkText">コメントした質問</span>
               </nuxt-link>
             </li>
             <li class="MenuMyItem__myItemListItem">
@@ -60,7 +60,7 @@
                 >
                   <icon-heart-outline />
                 </icon-base>
-                <span class="MenuMyItem__myItemListItemLinkText">いいね！した記事</span>
+                <span class="MenuMyItem__myItemListItemLinkText">いいね！した質問</span>
               </nuxt-link>
             </li>
             <li class="MenuMyItem__myItemListItem">
@@ -73,7 +73,7 @@
                 >
                   <icon-check-circle-outline />
                 </icon-base>
-                <span class="MenuMyItem__myItemListItemLinkText">チケットを使用した記事</span>
+                <span class="MenuMyItem__myItemListItemLinkText">チケットを使用した質問</span>
               </nuxt-link>
             </li>
             <li class="MenuMyItem__myItemListItem">
@@ -86,7 +86,7 @@
                 >
                   <icon-history />
                 </icon-base>
-                <span class="MenuMyItem__myItemListItemLinkText">記事の閲覧履歴</span>
+                <span class="MenuMyItem__myItemListItemLinkText">質問の閲覧履歴</span>
               </nuxt-link>
             </li>
           </ul>

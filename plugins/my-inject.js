@@ -33,10 +33,6 @@ class MyInject {
   }
 
   // 「質問」のリンク
-  questionLinkTo (id, name = 'questions-id') {
-    return { name, params: { id } }
-  }
-  // TODO 「user_id」を「rack_id」に変更する！
   // questionLinkTo (rack_id, name = 'rack_id-questions-question') {
   //   return { name, params: { rack_id } }
   // }

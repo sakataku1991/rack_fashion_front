@@ -4,11 +4,13 @@
       <div class="Question__questionArticles">
         <ul class="Question__questionList">
           <li
-            v-for="n in 12"
-            :key="n"
+            v-for="(question, i) in recentQuestions.slice(0, 12)"
+            :key="`card-question-${i}`"
             class="Question__questionListItem"
           >
-            <card-question />
+            <card-question
+              :question="question"
+            />
           </li>
         </ul>
       </div>
@@ -23,7 +25,7 @@
 export default {
   name: 'PagesIndex',
   layout: 'logged-in',
-  middleware: ['authentication', 'get-user-list'],
+  middleware: ['authentication', 'get-user-list', 'get-question-list'],
   async asyncData ({ $axios }) {
     let users = []
     await $axios.$get('/api/v1/users').then(res => (users = res))
@@ -32,11 +34,28 @@ export default {
   },
   data () {
     return {
+      image_src_avatar: require('@/assets/image/icon_sakataku1991.png'),
+      image_src_picture: require('@/assets/image/thum/thum_post-question_dummy.jpg'),
       imgHeight: 500,
       menus: [
         { title: 'user', subtitle: 'ユーザーの一覧' },
         { title: 'question', subtitle: '質問の一覧' }
       ]
+    }
+  },
+  // computedメソッド
+  // ページ内からアクセスする関数を宣言するところ
+  // methodsメソッドと違い、computedメソッドの計算結果はキャッシュされる
+  computed: {
+    // 最近の「質問」（日付データを表示）
+    recentQuestions () {
+      const copyQuestions = Array.from(this.$store.state.question.list)
+      // 日付によるソート
+      return copyQuestions.sort((a, b) => {
+        if (a.createdAt > b.createdAt) { return -1 }
+        if (a.createdAt < b.createdAt) { return 1 }
+        return 0
+      })
     }
   }
 }
