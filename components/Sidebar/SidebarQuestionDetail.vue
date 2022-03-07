@@ -34,13 +34,11 @@
             <dd class="SidebarQuestionDetail__detailInfoDefListItemData">
               <div class="hashtag-container">
                 <ul class="hashtag-list">
-                  <li class="hashtag-list-item">
-                    <hashtag />
-                  </li>
-                  <li class="hashtag-list-item">
-                    <hashtag />
-                  </li>
-                  <li class="hashtag-list-item">
+                  <li
+                    v-for="(hashtag, i) in hashtags"
+                    :key="`hashtag-${i}`"
+                    class="hashtag-list-item"
+                  >
                     <hashtag />
                   </li>
                 </ul>
@@ -55,7 +53,12 @@
 
 <script>
 export default {
-  name: 'ComponentsSidebarQuestionDetail'
+  name: 'ComponentsSidebarQuestionDetail',
+  data ({ $store }) {
+    return {
+      hashtags: $store.state.question.current.hashtags
+    }
+  }
 }
 </script>
 

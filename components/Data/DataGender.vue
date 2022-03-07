@@ -23,7 +23,7 @@ export default {
 }
 .data-gender.-all,
 .data-gender.-others,
-.data-gender.-null {
+.data-gender.-unanswered {
   color: $gender-all;
   @include sp {
   };

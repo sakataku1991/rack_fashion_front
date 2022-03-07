@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    to="/hashtag/デニム"
+    :to="`/hashtag/デニム`"
     class="hashtag"
     ontouchstart=""
   >
