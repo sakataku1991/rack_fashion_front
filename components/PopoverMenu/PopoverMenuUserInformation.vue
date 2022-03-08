@@ -14,6 +14,7 @@ export default {
 <style lang="scss" scoped>
 .PopoverMenu__userInformation {
   background-color: $white;
+  overflow: hidden;
   position: relative;
   @include sp {
   };
@@ -28,7 +29,6 @@ export default {
   background-color: $white;
   clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
   content: "";
-  overflow: hidden;
   pointer-events: none;
   position: absolute;
   @include sp {
