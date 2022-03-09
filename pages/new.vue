@@ -18,66 +18,16 @@
                     tabindex="0"
                     class="NewQuestion__postBodyMainHeaderEyeCatching form-list-item-data-label"
                   >
-                    <p class="form-question-picture">
-                      <img
-                        :src="image_src"
-                        alt="「質問」のアイキャッチ画像"
-                        class="NewQuestion__postBodyMainHeaderEyeCatchingImg form-question-picture-img"
-                      >
-                    </p>
-                    <input
-                      type="file"
-                      accept="image/png, image/jpeg, image/gif"
-                      autocomplete="off"
-                      tabindex="-1"
-                      class="form-list-item-data-content -file visuallyHidden"
-                    >
+                    <form-input-question-image
+                      :image.sync="params.question.image"
+                    />
                   </label>
                   <div class="NewQuestion__postBodyMainHeaderCategory">
                     <div class="form-list-item -questionCategory">
                       <div class="form-list-item-data-select-wrap">
-                        <select
-                          id="questionCategory"
-                          name="questionCategory"
-                          class="form-list-item-data-content -select"
-                        >
-                          <option value="">
-                            アイテムカテゴリーを選択
-                          </option>
-                          <option value="アウター">
-                            アウター
-                          </option>
-                          <option value="トップス">
-                            トップス
-                          </option>
-                          <option value="パンツ">
-                            パンツ
-                          </option>
-                          <option value="スカート">
-                            スカート
-                          </option>
-                          <option value="ワンピース">
-                            ワンピース
-                          </option>
-                          <option value="靴">
-                            靴
-                          </option>
-                          <option value="バッグ">
-                            バッグ
-                          </option>
-                          <option value="帽子">
-                            帽子
-                          </option>
-                          <option value="アクセサリー">
-                            アクセサリー
-                          </option>
-                          <option value="小物・雑貨">
-                            小物・雑貨
-                          </option>
-                          <option value="その他">
-                            その他
-                          </option>
-                        </select>
+                        <form-input-question-category
+                          :category.sync="params.question.category"
+                        />
                         <icon-base
                           class="icon icon-arrowInputSelect"
                           height="24"
@@ -94,23 +44,16 @@
                       <div class="form-list-item -questionTitle">
                         <dt class="form-list-item-title visuallyHidden">
                           <label
-                            for="questionText"
+                            for="questionBody"
                             class="form-list-item-title-label"
                           >
                             質問のタイトル
                           </label>
                         </dt>
                         <dd class="form-list-item-data">
-                          <textarea
-                            id="questionTitle"
-                            name="questionTitle"
-                            cols="30"
-                            rows="1"
-                            spellcheck="false"
-                            autocomplete="off"
-                            required
-                            placeholder="ここに質問のタイトルを入力"
-                            class="NewQuestion__postBodyMainHeaderTitleText form-list-item-data-content -text"
+                          <form-input-question-title
+                            :title.sync="params.question.title"
+                            class="NewQuestion__postBodyMainHeaderTitleText"
                           />
                         </dd>
                       </div>
@@ -150,26 +93,19 @@
                 </div>
                 <div class="NewQuestion__postBodyMainTextBox">
                   <dl class="form-list -layer1">
-                    <div class="form-list-item -questionText">
+                    <div class="form-list-item -questionBody">
                       <dt class="form-list-item-title visuallyHidden">
                         <label
-                          for="questionText"
+                          for="questionBody"
                           class="form-list-item-title-label"
                         >
                           質問の内容
                         </label>
                       </dt>
                       <dd class="form-list-item-data">
-                        <textarea
-                          id="questionText"
-                          name="questionText"
-                          cols="30"
-                          rows="3"
-                          spellcheck="false"
-                          autocomplete="off"
-                          required
-                          placeholder="質問の内容"
-                          class="NewQuestion__postBodyMainText form-list-item-data-content -textarea"
+                        <form-input-question-body
+                          :body.sync="params.question.body"
+                          class="NewQuestion__postBodyMainText"
                         />
                       </dd>
                     </div>
@@ -294,6 +230,19 @@ export default {
       isValid: false,
       loading: false,
       image_src: require('@/assets/image/thum/thum_form-question_picture-placeholder.png'),
+      params: {
+        question: {
+          user_id: this.$store.state.user.current.id,
+          // image: '',
+          category: '',
+          title: '質問の投稿テスト',
+          body: 'テストですよ〜質問の投稿の！'
+          // sex: '',
+          // color: '',
+          // hashtag: [],
+          // color: ''
+        }
+      },
       // マイページのリンク
       signedUpNextPath: $store.state.signedUp.temporarySignedUpPath
     }
@@ -320,8 +269,8 @@ export default {
       this.question(response)
       // フォーム内容をリセット
       this.$refs.form.reset()
-      for (const key in this.params.user) {
-        this.params.user[key] = ''
+      for (const key in this.params.question) {
+        this.params.question[key] = ''
       }
       // マイページ（signedUpNextPath）へリダイレクトする
       this.$router.go(this.signedUpNextPath)
@@ -406,6 +355,7 @@ export default {
     order: 1;
   };
 }
+// アイキャッチ画像
 .NewQuestion__postBodyMainHeaderEyeCatching {
   @include sp {
   };
@@ -524,27 +474,9 @@ export default {
   };
 }
 .NewQuestion__postBodyMainHeaderTitleText {
-  background-color: $white;
-  font-weight: bold;
-  outline: none;
-  resize: none;
   @include sp {
-    border: 1px solid $white;
-    font-size: 2.0rem;
-    height: 100%;
-    line-height: 1.4;
-    min-height: 1em;
-    padding: 0;
-    width: 100%;
   };
   @include pc {
-    border: 1px solid $white;
-    font-size: 2.4rem;
-    height: 100%;
-    line-height: 1.4;
-    min-height: 1em;
-    padding: 0;
-    width: 100%;
   };
 }
 // 質問の時間といいね！

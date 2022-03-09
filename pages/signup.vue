@@ -250,7 +250,7 @@ export default {
     // 会員登録成功時の処理
     authSuccessful (response) {
       // 会員登録後のレスポンス
-      // this.signup(response)
+      this.signup(response)
       // フォーム内容をリセット
       this.$refs.form.reset()
       for (const key in this.params.user) {
