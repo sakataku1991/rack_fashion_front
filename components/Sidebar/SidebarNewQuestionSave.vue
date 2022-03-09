@@ -28,7 +28,7 @@
                 name="questionStatus"
                 class="form-list-item-data-content -select"
               >
-                <option value="">
+                <option disabled value="">
                   保存方法を選択
                 </option>
                 <option value="公開">

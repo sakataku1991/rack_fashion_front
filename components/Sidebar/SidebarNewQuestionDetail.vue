@@ -71,7 +71,7 @@
                   name="questionColor"
                   class="form-list-item-data-content -select"
                 >
-                  <option value="">
+                  <option disabled value="">
                     色を選択
                   </option>
                   <option value="ホワイト">
