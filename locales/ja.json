@@ -6,7 +6,11 @@
   "sexes": {
     "all": "すべて",
     "men": "メンズ",
-    "women": "レディース"
+    "women": "レディース",
+    "not known": "不明",
+    "male": "メンズ",
+    "female": "レディース",
+    "not applicable": "その他"
   },
   "not known": "不明",
   "male": "メンズ",

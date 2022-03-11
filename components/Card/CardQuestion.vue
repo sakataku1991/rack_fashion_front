@@ -21,7 +21,7 @@
         </h2>
         <div class="card-question-category">
           <p class="category-text">
-            <!-- {{ $t(`${question.category.name}`) }} -->
+            {{ $t(`${question.category.name}`) }}
           </p>
         </div>
         <div class="card-question-author-avatar-and-date">

@@ -27,7 +27,7 @@
               <link-color />
             </dd>
           </div>
-          <div class="SidebarQuestionDetail__detailInfoDefListItem -hashtag">
+          <!-- <div class="SidebarQuestionDetail__detailInfoDefListItem -hashtag">
             <dt class="SidebarQuestionDetail__detailInfoDefListItemTitle visuallyHidden">
               ハッシュタグ
             </dt>
@@ -44,7 +44,7 @@
                 </ul>
               </div>
             </dd>
-          </div>
+          </div> -->
         </dl>
       </div>
     </div>
@@ -173,7 +173,7 @@ export default {
     };
   }
 }
-.SidebarQuestionDetail__detailInfoDefListItemData .category {
+::v-deep .SidebarQuestionDetail__detailInfoDefListItemData .category .category-text {
   color: $gray_5;
   @include sp {
     font-size: 1.4rem;
@@ -185,7 +185,7 @@ export default {
   };
 }
 // ホバー時の効果
-.SidebarQuestionDetail__detailInfoDefListItemData .category {
+::v-deep .SidebarQuestionDetail__detailInfoDefListItemData .category .category-text {
   @include sp {
     &:active {
       color: $blue;
