@@ -3,8 +3,8 @@
     <p class="form-question-picture">
       <!-- アップロードしたての画像 -->
       <img
-        v-if="image_src_photo_upload"
-        :src="image_src_photo_upload"
+        v-if="image_url_upload"
+        :src="image_url_upload"
         alt="「質問」のアイキャッチ画像"
         class="NewQuestion__postBodyMainHeaderEyeCatchingImg form-question-picture-img"
       >
@@ -12,7 +12,7 @@
       <!-- 画像未登録時の、デフォルトの画像 -->
       <img
         v-else
-        :src="image_src_photo_default"
+        :src="image_url_default"
         alt="「質問」のアイキャッチ画像"
         class="NewQuestion__postBodyMainHeaderEyeCatchingImg form-question-picture-img"
       >
@@ -21,7 +21,7 @@
       id="questionImage"
       v-model="setImage"
       type="file"
-      accept="image/png, image/jpeg, image/gif"
+      accept="image/jpg, image/jpeg, image/gif, image/png"
       autocomplete="off"
       tabindex="-1"
       name="questionImage"
@@ -30,6 +30,7 @@
       v-on="$listeners"
       @change="onImagePicked"
     />
+    <!-- 「@change」：「onChangeイベント」は、inputがクリックされた後に発火する処理 -->
   </div>
 </template>
 
@@ -38,14 +39,15 @@ export default {
   name: 'ComponentsFormInputQuestionImage',
   props: {
     image: {
-      type: []
+      type: Object,
+      default: () => {}
     }
   },
   data () {
     return {
-      image_src_photo_upload: '',
-      image_src_photo_current: '',
-      image_src_photo_default: require('@/assets/image/thum/thum_form-question_picture-placeholder.png')
+      image_url_upload: '',
+      image_url_current: '',
+      image_url_default: require('@/assets/image/thum/thum_form-question_picture-placeholder.png')
     }
   },
   computed: {
@@ -59,18 +61,26 @@ export default {
     }
   },
   methods: {
+    // 選択した画像（ファイルを引数に取る）
     onImagePicked (file) {
+      // ファイルが選択されている時で
       if (file !== undefined && file !== null) {
+        // ファイルの拡張子があれば
         if (file.name.lastIndexOf('.') <= 0) {
+          // ファイル名を返す？
           return
         }
+        // FileReaderのインスタンス「fr」を生成する（FileReaderを使うことでファイルオブジェクトを読み込める）
         const fr = new FileReader()
+        // ファイルのURLをresult属性に格納する
         fr.readAsDataURL(file)
+        // 読み込んだファイルを表示する
         fr.addEventListener('load', () => {
-          this.image_src_photo_upload = fr.result
+          this.image_url_upload = fr.result
         })
+      // ファイルが選択されていない時は、「image_url_upload」は空のまま
       } else {
-        this.image_src_photo_upload = ''
+        this.image_url_upload = ''
       }
     }
   }

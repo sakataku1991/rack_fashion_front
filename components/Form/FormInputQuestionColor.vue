@@ -33,10 +33,10 @@ export default {
         { id: 9, name: 'yellow', code: 9 },
         { id: 10, name: 'pink', code: 10 },
         { id: 11, name: 'red', code: 11 },
-        { id: 12, name: 'orange', code: 11 },
-        { id: 13, name: 'silver', code: 11 },
-        { id: 14, name: 'gold', code: 11 },
-        { id: 15, name: 'others', code: 11 }
+        { id: 12, name: 'orange', code: 12 },
+        { id: 13, name: 'silver', code: 13 },
+        { id: 14, name: 'gold', code: 14 },
+        { id: 15, name: 'others', code: 15 }
       ],
       rules: [
         // 入力必須

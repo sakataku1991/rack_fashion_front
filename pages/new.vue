@@ -18,9 +18,19 @@
                     tabindex="0"
                     class="NewQuestion__postBodyMainHeaderEyeCatching form-list-item-data-label"
                   >
-                    <form-input-question-image
-                      :image.sync="params.question.image"
+                    <v-file-input
+                      id="questionImage"
+                      type="file"
+                      accept="image/jpg, image/jpeg, image/gif, image/png"
+                      autocomplete="off"
+                      tabindex="-1"
+                      name="questionImage"
+                      placeholder="画像を投稿"
+                      class="form-list-item-data-content -file"
                     />
+                    <!-- <form-input-question-image
+                      :image.sync="params.question.image"
+                    /> -->
                   </label>
                   <div class="NewQuestion__postBodyMainHeaderCategory">
                     <div class="form-list-item -questionCategory">
@@ -285,7 +295,7 @@ export default {
       params: {
         question: {
           user_id: this.$store.state.user.current.id,
-          // image: '',
+          image: null,
           category_id: 0,
           title: '質問の投稿テスト',
           body: 'テストですよ〜質問の投稿の！',
@@ -300,14 +310,24 @@ export default {
     }
   },
   methods: {
+    setImage (e) {
+      this.params.question.image = e
+    },
     // 質問投稿処理
     async question () {
       this.loading = true
       setTimeout(() => {
         this.loading = false
       }, 1500)
+      const formData = new FormData()
+      formData.append('image', this.params.question.image)
+      const config = {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      }
       if (this.isValid) {
-        await this.$axios.$post('/api/v1/questions', this.params)
+        await this.$axios.$post('/api/v1/questions', this.params, formData, config)
           // 質問投稿成功時の処理
           .then(response => this.postSuccessful(response))
           // 質問投稿失敗時の処理
