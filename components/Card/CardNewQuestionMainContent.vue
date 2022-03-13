@@ -28,7 +28,7 @@
               name="questionCategory"
               class="form-list-item-data-content -select"
             >
-              <option value="">
+              <option disabled value="">
                 アイテムカテゴリーを選択
               </option>
               <option value="アウター">

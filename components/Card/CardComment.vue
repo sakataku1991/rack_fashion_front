@@ -6,7 +6,7 @@
       />
       <div class="card-comment-author-and-date">
         <nuxt-link
-          to="/mypage/items/questions"
+          to="/rack_id0/items/questions"
           class="card-comment-author-user-name"
           ontouchstart=""
         >

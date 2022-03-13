@@ -346,7 +346,7 @@
     font-size: 1.6rem;
   };
 }
-.input.form-list-item-data-content.-text,
+input.form-list-item-data-content.-text,
 .form-list-item-data-content.-text input,
 .form-list-item-data-content.-textarea textarea {
   @include sp {
@@ -367,7 +367,7 @@
 // 入力欄の背景色と枠線
 input.form-list-item-data-content.-text,
 .form-list-item-data-content.-text input,
-input.form-list-item-data-content.-textarea,
+textarea.form-list-item-data-content.-textarea,
 .form-list-item-data-content.-textarea textarea,
 .form-list-item-data-content.-select,
 .form-list-item-data-content.-radio .form-list-item-data-content-label-text::before,

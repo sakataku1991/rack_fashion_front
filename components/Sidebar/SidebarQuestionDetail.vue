@@ -27,26 +27,24 @@
               <link-color />
             </dd>
           </div>
-          <div class="SidebarQuestionDetail__detailInfoDefListItem -hashtag">
+          <!-- <div class="SidebarQuestionDetail__detailInfoDefListItem -hashtag">
             <dt class="SidebarQuestionDetail__detailInfoDefListItemTitle visuallyHidden">
               ハッシュタグ
             </dt>
             <dd class="SidebarQuestionDetail__detailInfoDefListItemData">
               <div class="hashtag-container">
                 <ul class="hashtag-list">
-                  <li class="hashtag-list-item">
-                    <hashtag />
-                  </li>
-                  <li class="hashtag-list-item">
-                    <hashtag />
-                  </li>
-                  <li class="hashtag-list-item">
+                  <li
+                    v-for="(hashtag, i) in hashtags"
+                    :key="`hashtag-${i}`"
+                    class="hashtag-list-item"
+                  >
                     <hashtag />
                   </li>
                 </ul>
               </div>
             </dd>
-          </div>
+          </div> -->
         </dl>
       </div>
     </div>
@@ -55,7 +53,12 @@
 
 <script>
 export default {
-  name: 'ComponentsSidebarQuestionDetail'
+  name: 'ComponentsSidebarQuestionDetail',
+  data ({ $store }) {
+    return {
+      hashtags: $store.state.question.current.hashtags
+    }
+  }
 }
 </script>
 
@@ -170,7 +173,7 @@ export default {
     };
   }
 }
-.SidebarQuestionDetail__detailInfoDefListItemData .category {
+::v-deep .SidebarQuestionDetail__detailInfoDefListItemData .category .category-text {
   color: $gray_5;
   @include sp {
     font-size: 1.4rem;
@@ -182,7 +185,7 @@ export default {
   };
 }
 // ホバー時の効果
-.SidebarQuestionDetail__detailInfoDefListItemData .category {
+::v-deep .SidebarQuestionDetail__detailInfoDefListItemData .category .category-text {
   @include sp {
     &:active {
       color: $blue;

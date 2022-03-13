@@ -8,11 +8,13 @@
         <div class="LatestQuestions__article">
           <ul class="LatestQuestions__articleList">
             <li
-              v-for="n in 4"
-              :key="n"
+              v-for="(question, i) in recentQuestions.slice(0, 4)"
+              :key="`card-question-${i}`"
               class="LatestQuestions__articleListItem"
             >
-              <card-question />
+              <card-question
+                :question="question"
+              />
             </li>
           </ul>
         </div>
@@ -23,7 +25,19 @@
 
 <script>
 export default {
-  name: 'ComponentsRecommendLatestQuestions'
+  name: 'ComponentsRecommendLatestQuestions',
+  computed: {
+    // 最近の「質問」（日付データを表示）
+    recentQuestions () {
+      const copyQuestions = Array.from(this.$store.state.question.list)
+      // 日付によるソート
+      return copyQuestions.sort((a, b) => {
+        if (a.createdAt > b.createdAt) { return -1 }
+        if (a.createdAt < b.createdAt) { return 1 }
+        return 0
+      })
+    }
+  }
 }
 </script>
 

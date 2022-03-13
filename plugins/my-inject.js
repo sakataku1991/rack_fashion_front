@@ -33,9 +33,9 @@ class MyInject {
   }
 
   // 「質問」のリンク
-  questionLinkTo (rack_id, name = 'rack_id-questions-question') {
-    return { name, params: { rack_id } }
-  }
+  // questionLinkTo (rack_id, name = 'rack_id-questions-question') {
+  //   return { name, params: { rack_id } }
+  // }
 
   // APIのエラーハンドラー
   apiErrorHandler (response) {

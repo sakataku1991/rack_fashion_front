@@ -1,5 +1,5 @@
 <template>
-  <span class="data data-category">パンツ</span>
+  <span class="data data-category">{{ $t(`${$store.state.question.current.category.name}`) }}</span>
 </template>
 
 <script>
@@ -16,6 +16,7 @@ export default {
   };
 }
 .data-category {
+  display: inline-block;
   @include sp {
   };
   @include pc {

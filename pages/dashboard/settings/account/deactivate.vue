@@ -177,6 +177,7 @@ export default {
   validate ({ route }) {
     return route.name !== 'account'
   },
+  scrollToTop: true,
   data ({ $store }) {
     return {
       isValid: false,

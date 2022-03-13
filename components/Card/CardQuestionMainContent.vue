@@ -3,8 +3,8 @@
     <header class="Question__postBodyMainHeader">
       <figure class="Question__postBodyMainHeaderEyeCatching">
         <img
-          :src="image_src"
-          alt="「質問」のアイキャッチ画像"
+          :src="`${$store.state.question.current.image.url}`"
+          :alt="`${$store.state.question.current.title}`"
           class="Question__postBodyMainHeaderEyeCatchingImg"
         >
       </figure>
@@ -12,7 +12,7 @@
         <category />
       </p>
       <h1 class="Question__postBodyMainHeaderTitle">
-        <span class="Question__postBodyMainHeaderTitleText">今風なサイズ感の色落ちデニムを探しています</span>
+        <span class="Question__postBodyMainHeaderTitleText">{{ $store.state.question.current.title }}</span>
       </h1>
     </header>
     <div class="Question__postBodyMainHeaderDateAndLike">
@@ -26,7 +26,7 @@
             >
               <icon-schedule />
             </icon-base>
-            <span class="Question__postBodyMainHeaderDateItemTimeText">2022/01/01に公開</span>
+            <span class="Question__postBodyMainHeaderDateItemTimeText">{{ $my.dateFormat($store.state.question.current.created_at) }}に公開</span>
           </time>
         </p>
         <p class="Question__postBodyMainHeaderDateItem -updateTime">
@@ -38,7 +38,7 @@
             >
               <icon-update />
             </icon-base>
-            <span class="Question__postBodyMainHeaderDateItemTimeText">2022/01/03に更新</span>
+            <span class="Question__postBodyMainHeaderDateItemTimeText">{{ $my.dateFormat($store.state.question.current.updated_at) }}に更新</span>
           </time>
         </p>
       </div>
@@ -48,7 +48,7 @@
     </div>
     <div class="Question__postBodyMainTextBox">
       <p class="Question__postBodyMainText">
-        当方男性です。太いブリーチ加工の色落ちデニムを探しています。COMOLIの5Pパンツに似たものがあれば教えていただきたいです。予算は3万円です。よろしくお願いします。
+        {{ $store.state.question.current.body }}
       </p>
     </div>
   </div>

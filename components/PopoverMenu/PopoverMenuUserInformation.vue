@@ -14,6 +14,7 @@ export default {
 <style lang="scss" scoped>
 .PopoverMenu__userInformation {
   background-color: $white;
+  overflow: hidden;
   position: relative;
   @include sp {
   };

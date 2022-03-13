@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    to="/category/パンツ"
+    :to="`/category/${$store.state.question.current.category.name}`"
     class="category"
     ontouchstart=""
   >
