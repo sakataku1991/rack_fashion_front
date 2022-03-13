@@ -10,12 +10,12 @@
       >
         <v-list-item>
           <v-list-item-icon>
-            <img
+            <!-- <img
               :src="member.img"
               :alt="member.nickname"
               :aspect-ratio="192 / 336"
               width="50"
-            >
+            > -->
           </v-list-item-icon>
           <v-list-item-content>
             <div>
@@ -99,9 +99,9 @@
 </template>
 
 <script>
-import member1 from '~/assets/image/member1.png'
-import member2 from '~/assets/image/member2.png'
-import member3 from '~/assets/image/member3.png'
+// import member1 from '~/assets/image/member1.png'
+// import member2 from '~/assets/image/member2.png'
+// import member3 from '~/assets/image/member3.png'
 
 export default {
   name: 'ComponentsHomeCompany',

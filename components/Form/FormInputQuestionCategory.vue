@@ -22,17 +22,28 @@ export default {
   data () {
     return {
       items: [
-        { id: 1, name: 'jackets', code: 1 },
-        { id: 2, name: 'tops', code: 2 },
-        { id: 3, name: 'bottoms', code: 3 },
-        { id: 4, name: 'skirts', code: 4 },
-        { id: 5, name: 'dresses', code: 5 },
-        { id: 6, name: 'shoes', code: 6 },
-        { id: 7, name: 'bags', code: 7 },
-        { id: 8, name: 'hats', code: 8 },
-        { id: 9, name: 'accessories', code: 9 },
-        { id: 10, name: 'goods', code: 10 },
-        { id: 11, name: 'others', code: 11 }
+        { id: 1, name: 'アウター', code: 1 },
+        { id: 2, name: 'トップス', code: 2 },
+        { id: 3, name: 'パンツ', code: 3 },
+        { id: 4, name: 'スカート', code: 4 },
+        { id: 5, name: 'ワンピース', code: 5 },
+        { id: 6, name: '靴', code: 6 },
+        { id: 7, name: 'バッグ', code: 7 },
+        { id: 8, name: '帽子', code: 8 },
+        { id: 9, name: 'アクセサリー', code: 9 },
+        { id: 10, name: '小物・雑貨', code: 10 },
+        { id: 11, name: 'その他', code: 11 }
+        // { id: 1, name: 'jackets', code: 1 },
+        // { id: 2, name: 'tops', code: 2 },
+        // { id: 3, name: 'bottoms', code: 3 },
+        // { id: 4, name: 'skirts', code: 4 },
+        // { id: 5, name: 'dresses', code: 5 },
+        // { id: 6, name: 'shoes', code: 6 },
+        // { id: 7, name: 'bags', code: 7 },
+        // { id: 8, name: 'hats', code: 8 },
+        // { id: 9, name: 'accessories', code: 9 },
+        // { id: 10, name: 'goods', code: 10 },
+        // { id: 11, name: 'others', code: 11 }
       ],
       rules: [
         // 入力必須

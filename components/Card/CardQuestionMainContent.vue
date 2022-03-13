@@ -3,8 +3,8 @@
     <header class="Question__postBodyMainHeader">
       <figure class="Question__postBodyMainHeaderEyeCatching">
         <img
-          :src="image_src"
-          alt="「質問」のアイキャッチ画像"
+          :src="`${$store.state.question.current.image.url}`"
+          :alt="`${$store.state.question.current.title}`"
           class="Question__postBodyMainHeaderEyeCatchingImg"
         >
       </figure>

@@ -10,7 +10,7 @@
       </div>
       <div class="card-question-thumbnail">
         <img
-          :src="image_src_picture"
+          :src="`${question.image.url}`"
           :alt="`${question.title}`"
           class="card-question-thumbnail-img"
         >

@@ -77,6 +77,13 @@
     "popular": "人気順",
     "hot": "コメント数"
   },
+  "post status": {
+    "unsaved": "未保存",
+    "publish": "公開",
+    "draft": "下書き",
+    "private": "非公開",
+    "delete": "削除"
+  },
   "menus": {
     "user": "ユーザー",
     "question": "質問",

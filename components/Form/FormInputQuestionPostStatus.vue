@@ -22,11 +22,16 @@ export default {
   data () {
     return {
       items: [
-        { id: 1, name: 'unsaved', code: 0 },
-        { id: 2, name: 'publish', code: 1 },
-        { id: 3, name: 'draft', code: 2 },
-        { id: 4, name: 'private', code: 3 },
-        { id: 5, name: 'delete', code: 4 }
+        { id: 1, name: '未保存', code: 0 },
+        { id: 2, name: '公開', code: 1 },
+        { id: 3, name: '下書き', code: 2 },
+        { id: 4, name: '非公開', code: 3 },
+        { id: 5, name: '削除', code: 4 }
+        // { id: 1, name: 'unsaved', code: 0 },
+        // { id: 2, name: 'publish', code: 1 },
+        // { id: 3, name: 'draft', code: 2 },
+        // { id: 4, name: 'private', code: 3 },
+        // { id: 5, name: 'delete', code: 4 }
       ],
       rules: [
         // 入力必須

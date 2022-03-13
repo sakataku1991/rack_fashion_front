@@ -27,6 +27,7 @@
                       name="questionImage"
                       placeholder="画像を投稿"
                       class="form-list-item-data-content -file"
+                      v-model="params.question.image"
                     />
                     <!-- <form-input-question-image
                       :image.sync="params.question.image"
@@ -310,9 +311,6 @@ export default {
     }
   },
   methods: {
-    setImage (e) {
-      this.params.question.image = e
-    },
     // 質問投稿処理
     async question () {
       this.loading = true
@@ -320,14 +318,21 @@ export default {
         this.loading = false
       }, 1500)
       const formData = new FormData()
-      formData.append('image', this.params.question.image)
+      formData.append('question[user_id]', this.$store.state.user.current.id)
+      formData.append('question[image]', this.params.question.image)
+      formData.append('question[category_id]', this.params.question.category_id)
+      formData.append('question[title]', this.params.question.title)
+      formData.append('question[body]', this.params.question.body)
+      formData.append('question[sex_id]', this.params.question.sex_id)
+      formData.append('question[color_id]', this.params.question.color_id)
+      formData.append('question[post_status_id]', this.params.question.post_status_id)
       const config = {
         headers: {
           'content-type': 'multipart/form-data'
         }
       }
       if (this.isValid) {
-        await this.$axios.$post('/api/v1/questions', this.params, formData, config)
+        await this.$axios.$post('/api/v1/questions', formData, config)
           // 質問投稿成功時の処理
           .then(response => this.postSuccessful(response))
           // 質問投稿失敗時の処理
