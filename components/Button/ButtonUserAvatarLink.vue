@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    to="/mypage/items/questions"
+    to="/rack_id0/items/questions"
     class="btn btn-userAvatar"
     ontouchstart=""
   >

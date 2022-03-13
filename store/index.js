@@ -50,13 +50,33 @@ export const state = () => ({
       name: afterDeleteAccountPath
     }
   },
+  // 「ユーザー」のデータ
+  user: {
+    current: null,
+    list: []
+  },
+  // 「性別」のデータ
+  sex: {
+    current: null,
+    list: []
+  },
   // 「質問」のデータ
   question: {
     current: null,
     list: []
   },
-  // 「ユーザー」のデータ
-  user: {
+  // 「カテゴリー」のデータ
+  category: {
+    current: null,
+    list: []
+  },
+  // 「色」のデータ
+  color: {
+    current: null,
+    list: []
+  },
+  // 「ハッシュタグ」のデータ
+  hashtag: {
     current: null,
     list: []
   },
@@ -80,17 +100,23 @@ export const getters = {
 
 // stateで用意した変数の値を変更する場所
 export const mutations = {
+  // 「質問」
   setQuestionList (state, payload) {
     state.question.list = payload
   },
   setCurrentQuestion (state, payload) {
     state.question.current = payload
   },
+  // 「ユーザー」
   setUserList (state, payload) {
     state.user.list = payload
   },
   setCurrentUser (state, payload) {
     state.user.current = payload
+  },
+  // 「性別」
+  setSexList (state, payload) {
+    state.sex.list = payload
   },
   setAuthToken (state, payload) {
     state.auth.token = payload
@@ -143,6 +169,11 @@ export const actions = {
   //   }
   //   commit('setCurrentUser', currentUser)
   // },
+  // 性別
+  getSexList ({ commit }, sexes) {
+    sexes = sexes || []
+    commit('setSexList', sexes)
+  },
   // AuthToken
   getAuthToken ({ commit }, token) {
     commit('setAuthToken', token)

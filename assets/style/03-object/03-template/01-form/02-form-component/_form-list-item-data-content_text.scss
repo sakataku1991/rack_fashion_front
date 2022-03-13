@@ -22,7 +22,7 @@ input.form-list-item-data-content.-text,
   };
 }
 // 入力欄（文章）
-input.form-list-item-data-content.-textarea,
+textarea.form-list-item-data-content.-textarea,
 .form-list-item-data-content.-textarea textarea {
   display: block;
   @include sp {

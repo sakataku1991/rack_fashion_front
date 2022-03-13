@@ -52,13 +52,13 @@
                       {{ $store.state.user.current.email }}
                     </p>
                     <p class="MyContent__basicInformationDefListItemDataBtn">
-                        <nuxt-link
-                          to="/dashboard/settings/account/email"
-                          class="btn -outlined -blue btn-change"
-                          ontouchstart=""
-                        >
-                          <span class="btn-text">変更</span>
-                        </nuxt-link>
+                      <nuxt-link
+                        to="/dashboard/settings/account/email"
+                        class="btn -outlined -blue btn-change"
+                        ontouchstart=""
+                      >
+                        <span class="btn-text">変更</span>
+                      </nuxt-link>
                     </p>
                   </dd>
                 </div>
@@ -80,13 +80,13 @@
                       </ul>
                     </div>
                     <p class="MyContent__basicInformationDefListItemDataBtn">
-                        <nuxt-link
-                          to="/dashboard/settings/account/password"
-                          class="btn -outlined -blue btn-change"
-                          ontouchstart=""
-                        >
-                          <span class="btn-text">変更</span>
-                        </nuxt-link>
+                      <nuxt-link
+                        to="/dashboard/settings/account/password"
+                        class="btn -outlined -blue btn-change"
+                        ontouchstart=""
+                      >
+                        <span class="btn-text">変更</span>
+                      </nuxt-link>
                     </p>
                   </dd>
                 </div>
@@ -214,13 +214,13 @@
                 </ul>
               </p>
               <p class="MyContent__deleteAccountMessageBtn">
-                  <a
-                    href="/dashboard/settings/account/deactivate"
-                    class="btn -outlined -delete btn-deleteAccount"
-                    ontouchstart=""
-                  >
-                    <span class="btn-text">アカウントの削除はこちらから</span>
-                  </a>
+                <nuxt-link
+                  to="/dashboard/settings/account/deactivate"
+                  class="btn -outlined -delete btn-deleteAccount"
+                  ontouchstart=""
+                >
+                  <span class="btn-text">アカウントの削除はこちらから</span>
+                </nuxt-link>
               </p>
             </div>
           </div>

@@ -88,7 +88,7 @@
                 >
                   <icon-heart-outline />
                 </icon-base>
-                <span class="Menu__userAvatarContentListItemLinkText">いいね！した記事</span>
+                <span class="Menu__userAvatarContentListItemLinkText">いいね！した質問</span>
               </nuxt-link>
             </li>
             <li class="Menu__userAvatarContentListItem -commentsCanBeViewed">
@@ -105,7 +105,7 @@
                 >
                   <icon-check-circle-outline />
                 </icon-base>
-                <span class="Menu__userAvatarContentListItemLinkText">チケットを使用した記事</span>
+                <span class="Menu__userAvatarContentListItemLinkText">チケットを使用した質問</span>
               </nuxt-link>
             </li>
             <li class="Menu__userAvatarContentListItem -browsingHistory">
@@ -122,7 +122,7 @@
                 >
                   <icon-history />
                 </icon-base>
-                <span class="Menu__userAvatarContentListItemLinkText">記事の閲覧履歴</span>
+                <span class="Menu__userAvatarContentListItemLinkText">質問の閲覧履歴</span>
               </nuxt-link>
             </li>
           </ul>

@@ -140,6 +140,7 @@ export default {
   @include sp {
   };
   @include pc {
+    background-color: $gray_f4;
     border-radius: 10px 0 0 0;
     padding-top: 18px;
   };

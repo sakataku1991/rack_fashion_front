@@ -43,7 +43,9 @@ export default {
     // Doc: https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
     // Doc: https://www.npmjs.com/package/@nuxtjs/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    // Doc: https://typescript.nuxtjs.org/ja/
+    '@nuxt/typescript-build'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -138,6 +140,15 @@ export default {
       messages: {
         ja: require('./locales/ja.json'),
         en: require('./locales/en.json')
+      }
+    }
+  },
+
+  // 「ランタイムlint」の有効化（ファイル保存後にESLintを実行する）
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './src/**/*.{ts,js,vue}'
       }
     }
   },

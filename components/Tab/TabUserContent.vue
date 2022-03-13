@@ -31,7 +31,7 @@
           class="Tab__userItemsListItemBtn"
           ontouchstart=""
         >
-          <span class="Tab__userItemsListItemBtnText">いいね！した記事</span>
+          <span class="Tab__userItemsListItemBtnText">いいね！した質問</span>
         </nuxt-link>
       </li> -->
     </ul>

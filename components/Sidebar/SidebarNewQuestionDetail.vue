@@ -66,12 +66,15 @@
             </dt>
             <dd class="SidebarNewQuestionDetail__detailInfoDefListItemData form-list-item-data">
               <div class="form-list-item-data-select-wrap">
+                <form-input-question-category
+                  :color_id.sync="params.question.color_id"
+                />
                 <select
                   id="questionColor"
                   name="questionColor"
                   class="form-list-item-data-content -select"
                 >
-                  <option value="">
+                  <option disabled value="">
                     色を選択
                   </option>
                   <option value="ホワイト">

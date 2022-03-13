@@ -56,7 +56,7 @@ export default {
       currentTab:
         'tab-0',
       tabs: [
-        { name: 'コメントした記事', slug: 'dashboard/items/comments' }
+        { name: 'コメントした質問', slug: 'dashboard/items/comments' }
       ]
     }
   },

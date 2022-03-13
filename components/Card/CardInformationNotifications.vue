@@ -14,7 +14,7 @@
       />
       <div class="card-information-notifications-content-user-and-date">
         <nuxt-link
-          to="/mypage/items/questions"
+          to="/rack_id0/items/questions"
           class="card-information-notifications-content-user-name"
           ontouchstart=""
         >
@@ -27,7 +27,7 @@
       <p class="card-information-notifications-content-message">
         <span class="card-information-notifications-content-message-user-name">
           <nuxt-link
-            to="/mypage/items/questions"
+            to="/rack_id0/items/questions"
             class="card-information-notifications-content-message-user-name-link"
             ontouchstart=""
           >

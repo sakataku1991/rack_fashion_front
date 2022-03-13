@@ -17,6 +17,7 @@ export default {
   background-color: $black;
   display: inline-block;
   position: fixed;
+  z-index: 50;
   @include sp {
     border-radius: 5px;
     bottom: 24px;

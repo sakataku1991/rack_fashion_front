@@ -1,6 +1,6 @@
 <template>
-  <p class="data data-color color-guide color-7">
-    <span class="color-guide-text">ブルー</span>
+  <p class="data data-color color-guide" :class="`color-${$store.state.question.current.color.code}`">
+    <span class="color-guide-text">{{ $t(`${$store.state.question.current.color.name}`) }}</span>
   </p>
 </template>
 

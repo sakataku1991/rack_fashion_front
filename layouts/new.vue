@@ -19,7 +19,8 @@
         </div>
       </div>
       <!-- トースト通知 -->
-      <toast-base />
+      <!-- TODO のちにトースト通知機能を実装！ -->
+      <!-- <toast-base /> -->
     </div>
   </v-app>
 </template>

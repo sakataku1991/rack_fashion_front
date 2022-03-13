@@ -98,6 +98,7 @@ export default {
     border-top: 1px solid $gray_e4;
   };
   @include pc {
+    background-color: $gray_e4;
     border-top: 1px solid $gray_e4;
     padding-top: 24px;
   };

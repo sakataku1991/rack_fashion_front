@@ -28,7 +28,7 @@
                 name="questionStatus"
                 class="form-list-item-data-content -select"
               >
-                <option value="">
+                <option disabled value="">
                   保存方法を選択
                 </option>
                 <option value="公開">
@@ -74,7 +74,7 @@
         </div>
       </div>
     </div>
-    <!-- 「公開した記事を見る」ボタン -->
+    <!-- 「公開した質問を見る」ボタン -->
     <button-view-publiced-question
       class="SidebarNewQuestionSave__publicLinkBtn"
     />
@@ -208,7 +208,7 @@ export default {
   @include pc {
   };
 }
-// 「記事の公開状況」＋「公開する」ボタン
+// 「質問の公開状況」＋「公開する」ボタン
 .SidebarNewQuestionSave__saveAction {
   background-color: $white;
   z-index: 2;
@@ -223,7 +223,7 @@ export default {
     padding: 16px 16px 16px 16px;
   };
 }
-// 「記事の公開状況」
+// 「質問の公開状況」
 .SidebarNewQuestionSave__saveActionCurrentStatus {
   @include sp {
   };
@@ -298,7 +298,7 @@ export default {
     width: 100%;
   };
 }
-// 「公開した記事を見る」ボタン
+// 「公開した質問を見る」ボタン
 .SidebarNewQuestionSave__publicLinkBtn {
   position: absolute;
   @include sp {
