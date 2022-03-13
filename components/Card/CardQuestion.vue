@@ -59,8 +59,7 @@ export default {
   },
   data () {
     return {
-      image_src_avatar: require('@/assets/image/icon_sakataku1991.png'),
-      image_src_picture: require('@/assets/image/thum/thum_post-question_dummy.jpg')
+      image_src_avatar: require('@/assets/image/icon_sakataku1991.png')
     }
   }
 }
